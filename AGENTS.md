@@ -15,6 +15,8 @@ Before doing anything else:
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 
+**Gateway restarts daily at 5:00 AM** — This ensures fresh plugin loading and clean state. You'll receive a system event notification when this happens.
+
 Don't ask permission. Just do it.
 
 ## Memory
