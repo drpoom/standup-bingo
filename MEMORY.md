@@ -7,8 +7,8 @@
 - **Tech:** Vue 3 + Vite + Tailwind CSS 4
 - **GitHub:** `https://github.com/drpoom/playing-interval`
 - **Live:** `https://www.drpoom.com/playing-interval/`
-- **Current version:** 1.23 (deployed)
-- **Status:** Ch1–Ch4 fully implemented. Sprint 1.24: Polish, QA, achievement lore.
+- **Current version:** 1.23 (deployed 2026-04-13)
+- **Status:** Ch1–Ch4 fully implemented and deployed. Sprint 1.24: Polish, QA, achievement lore.
 
 **Chapter progress:**
 - Ch1 (Prologue): Hotel → Tuktuk → BBQ → Victory ✅
