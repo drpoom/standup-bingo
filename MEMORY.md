@@ -7,8 +7,8 @@
 - **Tech:** Vue 3 + Vite + Tailwind CSS 4
 - **GitHub:** `https://github.com/drpoom/playing-interval`
 - **Live:** `https://www.drpoom.com/playing-interval/`
-- **Current version:** 1.32 (deployed 2026-04-13)
-- **Status:** 🏆 GOLD — All 4 chapters + credits shipped. PWA/a11y hardened. Sprint 1.32: PWA improvements, WCAG viewport fix, tap-targets, offline fallback.
+- **Current version:** 1.32 (Gold, Archived)
+- **Status:** 🏆 GOLD — All 4 chapters + credits shipped, PWA/a11y hardened, Creative QA PASS. Project archived.
 
 **Chapter progress:**
 - Ch1 (Prologue): Hotel → Tuktuk → BBQ → Victory ✅
@@ -29,7 +29,7 @@
 - App.vue refactored (Sprint 1.25): ITEM_COMBOS/EXAMINES/REJECTIONS/VALID_COMBO_TARGETS extracted to `src/data/gameData.js` (226 lines). App.vue reduced from 681 → 473 lines.
 - Sprint 1.26-1.28: Dead code cleanup, Ch4 achievement lore polished (7 strings Hans voice), 99 aria-labels across all 17 scenes + 3 components, CreditsScene added, keyboard a11y (buttonKey.js), deploy fix (index.html leaked dist version). Version 1.29 deployed.
 - Sprint 1.30: CreditsScene rewritten as PEA Audit Report (dynamic Lek fate, player rating, Thermal Synergy section, official document styling). VictoryScene Shareable Summary Card (certificate layout, Hans quote pool, screenshot-friendly). Version 1.30 deployed.
-- Sprint 1.32: PWA improvements — SW runtime caching (cache-first for assets, network-first for nav), offline fallback, WCAG viewport fix (maximum-scale=5.0), tap-target on InspectorScene evidence buttons. Version 1.32 deployed.
+- Sprint 1.33: Creative QA — Final play-test PASS. All 9 checks verified (endgame flow, Summary Card, Hans quotes, visual polish, PWA offline). Project archived at v1.32.
 - Scene skeletons work well for parallel workflow: Tech builds structure, Creative fills in dialogue/puzzles via spec doc
 - **statSnapshot must mirror achievement conditions** — Any new achievement referencing `stats.X` requires `X` in the snapshot object
 - **Prop naming conventions** — App.vue uses kebab-case (`selected-item-id`) → `selectedItemId` in components. Skeletons must match exactly.
