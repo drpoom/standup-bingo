@@ -7,8 +7,8 @@
 - **Tech:** Vue 3 + Vite + Tailwind CSS 4
 - **GitHub:** `https://github.com/drpoom/playing-interval`
 - **Live:** `https://www.drpoom.com/playing-interval/`
-- **Current version:** 1.30 (deployed 2026-04-13)
-- **Status:** Ch1–Ch4 fully implemented and deployed. Sprint 1.30: PEA Audit Report credits, Shareable Summary Card.
+- **Current version:** 1.31 (deployed 2026-04-13)
+- **Status:** Ch1–Ch4 fully implemented and deployed. Sprint 1.31: Architect refinements — Bureaucratic Brutalism credits, Polaroid Summary Card, canonical Hans quotes.
 
 **Chapter progress:**
 - Ch1 (Prologue): Hotel → Tuktuk → BBQ → Victory ✅
@@ -29,6 +29,7 @@
 - App.vue refactored (Sprint 1.25): ITEM_COMBOS/EXAMINES/REJECTIONS/VALID_COMBO_TARGETS extracted to `src/data/gameData.js` (226 lines). App.vue reduced from 681 → 473 lines.
 - Sprint 1.26-1.28: Dead code cleanup, Ch4 achievement lore polished (7 strings Hans voice), 99 aria-labels across all 17 scenes + 3 components, CreditsScene added, keyboard a11y (buttonKey.js), deploy fix (index.html leaked dist version). Version 1.29 deployed.
 - Sprint 1.30: CreditsScene rewritten as PEA Audit Report (dynamic Lek fate, player rating, Thermal Synergy section, official document styling). VictoryScene Shareable Summary Card (certificate layout, Hans quote pool, screenshot-friendly). Version 1.30 deployed.
+- Sprint 1.31: Architect refinements — "Bureaucratic Brutalism". CreditsScene: District 6 header, DATE field, Disposition of Entities, Hans rating "S (Efficiency Overload)", CONSULTANT/INCARCERATED/STATUS UNKNOWN labels, Digital Signature footer, diagonal APPROVED watermark, 1.5s fade-in, deep orange embers. VictoryScene: Polaroid Summary Card, ⚡ badge, Architect's 4 canonical Hans quotes. Narrative audit confirmed: symmetry achieved, Hans arc complete. Version 1.31 deployed.
 - Scene skeletons work well for parallel workflow: Tech builds structure, Creative fills in dialogue/puzzles via spec doc
 - **statSnapshot must mirror achievement conditions** — Any new achievement referencing `stats.X` requires `X` in the snapshot object
 - **Prop naming conventions** — App.vue uses kebab-case (`selected-item-id`) → `selectedItemId` in components. Skeletons must match exactly.
