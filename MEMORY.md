@@ -7,8 +7,8 @@
 - **Tech:** Vue 3 + Vite + Tailwind CSS 4
 - **GitHub:** `https://github.com/drpoom/playing-interval`
 - **Live:** `https://www.drpoom.com/playing-interval/`
-- **Current version:** 1.27 (deployed 2026-04-13)
-- **Status:** Ch1–Ch4 fully implemented and deployed. Sprint 1.27: QA, lore polish, accessibility.
+- **Current version:** 1.30 (deployed 2026-04-13)
+- **Status:** Ch1–Ch4 fully implemented and deployed. Sprint 1.30: PEA Audit Report credits, Shareable Summary Card.
 
 **Chapter progress:**
 - Ch1 (Prologue): Hotel → Tuktuk → BBQ → Victory ✅
@@ -18,14 +18,17 @@
   - ConfrontationScene: Somchai dialogue tree, inspector interaction, somchai-statement pickup
   - PEAHeadquartersScene: 3-field form puzzle with sequential validation
   - LeksRedemptionScene: 3-choice fate dialogue (redeemed/fled/unknown)
-  - EpilogueScene: Conditional outcomes, thermal synergy display
+  - EpilogueScene: Conditional outcomes, thermal synergy display, Final Thought block, steam/Satoshi easter eggs
+  - CreditsScene (Sprint 1.28): Design/Dev/Inspiration/Thanks sections, ember particles, back button
+  - Keyboard a11y (Sprint 1.28): buttonKey.js global Enter/Space handler for role="button"
   - Bug fixes: duplicate flag key merged, chapter4Complete uses set-flag, somchaiStatement achievement flag, Ch4 rejections, sequential form validation
 
 **Key lessons learned:**
 - Smart quotes (`'` `"` etc.) cause "Unterminated string constant" build errors in Vue SFCs — use backtick template literals
 - Emoji characters in achievements.js can cause edit tool matching failures — use sed or simpler edit patterns
 - App.vue refactored (Sprint 1.25): ITEM_COMBOS/EXAMINES/REJECTIONS/VALID_COMBO_TARGETS extracted to `src/data/gameData.js` (226 lines). App.vue reduced from 681 → 473 lines.
-- Sprint 1.26-1.27: Dead code cleanup (auditFolder rejections removed), Ch4 achievement lore polished (7 strings updated to Hans voice), aria-labels added (5 scenes + 3 components, 27 total). Version 1.27 deployed.
+- Sprint 1.26-1.28: Dead code cleanup, Ch4 achievement lore polished (7 strings Hans voice), 99 aria-labels across all 17 scenes + 3 components, CreditsScene added, keyboard a11y (buttonKey.js), deploy fix (index.html leaked dist version). Version 1.29 deployed.
+- Sprint 1.30: CreditsScene rewritten as PEA Audit Report (dynamic Lek fate, player rating, Thermal Synergy section, official document styling). VictoryScene Shareable Summary Card (certificate layout, Hans quote pool, screenshot-friendly). Version 1.30 deployed.
 - Scene skeletons work well for parallel workflow: Tech builds structure, Creative fills in dialogue/puzzles via spec doc
 - **statSnapshot must mirror achievement conditions** — Any new achievement referencing `stats.X` requires `X` in the snapshot object
 - **Prop naming conventions** — App.vue uses kebab-case (`selected-item-id`) → `selectedItemId` in components. Skeletons must match exactly.
@@ -38,7 +41,10 @@
 - InspectorScene: initialize `presentedItems` from flags on mount + watch flags for combo-path sync
 - Read component data BEFORE unmounting (v-if destroys the ref)
 
-**Deployment:** `npm run build` → copy dist/ to gh-pages branch → force push
+- **Deploy leak lesson (CRITICAL):** `git checkout -B gh-pages && git clean -fdx` wipes uncommitted source changes. ALWAYS commit to main BEFORE deploying to gh-pages. The index.html can get overwritten with dist version if not careful.
+- **Emoji ZWJ characters (👨‍🍳)** cause edit tool matching failures — use `write` (full file rewrite)
+
+**Deployment:** `npm run build` → commit to main → copy dist/ to gh-pages branch → force push → `git checkout main`
 
 ### Elango Surfers
 - **Live:** `https://drpoom.github.io/elango-surfers/`
