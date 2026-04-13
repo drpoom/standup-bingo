@@ -1,0 +1,7 @@
+{
+  "id": "replicate",
+  "name": "Replicate Image Generation",
+  "version": "1.0.0",
+  "description": "Generate images using Replicate API (Flux Schnell/Pro). Use for game assets, character art, backgrounds.",
+  "location": "~/.openclaw/workspace/skills/replicate"
+}
