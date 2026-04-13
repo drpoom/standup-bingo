@@ -7,20 +7,28 @@
 - **Tech:** Vue 3 + Vite + Tailwind CSS 4
 - **GitHub:** `https://github.com/drpoom/playing-interval`
 - **Live:** `https://www.drpoom.com/playing-interval/`
-- **Current version:** 1.21 (deployed)
-- **Status:** Ch1–Ch3 complete and deployed. Sprint 1.21 Phase 1 (Ch4 infrastructure) complete. Phase 2 blocked on chapter4_scenes.md.
+- **Current version:** 1.23 (deployed)
+- **Status:** Ch1–Ch4 fully implemented. Sprint 1.24: Polish, QA, achievement lore.
 
 **Chapter progress:**
 - Ch1 (Prologue): Hotel → Tuktuk → BBQ → Victory ✅
 - Ch2 (Electric Bill): Electric Bill → PEA Lobby → Rooftop Solar → Victory ✅
 - Ch3 (The Investigation): PEA Substation → Lek's Stall → Rooftop Chase → Inspector → Victory ✅
-- Ch4 (The Final Audit): Creative spec written, scene skeletons deployed. 4 scenes scaffolded (ConfrontationScene, PEAHeadquartersScene, LeksRedemptionScene, EpilogueScene). Phase 2 implementation blocked on chapter4_scenes.md detailed spec.
+- Ch4 (The Final Audit): ConfrontationScene → PEAHeadquartersScene → LeksRedemptionScene → EpilogueScene → Victory ✅
+  - ConfrontationScene: Somchai dialogue tree, inspector interaction, somchai-statement pickup
+  - PEAHeadquartersScene: 3-field form puzzle with sequential validation
+  - LeksRedemptionScene: 3-choice fate dialogue (redeemed/fled/unknown)
+  - EpilogueScene: Conditional outcomes, thermal synergy display
+  - Bug fixes: duplicate flag key merged, chapter4Complete uses set-flag, somchaiStatement achievement flag, Ch4 rejections, sequential form validation
 
 **Key lessons learned:**
 - Smart quotes (`'` `"` etc.) cause "Unterminated string constant" build errors in Vue SFCs — use backtick template literals
 - Emoji characters in achievements.js can cause edit tool matching failures — use sed or simpler edit patterns
 - App.vue is getting large (~620 lines) — consider splitting ITEM_COMBOS/EXAMINES/REJECTIONS into a separate data module
 - Scene skeletons work well for parallel workflow: Tech builds structure, Creative fills in dialogue/puzzles via spec doc
+- **statSnapshot must mirror achievement conditions** — Any new achievement referencing `stats.X` requires `X` in the snapshot object
+- **Prop naming conventions** — App.vue uses kebab-case (`selected-item-id`) → `selectedItemId` in components. Skeletons must match exactly.
+- **Creative blocker escalation** — If spec doesn't arrive next sprint, Tech should write it directly
 - `DIALOGUE_NODES` must be `computed(() => [...])` not `const [...]` for reactive flag references
 - Combo `pickup` field is essential when a flag-gating item needs to be in inventory later
 - Always verify bidirectional navigation — dead-ends occur when scenes only have forward transitions
