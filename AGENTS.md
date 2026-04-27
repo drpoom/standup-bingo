@@ -45,6 +45,42 @@
 
 ## CI Protocol (Scout's Duty)
 
+**AFTER EVERY FIX, BEFORE PUSH:**
+
+### 🛑 MANDATORY PRE-PUSH CHECKLIST (DO NOT SKIP)
+
+1. **Byte implements fix** → commits locally
+2. **🔍 SCOUT MUST TEST LOCALLY** (non-negotiable):
+   ```bash
+   # Scout runs this BEFORE allowing push:
+   npm run test:ci  # OR specific failed test file
+   ```
+3. **Scout verifies**:
+   - ✅ Tests pass locally → **Only then** approve push
+   - ❌ Tests fail → Assign fix back to Byte, repeat from step 1
+4. **Mickey pushes** to GitHub (only after Scout approval)
+5. **CI runs** → Scout monitors via cron (8 min)
+6. **Deploy** → Only if CI passes
+
+### ⚠️ ENFORCEMENT RULES
+
+- **Mickey is FORBIDDEN from pushing** without explicit Scout approval
+- **Scout approval** = "Tests pass locally" message in chat
+- **No exceptions** - even for "small" fixes or "just logging"
+- **If Scout is unavailable** → Wait, do NOT push
+
+### Old Workflow (WRONG ❌):
+```
+Byte fixes → Mickey pushes → CI fails → Repeat (wasted time)
+```
+
+### New Workflow (RIGHT ✅):
+```
+Byte fixes → Scout tests locally → Scout approves → Mickey pushes → CI passes
+```
+
+---
+
 **After every push that triggers CI:**
 
 1. **Mickey schedules cron** (non-blocking, ~8 min):
@@ -63,17 +99,11 @@
    - ⏳ Hang >15 min → Cancel, investigate
    - 🎲 Flaky → Mark for stabilization
 
-4. **Pre-Deploy Verification (MANDATORY)**:
-   - ✅ **BEFORE allowing deploy**, Scout MUST retest failed test cases locally
-   - Run: `npm run test:ci` (or specific failed test file)
-   - Verify tests pass on local machine before approving push
-   - This prevents multiple CI failure cycles
-
-5. **Rules**:
+4. **Rules**:
    - ❌ Never `sleep 60 + curl` loops (blocks responsiveness)
    - ✅ Use cron for deferred checks
    - ✅ User asks mid-run → single poll, then yield
-   - ✅ **Local retest required before deploy approval**
+   - ✅ **Local retest required BEFORE push** (see checklist above)
 
 ---
 
