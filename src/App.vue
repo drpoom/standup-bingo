@@ -1,5 +1,7 @@
 <template>
   <div class="app">
+    <!-- Version Badge -->
+    <div class="version-badge">v{{ VERSION }}</div>
     <!-- Confetti Canvas -->
     <canvas
       v-show="showConfetti"
@@ -61,6 +63,8 @@
 
 <script setup>
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
+
+const VERSION = '2.1.1'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
@@ -304,5 +308,14 @@ body {
 
 .app {
   min-height: 100vh;
+}
+
+.version-badge {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  font-size: 12px;
+  opacity: 0.6;
+  pointer-events: none;
 }
 </style>

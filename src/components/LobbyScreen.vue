@@ -133,6 +133,21 @@
           </button>
         </div>
 
+        <!-- Mute Toggle -->
+        <div class="mb-6">
+          <button
+            @click="toggleMute"
+            :class="[
+              'w-full py-3 rounded-lg font-semibold transition',
+              isMuted
+                ? 'bg-yellow-500 hover:bg-yellow-600 text-white'
+                : 'bg-slate-200 hover:bg-slate-300 text-slate-700'
+            ]"
+          >
+            {{ isMuted ? '🔇 Unmute' : '🔊 Mute' }}
+          </button>
+        </div>
+
         <!-- Host Controls -->
         <div v-if="isHost" class="border-t pt-6">
           <h3 class="font-semibold text-slate-700 mb-4">🎮 Host Controls</h3>
@@ -211,6 +226,7 @@ import { ref, computed, watch } from 'vue'
 import ThemePicker from './ThemePicker.vue'
 import PlayerAvatar from './PlayerAvatar.vue'
 import CustomPhraseEditor from './CustomPhraseEditor.vue'
+import { useSoundEffects } from '../composables/useSoundEffects.js'
 
 const props = defineProps({
   networking: {
@@ -232,6 +248,8 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['join', 'start-game', 'end-game', 'transfer-host', 'toggle-ready', 'custom-phrases-updated'])
+
+const { isMuted, toggleMute } = useSoundEffects()
 
 const teamCode = ref('')
 const playerName = ref('')
