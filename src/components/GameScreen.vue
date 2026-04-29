@@ -2,37 +2,80 @@
   <div class="min-h-screen bg-slate-50">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-10">
-      <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <div>
           <h1 class="text-xl font-bold text-slate-800">🎯 Standup Bingo</h1>
           <p class="text-sm text-slate-500">{{ playerName }}</p>
         </div>
-        <div class="text-right">
-          <div :class="[
-            'text-2xl font-mono font-bold',
-            gameState.timerSeconds < 60 ? 'text-red-500' : 'text-slate-700'
-          ]">
-            {{ formatTime(gameState.timerSeconds) }}
+        <div class="flex items-center gap-4">
+          <!-- Connection Status -->
+          <div class="flex items-center gap-2 text-sm">
+            <span :class="connected ? 'text-green-500' : 'text-slate-400'">
+              {{ connected ? '🟢 Connected' : '🔴 Offline' }}
+            </span>
+            <span class="text-slate-400">|</span>
+            <span class="text-slate-600">{{ playerCount }} player{{ playerCount !== 1 ? 's' : '' }}</span>
           </div>
-          <div class="text-xs text-slate-400">Time remaining</div>
+          <!-- Elapsed Time -->
+          <div class="text-right">
+            <div class="text-2xl font-bold text-slate-700">
+              {{ formatTime(gameState.startTime) }}
+            </div>
+            <div class="text-xs text-slate-400">Elapsed time</div>
+          </div>
+          <!-- Host End Game Button -->
+          <button
+            v-if="isHost"
+            @click="handleEndGame"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+          >
+            🛑 End Game
+          </button>
         </div>
       </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 py-6">
-      <BingoCard :grid="gameState.grid" @toggle="handleToggle" />
+    <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+      <!-- Bingo Card Area -->
+      <div class="flex-1">
+        <BingoCard :grid="gameState.grid" @toggle="handleToggle" />
 
-      <!-- Stats -->
-      <div class="mt-6 flex justify-center gap-4 text-sm text-slate-600">
-        <div class="bg-white px-4 py-2 rounded-lg shadow">
-          <span class="font-bold text-blue-500">{{ marksCount }}</span> marked
-        </div>
-        <div class="bg-white px-4 py-2 rounded-lg shadow">
-          <span class="font-bold text-green-500">{{ bingos.length }}</span> bingo{{ bingos.length !== 1 ? 's' : '' }}
+        <!-- Stats -->
+        <div class="mt-6 flex justify-center gap-4 text-sm text-slate-600">
+          <div class="bg-white px-4 py-2 rounded-lg shadow">
+            <span class="font-bold text-blue-500">{{ marksCount }}</span> marked
+          </div>
+          <div class="bg-white px-4 py-2 rounded-lg shadow">
+            <span class="font-bold text-green-500">{{ bingos.length }}</span> bingo{{ bingos.length !== 1 ? 's' : '' }}
+          </div>
         </div>
       </div>
+
+      <!-- Player Sidebar -->
+      <aside class="w-64 space-y-3">
+        <h3 class="font-semibold text-slate-700 mb-2">Players</h3>
+        <PlayerBoardThumbnail
+          v-for="player in allPlayers"
+          :key="player.name"
+          :playerName="player.name"
+          :grid="player.grid"
+          :bingoCount="player.bingoCount"
+          :theme="player.theme"
+          @click="openPlayerModal(player)"
+        />
+      </aside>
     </main>
+
+    <!-- Player Board Modal -->
+    <PlayerBoardModal
+      v-if="modalPlayer"
+      :visible="!!modalPlayer"
+      :playerName="modalPlayer.name"
+      :grid="modalPlayer.grid"
+      :bingoCount="modalPlayer.bingoCount"
+      @close="closeModal"
+    />
 
     <!-- Win Overlay -->
     <WinOverlay
@@ -44,8 +87,11 @@
 </template>
 
 <script setup>
+import { ref, reactive, watch } from 'vue'
 import BingoCard from './BingoCard.vue'
 import WinOverlay from './WinOverlay.vue'
+import PlayerBoardThumbnail from './PlayerBoardThumbnail.vue'
+import PlayerBoardModal from './PlayerBoardModal.vue'
 
 const props = defineProps({
   gameState: {
@@ -59,26 +105,66 @@ const props = defineProps({
   formatTime: {
     type: Function,
     required: true
+  },
+  allPlayers: {
+    type: Array,
+    default: () => []
+  },
+  connected: {
+    type: Boolean,
+    default: false
+  },
+  playerCount: {
+    type: Number,
+    default: 1
+  },
+  isHost: {
+    type: Boolean,
+    default: false
   }
 })
 
-const emit = defineEmits(['continue'])
+const emit = defineEmits(['continue', 'toggle', 'open-modal', 'close-modal', 'end-game'])
 
-const { gameState, toggleMark, formatTime } = props
+const { gameState, toggleMark, formatTime, allPlayers, connected, playerCount } = props
+
+const modalPlayer = ref(null)
 
 function handleToggle({ row, col }) {
   const wins = toggleMark(row, col)
-  if (wins && wins.length > 0) {
-    // Bingo detected
-  }
+  emit('toggle', { row, col, wins })
 }
 
 function handleContinue() {
   emit('continue')
 }
 
+function openPlayerModal(player) {
+  modalPlayer.value = player
+  emit('open-modal', player)
+}
+
+function closeModal() {
+  modalPlayer.value = null
+  emit('close-modal')
+}
+
+function handleEndGame() {
+  emit('end-game')
+}
+
 // Computed helpers
 const marksCount = gameState.marksCount
 const bingos = gameState.bingos
 const playerName = gameState.playerName
+
+// Listen for peer bingo events
+if (typeof window !== 'undefined') {
+  window.addEventListener('peer-data', (event) => {
+    const data = event.detail
+    if (data.type === 'BINGO') {
+      emit('peer-bingo', data)
+    }
+  })
+}
 </script>

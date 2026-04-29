@@ -35,52 +35,50 @@ function checkBingo(grid) {
 
 export function useGameState() {
   const gameState = reactive({
-    phase: 'join', // 'join' | 'playing' | 'won' | 'finished'
+    phase: 'LOBBY', // 'LOBBY' | 'PLAYING' | 'WON' | 'FINISHED'
     teamCode: '',
     playerName: '',
+    theme: 'default',
     grid: [],
     bingos: [],
     marksCount: 0,
     startTime: null,
     bingoTime: null,
-    timerSeconds: 20 * 60, // 20 minutes
-    timerRunning: false
+    seed: null,
+    customPhrases: null,
+    hostPeerId: null
   })
 
-  const timerInterval = ref(null)
+  function enterLobby(teamCode = '', playerName = '') {
+    gameState.phase = 'LOBBY'
+    if (teamCode) gameState.teamCode = teamCode
+    if (playerName) gameState.playerName = playerName
+    gameState.grid = []
+    gameState.bingos = []
+    gameState.marksCount = 0
+    gameState.startTime = null
+    gameState.bingoTime = null
+  }
 
-  function startGame(teamCode, playerName, grid) {
-    gameState.phase = 'playing'
+  function startGame(teamCode, playerName, grid, theme = 'default', seed = null, customPhrases = null) {
+    gameState.phase = 'PLAYING'
     gameState.teamCode = teamCode
     gameState.playerName = playerName
+    gameState.theme = theme
     gameState.grid = grid
     gameState.bingos = []
     gameState.marksCount = 0
     gameState.startTime = Date.now()
     gameState.bingoTime = null
-    gameState.timerSeconds = 20 * 60
-    gameState.timerRunning = true
-
-    // Start timer
-    if (timerInterval.value) {
-      clearInterval(timerInterval.value)
-    }
-    timerInterval.value = setInterval(() => {
-      if (gameState.timerSeconds > 0) {
-        gameState.timerSeconds--
-      } else {
-        gameState.timerRunning = false
-        gameState.phase = 'finished'
-        clearInterval(timerInterval.value)
-      }
-    }, 1000)
+    gameState.seed = seed
+    gameState.customPhrases = customPhrases
   }
 
   function toggleMark(row, col) {
-    if (gameState.phase !== 'playing') return
+    if (gameState.phase !== 'PLAYING') return null
 
     const cell = gameState.grid[row][col]
-    if (cell.isFree) return
+    if (cell.isFree) return null
 
     cell.marked = !cell.marked
     if (cell.marked) {
@@ -93,7 +91,7 @@ export function useGameState() {
     const wins = checkBingo(gameState.grid)
     if (wins.length > 0 && gameState.bingos.length === 0) {
       gameState.bingoTime = Date.now() - gameState.startTime
-      gameState.phase = 'won'
+      gameState.phase = 'WON'
     }
 
     // Add new wins
@@ -107,41 +105,62 @@ export function useGameState() {
   }
 
   function finishGame() {
-    gameState.timerRunning = false
-    gameState.phase = 'finished'
-    if (timerInterval.value) {
-      clearInterval(timerInterval.value)
-    }
+    gameState.phase = 'FINISHED'
   }
 
-  function resetGame() {
-    gameState.phase = 'join'
-    gameState.teamCode = ''
-    gameState.playerName = ''
+  function endGame() {
+    // Return to lobby, keep player info
+    gameState.phase = 'LOBBY'
     gameState.grid = []
     gameState.bingos = []
     gameState.marksCount = 0
     gameState.startTime = null
     gameState.bingoTime = null
-    gameState.timerSeconds = 20 * 60
-    gameState.timerRunning = false
-    if (timerInterval.value) {
-      clearInterval(timerInterval.value)
-    }
+    gameState.seed = null
+    // Keep teamCode, playerName, theme, customPhrases
   }
 
-  function formatTime(seconds) {
-    const mins = Math.floor(seconds / 60)
-    const secs = seconds % 60
+  function resetGame() {
+    gameState.phase = 'LOBBY'
+    gameState.teamCode = ''
+    gameState.playerName = ''
+    gameState.theme = 'default'
+    gameState.grid = []
+    gameState.bingos = []
+    gameState.marksCount = 0
+    gameState.startTime = null
+    gameState.bingoTime = null
+    gameState.seed = null
+    gameState.customPhrases = null
+    gameState.hostPeerId = null
+  }
+
+  function setHostPeerId(peerId) {
+    gameState.hostPeerId = peerId
+  }
+
+  function setCustomPhrases(phrases) {
+    gameState.customPhrases = phrases
+  }
+
+  function formatTime(startTime) {
+    if (!startTime) return '0:00'
+    const elapsed = Math.floor((Date.now() - startTime) / 1000)
+    const mins = Math.floor(elapsed / 60)
+    const secs = elapsed % 60
     return `${mins}:${secs.toString().padStart(2, '0')}`
   }
 
   return {
     gameState,
+    enterLobby,
     startGame,
     toggleMark,
     finishGame,
+    endGame,
     resetGame,
-    formatTime
+    formatTime,
+    setHostPeerId,
+    setCustomPhrases
   }
 }

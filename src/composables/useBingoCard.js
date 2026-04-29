@@ -1,4 +1,5 @@
 import { PHRASES } from '../data/phrases.js'
+import { THEMES } from '../data/themes.js'
 
 // Seeded PRNG - mulberry32
 function mulberry32(seed) {
@@ -29,14 +30,34 @@ function getAllPhrases() {
   return all
 }
 
-// Generate a bingo card based on seed
-export function useBingoCard() {
-  function generateCard(teamCode, playerName, dateISO) {
-    const seedString = `${teamCode.toUpperCase()}${dateISO}${playerName}`
-    const seed = hashString(seedString)
-    const rng = mulberry32(seed)
+// Merge custom phrases with theme phrases (deduplicate)
+function mergePhrases(themePhrases, customPhrases) {
+  if (!customPhrases || !customPhrases.categories) {
+    return themePhrases
+  }
+  
+  // Flatten custom phrases
+  const customFlat = Object.values(customPhrases.categories).flat()
+  
+  // Deduplicate (case-insensitive)
+  const seen = new Set(themePhrases.map(p => p.toLowerCase()))
+  const uniqueCustom = customFlat.filter(p => !seen.has(p.toLowerCase()))
+  
+  return [...themePhrases, ...uniqueCustom]
+}
 
-    const allPhrases = getAllPhrases()
+// Generate a bingo card based on seed and theme
+export function useBingoCard() {
+  function generateCard(teamCode, playerName, dateISO, theme = 'default', customPhrases = null, seed = null) {
+    // Use provided seed or generate from inputs
+    const seedString = seed ? String(seed) : `${teamCode.toUpperCase()}${dateISO}${playerName}${theme}`
+    const seedValue = typeof seed === 'number' ? seed : hashString(seedString)
+    const rng = mulberry32(seedValue)
+
+    // Get phrases based on theme
+    const themePhrases = getThemePhrases(theme)
+    const mergedPhrases = mergePhrases(themePhrases, customPhrases)
+    const allPhrases = mergedPhrases.length > 0 ? mergedPhrases : getAllPhrases()
     
     // Shuffle phrases deterministically
     const shuffled = [...allPhrases]
@@ -78,7 +99,21 @@ export function useBingoCard() {
     return grid
   }
 
+  // Get phrases for a specific theme
+  function getThemePhrases(themeId) {
+    const theme = THEMES[themeId]
+    if (!theme || !theme.phrases) return []
+    
+    const all = []
+    for (const category of Object.values(theme.phrases)) {
+      all.push(...category)
+    }
+    return all
+  }
+
   return {
-    generateCard
+    generateCard,
+    getThemePhrases,
+    mergePhrases
   }
 }

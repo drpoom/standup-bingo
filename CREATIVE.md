@@ -94,4 +94,21 @@ Visual styles for the back of the bingo cards.
 - **Default**: Minimalist geometric pattern.
 - **Silver**: Brushed metal texture.
 - **Gold**: Polished gold foil.
-- **Holographic**: Iridescent gradient that shifts on mouse move.
+
+---
+
+## 7. Player Avatars
+Avatars are generated dynamically using the DiceBear API, ensuring every player has a unique but consistent visual identity.
+
+### Implementation
+- **Provider**: DiceBear API (CDN-hosted)
+- **URL Format**: `https://api.dicebear.com/9.x/[style]/svg?seed=[playerName]`
+- **Deterministic**: The `seed` (player name) ensures that the same player always receives the same avatar across sessions.
+- **Generation**: No local SVG generation is required; the CDN handles all rendering.
+
+### Supported Styles
+Players can choose from the following styles:
+- `avataaars`: Human-like characters.
+- `bottts`: Robot-themed avatars.
+- `lorelei`: Stylized artistic portraits.
+- `identicon`: Abstract geometric patterns.

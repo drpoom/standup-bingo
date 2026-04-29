@@ -37,6 +37,8 @@
           />
         </div>
 
+        <ThemePicker v-model:theme="selectedTheme" @select="handleThemeSelect" />
+
         <button
           type="submit"
           class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 text-lg"
@@ -54,15 +56,21 @@
 
 <script setup>
 import { ref } from 'vue'
+import ThemePicker from './ThemePicker.vue'
 
 const emit = defineEmits(['join'])
 
 const teamCode = ref('')
 const playerName = ref('')
+const selectedTheme = ref('default')
+
+function handleThemeSelect(themeId) {
+  selectedTheme.value = themeId
+}
 
 function handleSubmit() {
   if (teamCode.value.trim() && playerName.value.trim()) {
-    emit('join', teamCode.value.trim().toUpperCase(), playerName.value.trim())
+    emit('join', teamCode.value.trim().toUpperCase(), playerName.value.trim(), selectedTheme.value)
   }
 }
 </script>
