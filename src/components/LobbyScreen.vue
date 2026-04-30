@@ -1,51 +1,51 @@
 <template>
   <div class="min-h-screen lobby-bg relative">
-    <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
       <!-- Header -->
-      <div class="text-center mb-8 relative z-10">
-        <h1 class="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
-          <img src="../assets/icons/ui/start.svg" alt="" class="w-8 h-8 inline" />
+      <div class="text-center mb-6 sm:mb-8 relative z-10">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 flex items-center justify-center gap-2 sm:gap-3">
+          <img src="../assets/icons/ui/start.svg" alt="" class="w-6 h-6 sm:w-8 sm:h-8 inline" />
           Standup Bingo
         </h1>
-        <p class="text-white/70">Make your daily standup more fun!</p>
+        <p class="text-white/70 text-sm sm:text-base">Make your daily standup more fun!</p>
       </div>
 
       <!-- How to Play -->
-      <div class="glass-card relative z-10 p-6 mb-8">
-        <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <img src="../assets/icons/steps/join.svg" alt="" class="w-6 h-6" />
+      <div class="glass-card relative z-10 p-4 sm:p-6 mb-6 sm:mb-8">
+        <h2 class="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4 flex items-center gap-2">
+          <img src="../assets/icons/steps/join.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
           How to Play
         </h2>
-        <div class="flex flex-wrap gap-4 justify-center text-white/80">
+        <div class="flex flex-wrap gap-3 sm:gap-4 justify-center text-white/80">
           <div class="flex items-center gap-2">
-            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-              <img src="../assets/icons/steps/join.svg" alt="" class="w-6 h-6" />
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/join.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <span class="text-sm">Join</span>
+            <span class="text-xs sm:text-sm">Join</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-              <img src="../assets/icons/steps/wait.svg" alt="" class="w-6 h-6" />
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/wait.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <span class="text-sm">Wait</span>
+            <span class="text-xs sm:text-sm">Wait</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-              <img src="../assets/icons/steps/mark.svg" alt="" class="w-6 h-6" />
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/mark.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <span class="text-sm">Mark</span>
+            <span class="text-xs sm:text-sm">Mark</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-              <img src="../assets/icons/steps/win.svg" alt="" class="w-6 h-6" />
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/win.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <span class="text-sm">Win</span>
+            <span class="text-xs sm:text-sm">Win</span>
           </div>
         </div>
       </div>
 
       <!-- Join Form (shown when not in room) -->
-      <div v-if="!inRoom" class="glass-card relative z-10 p-8 mb-8">
+      <div v-if="!inRoom" class="glass-card relative z-10 p-5 sm:p-8 mb-6 sm:mb-8">
         <form @submit.prevent="handleJoin" class="space-y-6">
           <div>
             <label for="teamCode" class="block text-sm font-medium text-white/90 mb-2">
@@ -172,7 +172,7 @@
                 : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
             ]"
           >
-            <img :src="isMuted ? '../assets/icons/ui/mute.svg' : '../assets/icons/ui/mute.svg'" alt="" class="w-5 h-5" />
+            <img :src="isMuted ? '../assets/icons/ui/mute.svg' : '../assets/icons/ui/unmute.svg'" alt="" class="w-5 h-5" />
             {{ isMuted ? 'Unmute' : 'Mute' }}
           </button>
         </div>

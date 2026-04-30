@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-2xl mx-auto">
+  <div class="w-full max-w-full sm:max-w-2xl mx-auto px-2">
     <div class="grid grid-cols-5 gap-2 sm:gap-3">
       <BingoSquare
         v-for="(row, rowIndex) in grid"

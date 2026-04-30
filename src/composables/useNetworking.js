@@ -20,7 +20,13 @@ export function useNetworking() {
     hostPeerId.value = null // Will be set when peer opens
     
     peer.value = new Peer(roomId.value, {
-      debug: 2
+      debug: 2,
+      config: {
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' }
+        ]
+      }
     })
 
     peer.value.on('open', (id) => {
@@ -65,7 +71,13 @@ export function useNetworking() {
     isHost.value = false
     
     peer.value = new Peer({
-      debug: 2
+      debug: 2,
+      config: {
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' }
+        ]
+      }
     })
 
     peer.value.on('open', (id) => {
@@ -166,7 +178,7 @@ export function useNetworking() {
   function handleJoin(data) {
     const { playerName, peerId, timestamp } = data
     addPlayer({
-      peerId: peerId || conn.peer,
+      peerId: peerId,
       name: playerName,
       joinTime: timestamp || Date.now(),
       ready: false,

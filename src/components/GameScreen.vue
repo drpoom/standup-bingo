@@ -2,12 +2,12 @@
   <div class="min-h-screen bg-slate-50">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-10">
-      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <img src="../assets/icons/ui/start.svg" alt="" class="w-6 h-6" />
-          <div>
-            <h1 class="text-xl font-bold text-slate-800">Standup Bingo</h1>
-            <p class="text-sm text-slate-500">{{ playerName }}</p>
+      <div class="max-w-6xl mx-auto px-3 sm:px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2 min-w-0">
+          <img src="../assets/icons/ui/start.svg" alt="" class="w-6 h-6 flex-shrink-0" />
+          <div class="min-w-0">
+            <h1 class="text-lg sm:text-xl font-bold text-slate-800 truncate">Standup Bingo</h1>
+            <p class="text-xs sm:text-sm text-slate-500 truncate">{{ playerName }}</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
@@ -41,9 +41,9 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <main class="max-w-6xl mx-auto px-3 sm:px-4 py-6 flex flex-col sm:flex-row gap-6">
       <!-- Bingo Card Area -->
-      <div class="flex-1">
+      <div class="flex-1 w-full">
         <BingoCard :grid="gameState.grid" @toggle="handleToggle" />
 
         <!-- Stats -->
@@ -58,7 +58,7 @@
       </div>
 
       <!-- Player Sidebar -->
-      <aside class="w-64 space-y-3">
+      <aside class="w-full sm:w-64 space-y-3">
         <h3 class="font-semibold text-slate-700 mb-2">Players</h3>
         <PlayerBoardThumbnail
           v-for="player in allPlayers"

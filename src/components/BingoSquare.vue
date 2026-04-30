@@ -6,8 +6,8 @@
     :data-col="cell.col"
     @click="handleClick"
     :class="[
-      'aspect-square flex items-center justify-center p-1 sm:p-2 rounded-lg cursor-pointer transition-all duration-200 select-none',
-      'text-xs sm:text-sm font-medium',
+      'aspect-square flex items-center justify-center p-1.5 sm:p-2 rounded-lg cursor-pointer transition-all duration-200 select-none',
+      'text-[10px] xs:text-xs sm:text-sm font-medium',
       cell.isFree 
         ? 'bg-gradient-to-br from-yellow-400 to-orange-500 text-white shadow-lg' 
         : cell.marked
@@ -15,7 +15,7 @@
           : 'bg-white border-2 border-slate-200 text-slate-700 hover:border-slate-300 hover:shadow-md'
     ]"
   >
-    <span class="text-center leading-tight break-words line-clamp-3">
+    <span class="text-center leading-tight break-words line-clamp-3 max-w-full">
       {{ cell.phrase }}
     </span>
     <img
