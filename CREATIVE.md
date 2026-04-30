@@ -1,114 +1,50 @@
-# Standup Bingo — Creative Design & Flavor
+# Creative Assets Documentation
 
-This document defines the "fun" layer of Standup Bingo: the phrases, visual identity, progression systems, and celebration moments.
+## SVG Icon Sets
 
-## 1. Bingo Phrase Expansion
-The goal is a mix of "universal dev truths" and "relatable meeting pain."
+### 1. Theme Category Icons (`src/assets/icons/categories/`)
+Used in the Theme Picker and category labels.
+- `general.svg`: Briefcase/General Dev
+- `embedded.svg`: Circuit/Embedded
+- `qa.svg`: Bug/QA
+- `cyberpunk.svg`: Neon Eye/Cyberpunk
+- `retro.svg`: Terminal/Retro
+- `zen.svg`: Lotus/Zen
 
-### Categories & Examples
-- **Status Updates**: The classic "I'm still on the same ticket" and "Almost done."
-- **Tech Excuses**: "Works on my machine" and "It's a caching issue."
-- **Meeting Classics**: "Can you see my screen?" and "Sorry, I was on mute."
-- **Vague Answers**: "We're making progress" and "I'll look into it."
-- **Standup Rituals**: Dog barking, background noise, and "Happy Monday!"
-- **Chaos Events**: Unexpected outages and critical production bugs.
+### 2. Theme-Specific Markers (`src/assets/markers/`)
+Used as overlays for marked bingo squares.
+- `default-marker.svg`: Clean checkmark circle
+- `embedded-marker.svg`: Circuit node/chip
+- `cyberpunk-marker.svg`: Tech glyph/diamond
+- `qa-marker.svg`: Bug/check hybrid
+- `zen-marker.svg`: Pebble/stone
+- `retro-marker.svg`: Pixel block
 
-**Total Phrases**: 90+ (See `src/data/phrases.js`)
+### 3. UI Icon Set (`src/assets/icons/ui/`)
+General application controls.
+- `settings.svg`, `mute.svg`, `copy.svg`, `download.svg`, `upload.svg`, `transfer.svg`, `start.svg`, `end.svg`
 
-### Team Customization
-Teams can add their own "inside jokes" via `team-config.json`. 
-*Example: "Mentioned the legacy COBOL system" or "Someone mentions the coffee machine is broken."*
+### 4. How-to-Play Step Icons (`src/assets/icons/steps/`)
+Visual guide for the lobby.
+- `join.svg`: Door/Enter
+- `wait.svg`: Clock/Timer
+- `mark.svg`: Stamp/Check
+- `win.svg`: Trophy/Victory
 
----
+## DiceBear Avatar Recommendations
 
-## 2. Visual Themes
-Themes are unlockable skins that change the entire look and feel of the app.
+To match the theme's vibe, the following DiceBear styles are recommended:
 
-| Theme | Vibe | Primary Colors | Font | Unlock Condition |
-|-------|------|----------------|------|-------------------|
-| **Corporate Clean** | Modern SaaS / Enterprise | Slate-50, Blue-500 | Inter | Default |
-| **Neon Night** | Cyberpunk / Synthwave | Slate-900, Fuchsia-300 | JetBrains Mono | 3-Day Streak |
-| **CRT Terminal** | 80s Mainframe / Fallout | Black, Matrix Green | Courier New | 5-Day Streak |
-| **Zen Garden** | Minimalist / Organic | Warm White, Sage Green | Georgia | 7-Day Streak |
+| Theme | DiceBear Style | Vibe |
+|---|---|---|
+| Default | `avataaars` | Friendly, modern, standard |
+| Cyberpunk | `bottts` | Robotic, futuristic, techy |
+| Retro | `pixel-art` | 8-bit, nostalgic, gaming |
+| Zen | `lorelei` | Artistic, soft, minimalist |
+| Embedded | `identicon` | Abstract, technical, unique |
+| QA/Test | `avataaars` | Professional, clear |
 
----
-
-## 3. Celebration Effects
-The "BINGO!" moment should feel like a victory.
-
-### Visuals
-- **Confetti**: High-density canvas confetti. 
-  - *Default*: Multi-colored.
-  - *Theme-based*: Neon colors for Cyberpunk, Green bits for Retro.
-- **Winning Line Highlight**: The 5 squares that triggered the bingo pulse with a gold glow.
-- **Victory Overlay**: A full-screen "BINGO!" banner with a random victory quote.
-
-### Audio (Muteable)
-- **Mark Sound**: A subtle "pop" or "click."
-- **Bingo Sound**: A triumphant fanfare or a "Ding!"
-- **Victory Quote**: Randomly selected from a list:
-  - *"The Standup God smiles upon you!"*
-  - *"Absolute Legend!"*
-  - *"Meeting efficiency: 100%"*
-  - *"You've conquered the standup!"*
-
-### Team Celebration
-When a player shares their "Brag Snippet" to Slack/Teams, it includes a formatted summary:
-`🎉 BINGO! Alice achieved a 3-row win in 14 minutes! 🏆`
-
----
-
-## 4. Unlockables & Progression
-Players earn rewards based on their performance and consistency.
-
-### Progression Path
-- **Streaks**: Consecutive days played.
-- **Total Bingos**: Lifetime count.
-- **Achievements**: Specific milestones.
-
-### Rewards
-- **Card Backs**: 
-  - *Default*: Simple blue pattern.
-  - *Silver*: 10-day streak.
-  - *Gold*: 50 total bingos.
-  - *Holographic*: Completionist achievement.
-- **Badges**: Small icons displayed next to the player's name on the results screen.
-- **Themes**: Unlocked via streaks (see table above).
-
----
-
-## 5. Achievements
-A set of 12 fun, achievable milestones (See `src/data/achievements.js`).
-
-- **Early Bird**: Bingo in < 5 mins.
-- **Marathon**: 7-day streak.
-- **Speed Demon**: Bingo in < 3 mins.
-- **Completionist**: Mark all 24 squares.
-- **Clutch**: Bingo in the final 60 seconds.
-
----
-
-## 6. Card Back Designs
-Visual styles for the back of the bingo cards.
-
-- **Default**: Minimalist geometric pattern.
-- **Silver**: Brushed metal texture.
-- **Gold**: Polished gold foil.
-
----
-
-## 7. Player Avatars
-Avatars are generated dynamically using the DiceBear API, ensuring every player has a unique but consistent visual identity.
-
-### Implementation
-- **Provider**: DiceBear API (CDN-hosted)
-- **URL Format**: `https://api.dicebear.com/9.x/[style]/svg?seed=[playerName]`
-- **Deterministic**: The `seed` (player name) ensures that the same player always receives the same avatar across sessions.
-- **Generation**: No local SVG generation is required; the CDN handles all rendering.
-
-### Supported Styles
-Players can choose from the following styles:
-- `avataaars`: Human-like characters.
-- `bottts`: Robot-themed avatars.
-- `lorelei`: Stylized artistic portraits.
-- `identicon`: Abstract geometric patterns.
+## Implementation Notes
+- All SVGs use `currentColor` for fill/stroke to allow easy CSS theming.
+- Sized at 32x32px for consistency.
+- Format: Standalone SVG files for easy import in Vue.

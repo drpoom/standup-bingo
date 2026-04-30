@@ -20,14 +20,27 @@ const props = defineProps({
     type: Number,
     default: 40
   },
-  style: {
+  theme: {
     type: String,
-    default: 'avataaars', // avataaars, bottts, lorelei, identicon
-    validator: v => ['avataaars', 'bottts', 'lorelei', 'identicon'].includes(v)
+    default: 'default'
   }
 })
 
+// Map themes to DiceBear styles per CREATIVE.md
+const themeToStyle = {
+  'cyberpunk': 'bottts',
+  'retro': 'pixel-art',
+  'zen': 'lorelei',
+  'embedded': 'identicon',
+  'default': 'avataaars',
+  'qa': 'avataaars'
+}
+
+const avatarStyle = computed(() => 
+  themeToStyle[props.theme] || 'avataaars'
+)
+
 const avatarUrl = computed(() => 
-  `https://api.dicebear.com/9.x/${props.style}/svg?seed=${encodeURIComponent(props.name)}`
+  `https://api.dicebear.com/9.x/${avatarStyle.value}/svg?seed=${encodeURIComponent(props.name)}`
 )
 </script>

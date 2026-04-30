@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app" :class="{ 'screen-shake': screenShake }">
     <!-- Version Badge -->
     <div class="version-badge">v{{ VERSION }}</div>
     <!-- Confetti Canvas -->
@@ -63,8 +63,9 @@
 
 <script setup>
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
+import { THEMES } from './data/themes.js'
 
-const VERSION = '2.1.1'
+const VERSION = '2.2.0'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
@@ -86,6 +87,33 @@ const showConfetti = computed(() => gameState.phase === 'WON')
 const toastMessage = ref('')
 const networkPlayers = ref([])
 const lobbyGamePhase = ref('LOBBY') // 'LOBBY' | 'PLAYING' for host controls visibility
+const screenShake = ref(false)
+
+// Apply theme CSS custom properties to document root
+function applyTheme(themeId) {
+  const theme = THEMES[themeId] || THEMES.default
+  const cssVars = theme.cssVars
+  
+  if (cssVars) {
+    Object.entries(cssVars).forEach(([prop, value]) => {
+      document.documentElement.style.setProperty(prop, value)
+    })
+  }
+  
+  // Also apply font
+  document.documentElement.style.setProperty('--theme-font', theme.font)
+}
+
+// Watch for theme changes and apply CSS variables
+watch(
+  () => gameState.theme,
+  (newTheme) => {
+    if (newTheme) {
+      applyTheme(newTheme)
+    }
+  },
+  { immediate: true }
+)
 
 // Listen for peer data events
 function handlePeerData(event) {
@@ -272,6 +300,12 @@ watch(
     if (newPhase === 'WON') {
       burstConfetti()
       recordGame(gameState.bingoTime, true)
+      
+      // Trigger screen shake
+      screenShake.value = true
+      setTimeout(() => {
+        screenShake.value = false
+      }, 250)
     } else if (newPhase === 'FINISHED') {
       stopConfetti()
       if (!gameState.bingoTime) {
@@ -301,13 +335,18 @@ onUnmounted(() => {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--theme-font, 'Inter, system-ui, -apple-system, sans-serif');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--theme-bg, #f8fafc);
+  color: var(--theme-text, #1e293b);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .app {
   min-height: 100vh;
+  background: var(--theme-bg, #f8fafc);
+  transition: background 0.3s ease;
 }
 
 .version-badge {

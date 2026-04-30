@@ -37,6 +37,9 @@ export function useNetworking() {
         ready: false,
         isHost: true
       })
+      
+      // Broadcast initial player list
+      broadcastPlayerList()
     })
 
     peer.value.on('connection', (conn) => {

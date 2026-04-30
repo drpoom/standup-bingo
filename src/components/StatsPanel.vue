@@ -43,7 +43,7 @@
 
       <button
         @click="$emit('playAgain')"
-        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105"
+        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 btn-game"
       >
         🎮 Play Again
       </button>

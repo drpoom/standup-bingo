@@ -1,40 +1,54 @@
 <template>
-  <div class="min-h-screen bg-slate-50">
+  <div class="min-h-screen lobby-bg relative">
     <div class="max-w-4xl mx-auto px-4 py-8">
       <!-- Header -->
-      <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-slate-800 mb-2">🎯 Standup Bingo</h1>
-        <p class="text-slate-500">Make your daily standup more fun!</p>
+      <div class="text-center mb-8 relative z-10">
+        <h1 class="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+          <img src="../assets/icons/ui/start.svg" alt="" class="w-8 h-8 inline" />
+          Standup Bingo
+        </h1>
+        <p class="text-white/70">Make your daily standup more fun!</p>
       </div>
 
       <!-- How to Play -->
-      <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
-        <h2 class="text-xl font-semibold text-slate-800 mb-4">📖 How to Play</h2>
-        <ol class="space-y-2 text-slate-600">
-          <li class="flex items-start gap-2">
-            <span class="font-bold text-blue-500">1.</span>
-            Join a room with your team code
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="font-bold text-blue-500">2.</span>
-            Host starts the game when everyone is ready
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="font-bold text-blue-500">3.</span>
-            Mark squares when phrases come up in standup
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="font-bold text-blue-500">4.</span>
-            Get 5 in a row → BINGO! 🎉
-          </li>
-        </ol>
+      <div class="glass-card relative z-10 p-6 mb-8">
+        <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <img src="../assets/icons/steps/join.svg" alt="" class="w-6 h-6" />
+          How to Play
+        </h2>
+        <div class="flex flex-wrap gap-4 justify-center text-white/80">
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/join.svg" alt="" class="w-6 h-6" />
+            </div>
+            <span class="text-sm">Join</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/wait.svg" alt="" class="w-6 h-6" />
+            </div>
+            <span class="text-sm">Wait</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/mark.svg" alt="" class="w-6 h-6" />
+            </div>
+            <span class="text-sm">Mark</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <img src="../assets/icons/steps/win.svg" alt="" class="w-6 h-6" />
+            </div>
+            <span class="text-sm">Win</span>
+          </div>
+        </div>
       </div>
 
       <!-- Join Form (shown when not in room) -->
-      <div v-if="!inRoom" class="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <div v-if="!inRoom" class="glass-card relative z-10 p-8 mb-8">
         <form @submit.prevent="handleJoin" class="space-y-6">
           <div>
-            <label for="teamCode" class="block text-sm font-medium text-slate-700 mb-2">
+            <label for="teamCode" class="block text-sm font-medium text-white/90 mb-2">
               Team Code
             </label>
             <input
@@ -42,14 +56,14 @@
               v-model="teamCode"
               type="text"
               placeholder="e.g., ACME"
-              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-lg uppercase"
+              class="w-full px-4 py-3 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition text-lg uppercase bg-white/10 text-white placeholder-white/50"
               required
               maxlength="10"
             />
           </div>
 
           <div>
-            <label for="playerName" class="block text-sm font-medium text-slate-700 mb-2">
+            <label for="playerName" class="block text-sm font-medium text-white/90 mb-2">
               Your Name
             </label>
             <input
@@ -57,7 +71,7 @@
               v-model="playerName"
               type="text"
               placeholder="e.g., Alice"
-              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-lg"
+              class="w-full px-4 py-3 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition text-lg bg-white/10 text-white placeholder-white/50"
               required
               maxlength="20"
             />
@@ -67,52 +81,64 @@
 
           <button
             type="submit"
-            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 text-lg"
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 text-lg shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 btn-game"
           >
-            ▶ Join Room
+            <img src="../assets/icons/ui/start.svg" alt="" class="w-5 h-5" />
+            Join Room
           </button>
         </form>
       </div>
 
       <!-- Lobby (shown when in room) -->
-      <div v-else class="bg-white rounded-xl shadow-lg p-8">
+      <div v-else class="glass-card relative z-10 p-8">
         <!-- Room Info -->
-        <div class="flex items-center justify-between mb-6 pb-4 border-b">
+        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/20">
           <div>
-            <h2 class="text-xl font-semibold text-slate-800">Room: {{ teamCode }}</h2>
-            <p class="text-sm text-slate-500">Date: {{ dateISO }}</p>
+            <h2 class="text-xl font-semibold text-white">Room: {{ teamCode }}</h2>
+            <p class="text-sm text-white/60">Date: {{ dateISO }}</p>
           </div>
-          <div class="text-sm text-slate-600">
+          <div class="text-sm text-white/80">
             {{ players.length }} player{{ players.length !== 1 ? 's' : '' }} in room
           </div>
         </div>
 
         <!-- Player List -->
         <div class="mb-6">
-          <h3 class="font-semibold text-slate-700 mb-3">Players in Room</h3>
-          <div class="space-y-2">
+          <h3 class="font-semibold text-white mb-4 flex items-center gap-2">
+            <img src="../assets/icons/ui/transfer.svg" alt="" class="w-5 h-5" />
+            Players in Room
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div
               v-for="player in players"
               :key="player.peerId"
-              class="flex items-center justify-between p-3 bg-slate-50 rounded-lg"
+              class="player-card flex items-center justify-between p-4 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              :class="player.isHost ? 'player-card-host' : 'player-card-default'"
             >
               <div class="flex items-center gap-3">
-                <PlayerAvatar :name="player.name" :size="40" />
+                <PlayerAvatar :name="player.name" :size="56" :theme="selectedTheme" />
                 <div>
                   <div class="flex items-center gap-2">
-                    <span class="font-medium text-slate-800">{{ player.name }}</span>
-                    <span v-if="player.isHost" class="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">
-                      👑 Host
+                    <span class="font-semibold text-white">{{ player.name }}</span>
+                    <span v-if="player.isHost" class="host-badge text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <img src="../assets/icons/ui/transfer.svg" alt="" class="w-3 h-3" />
+                      Host
                     </span>
                   </div>
-                  <div class="text-xs text-slate-500">
+                  <div class="text-xs text-white/70">
                     Joined {{ formatJoinTime(player.joinTime) }}
                   </div>
                 </div>
               </div>
               <div class="flex items-center gap-2">
-                <span v-if="player.ready" class="text-green-500 text-sm">✅ Ready</span>
-                <span v-else class="text-slate-400 text-sm">⬜ Not Ready</span>
+                <span v-if="player.ready" class="ready-badge text-sm flex items-center gap-1">
+                  <img src="../assets/icons/steps/mark.svg" alt="" class="w-4 h-4" />
+                  Ready
+                </span>
+                <span v-else class="not-ready-badge text-sm flex items-center gap-1 text-white/50">
+                  <span class="w-4 h-4 border-2 border-white/50 rounded-sm"></span>
+                  Not Ready
+                </span>
               </div>
             </div>
           </div>
@@ -123,13 +149,15 @@
           <button
             @click="toggleReady"
             :class="[
-              'w-full py-3 rounded-lg font-semibold transition',
+              'w-full py-3 rounded-lg font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2 btn-game',
               isReady
-                ? 'bg-green-500 hover:bg-green-600 text-white'
-                : 'bg-slate-200 hover:bg-slate-300 text-slate-700'
+                ? 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/30'
+                : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
             ]"
           >
-            {{ isReady ? '✅ You are Ready' : '⬜ Toggle Ready' }}
+            <img v-if="isReady" src="../assets/icons/steps/mark.svg" alt="" class="w-5 h-5" />
+            <span v-else class="w-5 h-5 border-2 border-white rounded-sm"></span>
+            {{ isReady ? 'You are Ready' : 'Toggle Ready' }}
           </button>
         </div>
 
@@ -138,52 +166,55 @@
           <button
             @click="toggleMute"
             :class="[
-              'w-full py-3 rounded-lg font-semibold transition',
+              'w-full py-3 rounded-lg font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2 btn-game',
               isMuted
-                ? 'bg-yellow-500 hover:bg-yellow-600 text-white'
-                : 'bg-slate-200 hover:bg-slate-300 text-slate-700'
+                ? 'bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg shadow-yellow-500/30'
+                : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
             ]"
           >
-            {{ isMuted ? '🔇 Unmute' : '🔊 Mute' }}
+            <img :src="isMuted ? '../assets/icons/ui/mute.svg' : '../assets/icons/ui/mute.svg'" alt="" class="w-5 h-5" />
+            {{ isMuted ? 'Unmute' : 'Mute' }}
           </button>
         </div>
 
         <!-- Host Controls -->
-        <div v-if="isHost" class="border-t pt-6">
-          <h3 class="font-semibold text-slate-700 mb-4">🎮 Host Controls</h3>
+        <div v-if="isHost" class="border-t border-white/20 pt-6">
+          <h3 class="font-semibold text-white mb-4 flex items-center gap-2">
+            <img src="../assets/icons/ui/settings.svg" alt="" class="w-5 h-5" />
+            Host Controls
+          </h3>
           
           <div class="flex gap-4 mb-4">
             <button
               v-if="gamePhase === 'LOBBY'"
               @click="handleStartGame"
-              :disabled="readyCount < 2"
               :class="[
-                'flex-1 py-3 rounded-lg font-semibold transition',
-                readyCount >= 2
-                  ? 'bg-green-500 hover:bg-green-600 text-white'
-                  : 'bg-slate-300 text-slate-500 cursor-not-allowed'
+                'flex-1 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 btn-game',
+                'bg-green-500 hover:bg-green-600 text-white'
               ]"
             >
-              🚀 Start Game
+              <img src="../assets/icons/ui/start.svg" alt="" class="w-5 h-5" />
+              Start Game
             </button>
             <button
               v-if="gamePhase === 'PLAYING'"
               @click="handleEndGame"
-              class="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-semibold transition"
+              class="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 btn-game"
             >
-              🛑 End Game
+              <img src="../assets/icons/ui/end.svg" alt="" class="w-5 h-5" />
+              End Game
             </button>
           </div>
 
           <!-- Transfer Host -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-slate-700 mb-2">
+            <label class="block text-sm font-medium text-white/80 mb-2">
               Transfer Host
             </label>
             <div class="flex gap-2">
               <select
                 v-model="selectedTransferTarget"
-                class="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                class="flex-1 px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none bg-white/10 text-white"
               >
                 <option
                   v-for="player in otherPlayers"
@@ -196,8 +227,9 @@
               <button
                 @click="handleTransferHost"
                 :disabled="!selectedTransferTarget"
-                class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition disabled:opacity-50"
+                class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition disabled:opacity-50 shadow-lg shadow-blue-500/30 flex items-center gap-2 btn-game"
               >
+                <img src="../assets/icons/ui/transfer.svg" alt="" class="w-4 h-4" />
                 Transfer
               </button>
             </div>
@@ -212,7 +244,7 @@
         </div>
 
         <!-- Non-host waiting message -->
-        <div v-else class="border-t pt-6 text-center text-slate-500">
+        <div v-else class="border-t border-white/20 pt-6 text-center text-white/70">
           <p>Waiting for host to start the game...</p>
           <p class="text-sm mt-2">Host: {{ hostPlayer?.name || 'Unknown' }}</p>
         </div>

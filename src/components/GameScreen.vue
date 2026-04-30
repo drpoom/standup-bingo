@@ -3,15 +3,19 @@
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-10">
       <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div>
-          <h1 class="text-xl font-bold text-slate-800">🎯 Standup Bingo</h1>
-          <p class="text-sm text-slate-500">{{ playerName }}</p>
+        <div class="flex items-center gap-2">
+          <img src="../assets/icons/ui/start.svg" alt="" class="w-6 h-6" />
+          <div>
+            <h1 class="text-xl font-bold text-slate-800">Standup Bingo</h1>
+            <p class="text-sm text-slate-500">{{ playerName }}</p>
+          </div>
         </div>
         <div class="flex items-center gap-4">
           <!-- Connection Status -->
           <div class="flex items-center gap-2 text-sm">
-            <span :class="connected ? 'text-green-500' : 'text-slate-400'">
-              {{ connected ? '🟢 Connected' : '🔴 Offline' }}
+            <span :class="connected ? 'text-green-500 flex items-center gap-1' : 'text-slate-400'">
+              <span class="w-2 h-2 rounded-full" :class="connected ? 'bg-green-500' : 'bg-slate-400'"></span>
+              Connected
             </span>
             <span class="text-slate-400">|</span>
             <span class="text-slate-600">{{ playerCount }} player{{ playerCount !== 1 ? 's' : '' }}</span>
@@ -27,9 +31,10 @@
           <button
             v-if="isHost"
             @click="handleEndGame"
-            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 btn-game"
           >
-            🛑 End Game
+            <img src="../assets/icons/ui/end.svg" alt="" class="w-4 h-4" />
+            End Game
           </button>
         </div>
       </div>

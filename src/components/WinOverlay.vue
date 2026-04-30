@@ -24,7 +24,7 @@
 
       <button
         @click="$emit('continue')"
-        class="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105"
+        class="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 btn-game"
       >
         Keep Playing
       </button>

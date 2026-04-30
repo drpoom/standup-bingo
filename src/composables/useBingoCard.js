@@ -81,7 +81,8 @@ export function useBingoCard() {
             marked: true,
             isFree: true,
             row,
-            col
+            col,
+            theme
           })
         } else {
           gridRow.push({
@@ -89,7 +90,8 @@ export function useBingoCard() {
             marked: false,
             isFree: false,
             row,
-            col
+            col,
+            theme
           })
         }
       }
