@@ -9,6 +9,7 @@
 - **Timezone:** Europe/Berlin
 - **Languages:** Thai (native/fluent), German (fluent), English (fluent)
 - **Notes:** Expert in system integration and test manager. Big fan of technology and investment hobbyist. Has experience living in multiple countries.
+- **Preferences:** Never use LaTeX-style symbols or arrows (e.g., $\rightarrow$). Use plain text or standard emojis instead.
 
 ## Context
 

@@ -16,6 +16,26 @@
     "github": {
       "version": "1.0.0",
       "installedAt": 1775326201462
+    },
+    "core": {
+      "version": "3.0.0",
+      "installedAt": 1775867170937
+    },
+    "chat": {
+      "version": "1.1.0",
+      "installedAt": 1775867301303
+    },
+    "filesystem": {
+      "version": "1.0.0",
+      "installedAt": 1775867969434
+    },
+    "replicate": {
+      "version": "1.0.0",
+      "installedAt": 1776040733087
+    },
+    "graphify": {
+      "version": "2.1.0",
+      "installedAt": 1776674702541
     }
   }
 }

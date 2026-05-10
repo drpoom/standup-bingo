@@ -44,4 +44,26 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+## GitHub
+
+- **PAT:** `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`
+- **Username:** drpoom
+- **Repos:** elango-surfers, moonlanding
+
+## Replicate
+- **API Key:** `r8_aSwjYr3vNQBUYWpN5i0s2zoRIHpMW7K2Qwjg3`
+- **Use for:** Image generation (Flux Schnell, Flux Pro)
+
+## PyPI
+- **API Token:** `pypi-AgEIcHlwaS5vcmcCJDg1YzllMDVjLWUzNmQtNDk4MS05ODA3LTA0NTA5NDAwOTUzNAACKlszLCIxMmY5MjBhNi01NGYwLTRkY2EtYjk1Mi0yY2E3ZTY2NjNmZWUiXQAABiCGmteV3pI2wJ48e3SjhoNhbzMIY0eV6bngmzQW_saXdg`
+- **Use for:** Publishing `cobra-bridge` package
+- ⚠️ Never commit to repo — workspace only
+
+## npm
+- **Auth Token:** `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`
+- **Use for:** Publishing `cobra-bridge` package
+- ⚠️ Never commit to repo — workspace only
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.

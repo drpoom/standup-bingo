@@ -1,0 +1,160 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "wiki:sessions/2026-05-06-openclaw-04",
+      "@type": "SoftwareApplication",
+      "name": "2026-05-06-openclaw-04",
+      "description": "# Session 2026-05-06\n\n## Summary\n\nSession transcript analysis pending.\n\n## Key Decisions\n\n- No explicit decisions recorded\n\n## Errors & Fixes\n\n- {\"type\":\"message\",\"id\":\"b802c91d\",\"parentId\":\"9032fe41\",\"timestamp\":\"2026-05-06T05:16:17.237Z\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"ollama_call_4893370e-6207-4ea2-9493-79babf35e2a7\",\"toolName\":\"read\",\"content\":[{\"type\":\"text\",\"text\":\"# Uncle John's Investment Watchlist\\n\\n**Last Updated:** 2026-05-02  \\n**Maintained by:** Warren \ud83e\udd85\\n\\n---\\n\\n## I",
+      "about": [
+        "wiki:entities/openclaw",
+        "wiki:entities/ollama",
+        "wiki:entities/github",
+        "wiki:concepts/session-analysis",
+        "wiki:openclaw",
+        "wiki:ollama",
+        "wiki:github",
+        "wiki:session-analysis"
+      ]
+    },
+    {
+      "@id": "wiki:sessions/2026-05-06-ollama",
+      "@type": "SoftwareApplication",
+      "name": "2026-05-06-ollama",
+      "description": "# Session 2026-05-06\n\n## Summary\n\nSession transcript analysis pending.\n\n## Key Decisions\n\n- No explicit decisions recorded\n\n## Errors & Fixes\n\n- {\"type\":\"message\",\"id\":\"fb2cb886\",\"parentId\":\"d8a7e766\",\"timestamp\":\"2026-05-06T05:31:04.559Z\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"ollama_call_484dc2ca-d27d-45f9-9eec-9944f2abba27\",\"toolName\":\"exec\",\"content\":[{\"type\":\"text\",\"text\":\"# \ud83d\udcca Daily Agent Performance Report\\n**Wed 2026-05-06 07:31 GMT+0200**\\n**Period:** Last 24 hours\\n\\n## \ud83c\udfaf Task Out",
+      "about": [
+        "wiki:entities/ollama",
+        "wiki:entities/openclaw",
+        "wiki:concepts/session-analysis",
+        "wiki:ollama",
+        "wiki:openclaw",
+        "wiki:session-analysis"
+      ]
+    },
+    {
+      "@id": "wiki:sessions/2026-05-06-openclaw-02",
+      "@type": "SoftwareApplication",
+      "name": "2026-05-06-openclaw-02",
+      "description": "# Session 2026-05-06\n\n## Summary\n\nSession transcript analysis pending.\n\n## Key Decisions\n\n- No explicit decisions recorded\n\n## Errors & Fixes\n\n- {\"type\":\"message\",\"id\":\"fb2cb886\",\"parentId\":\"d8a7e766\",\"timestamp\":\"2026-05-06T05:31:04.559Z\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"ollama_call_484dc2ca-d27d-45f9-9eec-9944f2abba27\",\"toolName\":\"exec\",\"content\":[{\"type\":\"text\",\"text\":\"# \ud83d\udcca Daily Agent Performance Report\\n**Wed 2026-05-06 07:31 GMT+0200**\\n**Period:** Last 24 hours\\n\\n## \ud83c\udfaf Task Out",
+      "about": [
+        "wiki:entities/openclaw",
+        "wiki:entities/ollama",
+        "wiki:concepts/session-analysis",
+        "wiki:openclaw",
+        "wiki:ollama",
+        "wiki:session-analysis"
+      ]
+    },
+    {
+      "@id": "wiki:sessions/2026-05-06-vue",
+      "@type": "SoftwareApplication",
+      "name": "2026-05-06-vue",
+      "description": "# Session 2026-05-06\n\n## Summary\n\nSession transcript analysis pending.\n\n## Key Decisions\n\n- {\"type\":\"message\",\"id\":\"9997d592\",\"parentId\":\"b364497e\",\"timestamp\":\"2026-05-06T06:20:28.318Z\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"ollama_call_a24b2007-aa08-436f-917e-84e1759ce3bc\",\"toolName\":\"web_fetch\",\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"url\\\": \\\"https://github.com/Labhund/llm-wiki\\\",\\n  \\\"finalUrl\\\": \\\"https://github.com/Labhund/llm-wiki\\\",\\n  \\\"status\\\": 200,\\n  \\\"contentType\\\": \\\"text/h",
+      "about": [
+        "wiki:entities/vue",
+        "wiki:entities/llm",
+        "wiki:entities/github",
+        "wiki:entities/telegram",
+        "wiki:entities/ollama",
+        "wiki:concepts/session-analysis",
+        "wiki:concepts/game-loop",
+        "wiki:concepts/context-management",
+        "wiki:concepts/debugging",
+        "wiki:concepts/ci-pipeline",
+        "wiki:like-this",
+        "wiki:wikilinks",
+        "wiki:wikilinks",
+        "wiki:wikilinks",
+        "wiki:...",
+        "wiki:links",
+        "wiki:wikilinks",
+        "wiki:elango-surfers",
+        "wiki:game-loop-debugging",
+        "wiki:ci-pipeline-fix",
+        "wiki:elango-surfers",
+        "wiki:game-loop-debugging",
+        "wiki:ci-pipeline-fix",
+        "wiki:context-budget-management",
+        "wiki:slug",
+        "wiki:slug",
+        "wiki:boss-spawn-bug",
+        "wiki:boss-spawn",
+        "wiki:future-topic",
+        "wiki:...",
+        "wiki:wikilinks",
+        "wiki:slug",
+        "wiki:wikilinks",
+        "wiki:{e}",
+        "wiki:{c}",
+        "wiki:vue",
+        "wiki:llm",
+        "wiki:github",
+        "wiki:telegram",
+        "wiki:ollama",
+        "wiki:session-analysis",
+        "wiki:game-loop",
+        "wiki:context-management",
+        "wiki:debugging",
+        "wiki:ci-pipeline"
+      ]
+    },
+    {
+      "@id": "wiki:sessions/2026-05-06-openclaw-05",
+      "@type": "SoftwareApplication",
+      "name": "2026-05-06-openclaw-05",
+      "description": "# Session 2026-05-06\n\n## Summary\n\nSession transcript analysis pending.\n\n## Key Decisions\n\n- No explicit decisions recorded\n\n## Errors & Fixes\n\n- {\"type\":\"message\",\"id\":\"b802c91d\",\"parentId\":\"9032fe41\",\"timestamp\":\"2026-05-06T05:16:17.237Z\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"ollama_call_4893370e-6207-4ea2-9493-79babf35e2a7\",\"toolName\":\"read\",\"content\":[{\"type\":\"text\",\"text\":\"# Uncle John's Investment Watchlist\\n\\n**Last Updated:** 2026-05-02  \\n**Maintained by:** Warren \ud83e\udd85\\n\\n---\\n\\n## I",
+      "about": [
+        "wiki:entities/openclaw",
+        "wiki:entities/ollama",
+        "wiki:entities/github",
+        "wiki:concepts/session-analysis",
+        "wiki:openclaw",
+        "wiki:ollama",
+        "wiki:github",
+        "wiki:session-analysis"
+      ]
+    },
+    {
+      "@id": "wiki:sessions/2026-05-06-vue-01",
+      "@type": "SoftwareApplication",
+      "name": "2026-05-06-vue-01",
+      "description": "# Session 2026-05-06\n\n## Summary\n\nSession transcript analysis pending.\n\n## Key Decisions\n\n- {\"type\":\"message\",\"id\":\"f60e8021\",\"parentId\":\"667166d8\",\"timestamp\":\"2026-05-06T06:19:59.626Z\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"I want you to search for LLM-wiki. Then plan for an implementation here\"}],\"timestamp\":1778048399623}}\n- {\"type\":\"message\",\"id\":\"c0a41d35\",\"parentId\":\"77bfb0c9\",\"timestamp\":\"2026-05-06T06:20:05.354Z\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"thin",
+      "about": [
+        "wiki:entities/vue",
+        "wiki:entities/sqlite",
+        "wiki:entities/llm",
+        "wiki:entities/threejs",
+        "wiki:entities/wiki",
+        "wiki:concepts/debugging",
+        "wiki:concepts/bm25",
+        "wiki:concepts/fts5",
+        "wiki:concepts/game-loop",
+        "wiki:concepts/ci-pipeline",
+        "wiki:vue",
+        "wiki:sqlite",
+        "wiki:llm",
+        "wiki:threejs",
+        "wiki:wiki",
+        "wiki:debugging",
+        "wiki:bm25",
+        "wiki:fts5",
+        "wiki:game-loop",
+        "wiki:ci-pipeline"
+      ]
+    },
+    {
+      "@id": "wiki:sessions/2026-05-06-openclaw-03",
+      "@type": "SoftwareApplication",
+      "name": "2026-05-06-openclaw-03",
+      "description": "# Session 2026-05-06\n\n## Summary\n\nSession transcript analysis pending.\n\n## Key Decisions\n\n- No explicit decisions recorded\n\n## Errors & Fixes\n\n- {\"type\":\"message\",\"id\":\"fb2cb886\",\"parentId\":\"d8a7e766\",\"timestamp\":\"2026-05-06T05:31:04.559Z\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"ollama_call_484dc2ca-d27d-45f9-9eec-9944f2abba27\",\"toolName\":\"exec\",\"content\":[{\"type\":\"text\",\"text\":\"# \ud83d\udcca Daily Agent Performance Report\\n**Wed 2026-05-06 07:31 GMT+0200**\\n**Period:** Last 24 hours\\n\\n## \ud83c\udfaf Task Out",
+      "about": [
+        "wiki:entities/openclaw",
+        "wiki:entities/ollama",
+        "wiki:concepts/session-analysis",
+        "wiki:openclaw",
+        "wiki:ollama",
+        "wiki:session-analysis"
+      ]
+    }
+  ]
+}
