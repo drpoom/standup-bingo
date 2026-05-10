@@ -1,11 +1,6 @@
 10-K:
 - ticker: META
   company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/META-20231231.md
-  filing_date: '2023-12-31'
-  fiscal_period: FY2023
-- ticker: META
-  company: Meta Platforms, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-K/10-K_2018-02-01_fb-12312017x10k.md
   filing_date: '2018-02-01'
   fiscal_period: FY2018
@@ -44,11 +39,6 @@
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-K/10-K_2025-01-30_meta-20241231.md
   filing_date: '2025-01-30'
   fiscal_period: FY2025
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-K/META-10K-2025-12-31.md
-  filing_date: '2025-12-31'
-  fiscal_period: FY2025
 - ticker: KAMART
   company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/2020-56-1.md
@@ -71,37 +61,12 @@
   fiscal_period: ''
 - ticker: KAMART
   company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/20220331-kamart-or2021-en.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KAMART
-  company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/2023-56-1.md
   filing_date: ''
   fiscal_period: ''
 - ticker: KAMART
   company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/20230330-kamart-or2022-en.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KAMART
-  company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/2024-56-1.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/20250324-kamart-or2024-en.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/kamart-56-1-2023.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/10-K/kamart-56-1-2024.md
   filing_date: ''
   fiscal_period: ''
 - ticker: KAMART
@@ -126,18 +91,8 @@
   fiscal_period: FY2013
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2013_full-filing.md
-  filing_date: ''
-  fiscal_period: FY2013
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2014_2014-09-27.md
   filing_date: '2014-09-27'
-  fiscal_period: FY2014
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2014_full-filing.md
-  filing_date: ''
   fiscal_period: FY2014
 - ticker: AAPL
   company: Apple Inc.
@@ -146,18 +101,8 @@
   fiscal_period: FY2015
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2015_full-filing.md
-  filing_date: ''
-  fiscal_period: FY2015
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2016_2016-09-24.md
   filing_date: '2016-09-24'
-  fiscal_period: FY2016
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2016_full-filing.md
-  filing_date: ''
   fiscal_period: FY2016
 - ticker: AAPL
   company: Apple Inc.
@@ -166,18 +111,8 @@
   fiscal_period: FY2017
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2017_full-filing.md
-  filing_date: ''
-  fiscal_period: FY2017
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2018_2018-09-29.md
   filing_date: '2018-09-29'
-  fiscal_period: FY2018
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2018_full-filing.md
-  filing_date: ''
   fiscal_period: FY2018
 - ticker: AAPL
   company: Apple Inc.
@@ -186,18 +121,8 @@
   fiscal_period: FY2019
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2019_full-filing.md
-  filing_date: ''
-  fiscal_period: FY2019
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2020_2020-09-26.md
   filing_date: '2020-09-26'
-  fiscal_period: FY2020
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2020_full-filing.md
-  filing_date: ''
   fiscal_period: FY2020
 - ticker: AAPL
   company: Apple Inc.
@@ -206,18 +131,8 @@
   fiscal_period: FY2021
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2021_full-filing.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2022_2022-09-24.md
   filing_date: '2022-09-24'
-  fiscal_period: FY2022
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2022_full-filing.md
-  filing_date: ''
   fiscal_period: FY2022
 - ticker: AAPL
   company: Apple Inc.
@@ -226,18 +141,8 @@
   fiscal_period: FY2023
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2023_full-filing.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2024_2024-09-28.md
   filing_date: '2024-09-28'
-  fiscal_period: FY2024
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-K/AAPL_10-K_FY2024_full-filing.md
-  filing_date: ''
   fiscal_period: FY2024
 - ticker: AAPL
   company: Apple Inc.
@@ -291,31 +196,6 @@
   fiscal_period: FY2024
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-K_20201019.md
-  filing_date: ''
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-K_20211008.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-K_20221007.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-K_20231006.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-K_20241004.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_2015_10-K.md
   filing_date: ''
   fiscal_period: '2015'
@@ -341,69 +221,9 @@
   fiscal_period: '2019'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_2020_10-K.md
-  filing_date: ''
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_2021_10-K.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_2022_10-K.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_2023_10-K.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_2024_10-K.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/0000723125-21-000065-full-submission.md
-  filing_date: '2021-10-08'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/0000723125-22-000048-full-submission.md
-  filing_date: '2022-10-07'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/0000723125-23-000054-full-submission.md
-  filing_date: '2023-10-06'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/0000723125-24-000027-full-submission.md
-  filing_date: '2024-10-04'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/0000723125-25-000028-full-submission.md
-  filing_date: '2025-10-03'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/10-K_2020-10-19_mu-20200903.md
   filing_date: '2020-10-19'
   fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/10-K_2021-10-08_0000723125-21-000065.md
-  filing_date: '2021-10-08'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/10-K_2021-10-08_mu-20210902.md
-  filing_date: '2021-10-08'
-  fiscal_period: '2021'
 - ticker: MU
   company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/10-K_2023-10-06_mu-20230831.md
@@ -421,75 +241,15 @@
   fiscal_period: '2025'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU-2023-10K.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_10-K_2020-10-19.md
-  filing_date: '2020-10-19'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_10-K_2021-10-08.md
-  filing_date: '2021-10-08'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_10-K_2022-10-07.md
   filing_date: '2022-10-07'
   fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_10-K_2023-10-06.md
-  filing_date: '2023-10-06'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_10-K_2024-10-04.md
-  filing_date: '2024-10-04'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_10-K_2025-10-03.md
-  filing_date: '2025-10-03'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_10-K_FY2024_2024-08-29.md
-  filing_date: '2024-08-29'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_2022_10-K.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-K/MU_2024_10K.md
-  filing_date: ''
-  fiscal_period: '2024'
 10-Q:
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/META-20230930.md
-  filing_date: '2023-09-30'
-  fiscal_period: Q32023
 - ticker: META
   company: Meta Platforms, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/META-20240331.md
   filing_date: '2024-03-31'
   fiscal_period: Q12024
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/META-20240630.md
-  filing_date: '2024-06-30'
-  fiscal_period: Q22024
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/META-20240930.md
-  filing_date: '2024-09-30'
-  fiscal_period: Q32024
 - ticker: META
   company: Meta Platforms, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2018-04-26_fb-03312018x10q.md
@@ -527,29 +287,9 @@
   fiscal_period: Q22020
 - ticker: META
   company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2020-07-31_fb-06302020x10q.md
-  filing_date: '2020-07-31'
-  fiscal_period: Q32020
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2020-10-30_fb-09302020x10q.md
-  filing_date: '2020-10-30'
-  fiscal_period: Q42020
-- ticker: META
-  company: Meta Platforms, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2021-04-29_fb-20210331.md
   filing_date: '2021-04-29'
   fiscal_period: Q22021
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2021-07-29_fb-20210630.md
-  filing_date: '2021-07-29'
-  fiscal_period: Q32021
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2021-10-26_fb-20210930.md
-  filing_date: '2021-10-26'
-  fiscal_period: Q42021
 - ticker: META
   company: Meta Platforms, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2022-04-28_meta-20220331.md
@@ -557,94 +297,14 @@
   fiscal_period: Q22022
 - ticker: META
   company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2022-07-28_meta-20220630.md
-  filing_date: '2022-07-28'
-  fiscal_period: Q32022
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2022-10-27_meta-20220930.md
-  filing_date: '2022-10-27'
-  fiscal_period: Q42022
-- ticker: META
-  company: Meta Platforms, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2023-04-27_meta-20230331.md
   filing_date: '2023-04-27'
   fiscal_period: Q22023
 - ticker: META
   company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2023-07-27_meta-20230630.md
-  filing_date: '2023-07-27'
-  fiscal_period: Q32023
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2023-10-26_meta-20230930.md
-  filing_date: '2023-10-26'
-  fiscal_period: Q42023
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2024-04-25_meta-20240331.md
-  filing_date: '2024-04-25'
-  fiscal_period: Q22024
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2024-08-01_meta-20240630.md
-  filing_date: '2024-08-01'
-  fiscal_period: Q32024
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/10-Q_2024-10-31_meta-20240930.md
-  filing_date: '2024-10-31'
-  fiscal_period: Q42024
-- ticker: META
-  company: Meta Platforms, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META-10Q-2026-03-31.md
   filing_date: '2026-03-31'
   fiscal_period: Q12026
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2020-04-30_000132680120000048.md
-  filing_date: '2020-04-30'
-  fiscal_period: Q22020
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2020-07-31_000132680120000076.md
-  filing_date: '2020-07-31'
-  fiscal_period: Q32020
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2020-10-30_000132680120000084.md
-  filing_date: '2020-10-30'
-  fiscal_period: Q42020
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2021-04-29_000132680121000033.md
-  filing_date: '2021-04-29'
-  fiscal_period: Q22021
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2021-07-29_000132680121000049.md
-  filing_date: '2021-07-29'
-  fiscal_period: Q32021
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2021-10-26_000132680121000065.md
-  filing_date: '2021-10-26'
-  fiscal_period: Q42021
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2022-04-28_000132680122000057.md
-  filing_date: '2022-04-28'
-  fiscal_period: Q22022
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2022-07-28_000132680122000082.md
-  filing_date: '2022-07-28'
-  fiscal_period: Q32022
-- ticker: META
-  company: Meta Platforms, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/META/10-Q/META_10-Q_2022-10-27_000132680122000108.md
-  filing_date: '2022-10-27'
-  fiscal_period: Q42022
 - ticker: AAPL
   company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/2019-Q1.md
@@ -652,27 +312,7 @@
   fiscal_period: ''
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/2019-Q2.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/2019-Q3.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/2020-Q1.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/2020-Q2.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/2020-Q3.md
   filing_date: ''
   fiscal_period: ''
 - ticker: AAPL
@@ -687,29 +327,9 @@
   fiscal_period: Q12013
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2013-Q3_2013-06-29.md
-  filing_date: '2013-06-29'
-  fiscal_period: Q22013
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2014-Q1_2013-12-28.md
-  filing_date: '2013-12-28'
-  fiscal_period: Q42013
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2014-Q2_2014-03-29.md
   filing_date: '2014-03-29'
   fiscal_period: Q12014
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2014-Q3_2014-06-28.md
-  filing_date: '2014-06-28'
-  fiscal_period: Q22014
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2015-Q1_2014-12-27.md
-  filing_date: '2014-12-27'
-  fiscal_period: Q42014
 - ticker: AAPL
   company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2015-Q2_2015-03-28.md
@@ -717,29 +337,9 @@
   fiscal_period: Q12015
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2015-Q3_2015-06-27.md
-  filing_date: '2015-06-27'
-  fiscal_period: Q22015
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2016-Q1_2015-12-26.md
-  filing_date: '2015-12-26'
-  fiscal_period: Q42015
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2016-Q2_2016-03-26.md
   filing_date: '2016-03-26'
   fiscal_period: Q12016
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2016-Q3_2016-06-25.md
-  filing_date: '2016-06-25'
-  fiscal_period: Q22016
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2017-Q1_2016-12-31.md
-  filing_date: '2016-12-31'
-  fiscal_period: Q42016
 - ticker: AAPL
   company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2017-Q2_2017-04-01.md
@@ -762,74 +362,14 @@
   fiscal_period: Q12018
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2018-Q3_2018-06-30.md
-  filing_date: '2018-06-30'
-  fiscal_period: Q22018
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2019-Q1_2018-12-29.md
-  filing_date: '2018-12-29'
-  fiscal_period: Q42018
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2019-Q2_2019-03-30.md
-  filing_date: '2019-03-30'
-  fiscal_period: Q12019
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2019-Q3_2019-06-29.md
-  filing_date: '2019-06-29'
-  fiscal_period: Q22019
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2020-Q1_2019-12-28.md
-  filing_date: '2019-12-28'
-  fiscal_period: Q42019
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2020-Q2_2020-03-28.md
-  filing_date: '2020-03-28'
-  fiscal_period: Q12020
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2020-Q3_2020-06-27.md
-  filing_date: '2020-06-27'
-  fiscal_period: Q22020
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2021-Q1_2020-12-26.md
-  filing_date: '2020-12-26'
-  fiscal_period: Q42020
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2021-Q2_2021-03-27.md
   filing_date: '2021-03-27'
   fiscal_period: Q12021
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2021-Q3_2021-06-26.md
-  filing_date: '2021-06-26'
-  fiscal_period: Q22021
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2022-Q1_2021-12-25.md
-  filing_date: '2021-12-25'
-  fiscal_period: Q42021
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2022-Q2_2022-03-26.md
   filing_date: '2022-03-26'
   fiscal_period: Q12022
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2022-Q3_2022-06-25.md
-  filing_date: '2022-06-25'
-  fiscal_period: Q22022
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2023-Q1_2022-12-31.md
-  filing_date: '2022-12-31'
-  fiscal_period: Q42022
 - ticker: AAPL
   company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2023-Q2_2023-04-01.md
@@ -852,16 +392,6 @@
   fiscal_period: Q12024
 - ticker: AAPL
   company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2024-Q3_2024-06-29.md
-  filing_date: '2024-06-29'
-  fiscal_period: Q22024
-- ticker: AAPL
-  company: Apple Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2025-Q1_2024-12-28.md
-  filing_date: '2024-12-28'
-  fiscal_period: Q42024
-- ticker: AAPL
-  company: Apple Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/AAPL/10-Q/AAPL_10-Q_FY2025-Q2_2025-03-29.md
   filing_date: '2025-03-29'
   fiscal_period: Q12025
@@ -874,96 +404,81 @@
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2021Q1.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q1
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2021Q2.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q2
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2021Q3.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q3
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2022Q1.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q1
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2022Q2.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q2
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2022Q3.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q3
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2023Q1.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q1
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2023Q2.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q2
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2023Q3.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q3
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2024Q1.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q1
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2024Q2.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q2
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2024Q3.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q3
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2025Q1.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q1
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2025Q2.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q2
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/10-Q/10-Q_2025Q3.md
   filing_date: ''
-  fiscal_period: ''
+  fiscal_period: Q3
 - ticker: MU
   company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2017-01-09.md
   filing_date: '2017-01-09'
-  fiscal_period: '2017'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2017-03-28.md
-  filing_date: '2017-03-28'
-  fiscal_period: '2017'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2017-06-30.md
-  filing_date: '2017-06-30'
-  fiscal_period: '2017'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2017-12-20.md
-  filing_date: '2017-12-20'
   fiscal_period: '2017'
 - ticker: MU
   company: Micron Technology, Inc.
@@ -972,183 +487,13 @@
   fiscal_period: '2018'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2018-06-22.md
-  filing_date: '2018-06-22'
-  fiscal_period: '2018'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2018-12-19.md
-  filing_date: '2018-12-19'
-  fiscal_period: '2018'
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2019-03-21.md
   filing_date: '2019-03-21'
   fiscal_period: '2019'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2019-06-26.md
-  filing_date: '2019-06-26'
-  fiscal_period: '2019'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2019-12-20.md
-  filing_date: '2019-12-20'
-  fiscal_period: '2019'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2020-03-26.md
-  filing_date: '2020-03-26'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2020-06-29.md
-  filing_date: '2020-06-29'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2021-01-08.md
-  filing_date: '2021-01-08'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2021-04-01.md
-  filing_date: '2021-04-01'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2021-07-01.md
-  filing_date: '2021-07-01'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2022-01-06.md
-  filing_date: '2022-01-06'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2022-03-30.md
-  filing_date: '2022-03-30'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2022-07-01.md
-  filing_date: '2022-07-01'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_10-Q_2022-12-22.md
-  filing_date: '2022-12-22'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-21-000012-full-submission.md
-  filing_date: '2021-01-08'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-21-000032-full-submission.md
-  filing_date: '2021-04-01'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-21-000052-full-submission.md
-  filing_date: '2021-07-01'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-22-000004-full-submission.md
-  filing_date: '2022-01-06'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-22-000016-full-submission.md
-  filing_date: '2022-03-30'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-22-000036-full-submission.md
-  filing_date: '2022-07-01'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-22-000072-full-submission.md
-  filing_date: '2022-12-22'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-23-000022-full-submission.md
-  filing_date: '2023-03-29'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-23-000041-full-submission.md
-  filing_date: '2023-06-29'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-23-000077-full-submission.md
-  filing_date: '2023-12-21'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-24-000007-full-submission.md
-  filing_date: '2024-03-21'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-24-000019-full-submission.md
-  filing_date: '2024-06-27'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-24-000047-full-submission.md
-  filing_date: '2024-12-19'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-25-000009-full-submission.md
-  filing_date: '2025-03-21'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-25-000021-full-submission.md
-  filing_date: '2025-06-26'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-25-000046-full-submission.md
-  filing_date: '2025-12-18'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/0000723125-26-000006-full-submission.md
-  filing_date: '2026-03-19'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2020-03-26_mu-20200227.md
-  filing_date: '2020-03-26'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2020-06-29_mu-20200528.md
-  filing_date: '2020-06-29'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2021-01-08_mu-20201203.md
   filing_date: '2021-01-08'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2021-04-01_mu-20210304.md
-  filing_date: '2021-04-01'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2021-07-01_mu-20210603.md
-  filing_date: '2021-07-01'
   fiscal_period: '2021'
 - ticker: MU
   company: Micron Technology, Inc.
@@ -1157,33 +502,8 @@
   fiscal_period: '2022'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2022-03-30_mu-20220303.md
-  filing_date: '2022-03-30'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2022-07-01_mu-20220602.md
-  filing_date: '2022-07-01'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2022-12-22_mu-20221201.md
-  filing_date: '2022-12-22'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2023-03-29_mu-20230302.md
   filing_date: '2023-03-29'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2023-06-29_mu-20230601.md
-  filing_date: '2023-06-29'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2023-12-21_mu-20231130.md
-  filing_date: '2023-12-21'
   fiscal_period: '2023'
 - ticker: MU
   company: Micron Technology, Inc.
@@ -1192,139 +512,14 @@
   fiscal_period: '2024'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2024-06-27_mu-20240530.md
-  filing_date: '2024-06-27'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2024-12-19_mu-20241128.md
-  filing_date: '2024-12-19'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2025-03-21_mu-20250227.md
   filing_date: '2025-03-21'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2025-06-26_mu-20250529.md
-  filing_date: '2025-06-26'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/10-Q_2025-12-18_mu-20251127.md
-  filing_date: '2025-12-18'
   fiscal_period: '2025'
 - ticker: MU
   company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2020-03-26.md
   filing_date: '2020-03-26'
   fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2020-06-29.md
-  filing_date: '2020-06-29'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2021-01-08.md
-  filing_date: '2021-01-08'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2021-04-01.md
-  filing_date: '2021-04-01'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2021-07-01.md
-  filing_date: '2021-07-01'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2022-01-06.md
-  filing_date: '2022-01-06'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2022-03-30.md
-  filing_date: '2022-03-30'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2022-07-01.md
-  filing_date: '2022-07-01'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2022-12-22.md
-  filing_date: '2022-12-22'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2023-03-29.md
-  filing_date: '2023-03-29'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2023-06-29.md
-  filing_date: '2023-06-29'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2023-12-21.md
-  filing_date: '2023-12-21'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2024-03-21.md
-  filing_date: '2024-03-21'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2024-06-27.md
-  filing_date: '2024-06-27'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2024-12-19.md
-  filing_date: '2024-12-19'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2025-03-21.md
-  filing_date: '2025-03-21'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2025-06-26.md
-  filing_date: '2025-06-26'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_2025-12-18.md
-  filing_date: '2025-12-18'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_FY2025_Q1_2024-11-28.md
-  filing_date: '2024-11-28'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_FY2025_Q2_2025-02-28.md
-  filing_date: '2025-02-28'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/MU_10-Q_FY2025_Q3_2025-05-31.md
-  filing_date: '2025-05-31'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/10-Q/mu-10q-2023q3.md
-  filing_date: ''
-  fiscal_period: '2023'
 20-F:
 - ticker: HESAI
   company: Hesai Group
@@ -1341,16 +536,6 @@
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/20-F/Hesai_20-F_2022.md
   filing_date: ''
   fiscal_period: FY2022
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/20-F/Hesai_20-F_2023.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/20-F/Hesai_20-F_2024.md
-  filing_date: ''
-  fiscal_period: FY2024
 - ticker: Trip
   company: Trip.com Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/20-F/TCOM_2021_20F.md
@@ -1381,36 +566,6 @@
   path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/TSM_2020_20-F.md
   filing_date: ''
   fiscal_period: FY2020
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/TSM_2021_20-F.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/TSM_2022_20F.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/TSM_2023_20-F.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/TSM_2024_20-F.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/TSM_2024_20F.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/sec_filings/TSM_2024_20-F.md
-  filing_date: ''
-  fiscal_period: FY2024
 - ticker: TSM
   company: Taiwan Semiconductor Manufacturing Company
   path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/sec-filings/20-F_2021-04-16_d94821d20f.md
@@ -1485,77 +640,7 @@
   fiscal_period: '2024'
 - ticker: KBANK
   company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2024_Q1_notes.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2024_Q2_financial_statements.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2024_Q2_notes.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2024_Q3_financial_statements.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2024_Q3_notes.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2024_annual_financial_statements.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2024_annual_notes.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
   path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_Q1_financial_statements.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_Q1_notes.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_Q2_financial_statements.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_Q2_notes.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_Q3_financial_statements.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_Q3_notes.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_annual_financial_statements.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/56-6_2025_annual_notes.md
   filing_date: ''
   fiscal_period: '2025'
 - ticker: KBANK
@@ -1573,67 +658,7 @@
   path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/Q3_2023.md
   filing_date: ''
   fiscal_period: '2023'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/kbank-56-6-2020-q1.md
-  filing_date: ''
-  fiscal_period: '2020'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/kbank-56-6-2020-q2.md
-  filing_date: ''
-  fiscal_period: '2020'
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/56-6/kbank-56-6-2020-q3.md
-  filing_date: ''
-  fiscal_period: '2020'
 6-K:
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q1-2023_earnings.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q1-2024_earnings.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q1-2025_earnings.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q2-2023_earnings.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q2-2024_earnings.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q2-2025_earnings.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q3-2023_earnings.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q3-2024_earnings.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q3-2025_earnings.md
-  filing_date: ''
-  fiscal_period: '2025'
 - ticker: HESAI
   company: Hesai Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q4-2022_earnings.md
@@ -1641,38 +666,8 @@
   fiscal_period: '2022'
 - ticker: HESAI
   company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q4-2023_earnings.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q4-2024_earnings.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/6-K/6-K_Q4-2025_earnings.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: HESAI
-  company: Hesai Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2023-03-16-Q4FY2022-earnings.md
   filing_date: '2023-03-16'
-  fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2023-05-24-Q1-earnings.md
-  filing_date: '2023-05-24'
-  fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2023-08-15-Q2-earnings.md
-  filing_date: '2023-08-15'
-  fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2023-11-14-Q3-earnings.md
-  filing_date: '2023-11-14'
   fiscal_period: '2023'
 - ticker: HESAI
   company: Hesai Group
@@ -1681,104 +676,50 @@
   fiscal_period: '2024'
 - ticker: HESAI
   company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2024-05-21-Q1-earnings.md
-  filing_date: '2024-05-21'
-  fiscal_period: '2024'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2024-08-20-Q2-earnings.md
-  filing_date: '2024-08-20'
-  fiscal_period: '2024'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2024-11-26-Q3-earnings.md
-  filing_date: '2024-11-26'
-  fiscal_period: '2024'
-- ticker: HESAI
-  company: Hesai Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2025-03-11-Q4FY2024-earnings.md
   filing_date: '2025-03-11'
-  fiscal_period: '2025'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2025-03-20-Q4FY2024-earnings.md
-  filing_date: '2025-03-20'
-  fiscal_period: '2025'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2025-05-27-Q1-earnings.md
-  filing_date: '2025-05-27'
-  fiscal_period: '2025'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2025-08-15-Q2-earnings.md
-  filing_date: '2025-08-15'
-  fiscal_period: '2025'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2025-11-12-Q3-earnings.md
-  filing_date: '2025-11-12'
   fiscal_period: '2025'
 - ticker: HESAI
   company: Hesai Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2026-03-25.md
   filing_date: '2026-03-25'
   fiscal_period: '2026'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2026-04-10a.md
-  filing_date: '2026-04-10'
-  fiscal_period: '2026'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2026-04-10b.md
-  filing_date: '2026-04-10'
-  fiscal_period: '2026'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2026-04-24.md
-  filing_date: '2026-04-24'
-  fiscal_period: '2026'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/sec-filings/Hesai-6-K-2026-04-27.md
-  filing_date: '2026-04-27'
-  fiscal_period: '2026'
+Business Report:
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/sec-filings/20-F/Samsung_20-F_FY2019.md
+  filing_date: '2020-03-27'
+  fiscal_period: FY2019
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/sec-filings/20-F/Samsung_20-F_FY2020.md
+  filing_date: '2021-03-29'
+  fiscal_period: FY2020
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/sec-filings/20-F/Samsung_20-F_FY2021.md
+  filing_date: '2022-03-29'
+  fiscal_period: FY2021
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/sec-filings/20-F/Samsung_20-F_FY2022.md
+  filing_date: '2023-03-29'
+  fiscal_period: FY2022
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/sec-filings/20-F/Samsung_20-F_FY2023.md
+  filing_date: '2024-03-29'
+  fiscal_period: FY2023
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/sec-filings/20-F/Samsung_20-F_FY2024.md
+  filing_date: '2025-03-29'
+  fiscal_period: FY2024
 SEC-filing:
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/000072312523000045-micron-20230831.md
-  filing_date: '2023-08-31'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/000072312524000067-micron-20240831.md
-  filing_date: '2024-08-31'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/000072312524000089-micron-20241130.md
-  filing_date: '2024-11-30'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/000072312525000012-micron-20250228.md
-  filing_date: '2025-02-28'
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/000072312525000034-micron-20250531.md
-  filing_date: '2025-05-31'
-  fiscal_period: ''
 - ticker: MU
   company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/2022-03-29_a2022q2ex991-pressrelease.md
   filing_date: '2022-03-29'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/2022-11-16_exhibit991-pressreleaseq12.md
-  filing_date: '2022-11-16'
   fiscal_period: '2022'
 - ticker: MU
   company: Micron Technology, Inc.
@@ -1787,28 +728,8 @@ SEC-filing:
   fiscal_period: '2023'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/2023-11-28_tm2331627d1_ex99-1.md
-  filing_date: '2023-11-28'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/2023-12-20_a2024q1ex991-pressrelease.md
-  filing_date: '2023-12-20'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/2024-03-20_a2024q2ex991-pressrelease.md
   filing_date: '2024-03-20'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/2024-06-26_a2024q3ex991-pressrelease.md
-  filing_date: '2024-06-26'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/2024-09-25_a2024q4ex991-pressrelease.md
-  filing_date: '2024-09-25'
   fiscal_period: '2024'
 - ticker: MU
   company: Micron Technology, Inc.
@@ -1822,205 +743,15 @@ SEC-filing:
   fiscal_period: '2026'
 - ticker: MU
   company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_8K-ER_20250811.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_8K-ER_20250923.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_8K-ER_20251021.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_8K-ER_20251217.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q1_FY2024_2023-12-20.md
-  filing_date: '2023-12-20'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q1_FY2025_2024-12-18.md
-  filing_date: '2024-12-18'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q1_FY2026_2025-12-17.md
-  filing_date: '2025-12-17'
-  fiscal_period: '2026'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q2_FY2024_2024-03-20.md
-  filing_date: '2024-03-20'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q2_FY2025_2025-03-20.md
-  filing_date: '2025-03-20'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q2_FY2026_2026-03-25.md
-  filing_date: '2026-03-25'
-  fiscal_period: '2026'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q3_FY2024_2024-06-26.md
-  filing_date: '2024-06-26'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q3_FY2025_2025-06-25.md
-  filing_date: '2025-06-25'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q4_FY2024_2024-09-25.md
-  filing_date: '2024-09-25'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/MU_Q4_FY2025_2025-09-23.md
-  filing_date: '2025-09-23'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/test.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: MU
-  company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2020-03-25_a2020q2exhibit991-pres.md
   filing_date: '2020-03-25'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2020-06-29_a2020q3exhibit991-pres.md
-  filing_date: '2020-06-29'
-  fiscal_period: '2020'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2020-09-29_a2020q4exhibit991-pres.md
-  filing_date: '2020-09-29'
   fiscal_period: '2020'
 - ticker: MU
   company: Micron Technology, Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2021-01-07_a2021q1ex991-pressrelease.md
   filing_date: '2021-01-07'
   fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2021-03-31_a2021q2ex991-pressrelease.md
-  filing_date: '2021-03-31'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2021-06-30_a2021q3ex991-pressrelease.md
-  filing_date: '2021-06-30'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2021-09-28_a2021q4ex991-pressrelease.md
-  filing_date: '2021-09-28'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2021-12-20_a2022q1ex991-pressrelease.md
-  filing_date: '2021-12-20'
-  fiscal_period: '2021'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2022-03-29_a2022q2ex991-pressrelease.md
-  filing_date: '2022-03-29'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2022-06-30_a2022q3ex991-pressrelease.md
-  filing_date: '2022-06-30'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2022-09-29_a2022q4ex991-pressrelease.md
-  filing_date: '2022-09-29'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2022-12-21_a2023q1ex991-pressrelease.md
-  filing_date: '2022-12-21'
-  fiscal_period: '2022'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2023-03-28_a2023q2ex991-pressrelease.md
-  filing_date: '2023-03-28'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2023-06-28_a2023q3ex991-pressrelease.md
-  filing_date: '2023-06-28'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2023-09-27_a2023q4ex991-pressrelease.md
-  filing_date: '2023-09-27'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2023-12-20_a2024q1ex991-pressrelease.md
-  filing_date: '2023-12-20'
-  fiscal_period: '2023'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2024-03-20_a2024q2ex991-pressrelease.md
-  filing_date: '2024-03-20'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2024-06-26_a2024q3ex991-pressrelease.md
-  filing_date: '2024-06-26'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2024-09-25_a2024q4ex991-pressrelease.md
-  filing_date: '2024-09-25'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2024-12-18_a2025q1ex991-pressrelease.md
-  filing_date: '2024-12-18'
-  fiscal_period: '2024'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2025-03-20_a2025q2ex991-pressrelease.md
-  filing_date: '2025-03-20'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2025-06-25_a2025q3ex991-pressrelease.md
-  filing_date: '2025-06-25'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2025-09-23_a2025q4ex991-pressrelease.md
-  filing_date: '2025-09-23'
-  fiscal_period: '2025'
-- ticker: MU
-  company: Micron Technology, Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/sec-filings/raw_er/earnings_2025-12-17_a2026q1ex991-pressrelease.md
-  filing_date: '2025-12-17'
-  fiscal_period: '2025'
 annual-report:
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/20210401-kamart-ar2020-en.md
-  filing_date: ''
-  fiscal_period: FY2021
 - ticker: KAMART
   company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/AR_2020_en.md
@@ -2028,92 +759,7 @@ annual-report:
   fiscal_period: FY2020
 - ticker: KAMART
   company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_56-1_OneReport_2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_56-1_OneReport_2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_56-1_OneReport_2023.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_56-1_OneReport_2023_th.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_56-1_OneReport_2024.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_56-1_OneReport_2024_full.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_OneReport_2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_OneReport_2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_OneReport_2023.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/KAMART_OneReport_2024.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/20210401-kamart-ar2020-en.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/20220331-kamart-or2021-en.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/20230330-kamart-or2022-en.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/20240325-kamart-or2023-en.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: KAMART
-  company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/20250324-kamart-or2024-en.md
-  filing_date: ''
-  fiscal_period: FY2025
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/20250325-kamart-or2024-attachment-en.md
-  filing_date: ''
-  fiscal_period: FY2025
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/kamart-or2025-attachment-en.md
-  filing_date: ''
-  fiscal_period: FY2025
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/or/kamart-or2025-en.md
   filing_date: ''
   fiscal_period: FY2025
 - ticker: KAMART
@@ -2163,11 +809,6 @@ annual-report:
   fiscal_period: FY2024
 - ticker: SISB
   company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_56-1_OneReport_2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: SISB
-  company: Siam Commercial Bank
   path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_56-1_OneReport_2022.md
   filing_date: ''
   fiscal_period: FY2022
@@ -2183,29 +824,9 @@ annual-report:
   fiscal_period: FY2024
 - ticker: SISB
   company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_56-1_OneReport_2025.md
-  filing_date: ''
-  fiscal_period: FY2025
-- ticker: SISB
-  company: Siam Commercial Bank
   path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_OneReport_2021.md
   filing_date: ''
   fiscal_period: FY2021
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_OneReport_2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_OneReport_2023.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_OneReport_2024.md
-  filing_date: ''
-  fiscal_period: FY2024
 - ticker: SISB
   company: Siam Commercial Bank
   path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_OneReport_2025.md
@@ -2213,64 +834,9 @@ annual-report:
   fiscal_period: FY2025
 - ticker: SISB
   company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/SISB-annual-report-2020.md
-  filing_date: ''
-  fiscal_period: FY2020
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/SISB-annual-report-2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/SISB-annual-report-2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/SISB-annual-report-2023.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/SISB-annual-report-2024.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: SISB
-  company: Siam Commercial Bank
   path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/sisb-2020.md
   filing_date: ''
   fiscal_period: FY2020
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/sisb-2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/sisb-2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/sisb-ar-2020.md
-  filing_date: ''
-  fiscal_period: FY2020
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/sisb-ar-2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/sisb-ar-2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/annual-reports/sisb-ar-2023.md
-  filing_date: ''
-  fiscal_period: FY2023
 - ticker: SIS
   company: Siam Cement Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_56-1_OneReport_2021.md
@@ -2298,59 +864,9 @@ annual-report:
   fiscal_period: FY2025
 - ticker: SIS
   company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OneReport_2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OneReport_2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OneReport_2023.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OneReport_2024.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OneReport_2025.md
-  filing_date: ''
-  fiscal_period: FY2025
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/annual-reports/SIS-56-1-One-Report-2024.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: SIS
-  company: Siam Cement Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/annual-reports/sis-ar-2020.md
   filing_date: ''
   fiscal_period: FY2020
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/annual-reports/sis-ar-2021.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/annual-reports/sis-ar-2022.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/annual-reports/sis-ar-2023.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/annual-reports/sis-ar-2024.md
-  filing_date: ''
-  fiscal_period: FY2024
 - ticker: TSM
   company: Taiwan Semiconductor Manufacturing Company
   path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/2025_Annual_Report.md
@@ -2376,14 +892,14 @@ annual-report:
   path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/annual_reports/index.md
   filing_date: ''
   fiscal_period: ''
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_FY2025_Annual-Report.md
+  filing_date: ''
+  fiscal_period: '2025'
 - ticker: Xiaomi
   company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2021_annual_presentation.md
-  filing_date: ''
-  fiscal_period: FY2021
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2021_annual_report.md
   filing_date: ''
   fiscal_period: FY2021
 - ticker: Xiaomi
@@ -2393,17 +909,7 @@ annual-report:
   fiscal_period: FY2022
 - ticker: Xiaomi
   company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2022_annual_report.md
-  filing_date: ''
-  fiscal_period: FY2022
-- ticker: Xiaomi
-  company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2023_annual_presentation.md
-  filing_date: ''
-  fiscal_period: FY2023
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2023_annual_report.md
   filing_date: ''
   fiscal_period: FY2023
 - ticker: Xiaomi
@@ -2413,48 +919,39 @@ annual-report:
   fiscal_period: FY2024
 - ticker: Xiaomi
   company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2024_annual_report.md
-  filing_date: ''
-  fiscal_period: FY2024
-- ticker: Xiaomi
-  company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2025_annual_presentation.md
   filing_date: ''
   fiscal_period: FY2025
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/annual-reports/2025_annual_report.md
+annual_financial_statements:
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/financial-statements/Samsung_2020_audited_FS.md
   filing_date: ''
-  fiscal_period: FY2025
+  fiscal_period: ''
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/financial-statements/Samsung_2021_audited_FS.md
+  filing_date: ''
+  fiscal_period: ''
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/financial-statements/Samsung_2022_audited_FS.md
+  filing_date: ''
+  fiscal_period: ''
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/financial-statements/Samsung_2023_audited_FS.md
+  filing_date: ''
+  fiscal_period: ''
+- ticker: 005930.KS
+  company: Samsung Electronics Co., Ltd.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/Samsung/financial-statements/Samsung_2024_audited_FS.md
+  filing_date: ''
+  fiscal_period: ''
 earnings-presentation:
 - ticker: Xiaomi
   company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2021Q1_announcement.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2021Q1_presentation.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2021Q3_announcement.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2021Q3_presentation.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2021Q4_announcement.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2021Q4_presentation.md
   filing_date: ''
   fiscal_period: '2021'
 - ticker: Xiaomi
@@ -2464,47 +961,7 @@ earnings-presentation:
   fiscal_period: '2022'
 - ticker: Xiaomi
   company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2022Q1_presentation.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2022Q3_announcement.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2022Q3_presentation.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2022Q4_announcement.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2022Q4_presentation.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2023Q1_announcement.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2023Q1_presentation.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2023Q3_announcement.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2023Q3_presentation.md
   filing_date: ''
   fiscal_period: '2023'
 - ticker: Xiaomi
@@ -2514,52 +971,7 @@ earnings-presentation:
   fiscal_period: '2024'
 - ticker: Xiaomi
   company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2024Q1_presentation.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2024Q3_announcement.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2024Q3_presentation.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2024Q4_presentation.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2025Q1_announcement.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2025Q1_presentation.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2025Q3_announcement.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2025Q3_presentation.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2025Q4_announcement.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/earnings-presentations/2025Q4_presentation.md
   filing_date: ''
   fiscal_period: '2025'
 earnings-release:
@@ -2590,27 +1002,7 @@ earnings-release:
   fiscal_period: ''
 - ticker: HESAI
   company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q2_2024_Earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q2_2025_Earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q3_2023_Earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q3_2024_Earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q3_2025_Earnings.md
   filing_date: ''
   fiscal_period: ''
 - ticker: HESAI
@@ -2623,114 +1015,9 @@ earnings-release:
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q4_FY2023_Earnings.md
   filing_date: ''
   fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q4_FY2024_Earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Hesai_Q4_FY2025_Earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Q1-2025_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Q2-2024_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Q2-2025_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Q3-2024_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Q3-2025_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Q4-2024_FY2024_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings/Q4-2025_FY2025_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings-releases/Hesai-Q1-2024-Earnings-Release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings-releases/Hesai-Q2-2024-Earnings-Release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings-releases/Hesai-Q2-2025-Earnings-Release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings-releases/Hesai-Q3-2025-Earnings-Release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/earnings-releases/Hesai-Q4-FY2025-Earnings-Release.md
-  filing_date: ''
-  fiscal_period: ''
 - ticker: Trip
   company: Trip.com Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q1_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q1_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q2_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q2_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q3_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q3_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q4_earnings.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2021_Q4_transcript.md
   filing_date: ''
   fiscal_period: ''
 - ticker: Trip
@@ -2740,77 +1027,7 @@ earnings-release:
   fiscal_period: ''
 - ticker: Trip
   company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2022_Q1_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2022_Q2_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2022_Q2_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2022_Q3_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2022_Q3_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2022_Q4_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2022_Q4_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q1_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q1_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q2_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q2_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q3_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q3_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q4_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2023_Q4_transcript.md
   filing_date: ''
   fiscal_period: ''
 - ticker: Trip
@@ -2820,87 +1037,7 @@ earnings-release:
   fiscal_period: ''
 - ticker: Trip
   company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2024_Q1_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2024_Q2_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2024_Q2_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2024_Q3_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2024_Q3_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2024_Q4_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2024_Q4_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q1_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q1_form6k.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q1_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q2_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q2_form6k.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q2_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q3_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q3_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q4_earnings_release.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: Trip
-  company: Trip.com Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/earnings/2025_Q4_transcript.md
   filing_date: ''
   fiscal_period: ''
 - ticker: GOOGL
@@ -2925,49 +1062,9 @@ earnings-release:
   fiscal_period: Q42022
 - ticker: GOOGL
   company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2023-Q1_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q12023
-- ticker: GOOGL
-  company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2023-Q2_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q22023
-- ticker: GOOGL
-  company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2023-Q3_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q32023
-- ticker: GOOGL
-  company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2023-Q4_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q42023
-- ticker: GOOGL
-  company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2023_annual-report.md
   filing_date: ''
   fiscal_period: ''
-- ticker: GOOGL
-  company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2024-Q1_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q12024
-- ticker: GOOGL
-  company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2024-Q2_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q22024
-- ticker: GOOGL
-  company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2024-Q3_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q32024
-- ticker: GOOGL
-  company: Alphabet Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2024-Q4_earnings-release.md
-  filing_date: ''
-  fiscal_period: Q42024
 - ticker: GOOGL
   company: Alphabet Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/GOOGL/earnings/2024_annual-report.md
@@ -3043,126 +1140,10 @@ earnings-release:
   path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/earnings-materials/SK-Hynix_FY2026-Q1_Earnings-Release.md
   filing_date: ''
   fiscal_period: Q12026
-filing:
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_FY2025_Annual-Report.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2021_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2022_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2023_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2024_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2025_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2026_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2026'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2021_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2022_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2023_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2024_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2025_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2021_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2022_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2023_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2024_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2025_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2021_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2022_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2023_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SK-Hynix
-  company: SK Hynix Inc.
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2024_Quarterly-Report.md
-  filing_date: ''
-  fiscal_period: '2024'
 financial-statement:
 - ticker: KAMART
   company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20210513-kamart-fs-1q2021-en.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20210811-kamart-fs-2q2021-en.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20211111-kamart-fs-3q2021-en.md
   filing_date: ''
   fiscal_period: '2021'
 - ticker: KAMART
@@ -3172,32 +1153,7 @@ financial-statement:
   fiscal_period: '2022'
 - ticker: KAMART
   company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20220513-kamart-fs-1q2022-en.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20220811-kamart-fs-2q2022-en.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: KAMART
-  company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20230224-kamart-fs-fy2022-en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20230511-kamart-fs-1q2023-en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20230810-kamart-fs-2q2023-en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20231113-kamart-fs-3q2023-en.md
   filing_date: ''
   fiscal_period: '2023'
 - ticker: KAMART
@@ -3207,32 +1163,7 @@ financial-statement:
   fiscal_period: '2024'
 - ticker: KAMART
   company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20240514-kamart-fs-1q2024-en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20240814-kamart-fs-2q2024-en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20241113-kamart-fs-3q2024-en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20250224-kamart-fs-4q2024-en.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20250813-kamart-fs-2q2025-en.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/20251112-kamart-fs-3q2025-en.md
   filing_date: ''
   fiscal_period: '2025'
 - ticker: KAMART
@@ -3245,121 +1176,6 @@ financial-statement:
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2020_Q4_en.md
   filing_date: ''
   fiscal_period: '2020'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2021_Q4_en.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2022_Q1_en.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2022_Q3_en.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2022_Q4_en.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2023_Q1_en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2023_Q4_en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2024_Q1_en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2024_Q2_en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2024_Q3_en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2024_Q4_en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/FS_2025_Q1_en.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/KAMART_FS_2021.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/FS/KAMART_FS_2024.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-1q2021-en.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-1q2022-en.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-1q2023-en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-1q2024-en.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-2q2021-en.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-2q2022-en.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-2q2023-en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-3q2021-en.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-3q2023-en.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: KAMART
-  company: Kamart Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/quarterly-reports/kamart-fs-fy2021-en.md
-  filing_date: ''
-  fiscal_period: '2021'
 - ticker: SISB
   company: Siam Commercial Bank
   path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_FS_Q1_2023.md
@@ -3377,17 +1193,7 @@ financial-statement:
   fiscal_period: '2025'
 - ticker: SISB
   company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_FS_Q2_2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SISB
-  company: Siam Commercial Bank
   path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_FS_Q3_2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SISB
-  company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_FS_Q4_2025.md
   filing_date: ''
   fiscal_period: '2025'
 - ticker: SIS
@@ -3415,81 +1221,6 @@ financial-statement:
   path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_1Q2025.md
   filing_date: ''
   fiscal_period: '2025'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_2Q2021.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_2Q2022.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_2Q2023.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_2Q2024.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_2Q2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_3Q2021.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_3Q2022.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_3Q2023.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_3Q2024.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_3Q2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_FY2021.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_FY2022.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_FY2023.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_FY2024.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_FS_FY2025.md
-  filing_date: ''
-  fiscal_period: '2025'
 - ticker: TSM
   company: Taiwan Semiconductor Manufacturing Company
   path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/financials/FY2023_audited_Q4_2023.md
@@ -3509,6 +1240,11 @@ index:
 - ticker: Trip
   company: Trip.com Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/Trip/index.md
+  filing_date: ''
+  fiscal_period: ''
+- ticker: KBANK
+  company: Kasikornbank Public Company Limited
+  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/index.md
   filing_date: ''
   fiscal_period: ''
 - ticker: TSM
@@ -3549,17 +1285,7 @@ interim-report:
   fiscal_period: '2021'
 - ticker: Xiaomi
   company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2021_interim_report.md
-  filing_date: ''
-  fiscal_period: '2021'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2022_interim_presentation.md
-  filing_date: ''
-  fiscal_period: '2022'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2022_interim_report.md
   filing_date: ''
   fiscal_period: '2022'
 - ticker: Xiaomi
@@ -3569,17 +1295,7 @@ interim-report:
   fiscal_period: '2023'
 - ticker: Xiaomi
   company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2023_interim_report.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2024_interim_presentation.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2024_interim_report.md
   filing_date: ''
   fiscal_period: '2024'
 - ticker: Xiaomi
@@ -3587,11 +1303,27 @@ interim-report:
   path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2025_interim_presentation.md
   filing_date: ''
   fiscal_period: '2025'
-- ticker: Xiaomi
-  company: Xiaomi Corporation
-  path: /home/poomk/.openclaw/workspace/investments/stocks/Xiaomi/interim-reports/2025_interim_report.md
-  filing_date: ''
-  fiscal_period: '2025'
+investment-thesis:
+- ticker: MWA
+  company: Mueller Water Products
+  path: /home/poomk/.openclaw/workspace/investments/stocks/MWA/theses/dhandho-3-mueller.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2025
+- ticker: LXS.DE
+  company: Lanxess AG
+  path: /home/poomk/.openclaw/workspace/investments/stocks/LXS.DE/theses/dhandho-3-lanxess.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2025
+- ticker: 4088.T
+  company: Air Water Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/4088.T/theses/dhandho-3-airwater.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2025
+- ticker: SNDK
+  company: SanDisk Corporation
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SNDK/theses/sndk-2026-05-10.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2026
 investor-day:
 - ticker: KAMART
   company: Kamart Corporation
@@ -3613,135 +1345,15 @@ investor-day:
   path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_1Q2025.md
   filing_date: ''
   fiscal_period: '2025'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_2Q2023.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_2Q2024.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_2Q2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_3Q2023.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_3Q2024.md
-  filing_date: ''
-  fiscal_period: '2024'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_3Q2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_4Q2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_FY2023.md
-  filing_date: ''
-  fiscal_period: '2023'
-- ticker: SIS
-  company: Siam Cement Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SIS/SIS_OppDay_FY2024.md
-  filing_date: ''
-  fiscal_period: '2024'
 presentation:
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/quarterly-results/Hesai-Q3-2023-Correcting-Presentation.md
-  filing_date: ''
-  fiscal_period: '2023'
 - ticker: HESAI
   company: Hesai Group
   path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/presentations/Hesai_Q3_2023_Correcting_Misinformation_Presentation.md
   filing_date: ''
   fiscal_period: '2023'
-- ticker: HESAI
-  company: Hesai Group
-  path: /home/poomk/.openclaw/workspace/investments/stocks/HESAI/presentations/Hesai_Q3_2023_Transcript.md
-  filing_date: ''
-  fiscal_period: '2023'
 - ticker: KBANK
   company: Kasikornbank Public Company Limited
   path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/KBANK_Presentation_3Q25.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_1Q23.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_1Q24.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_2Q23.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_2Q24.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_3Q23.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_3Q24.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_4Q23%20(Updated%20Econ%20Data).md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_4Q23-Updated-Econ-Data.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_4Q23.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/KBank_Investor_Presentation_4Q24-Updated-Econ-Data.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/ir_page.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/test_listedcompany.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/presentations/test_set.md
   filing_date: ''
   fiscal_period: ''
 - ticker: SISB
@@ -3766,357 +1378,12 @@ presentation:
   fiscal_period: '2023'
 - ticker: SISB
   company: Siam Commercial Bank
-  path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_presentation_Q3_2025.md
-  filing_date: ''
-  fiscal_period: '2025'
-- ticker: SISB
-  company: Siam Commercial Bank
   path: /home/poomk/.openclaw/workspace/investments/stocks/SISB/SISB_presentation_Q4_2025.md
   filing_date: ''
   fiscal_period: '2025'
 - ticker: TSM
   company: Taiwan Semiconductor Manufacturing Company
   path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q21EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q21ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q21PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q22EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q22ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q22PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q23EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q23ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q23PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q24-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q24EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q24ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q25-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q25EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q25ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q26-EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q26-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/1Q26ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q21EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q21ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q21PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q22EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q22ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q22PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q23EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q23ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q23PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q24-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q24EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q24ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q25-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q25EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/2Q25ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q21EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q21ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q21PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q22EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q22ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q22PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q23EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q23ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q23PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q24-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q24EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q24ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q25-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q25EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/3Q25ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q21EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q21ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q21PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q22EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q22ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q22PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q23EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q23ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q23PresentationE.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q24-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q24EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q24ManagementReport.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q25-Management-Report.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q25-Presentation-E.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/4Q25EarningsRelease.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/FS.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/FS_audited.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSMC-1Q26-Transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_1Q19_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_1Q20_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_1Q21_presentation.md
   filing_date: ''
   fiscal_period: ''
 - ticker: TSM
@@ -4146,67 +1413,7 @@ presentation:
   fiscal_period: '2025'
 - ticker: TSM
   company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_2Q19_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_2Q20_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_2Q21_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_3Q19_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_3Q20_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_3Q21_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_4Q19_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_4Q20_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/TSM_4Q21_presentation.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
   path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/tsm_2020_q1_presentation.md
-  filing_date: ''
-  fiscal_period: '2020'
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/tsm_2020_q2_presentation.md
-  filing_date: ''
-  fiscal_period: '2020'
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/tsm_2020_q3_presentation.md
-  filing_date: ''
-  fiscal_period: '2020'
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/presentations/tsm_2020_q4_presentation.md
   filing_date: ''
   fiscal_period: '2020'
 - ticker: GOOGL
@@ -4455,11 +1662,6 @@ quarterly-report:
   path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/KBANK_Brief_2Q24.md
   filing_date: ''
   fiscal_period: ''
-- ticker: KBANK
-  company: Kasikornbank Public Company Limited
-  path: /home/poomk/.openclaw/workspace/investments/stocks/KBANK/KBANK_Brief_4Q24.md
-  filing_date: ''
-  fiscal_period: ''
 - ticker: SK-Hynix
   company: SK Hynix Inc.
   path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/quarterly-reports/SK-Hynix_Q1-2025_Quarterly-Report.md
@@ -4480,12 +1682,248 @@ quarterly-report:
   path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/quarterly-reports/SK-Hynix_Q3-2025_Quarterly-Report.md
   filing_date: ''
   fiscal_period: '2025'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2021_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2021'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2022_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2022'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2023_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2023'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2024_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2024'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q1-2026_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2026'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2021_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2021'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2022_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2022'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2023_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2023'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q2-2024_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2024'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2021_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2021'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2022_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2022'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2023_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2023'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q3-2024_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2024'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2021_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2021'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2022_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2022'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2023_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2023'
+- ticker: SK-Hynix
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SK-Hynix/filings/SK-Hynix_Q4-2024_Quarterly-Report.md
+  filing_date: ''
+  fiscal_period: '2024'
 report:
 - ticker: KAMART
   company: Kamart Corporation
   path: /home/poomk/.openclaw/workspace/investments/stocks/KAMART/Kamart/index.md
   filing_date: ''
   fiscal_period: ''
+semiconductor-analysis:
+- ticker: LRCX
+  company: Lam Research
+  path: /home/poomk/.openclaw/workspace/investments/stocks/LRCX/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 8035.T
+  company: Tokyo Electron
+  path: /home/poomk/.openclaw/workspace/investments/stocks/8035.T/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: QCOM
+  company: Qualcomm Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/QCOM/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: IFX
+  company: Infineon Technologies
+  path: /home/poomk/.openclaw/workspace/investments/stocks/IFX/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 'ON'
+  company: ON Semiconductor
+  path: /home/poomk/.openclaw/workspace/investments/stocks/ON/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: NXPI
+  company: NXP Semiconductors
+  path: /home/poomk/.openclaw/workspace/investments/stocks/NXPI/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: AMD
+  company: Advanced Micro Devices
+  path: /home/poomk/.openclaw/workspace/investments/stocks/AMD/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 6861.T
+  company: Keyence Corporation
+  path: /home/poomk/.openclaw/workspace/investments/stocks/6861.T/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 3711.TW
+  company: Coretronic Corporation
+  path: /home/poomk/.openclaw/workspace/investments/stocks/3711.TW/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: KLAC
+  company: KLA Corporation
+  path: /home/poomk/.openclaw/workspace/investments/stocks/KLAC/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 6723.T
+  company: RICOH Company
+  path: /home/poomk/.openclaw/workspace/investments/stocks/6723.T/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: ADI
+  company: Analog Devices
+  path: /home/poomk/.openclaw/workspace/investments/stocks/ADI/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 4063.T
+  company: Shin-Etsu Chemical
+  path: /home/poomk/.openclaw/workspace/investments/stocks/4063.T/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: CDNS
+  company: Cadence Design Systems
+  path: /home/poomk/.openclaw/workspace/investments/stocks/CDNS/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 005930.KS
+  company: Samsung Electronics
+  path: /home/poomk/.openclaw/workspace/investments/stocks/005930.KS/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 6702.T
+  company: Renesas Electronics
+  path: /home/poomk/.openclaw/workspace/investments/stocks/6702.T/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: AVGO
+  company: Broadcom Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/AVGO/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: SNPS
+  company: Synopsys Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/SNPS/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: MRVL
+  company: Marvell Technology
+  path: /home/poomk/.openclaw/workspace/investments/stocks/MRVL/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: ASML
+  company: ASML Holding
+  path: /home/poomk/.openclaw/workspace/investments/stocks/ASML/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: WDC
+  company: Western Digital
+  path: /home/poomk/.openclaw/workspace/investments/stocks/WDC/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: MPWR
+  company: Monolithic Power Systems
+  path: /home/poomk/.openclaw/workspace/investments/stocks/MPWR/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: AMAT
+  company: Applied Materials
+  path: /home/poomk/.openclaw/workspace/investments/stocks/AMAT/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: TXN
+  company: Texas Instruments
+  path: /home/poomk/.openclaw/workspace/investments/stocks/TXN/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: INTC
+  company: Intel Corporation
+  path: /home/poomk/.openclaw/workspace/investments/stocks/INTC/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 2330.TW
+  company: Taiwan Semiconductor Manufacturing Company
+  path: /home/poomk/.openclaw/workspace/investments/stocks/2330.TW/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: 000660.KS
+  company: SK Hynix Inc.
+  path: /home/poomk/.openclaw/workspace/investments/stocks/000660.KS/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: STM
+  company: STMicroelectronics
+  path: /home/poomk/.openclaw/workspace/investments/stocks/STM/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: MU
+  company: Micron Technology
+  path: /home/poomk/.openclaw/workspace/investments/stocks/MU/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
+- ticker: NVDA
+  company: NVIDIA Corporation
+  path: /home/poomk/.openclaw/workspace/investments/stocks/NVDA/analyses/semiconductor-mega-analysis.md
+  filing_date: '2026-05-10'
+  fiscal_period: FY2024
 transcript:
 - ticker: HESAI
   company: Hesai Group
@@ -4495,101 +1933,6 @@ transcript:
 - ticker: TSM
   company: Taiwan Semiconductor Manufacturing Company
   path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_1Q21_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_1Q22_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_1Q23_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_1Q24_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_1Q25_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_2Q21_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_2Q22_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_2Q23_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_2Q24_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_2Q25_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_3Q21_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_3Q22_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_3Q23_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_3Q24_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_3Q25_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_4Q21_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_4Q22_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_4Q23_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_4Q24_transcript.md
-  filing_date: ''
-  fiscal_period: ''
-- ticker: TSM
-  company: Taiwan Semiconductor Manufacturing Company
-  path: /home/poomk/.openclaw/workspace/investments/stocks/TSM/transcripts/TSM_4Q25_transcript.md
   filing_date: ''
   fiscal_period: ''
 - ticker: MU

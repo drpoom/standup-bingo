@@ -117,3 +117,20 @@
 **Output Format:** Mandatory structure with executive summary, moat analysis, scenario table, peer matrix, catalyst calendar, invalidation criteria
 
 **Guardrails:** No price targets, no technical analysis, no leverage recommendations, long-term horizon only (5+yr)
+
+### Analyst Task Decomposition Protocol (2026-05-10)
+
+**Problem:** Analyst agents (Warren, Scout) were running monolithic complex tasks without atomic decomposition, violating AGENTS.md protocol.
+
+**Fix Applied:** Added mandatory Task Decomposition Protocol sections to:
+- `warren-investing/SKILL.md` — 8-step workflow (Data → Moat → Financials → Peers → Scenarios → Catalysts → Report → Delivery)
+- `security-audit/SKILL.md` — 7-step workflow (Dependencies → Secrets → Code → Config → Deploy → Report → Alert)
+- `performance-profiling/SKILL.md` — 8-step workflow (Build → Bundle → Lighthouse → CWV → Backend → Memory → Regression → Report)
+
+**Rules Enforced:**
+- Spawn subagents for atomic tasks (`lightContext:true`)
+- Parallelize independent checks, serialize blocked steps
+- Never monolithic "analyze everything" runs — they timeout
+- Report progress to Mickey after decomposition
+
+**Trigger:** SNDK 5-year coverage task revealed gap — Warren running 5min without decomposition.

@@ -242,3 +242,68 @@ Add to Scout's pre-push checklist:
 2. ✅ Lighthouse performance score ≥90
 3. ✅ No performance regressions >10% vs baseline
 4. ✅ Core Web Vitals pass thresholds
+
+---
+
+## ⚡ Task Decomposition Protocol (MANDATORY)
+
+**Per AGENTS.md:** Complex tasks (≥1 min, multi-turn) MUST be decomposed into atomic 1-2 min subtasks.
+
+### Pre-Flight Decomposition Check (MANDATORY — Added 2026-05-10)
+
+**Decompose BEFORE executing if ANY apply:**
+- ❌ Cannot complete in a **single turn** (work spans multiple responses)
+- ❌ Requires **subagent spawns** (each spawn = separate turn for result)
+- ❌ Has **sequential dependencies** between steps (step 2 blocked by step 1 output)
+- ❌ External API calls with **failure/retry risk** (web fetches, searches)
+
+**Can skip decomposition if:**
+- ✅ All work fits in **one turn** (multiple tool calls OK)
+- ✅ No subagents needed
+- ✅ No step depends on previous step's output
+- ✅ All tools are direct (`edit`/`read`/`write`/simple `exec`)
+
+**Time saved:** 1-10 minutes (avoiding wasted multi-turn execution if plan is wrong)
+
+**Example — Skip Decomposition:**
+```markdown
+Task: "Check bundle sizes for 3 JS files"
+→ 3x `exec` (ls -lh), compare to budget
+→ Completes in 1 turn (~10 seconds)
+→ NO decomposition needed
+```
+
+**Example — Requires Decomposition:**
+```markdown
+Task: "Full performance audit + Lighthouse + regression check"
+→ Build production bundle (blocks everything)
+→ Bundle size analysis (webpack analyzer)
+→ Lighthouse audit (staging URL)
+→ Core Web Vitals measurement
+→ Backend latency profiling
+→ Memory leak detection
+→ Regression comparison vs baseline
+→ Report assembly
+→ Sequential: build first, then parallel checks, then report
+→ 8+ turns, 10-15 min total
+→ DECOMPOSITION REQUIRED
+```
+
+### Scout's Performance Audit Decomposition
+
+| Step | Subtask | Duration | Parallel OK? |
+|------|---------|----------|--------------|
+| 1 | **Build Production Bundle** — `npm run build`, generate stats | 1-2 min | No (blocks all) |
+| 2 | **Bundle Size Check** — Measure JS/CSS vs budget, webpack analyzer | 1-2 min | Yes (after step 1) |
+| 3 | **Lighthouse Audit** — Run against staging/production URL | 1-2 min | Yes (after step 1) |
+| 4 | **Core Web Vitals** — LCP, FID, CLS, INP measurement | 1-2 min | Yes (after step 3) |
+| 5 | **Backend Latency** — API response times, database query profiling | 1-2 min | Yes (independent) |
+| 6 | **Memory/Leak Check** — Heap analysis, listener cleanup verification | 1-2 min | Yes (independent) |
+| 7 | **Regression Comparison** — Compare to baseline, flag >10% deltas | 1-2 min | No (needs 2-6) |
+| 8 | **Report Assembly** — Compile metrics, bottlenecks, recommendations | 1-2 min | No (needs step 7) |
+
+**Rules:**
+- Spawn subagents for atomic tasks (use `lightContext:true`)
+- Parallelize independent checks (steps 2-6)
+- Build must complete first (step 1 blocks everything)
+- Never monolithic "profile everything" runs — target specific metrics

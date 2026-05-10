@@ -623,3 +623,65 @@ git commit -m "Add <TICKER> <document-type> <period> to wiki"
 **Pipeline:** Investment analysis workflows (separate from coding pipeline)
 **Team Role:** Warren joins when investment thesis, valuation, or moat analysis is needed
 **Handoff to Mickey:** Thesis complete → saved to theses/ → watchlist updated → MEMORY.md updated
+
+---
+
+## ⚡ Task Decomposition Protocol (MANDATORY)
+
+**Per AGENTS.md:** Complex tasks (≥1 min, multi-turn) MUST be decomposed into atomic 1-2 min subtasks.
+
+### Pre-Flight Decomposition Check (MANDATORY — Added 2026-05-10)
+
+**Decompose BEFORE executing if ANY apply:**
+- ❌ Cannot complete in a **single turn** (work spans multiple responses)
+- ❌ Requires **subagent spawns** (each spawn = separate turn for result)
+- ❌ Has **sequential dependencies** between steps (step 2 blocked by step 1 output)
+- ❌ External API calls with **failure/retry risk** (web fetches, searches)
+
+**Can skip decomposition if:**
+- ✅ All work fits in **one turn** (multiple tool calls OK)
+- ✅ No subagents needed
+- ✅ No step depends on previous step's output
+- ✅ All tools are direct (`edit`/`read`/`write`/simple `exec`)
+
+**Time saved:** 1-10 minutes (avoiding wasted multi-turn execution if plan is wrong)
+
+**Example — Skip Decomposition:**
+```markdown
+Task: "Add pre-flight check to 3 skill files"
+→ 3x `edit` tool calls, all independent
+→ Completes in 1 turn (~15 seconds)
+→ NO decomposition needed
+```
+
+**Example — Requires Decomposition:**
+```markdown
+Task: "Update wiki for 83 companies"
+→ 83 stock directories to create
+→ 83 frontmatter injections
+→ 83 index rebuilds
+→ WATCHLIST.md update
+→ Git commit
+→ Sequential dependencies (can't rebuild index before frontmatter)
+→ 20+ turns, 30-60 min total
+→ DECOMPOSITION REQUIRED
+```
+
+### Warren's Standard Workflow Decomposition
+
+| Step | Subtask | Duration | Parallel OK? |
+|------|---------|----------|--------------|
+| 1 | **Data Gathering** — Pull financials, filings, metrics from wiki/web | 1-2 min | No (blocks all) |
+| 2 | **Business & Moat Analysis** — Document model, advantages, moat trend | 1-2 min | Yes (after step 1) |
+| 3 | **Financial Quality** — ROIC, margins, FCF, balance sheet | 1-2 min | Yes (after step 1) |
+| 4 | **Peer Comparison** — Matrix vs 3-5 competitors | 1-2 min | Yes (after step 1) |
+| 5 | **Scenario Modeling** — Bull/base/bear with probabilities | 1-2 min | No (needs 2-4) |
+| 6 | **Catalyst & Invalidation** — Catalysts + thesis break conditions | 1-2 min | Yes (after step 2) |
+| 7 | **Report Assembly** — Compile full report in mandatory format | 1-2 min | No (needs 5-6) |
+| 8 | **Delivery** — Email/save to wiki/update MEMORY.md | 1-2 min | No (final step) |
+
+**Rules:**
+- Spawn subagents for atomic tasks (use `lightContext:true`)
+- Orchestrate dependencies (don't parallelize blocked steps)
+- Report progress to Mickey after decomposition
+- Never monolithic "analyze everything" runs — they timeout

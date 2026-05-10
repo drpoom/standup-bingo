@@ -27,6 +27,17 @@
 4. **Privacy**: Ask before external actions
 5. **Groups**: Participate, don't dominate
 6. **Version bump**: Every bugfix commit MUST update VERSION constant in `src/App.vue` BEFORE building/deploying. **CRITICAL:** Always verify `git diff` shows VERSION change before `npm run build`. Missing this = deployed code won't match version badge.
+7. **Task Routing**: Mickey classifies tasks as simple vs complex:
+   - **Simple (<1 min, single-turn)**: Mickey handles directly (data fetching) or spawns Byte (code) / Sashay (creative)
+   - **Complex (≥1 min, multi-turn)**: Mickey MUST spawn planning agent first (Archie/Warren/Scout by topic) → breaks into atomic 1-2 min subtasks → Mickey orchestrates execution
+
+8. **DECOMPOSITION PROTOCOL (MANDATORY — Added 2026-05-10)**:
+   - **NEVER spawn subagent with "decompose AND execute" task** — this is Mickey's job, not the subagent's
+   - **Step 1: Spawn planner with DECOMPOSE-ONLY task** (e.g., "Break this into atomic subtasks, do NOT execute")
+   - **Step 2: Planner returns decomposition** (list of 10-20 atomic tasks, 1-2 min each, with dependencies)
+   - **Step 3: Mickey spawns executors** for each atomic task (parallel where independent, serialized where blocked)
+   - **Step 4: Mickey aggregates results** and delivers to user
+   - **Verification:** Before spawning ANY subagent, Mickey asks: "Am I asking this agent to decompose OR execute?" If both → VIOLATION → split into two spawns
 
 ---
 
@@ -34,8 +45,9 @@
 
 - **Always** `lightContext: true` when spawning subagents
 - **Lean prompts**: <500 chars simple, <1000 complex
-- **Atomic tasks**: ~100 lines max per task
+- **Atomic tasks**: ~100 lines max per task (1-2 min execution)
 - **Commit BEFORE deploy**: Push to main before gh-pages
+- **Mickey's role**: Strict router/orchestrator only — no coding or deep analysis
 
 ---
 
@@ -86,3 +98,7 @@
 | CI polling blocks | Use cron, not `sleep` loops |
 | Smart quotes break build | Use backtick template literals |
 | Emoji ZWJ breaks edit | Use `write` instead of `edit` |
+| Mickey coding directly | Violated task routing protocol — spawn Byte instead |
+| **Mickey spawns monolithic subagent tasks** (2026-05-10) | **VIOLATION: Spawned Warren with "do all wiki updates" instead of decomposing first** → **FIX: Mickey MUST spawn planner agent (Archie/Warren/Scout) with DECOMPOSE-ONLY task first, THEN orchestrate atomic subtasks. Never embed "decompose AND execute" in single spawn.** |
+| **Warren skips wiki auto-update protocol** (2026-05-10) | **VIOLATION: Generated analysis reports but didn't update wiki** → **FIX: Added mandatory checkpoint to warren-investing skill — wiki update MUST execute after ANY analysis completes, with verification step and ERROR reporting if it fails** |
+| **Warren/Scout execute without pre-flight decomposition** (2026-05-10) | **VIOLATION: Agents executed complex tasks without reporting decomposition first** → **FIX: Added Pre-Flight Decomposition Check to warren-investing, security-audit, performance-profiling skills — agents MUST report task list to Mickey BEFORE executing, wait for "Proceed" approval** |

@@ -1,0 +1,61 @@
+# Coverage Reports — Batch B (Stocks 7–12)
+
+---
+
+## 7. MU — Micron Technology
+
+**Business Overview & Moat:** Micron is the third-largest DRAM manufacturer globally, operating in a tight oligopoly alongside Samsung and SK Hynix. The company produces both DRAM and NAND flash memory, serving data centers, mobile, automotive, and consumer markets. Its moat rests on the enormous capital barriers to entry in memory fabrication and the oligopolistic market structure that limits new competition. However, Micron's moat score of 3 reflects the reality that memory is deeply cyclical — pricing power evaporates in downturns, and Micron has historically lagged SK Hynix in high-bandwidth memory (HBM) technology, which is the fastest-growing segment for AI workloads. CHIPS Act funding supports US fab expansion (Clay, NY; Boise, ID), which could provide a long-term structural advantage in domestic supply.
+
+**Financial Health & Valuation:** FY2024 was a cyclical trough: just $0.8B net income on $25.1B revenue, with negative $1.0B FCF and $5.0B net debt. The $8.0B CapEx program consumed all operating cash. The trailing P/E of 1,053 and EV/EBITDA of 130 are meaningless trough multiples. The thesis rests on a projected 38% revenue CAGR to ~$48B by FY2026E with $14B net income, implying a forward P/E of ~60x — still rich even at peak earnings. Net debt of $5B is manageable but limits financial flexibility during extended downturns.
+
+**Catalysts & Risks:** The primary catalyst is the HBM ramp for AI data centers, where Micron is gaining share but still trails SK Hynix. DRAM pricing recovery through 2025-26 should drive margin expansion. Key risks include: (1) memory cyclicality — any demand shock resets the earnings trajectory; (2) HBM execution risk versus SK Hynix's lead; (3) $8B+ annual CapEx with negative FCF during troughs. This is a classic cyclical name — the current valuation appears mid-cycle rather than trough, limiting the margin of safety.
+
+---
+
+## 8. 000660.KS — SK Hynix
+
+**Business Overview & Moat:** SK Hynix is the world's #2 DRAM manufacturer and the undisputed leader in HBM (High Bandwidth Memory), which is the critical memory component for AI accelerators. The company's proprietary TC NCF (Thermal Compression Non-Conductive Film) packaging for HBM gives it a meaningful technology lead over Samsung and Micron. As the primary HBM supplier to NVIDIA, SK Hynix sits at the center of the AI infrastructure buildout. Its moat score of 3 reflects the oligopolistic DRAM structure but acknowledges that memory cyclicality limits moat durability — even a dominant HBM position doesn't insulate from DRAM/NAND price cycles.
+
+**Financial Health & Valuation:** FY2024 showed strong recovery: $32B revenue, 42% gross margin, $4B net income, and a net cash position of $3B. However, FCF was near zero as $12B in CapEx consumed operating cash flows. The trailing P/E of 40 and EV/EBITDA of 8 appear divergent — the low EV/EBITDA reflects near-zero FCF and heavy CapEx, while the P/E prices in cyclical earnings recovery. FY2026E projects $17B net income, implying a forward P/E of ~9x, which is attractive if the HBM cycle sustains. The net cash balance sheet provides a meaningful cushion versus leveraged peers.
+
+**Catalysts & Risks:** The dominant catalyst is HBM3E demand, where SK Hynix commands >50% market share with NVIDIA as the primary customer. Revenue CAGR of 31% through FY2026E is driven almost entirely by HBM. Key risks: (1) extreme customer concentration on NVIDIA — any demand slowdown at NVIDIA cascades directly; (2) memory cyclicality — HBM premium pricing could compress as Samsung and Micron catch up; (3) $12B annual CapEx with near-zero FCF leaves no room for execution missteps; (4) TSMC dependency for HBM base die logic is a critical supply chain vulnerability. Best pure-play HBM exposure, but timing the memory cycle remains paramount.
+
+---
+
+## 9. INTC — Intel
+
+**Business Overview & Moat:** Intel is the world's largest semiconductor IDM (integrated device manufacturer), with a dominant x86 CPU franchise and an ambitious foundry business (Intel Foundry Services). Its moat score of just 2 reflects a grim reality: the x86 installed base is eroding versus AMD's resurgence, the foundry business has accumulated $30B+ in operating losses with limited external customer traction, and process technology execution has been poor with repeated delays. The IDM model could be a structural advantage if executed well — vertical integration from design through manufacturing — but execution risk is extreme. Intel's adoption of High-NA EUV (first customer) is a bet on process leadership, not evidence of it.
+
+**Financial Health & Valuation:** FY2024 was bleak: $54B revenue with a net loss of $0.2B, negative $15B FCF, $25B net debt, and $25B in annual CapEx. The P/E is not meaningful (negative earnings), and EV/EBITDA of 81 reflects the massive enterprise value against minimal operating profit. Even optimistic FY2026E projections of $5B net income imply a P/E of ~126x. Revenue CAGR of just 5% through FY2026E suggests the turnaround is more about margin recovery than growth. The balance sheet is stretched — $25B net debt with negative FCF is a dangerous combination.
+
+**Catalysts & Risks:** The entire thesis rests on Intel 18A process technology succeeding and attracting foundry customers. If Intel 18A delivers competitive yields and performance, the foundry business could become a viable third manufacturer alongside TSMC and Samsung. CHIPS Act funding provides some financial support. Risks are existential: (1) continued process execution failures would further erode credibility; (2) $25B/yr CapEx with negative FCF is unsustainable without external funding or asset sales; (3) AMD continues taking x86 share; (4) foundry customer pipeline remains thin. This is a deep turnaround story — only suitable for investors with very long time horizons and high conviction in management execution.
+
+---
+
+## 10. QCOM — Qualcomm
+
+**Business Overview & Moat:** Qualcomm dominates mobile SoC design through its Snapdragon platform and monetizes a vast wireless IP portfolio (5G/LTE patents) through licensing revenue. The moat score of 3 reflects strong IP licensing economics and mobile SoC dominance, offset by ARM architecture dependency — the ongoing legal dispute with ARM is an existential overhang that could restructure Qualcomm's cost structure. The mobile market is mature and cyclical, limiting organic growth. Qualcomm is diversifying into automotive (Snapdragon Cockpit, Car-to-Cloud) and IoT, but these segments remain early-stage and small relative to handset revenue.
+
+**Financial Health & Valuation:** FY2024 financials are solid: $38.9B revenue, 56.5% gross margin, $10B net income, and $10.5B FCF against just $2.5B CapEx. Net debt of $4B is minimal. P/E of 23 and EV/FCF of 22 are reasonable for a mature, cash-generative business with 9% revenue CAGR. The FCF conversion is excellent — Qualcomm generates nearly as much FCF as net income, reflecting the asset-light fabless model and IP licensing margins. The valuation is fair but not cheap, pricing in steady-state mobile cash flows with modest growth assumptions.
+
+**Catalysts & Risks:** Near-term catalysts include: (1) automotive design win pipeline converting to production revenue; (2) AI PC (Snapdragon X Elite) gaining share against Intel/AMD; (3) potential settlement with ARM removing the legal overhang. Key risks: (1) the ARM legal dispute is existential — an adverse ruling could force architecture changes or higher royalties; (2) China handset revenue (~50% of QCT) faces geopolitical risk and export control uncertainty; (3) mobile market cyclicality with limited secular growth; (4) Apple's in-house modem development could erode a key customer relationship over time. Solid value if ARM risk is manageable, but the legal overhang warrants a meaningful discount.
+
+---
+
+## 11. TXN — Texas Instruments
+
+**Business Overview & Moat:** Texas Instruments is the premier analog semiconductor company, with the industry's deepest and broadest analog portfolio spanning power management, signal chain, and embedded processing. Its moat score of 5 — the highest in this batch — reflects several structural advantages: a massive internal IP library with low obsolescence risk (analog products have 10-20+ year lifecycles), 95% in-house manufacturing target by 2030 across 7 assembly/test sites and multiple fabs, and a long-tail product strategy that serves hundreds of thousands of SKUs across diverse end markets. TI's analog moat is durable because analog design is experience-based rather than scaling-driven, making it resistant to the competitive dynamics that disrupt digital chipmakers.
+
+**Financial Health & Valuation:** FY2024 showed the analog cyclical trough: $17.5B revenue, 62% gross margin (still best-in-class even in downturn), $5.5B net income, and $4B FCF. Net debt of $7B is modest relative to cash generation. However, valuation is stretched: P/E of 48, EV/EBITDA of 33, and EV/FCF of 66 all price in the moat premium and the CapEx cycle inflection. The 12% revenue CAGR through FY2026E reflects recovery from the analog trough, not hypergrowth. CHIPS Act funding of $1.6B de-risks the US capacity build (Sherman, TX; Lehi, UT) but adds execution risk during ramp.
+
+**Catalysts & Risks:** The primary catalyst is analog demand recovery — TI is positioned at the cyclical trough with massive capacity investments that will drive margin expansion when utilization normalizes. The Sherman fab ramp in 2025-26 should begin contributing revenue. Key risks: (1) CapEx execution risk — $3.5B+ annually during a downturn compresses near-term margins; (2) analog cycle recovery timing is uncertain — industrial and automotive end markets remain soft; (3) premium valuation leaves no margin of safety for execution missteps or delayed recovery. TI is a compounder with the industry's best moat, but current pricing demands patience and flawless execution.
+
+---
+
+## 12. MRVL — Marvell Technology
+
+**Business Overview & Moat:** Marvell Technology is a fabless semiconductor company focused on data infrastructure — custom ASICs/XPUs for hyperscalers, high-speed Ethernet switching, and storage controllers. Its moat score of 3 reflects strong SerDes/Ethernet and custom silicon IP, but acknowledges the absence of any manufacturing moat (100% fabless, entirely TSMC-dependent). The hyperscaler custom ASIC business is the growth engine, with Marvell designing custom AI accelerators for major cloud providers. However, this creates a paradox: the growth thesis depends on TSMC CoWoS capacity that Marvell must compete for against NVIDIA and AMD, who have priority allocation.
+
+**Financial Health & Valuation:** FY2024 showed a company in transition: $5.8B revenue, 50% gross margin, -$0.2B net income (GAAP loss), and just $0.5B FCF. Net debt of $2B is manageable. The valuation is deeply speculative: P/E is not meaningful (negative earnings), EV/EBITDA of 60 and EV/FCF of 151 price in the 38% revenue CAGR thesis but offer no margin of safety. The 38% growth projection depends almost entirely on custom XPU volume ramping through TSMC CoWoS — a bottleneck Marvell doesn't control. CapEx is light ($0.5B) given the fabless model, but this also means no manufacturing leverage.
+
+**Catalysts & Risks:** The primary catalyst is hyperscaler custom ASIC revenue scaling — if Marvell's XPU designs win at multiple cloud providers and CoWoS capacity expands, the 38% CAGR is achievable. Near-term, Ethernet switching (5nm → 2nm transition) and data center interconnect products provide baseline growth. Key risks are severe: (1) TSMC CoWoS allocation is the #1 chokepoint — any capacity squeeze from NVIDIA/AMD priority directly hits Marvell's revenue trajectory; (2) GAAP unprofitability means the company is priced entirely on forward projections; (3) hyperscaler customers could bring custom ASIC design in-house, disintermediating Marvell; (4) at EV/FCF of 151, any growth deceleration causes significant multiple compression. This is a high-conviction AI infrastructure bet with asymmetric risk — wait for profitability inflection or CoWoS capacity expansion before committing.

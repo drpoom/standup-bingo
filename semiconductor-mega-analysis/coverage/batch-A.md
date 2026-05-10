@@ -1,0 +1,61 @@
+# Coverage Reports — Batch A (Stocks 1–6)
+
+---
+
+## 1. NVIDIA (NVDA) — Fabless GPU/AI | $5.23T Market Cap
+
+**Business Overview & Moat:** NVIDIA is the dominant force in AI compute, commanding 80%+ market share in AI training and inference GPUs. Its CUDA software ecosystem has created unassailable developer network effects — over two decades of accumulated libraries, frameworks, and developer mindshare that no competitor has replicated. The company operates a fabless model, relying almost entirely on TSMC for manufacturing, but its value creation lies in chip architecture and software. NVIDIA's data center segment has become the growth engine, with the Hopper (H100/H200) and Blackwell (B100/B200) architectures driving explosive demand from hyperscalers and sovereign AI initiatives. No credible alternative ecosystem exists for large-scale AI workloads, making NVIDIA's moat arguably the widest in semiconductors.
+
+**Financial Health & Valuation:** FY2024 revenue of $60.9B with 72.7% gross margins reflects extraordinary pricing power. The company holds $21.5B in net cash, providing a solid balance sheet cushion. However, the valuation is extreme — P/E of 176 and EV/EBITDA of 63 price in sustained hypergrowth well beyond current earnings. Revenue CAGR of ~65% through 2026E is remarkable, but any deceleration would compress multiples violently. FCF of $23.5B on $6.5B CapEx shows capital efficiency, though CoWoS packaging constraints at TSMC remain the gating factor for supply.
+
+**Catalysts & Risks:** Near-term catalysts include Blackwell ramp, sovereign AI infrastructure deals, and expanding inference demand. The key risks are cyclical: AI capex fatigue among hyperscalers, potential demand overshoot (especially if training efficiency improves), and CoWoS/HBM supply bottlenecks limiting upside. Geopolitically, NVIDIA faces escalating US export controls on China sales. The valuation leaves zero margin of safety — this is a momentum-driven holding where entry timing matters enormously.
+
+---
+
+## 2. TSMC (2330.TW) — Foundry Monopoly | ~$1T Market Cap
+
+**Business Overview & Moat:** TSMC is the world's indispensable advanced semiconductor manufacturer, holding a near-monopoly on leading-edge logic (5nm/3nm/2nm) with no viable competitor at equivalent yields. Its moat is built on 30+ years of process engineering, cumulative learning, and staggering $30B annual CapEx that creates insurmountable barriers to entry. Every major fabless company — NVIDIA, AMD, Qualcomm, Apple — depends on TSMC for their most advanced chips. The company's CoWoS advanced packaging technology has become a critical bottleneck for AI chip production, further cementing its strategic importance. TSMC is expanding fabs in Arizona, Japan, and Germany, though yields at overseas nodes remain a work in progress.
+
+**Financial Health & Valuation:** FY2024 revenue of $87B with 57.5% gross margins and $36B net income makes TSMC one of the most profitable companies on earth. P/E of 28 and EV/EBITDA of 19 are reasonable for a near-monopoly growing at 16% CAGR. The apparent FCF shortfall ($15B vs. $36B net income) reflects the massive $30B annual CapEx cycle — this is investment, not distress. Net cash of $15B adds balance sheet strength. EV/FCF of 67 looks elevated but normalizes when CapEx intensity moderates post-buildout.
+
+**Catalysts & Risks:** Key catalysts include 2nm ramp (2025), expanding CoWoS capacity to relieve AI bottlenecks, and pricing power from supply scarcity. The existential risk is geopolitical — a Taiwan Strait conflict would be catastrophic for TSMC and global tech. This risk is real and largely unpriceable, contributing to the "Korean/Taiwanese discount" on valuation. Near-term risks include Intel Foundry's competitive ambitions (unlikely to threaten near-term) and potential demand normalization if AI capex slows. For long-term investors comfortable with geopolitical risk, TSMC is a classic wide-moat compounder at a fair price.
+
+---
+
+## 3. ASML (ASML) — EUV Lithography Monopoly | $537B Market Cap
+
+**Business Overview & Moat:** ASML holds an absolute monopoly on EUV lithography — the only company on earth that manufactures EUV scanners, and every advanced chip below ~7nm requires them. This is arguably the narrowest and most defensible chokepoint in the entire semiconductor value chain. The moat is reinforced by sole-source dependencies: Carl Zeiss for EUV optics, Trumpf for CO₂ lasers, and decades of mechatronics expertise from Philips/VDL. No substitute technology exists, and replicating ASML's position would require tens of billions and 15+ years. High-NA EUV, now entering production, extends the monopoly into the angstrom era.
+
+**Financial Health & Valuation:** FY2024 revenue of $28.3B with 51.5% gross margins and $7.6B net income reflects premium pricing for irreplaceable technology. FCF of $7.5B on just $2B CapEx makes ASML remarkably capital-light compared to foundries — a key advantage. Net cash of $4.5B. However, P/E of 71 and EV/EBITDA of 51 are steep, reflecting the market's recognition of ASML's irreplaceable positioning. Revenue CAGR of ~16% through 2026E is solid but not explosive, meaning current multiples already embed significant future growth.
+
+**Catalysts & Risks:** High-NA EUV ramp is the primary growth catalyst, enabling sub-2nm nodes and driving next-generation tool orders. Export controls on China (~25-30% of potential market) cap near-term upside and create order volatility. The cyclical nature of equipment orders means ASML's revenue can swing sharply with foundry CapEx cycles — 2024-2025 is an upcycle, but the next downturn will compress bookings. Geopolitical escalation around China restrictions remains an ongoing risk. ASML is a premium asset at a premium price — best accumulated during cyclical downturns.
+
+---
+
+## 4. AMD (AMD) — Fabless CPU/GPU/AI | $742B Market Cap
+
+**Business Overview & Moat:** AMD is the #2 x86 processor vendor (duopoly with Intel) and the distant #2 in AI accelerators behind NVIDIA. Its chiplet architecture is innovative and has driven impressive server CPU share gains, but the approach is increasingly replicable. The critical gap is software: AMD lacks a CUDA-equivalent ecosystem, and its ROCm platform remains far behind in developer adoption. The MI300X/MI325X AI accelerators are technically competitive on hardware specs but struggle against NVIDIA's software lock-in. AMD's moat score of 3 reflects improving but not dominant positioning — it wins on price/performance in many segments but lacks the ecosystem gravity of NVIDIA or the manufacturing scale of TSMC.
+
+**Financial Health & Valuation:** FY2024 revenue of $25.8B with 52% gross margins and only $1.6B net income tells the story — AMD is investing heavily to compete in AI, suppressing current profitability. P/E of 465 on FY2024 earnings is astronomical, though FY2026E net income of ~$8.5B would bring forward P/E to ~87 — still rich. FCF of $3B on $1B CapEx is decent, and net cash of $2.5B provides flexibility. The valuation prices in massive profit expansion that depends on AMD successfully ramping AI accelerator share against NVIDIA's entrenched position.
+
+**Catalysts & Risks:** Key catalysts include MI350 series launch (2025), continued server CPU share gains from Intel's ongoing struggles, and potential CoWoS capacity expansion enabling higher AI accelerator volumes. The primary risk is that NVIDIA's software moat proves too deep — AMD may win on hardware specs but lose on ecosystem. CoWoS packaging constraints at TSMC disproportionately hurt AMD, which gets lower priority than NVIDIA for advanced packaging capacity. Intel's potential turnaround (unlikely near-term but possible medium-term) could compress AMD's CPU margins. This is a high-beta bet on AI market expansion with meaningful execution risk.
+
+---
+
+## 5. Broadcom (AVGO) — Fabless Networking/AI/Custom ASIC | $2.04T Market Cap
+
+**Business Overview & Moat:** Broadcom occupies a unique position at the intersection of networking infrastructure, custom AI silicon, and enterprise software. Its deep IP in SerDes, PHY, and high-speed interconnects creates a networking moat that every data center needs — AI clusters require massive networking bandwidth that only Broadcom can provide at scale. The custom ASIC business (designing chips for Google's TPU, Meta's AI accelerators, etc.) creates deeply sticky hyperscaler relationships. The VMware acquisition adds a software moat with recurring revenue and enterprise lock-in. Moat score of 4 reflects strong but not monopolistic positioning — Broadcom dominates networking but faces competition in custom ASICs and software.
+
+**Financial Health & Valuation:** FY2024 revenue of $51.6B with 65% gross margins and $19B FCF on just $3B CapEx demonstrates exceptional capital efficiency — among the best in semiconductors. However, $53B in net debt from the VMware acquisition is significant (Net Debt/EBITDA of 1.8x), and FY2024 net income of $5.8B was depressed by integration costs. P/E of 113 reflects this earnings trough; FY2026E net income of ~$24B implies forward P/E of ~85, which remains elevated. The debt overhang is manageable given Broadcom's FCF generation but limits financial flexibility until paydown progresses.
+
+**Catalysts & Risks:** AI networking (Tomahawk 6, Jericho3-AI) and custom ASIC volume ramps are the primary growth catalysts — every large AI cluster needs Broadcom's switching and routing silicon. VMware integration and margin expansion should drive earnings normalization. Key risks include the heavy debt load constraining M&A optionality, potential hyperscaler vertical integration (designing their own networking chips), and CoWoS packaging constraints limiting custom ASIC volumes. Broadcom's proprietary 3.5D F2F packaging development could mitigate the CoWoS bottleneck long-term. The stock is priced for continued AI infrastructure spending — any hyperscaler capex pullback would hit hard.
+
+---
+
+## 6. Samsung Electronics (005930.KS) — Memory/Logic IDM | $420B Market Cap
+
+**Business Overview & Moat:** Samsung is the world's largest memory chipmaker (DRAM + NAND) and the only company attempting to compete with TSMC in advanced foundry logic (3nm GAA). Its vertical integration — spanning memory, logic foundry, displays, and consumer electronics — creates scale advantages no competitor can match. However, the moat is uneven: dominant in memory but lagging TSMC in foundry yields, and competing against SK Hynix in HBM where it has fallen behind. The foundry business is a strategic optionality play — currently a drag on margins but potentially valuable if yields improve. Samsung's IDM model gives it unique flexibility to co-optimize memory and logic, critical for HBM and advanced packaging.
+
+**Financial Health & Valuation:** FY2024 revenue of $210B makes Samsung one of the largest tech companies on earth, yet P/E of 19 and EV/EBITDA of 7 reflect the classic "Korean discount" — cyclical memory earnings, conglomerate discount, and corporate governance concerns suppress multiples. Net cash of $35B provides an enormous downside cushion. FY2025E net income of ~$32B and FY2026E ~$38B imply forward P/E of 13→11, making Samsung remarkably cheap on normalized earnings. The catch: $40B annual CapEx is enormous and FCF of $10B looks thin relative to revenue, reflecting heavy investment in foundry and memory capacity.
+
+**Catalysts & Risks:** Memory cycle upswing is the primary catalyst — DRAM and NAND pricing recovery drives outsized earnings leverage given Samsung's scale. HBM3E qualification and volume ramp could close the gap with SK Hynix. Foundry wins at 2nm would validate the strategic investment. Key risks include persistent foundry yield issues burning cash, HBM market share loss to SK Hynix becoming structural, and memory cyclicality reversing into a downcycle. Corporate governance (chaebol structure, cross-holdings) remains a discount factor. For value-oriented investors, Samsung offers deep value with a massive balance sheet cushion — the question is whether the foundry optionality ever pays off.

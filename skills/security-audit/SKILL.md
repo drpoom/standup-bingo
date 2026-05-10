@@ -157,3 +157,65 @@ Add to Scout's pre-push checklist:
 2. ✅ No hardcoded secrets detected
 3. ✅ Security headers present on deployed site
 4. ✅ Auth flows tested (login, logout, session expiry)
+
+---
+
+## ⚡ Task Decomposition Protocol (MANDATORY)
+
+**Per AGENTS.md:** Complex tasks (≥1 min, multi-turn) MUST be decomposed into atomic 1-2 min subtasks.
+
+### Pre-Flight Decomposition Check (MANDATORY — Added 2026-05-10)
+
+**Decompose BEFORE executing if ANY apply:**
+- ❌ Cannot complete in a **single turn** (work spans multiple responses)
+- ❌ Requires **subagent spawns** (each spawn = separate turn for result)
+- ❌ Has **sequential dependencies** between steps (step 2 blocked by step 1 output)
+- ❌ External API calls with **failure/retry risk** (web fetches, searches)
+
+**Can skip decomposition if:**
+- ✅ All work fits in **one turn** (multiple tool calls OK)
+- ✅ No subagents needed
+- ✅ No step depends on previous step's output
+- ✅ All tools are direct (`edit`/`read`/`write`/simple `exec`)
+
+**Time saved:** 1-10 minutes (avoiding wasted multi-turn execution if plan is wrong)
+
+**Example — Skip Decomposition:**
+```markdown
+Task: "Run security audit on 5 files"
+→ 5x `read` + grep patterns, all independent
+→ Completes in 1 turn (~20 seconds)
+→ NO decomposition needed
+```
+
+**Example — Requires Decomposition:**
+```markdown
+Task: "Full pre-deployment security audit"
+→ Dependency scan (npm audit, pip audit, osv-scanner)
+→ Secret detection (grep across entire codebase)
+→ Code review (SQL injection, XSS, CSRF patterns)
+→ Config security check (CORS, HTTPS, headers)
+→ Deployed site browser audit
+→ Report assembly
+→ Sequential: report needs all checks complete
+→ 6+ turns, 5-10 min total
+→ DECOMPOSITION REQUIRED
+```
+
+### Scout's Security Audit Decomposition
+
+| Step | Subtask | Duration | Parallel OK? |
+|------|---------|----------|--------------|
+| 1 | **Dependency Scan** — `npm audit` / `pip audit` / `osv-scanner` | 1-2 min | No (blocks all) |
+| 2 | **Secret Detection** — Grep patterns for API keys, tokens, passwords | 1-2 min | Yes (after step 1) |
+| 3 | **Code Review** — SQL injection, XSS, CSRF, auth bypass patterns | 1-2 min | Yes (after step 1) |
+| 4 | **Config Security** — CORS, HTTPS, security headers, debug mode | 1-2 min | Yes (after step 1) |
+| 5 | **Deployed Site Check** — Browser audit for headers, HTTPS enforcement | 1-2 min | Yes (after step 1) |
+| 6 | **Report Assembly** — Compile findings, severity, fix recommendations | 1-2 min | No (needs 2-5) |
+| 7 | **Alert if Critical** — Message user immediately if critical/high found | <1 min | No (after step 6) |
+
+**Rules:**
+- Spawn subagents for atomic tasks (use `lightContext:true`)
+- Parallelize independent checks (steps 2-5)
+- Never run monolithic "scan everything" — break into targeted checks
+- Critical findings → alert immediately, don't wait for full report

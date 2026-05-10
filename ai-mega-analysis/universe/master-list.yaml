@@ -1,0 +1,143 @@
+# AI Mega-Analysis — Master Company Universe
+# 67 companies across 10 layers of the AI value chain
+# Created: 2026-05-10 | Updated: 2026-05-11 (added Xetra + HKEX)
+
+layers:
+  L1_chips:
+    name: "Layer 1 — AI Chips (GPU/AI Accelerators)"
+    companies:
+      - {ticker: NVDA, name: NVIDIA, region: US, note: "AI chip kingpin, H100/B200"}
+      - {ticker: AMD, name: AMD, region: US, note: "MI300X GPU challenger"}
+      - {ticker: AVGO, name: Broadcom, region: US, note: "Custom AI ASICs (Google TPU)"}
+      - {ticker: MRVL, name: Marvell, region: US, note: "Custom AI chips + networking"}
+      - {ticker: INTC, name: Intel, region: US, note: "Gaudi3, foundry pivot"}
+      - {ticker: 005930.KS, name: Samsung Electronics, region: KR, note: "HBM + AI ASIC foundry"}
+      - {ticker: 000660.KS, name: SK Hynix, region: KR, note: "HBM3E market leader"}
+
+  L2_memory:
+    name: "Layer 2 — AI Memory (HBM/DRAM/NAND)"
+    companies:
+      - {ticker: MU, name: Micron, region: US, note: "HBM3E, US memory champion"}
+      - {ticker: WDC, name: Western Digital, region: US, note: "NAND recovery play"}
+      - {ticker: 6645.T, name: Kioxia, region: JP, note: "NAND leader (pre-IPO)"}
+
+  L3_design:
+    name: "Layer 3 — Chip Design & EDA"
+    companies:
+      - {ticker: SNPS, name: Synopsys, region: US, note: "EDA duopoly, AI design tools"}
+      - {ticker: CDNS, name: Cadence, region: US, note: "EDA duopoly, AI design tools"}
+      - {ticker: ARM, name: ARM Holdings, region: US, note: "AI chip architecture monopoly"}
+
+  L4_equipment:
+    name: "Layer 4 — Semiconductor Equipment"
+    companies:
+      - {ticker: ASML, name: ASML, region: EU, note: "EUV monopoly"}
+      - {ticker: AMAT, name: Applied Materials, region: US, note: "Equipment broad leader"}
+      - {ticker: LRCX, name: Lam Research, region: US, note: "Etch leader"}
+      - {ticker: KLAC, name: KLA, region: US, note: "Process control monopoly"}
+      - {ticker: 8035.T, name: Tokyo Electron, region: JP, note: "Japan #1 equipment"}
+      - {ticker: 6702.T, name: Advantest, region: JP, note: "AI chip test leader"}
+      - {ticker: 4063.T, name: Shin-Etsu Chemical, region: JP, note: "Si wafer monopoly"}
+
+  L5_foundry:
+    name: "Layer 5 — Foundry & OSAT"
+    companies:
+      - {ticker: 2330.TW, name: TSMC, region: TW, note: "Foundry monopoly, AI chips"}
+      - {ticker: 3711.TW, name: ASE Technology, region: TW, note: "OSAT leader"}
+      - {ticker: 0981.HK, name: SMIC, region: CN, note: "China foundry champion"}
+      - {ticker: 6723.T, name: Renesas, region: JP, note: "Auto MCU + foundry"}
+
+  L6_analog:
+    name: "Layer 6 — Analog/Power/MCU"
+    companies:
+      - {ticker: TXN, name: Texas Instruments, region: US, note: "Analog king, AI power"}
+      - {ticker: ADI, name: Analog Devices, region: US, note: "High-performance analog"}
+      - {ticker: STM, name: STMicroelectronics, region: EU, note: "Auto/ind analog"}
+      - {ticker: IFX, name: Infineon, region: EU, note: "Power semi leader"}
+      - {ticker: ON, name: onsemi, region: US, note: "Auto SiC power"}
+      - {ticker: NXPI, name: NXP, region: US, note: "Auto processor leader"}
+      - {ticker: MPWR, name: Monolithic Power, region: US, note: "AI power management"}
+      - {ticker: 6861.T, name: Keyence, region: JP, note: "Factory automation sensors"}
+      - {ticker: SIE.DE, name: Siemens, region: DE, note: "Industrial AI + digital twin + automation"}
+      - {ticker: 1810.HK, name: Xiaomi, region: CN, note: "Edge AI devices + EV + IoT"}
+
+  L7_networking:
+    name: "Layer 7 — AI Networking & Connectivity"
+    companies:
+      - {ticker: ANET, name: Arista Networks, region: US, note: "AI data center switching"}
+      - {ticker: MRVL, name: Marvell, region: US, note: "Also in L1; networking ASICs"}
+      - {ticker: CIEN, name: Ciena, region: US, note: "Optical networking for AI"}
+      - {ticker: FSLY, name: Fastly, region: US, note: "Edge CDN for AI inference"}
+
+  L8_infra:
+    name: "Layer 8 — AI Infrastructure (Cloud/Hyperscale)"
+    companies:
+      - {ticker: MSFT, name: Microsoft, region: US, note: "Azure AI, OpenAI partner"}
+      - {ticker: GOOGL, name: Alphabet, region: US, note: "TPU, Gemini, DeepMind"}
+      - {ticker: AMZN, name: Amazon, region: US, note: "AWS AI, Trainium/Inferentia"}
+      - {ticker: META, name: Meta Platforms, region: US, note: "Llama, massive AI capex"}
+      - {ticker: ORCL, name: Oracle, region: US, note: "Cloud AI infra"}
+      - {ticker: 9988.HK, name: Alibaba, region: CN, note: "Cloud + AI chips (Yitian)"}
+      - {ticker: 0700.HK, name: Tencent, region: CN, note: "Cloud + AI infra + WeChat AI"}
+      - {ticker: 9888.HK, name: Baidu, region: CN, note: "AI search + Ernie LLM + cloud"}
+      - {ticker: DTE.DE, name: Deutsche Telekom, region: DE, note: "AI infrastructure + data centers"}
+      - {ticker: 3896.HK, name: Kingsoft Cloud, region: CN, note: "Cloud AI infra"}
+
+  L9_data:
+    name: "Layer 9 — AI Data & Software"
+    companies:
+      - {ticker: PLTR, name: Palantir, region: US, note: "AI analytics platform"}
+      - {ticker: SNOW, name: Snowflake, region: US, note: "AI data cloud"}
+      - {ticker: DDOG, name: Datadog, region: US, note: "AI observability"}
+      - {ticker: MDB, name: MongoDB, region: US, note: "AI-ready database"}
+      - {ticker: AI, name: C3.ai, region: US, note: "Enterprise AI platform"}
+      - {ticker: PATH, name: UiPath, region: US, note: "AI automation/RPA"}
+      - {ticker: APLS, name: Applovin, region: US, note: "AI advertising engine"}
+      - {ticker: SAP.DE, name: SAP, region: DE, note: "Enterprise AI + cloud platform"}
+      - {ticker: 0020.HK, name: SenseTime, region: CN, note: "AI vision + LLM platform"}
+      - {ticker: 1024.HK, name: Kuaishou, region: CN, note: "AI recommendation engine"}
+      - {ticker: BNTX.DE, name: BioNTech, region: DE, note: "AI drug discovery + mRNA"}
+      - {ticker: QIA.DE, name: Qiagen, region: DE, note: "AI bioinformatics + genomics"}
+
+  L10_power:
+    name: "Layer 10 — AI Power & Cooling"
+    companies:
+      - {ticker: VST, name: Vistra, region: US, note: "Nuclear power for AI DCs"}
+      - {ticker: CEG, name: Constellation Energy, region: US, note: "Nuclear + AI PPAs"}
+      - {ticker: GEV, name: GE Vernova, region: US, note: "Gas turbines for AI power"}
+      - {ticker: ETN, name: Eaton, region: US, note: "Power management for AI DCs"}
+      - {ticker: VRT, name: Vertiv, region: US, note: "AI data center cooling"}
+      - {ticker: SMID, name: Super Micro Computer, region: US, note: "AI server racks"}
+      - {ticker: 0992.HK, name: Lenovo, region: CN, note: "AI server + edge computing"}
+
+# Reuse mapping: companies with existing semiconductor-mega-analysis wiki data
+reuse_from_semi:
+  - 000660.KS  # SK Hynix
+  - 005930.KS  # Samsung
+  - 2330.TW    # TSMC
+  - MU         # Micron
+  - NVDA       # NVIDIA
+  - AMD        # AMD
+  - AVGO       # Broadcom
+  - MRVL       # Marvell
+  - INTC       # Intel
+  - WDC        # Western Digital
+  - SNPS       # Synopsys
+  - CDNS       # Cadence
+  - ASML       # ASML
+  - AMAT       # Applied Materials
+  - LRCX       # Lam Research
+  - KLAC       # KLA
+  - 8035.T     # Tokyo Electron
+  - 6702.T     # Advantest
+  - 4063.T     # Shin-Etsu
+  - 3711.TW    # ASE Technology
+  - 6723.T     # Renesas
+  - TXN        # Texas Instruments
+  - ADI        # Analog Devices
+  - STM        # STMicro
+  - IFX        # Infineon
+  - ON         # onsemi
+  - NXPI       # NXP
+  - MPWR       # Monolithic Power
+  - 6861.T     # Keyence
