@@ -272,7 +272,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import ThemePicker from './ThemePicker.vue'
 import PlayerAvatar from './PlayerAvatar.vue'
 import CustomPhraseEditor from './CustomPhraseEditor.vue'
@@ -294,6 +294,10 @@ const props = defineProps({
   gamePhase: {
     type: String,
     default: 'LOBBY' // 'LOBBY' | 'PLAYING'
+  },
+  gameState: {
+    type: Object,
+    required: true
   }
 })
 
@@ -309,7 +313,7 @@ const teamCode = ref('')
 const playerName = ref('')
 const selectedTheme = ref('default')
 const dateISO = ref('')
-const inRoom = ref(false)
+const inRoom = computed(() => !!props.gameState.teamCode)
 const isReady = ref(false)
 const selectedTransferTarget = ref('')
 const customPhrases = ref(null)
@@ -333,7 +337,7 @@ function handleThemeSelect(themeId) {
 function handleJoin() {
   if (teamCode.value.trim() && playerName.value.trim()) {
     dateISO.value = new Date().toISOString().split('T')[0]
-    inRoom.value = true
+    props.gameState.teamCode = teamCode.value.trim().toUpperCase()
     emit('join', teamCode.value.trim().toUpperCase(), playerName.value.trim(), selectedTheme.value, dateISO.value)
   }
 }
@@ -369,13 +373,4 @@ function formatJoinTime(timestamp) {
   if (diff < 3600) return `${Math.floor(diff / 60)}m ago`
   return `${Math.floor(diff / 3600)}h ago`
 }
-
-// Reset ready state when leaving room
-watch(inRoom, (newVal) => {
-  if (!newVal) {
-    isReady.value = false
-    teamCode.value = ''
-    playerName.value = ''
-  }
-})
 </script>
