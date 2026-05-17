@@ -28,12 +28,8 @@ const props = defineProps({
 
 // Map themes to DiceBear styles per CREATIVE.md
 const themeToStyle = {
-  'cyberpunk': 'bottts',
-  'retro': 'pixel-art',
-  'zen': 'lorelei',
   'embedded': 'identicon',
-  'default': 'avataaars',
-  'qa': 'avataaars'
+  'default': 'avataaars'
 }
 
 const avatarStyle = computed(() => 

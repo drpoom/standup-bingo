@@ -41,9 +41,7 @@ function selectTheme(themeId) {
 function getThemeEmoji(themeId) {
   const emojis = {
     default: '💼',
-    cyberpunk: '🌃',
-    retro: '🖥️',
-    zen: '🧘'
+    embedded: '🔧'
   }
   return emojis[themeId] || '🎨'
 }

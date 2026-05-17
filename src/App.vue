@@ -9,6 +9,12 @@
       class="fixed inset-0 pointer-events-none z-50"
     />
 
+    <!-- Onboarding Overlay -->
+    <OnboardingOverlay
+      v-if="showOnboarding"
+      @dismiss="dismissOnboarding"
+    />
+
     <!-- Lobby Screen -->
     <LobbyScreen
       v-if="gameState.phase === 'LOBBY'"
@@ -65,16 +71,18 @@
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { THEMES } from './data/themes.js'
 
-const VERSION = '2.2.1'
+const VERSION = '2.2.2'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
 import { useConfetti } from './composables/useConfetti'
 import { useNetworking } from './composables/useNetworking'
 import { useSoundEffects } from './composables/useSoundEffects'
+import { usePeerEvents } from './composables/usePeerEvents'
 import LobbyScreen from './components/LobbyScreen.vue'
 import GameScreen from './components/GameScreen.vue'
 import StatsPanel from './components/StatsPanel.vue'
+import OnboardingOverlay from './components/OnboardingOverlay.vue'
 
 const { generateCard, mergePhrases } = useBingoCard()
 const { gameState, enterLobby, startGame, toggleMark, finishGame, endGame, resetGame, formatTime, setHostPeerId, setCustomPhrases } = useGameState()
@@ -83,10 +91,29 @@ const { canvasRef, burst: burstConfetti, stop: stopConfetti } = useConfetti()
 const networking = useNetworking()
 const { playMarkSound, playBingoSound } = useSoundEffects()
 
+const showOnboarding = ref(false)
+
+// Initialize peer events composable with dependencies
+const {
+  networkPlayers,
+  toastMessage,
+  lobbyGamePhase,
+  handlePeerBingo,
+  setupPeerListener,
+  cleanupPeerListener
+} = usePeerEvents({
+  networking,
+  gameState,
+  generateCard,
+  startGame,
+  endGame,
+  setHostPeerId,
+  setCustomPhrases,
+  playBingoSound,
+  burstConfetti
+})
+
 const showConfetti = computed(() => gameState.phase === 'WON')
-const toastMessage = ref('')
-const networkPlayers = ref([])
-const lobbyGamePhase = ref('LOBBY') // 'LOBBY' | 'PLAYING' for host controls visibility
 const screenShake = ref(false)
 
 // Apply theme CSS custom properties to document root
@@ -115,77 +142,9 @@ watch(
   { immediate: true }
 )
 
-// Listen for peer data events
-function handlePeerData(event) {
-  const data = event.detail
-  
-  switch (data.type) {
-    case 'PLAYER_LIST':
-      networkPlayers.value = data.players
-      // Update host peer ID if provided
-      const host = data.players.find(p => p.isHost)
-      if (host) {
-        setHostPeerId(host.peerId)
-      }
-      break
-      
-    case 'GAME_START':
-      handleRemoteGameStart(data)
-      break
-      
-    case 'GAME_END':
-      handleRemoteGameEnd()
-      break
-      
-    case 'HOST_TRANSFER':
-      handleRemoteHostTransfer(data)
-      break
-      
-    case 'CUSTOM_PHRASES':
-      handleRemoteCustomPhrases(data)
-      break
-      
-    case 'BINGO':
-      handlePeerBingo(data)
-      break
-      
-    case 'MARK_UPDATE':
-      handleRemoteMarkUpdate(data)
-      break
-  }
-}
-
-function handleRemoteGameStart(data) {
-  const { theme, seed } = data
-  const teamCode = gameState.teamCode
-  const playerName = gameState.playerName
-  const dateISO = new Date().toISOString().split('T')[0]
-  
-  // Generate card with same seed
-  const grid = generateCard(teamCode, playerName, dateISO, theme, gameState.customPhrases, seed)
-  startGame(teamCode, playerName, grid, theme, seed, gameState.customPhrases)
-  lobbyGamePhase.value = 'PLAYING'
-}
-
-function handleRemoteGameEnd() {
-  endGame()
-  lobbyGamePhase.value = 'LOBBY'
-  networkPlayers.value = []
-}
-
-function handleRemoteHostTransfer(data) {
-  setHostPeerId(data.newHostPeerId)
-}
-
-function handleRemoteCustomPhrases(data) {
-  setCustomPhrases(data.phrases)
-}
-
-function handleRemoteMarkUpdate(data) {
-  const { row, col, marked } = data
-  if (gameState.grid[row] && gameState.grid[row][col]) {
-    gameState.grid[row][col].marked = marked
-  }
+function dismissOnboarding() {
+  showOnboarding.value = false
+  localStorage.setItem('standup-bingo-seen', 'true')
 }
 
 function handleJoin(teamCode, playerName, theme, dateISO) {
@@ -268,20 +227,6 @@ function handleToggleEmit({ row, col, wins }) {
   // Already handled in handleToggleMark
 }
 
-function handlePeerBingo(data) {
-  // Play bingo sound for peer bingo too
-  playBingoSound()
-  
-  // Show toast notification
-  toastMessage.value = `${data.playerName} got BINGO! 🎉`
-  burstConfetti()
-  
-  // Clear toast after 3 seconds
-  setTimeout(() => {
-    toastMessage.value = ''
-  }, 3000)
-}
-
 function handleContinue() {
   stopConfetti()
 }
@@ -317,11 +262,16 @@ watch(
 
 // Set up peer data listener
 onMounted(() => {
-  window.addEventListener('peer-data', handlePeerData)
+  setupPeerListener()
+  
+  // Check if onboarding should be shown
+  if (localStorage.getItem('standup-bingo-seen') === null) {
+    showOnboarding.value = true
+  }
 })
 
 onUnmounted(() => {
-  window.removeEventListener('peer-data', handlePeerData)
+  cleanupPeerListener()
 })
 </script>
 

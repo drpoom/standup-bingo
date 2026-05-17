@@ -14,8 +14,9 @@
           ? 'bg-blue-100 border-2 border-blue-500 text-slate-800 shadow-inner square-marked'
           : 'bg-white border-2 border-slate-200 text-slate-700 hover:border-slate-300 hover:shadow-md'
     ]"
+    :style="cell.isFree ? {} : (cell.marked ? { backgroundColor: 'var(--theme-accent-light)', borderColor: 'var(--theme-accent)', color: 'var(--theme-text)' } : { backgroundColor: 'var(--theme-primary)', borderColor: 'var(--theme-border)', color: 'var(--theme-text)' })"
   >
-    <span class="text-center leading-tight break-words line-clamp-3 max-w-full">
+    <span class="text-center leading-tight break-words line-clamp-3 max-w-full" :style="{ color: 'var(--theme-text)' }">
       {{ cell.phrase }}
     </span>
     <img
@@ -23,6 +24,7 @@
       :src="getMarkerForTheme(cell.theme || 'default')"
       alt=""
       class="w-8 h-8 sm:w-10 sm:h-10 opacity-40 pointer-events-none absolute"
+      :style="{ color: 'var(--theme-accent)' }"
     />
     <!-- Particle burst container -->
     <div v-if="showParticles" class="particle-container inset-0">
@@ -46,6 +48,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { getMarkerForTheme } from '../data/markerRegistry.js'
 
 const props = defineProps({
   row: {
@@ -106,18 +109,6 @@ function handleClick(event) {
 watch(() => props.row, () => {
   showParticles.value = false
 }, { deep: true })
-
-function getMarkerForTheme(themeId) {
-  const markerMap = {
-    'cyberpunk': '../assets/markers/cyberpunk-marker.svg',
-    'embedded': '../assets/markers/embedded-marker.svg',
-    'qa': '../assets/markers/qa-marker.svg',
-    'zen': '../assets/markers/zen-marker.svg',
-    'retro': '../assets/markers/retro-marker.svg',
-    'default': '../assets/markers/default-marker.svg'
-  }
-  return markerMap[themeId] || markerMap['default']
-}
 </script>
 
 <style scoped>
