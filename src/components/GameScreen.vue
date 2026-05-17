@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-slate-50">
+  <div class="min-h-screen bg-slate-50" style="overflow-x: hidden">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-10">
       <div class="max-w-6xl mx-auto px-3 sm:px-4 py-3 flex items-center justify-between">

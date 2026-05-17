@@ -21,34 +21,32 @@ export const THEMES = {
     },
     font: 'Inter, system-ui, sans-serif',
     vibe: 'Modern SaaS / Enterprise',
-    phrases: {
-      common: [
-        'Fixed a bug',
-        'Working on PR',
-        'Code review',
-        'Deployed to staging',
-        'Blocked by API',
-        'Refactoring legacy code',
-        'Updated dependencies',
-        'Writing tests',
-        'Debugging issue',
-        'Merged to main'
-      ],
-      meetings: [
-        'Sprint planning',
-        'Retrospective',
-        'Backlog grooming',
-        'Stakeholder demo',
-        'Architecture review'
-      ],
-      blockers: [
-        'Waiting for review',
-        'Need clarification',
-        'Environment issues',
-        'Third-party downtime',
-        'Merge conflicts'
-      ]
-    }
+    phrases: [
+      'Fixed a bug',
+      'Working on PR',
+      'Code review',
+      'Deployed to staging',
+      'Blocked by API',
+      'Refactoring legacy code',
+      'Updated dependencies',
+      'Writing tests',
+      'Debugging issue',
+      'Merged to main',
+      'Sprint planning',
+      'Retrospective',
+      'Backlog grooming',
+      'Stakeholder demo',
+      'Architecture review',
+      'Waiting on CI',
+      'Database migration',
+      'API integration',
+      'Merge conflict resolved',
+      'Hotfix deployed',
+      'Feature flag enabled',
+      'Tech debt paid',
+      'On-call rotation',
+      'Incident response'
+    ]
   },
   embedded: {
     id: 'embedded',
@@ -72,33 +70,80 @@ export const THEMES = {
     },
     font: 'JetBrains Mono, monospace',
     vibe: 'Embedded Systems / IoT',
-    phrases: {
-      common: [
-        'Flashed firmware',
-        'Debugging UART',
-        'Hardware bring-up',
-        'Sensor integration',
-        'Memory optimization',
-        'Real-time debugging',
-        'Peripheral config',
-        'Power management',
-        'Bootloader update',
-        'GPIO testing'
-      ],
-      hardware: [
-        'Oscilloscope session',
-        'Logic analyzer',
-        'PCB revision',
-        'Component shortage',
-        'Thermal testing'
-      ],
-      blockers: [
-        'Waiting for hardware',
-        'JTAG issues',
-        'Datasheet unclear',
-        'Toolchain problems',
-        'Flash memory full'
-      ]
-    }
+    phrases: [
+      'Flashed firmware',
+      'Debugging UART',
+      'Hardware bring-up',
+      'Sensor integration',
+      'Memory optimization',
+      'Real-time debugging',
+      'Peripheral config',
+      'Power management',
+      'Bootloader update',
+      'GPIO testing',
+      'Oscilloscope session',
+      'Logic analyzer',
+      'PCB revision',
+      'Component shortage',
+      'Thermal testing',
+      'SPI/I2C debugging',
+      'DMA configuration',
+      'Interrupt handler',
+      'Watchdog timer',
+      'Clock tree setup',
+      'EMC compliance',
+      'JTAG debugging',
+      'Flash memory wear',
+      'RTOS task scheduling'
+    ]
+  },
+  general: {
+    id: 'general',
+    name: 'General/QA',
+    description: 'General purpose and QA-focused phrases for cross-functional teams.',
+    colors: {
+      background: '#f0fdf4',
+      card: '#ffffff',
+      text: '#14532d',
+      accent: '#22c55e',
+      marked: '#bbf7d0',
+      border: '#86efac',
+    },
+    cssVars: {
+      '--theme-bg': '#f0fdf4',
+      '--theme-primary': '#ffffff',
+      '--theme-accent': '#22c55e',
+      '--theme-text': '#14532d',
+      '--theme-accent-light': '#bbf7d0',
+      '--theme-border': '#86efac',
+    },
+    font: 'Inter, system-ui, sans-serif',
+    vibe: 'General / QA Focus',
+    phrases: [
+      'Test case written',
+      'Bug verified',
+      'Regression testing',
+      'Test plan updated',
+      'Automation script',
+      'Manual testing',
+      'Performance test',
+      'Security scan',
+      'Accessibility check',
+      'Cross-browser test',
+      'Found edge case',
+      'Reproduced bug',
+      'Test environment ready',
+      'CI pipeline green',
+      'Coverage increased',
+      'Smoke test passed',
+      'Integration test',
+      'End-to-end test',
+      'Load testing',
+      'Bug triage',
+      'Test data prepared',
+      'Exploratory testing',
+      'Visual regression',
+      'API contract test'
+    ]
   }
 };

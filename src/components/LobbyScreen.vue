@@ -48,8 +48,11 @@
       <div v-if="!inRoom" class="glass-card relative z-10 p-5 sm:p-8 mb-6 sm:mb-8">
         <form @submit.prevent="handleJoin" class="space-y-6">
           <div>
-            <label for="teamCode" class="block text-sm font-medium text-white/90 mb-2">
+            <label for="teamCode" class="block text-sm font-medium text-white/90 mb-2 flex items-center gap-1">
               Team Code
+              <span class="cursor-help text-white/50 hover:text-white transition-colors" title="The unique identifier for your room. Share this with your teammates to join the same game.">
+                ℹ️
+              </span>
             </label>
             <input
               id="teamCode"
@@ -78,6 +81,11 @@
           </div>
 
           <ThemePicker v-model:theme="selectedTheme" @select="handleThemeSelect" />
+          <div class="text-right">
+            <span class="cursor-help text-white/50 hover:text-white transition-colors text-xs" title="Themes change the set of phrases on the bingo cards to match your team's vibe.">
+              ℹ️ What is a theme?
+            </span>
+          </div>
 
           <button
             type="submit"
@@ -172,7 +180,7 @@
                 : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
             ]"
           >
-            <img :src="isMuted ? '../assets/icons/ui/mute.svg' : '../assets/icons/ui/unmute.svg'" alt="" class="w-5 h-5" />
+            <img :src="isMuted ? muteIconUrl : unmuteIconUrl" alt="" class="w-5 h-5" />
             {{ isMuted ? 'Unmute' : 'Mute' }}
           </button>
         </div>
@@ -282,6 +290,10 @@ const props = defineProps({
 const emit = defineEmits(['join', 'start-game', 'end-game', 'transfer-host', 'toggle-ready', 'custom-phrases-updated'])
 
 const { isMuted, toggleMute } = useSoundEffects()
+
+// Pre-compute icon URLs (import.meta.url can't be used in template expressions)
+const muteIconUrl = new URL('../assets/icons/ui/mute.svg', import.meta.url).href
+const unmuteIconUrl = new URL('../assets/icons/ui/unmute.svg', import.meta.url).href
 
 const teamCode = ref('')
 const playerName = ref('')

@@ -1,25 +1,6 @@
 import { PHRASES } from '../data/phrases.js'
 import { THEMES } from '../data/themes.js'
-
-// Seeded PRNG - mulberry32
-function mulberry32(seed) {
-  return function () {
-    seed |= 0
-    seed = (seed + 0x6d2b79f5) | 0
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
-}
-
-// Hash function for strings
-function hashString(str) {
-  let h = 0
-  for (let i = 0; i < str.length; i++) {
-    h = Math.imul(31, h) + str.charCodeAt(i) | 0
-  }
-  return h
-}
+import { mulberry32, hashString } from '../utils/prng.js'
 
 // Get all phrases as a flat array
 function getAllPhrases() {
@@ -106,11 +87,8 @@ export function useBingoCard() {
     const theme = THEMES[themeId]
     if (!theme || !theme.phrases) return []
     
-    const all = []
-    for (const category of Object.values(theme.phrases)) {
-      all.push(...category)
-    }
-    return all
+    // theme.phrases is a flat array
+    return theme.phrases
   }
 
   return {
