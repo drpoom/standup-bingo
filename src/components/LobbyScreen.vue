@@ -1,6 +1,16 @@
 <template>
   <div class="min-h-screen lobby-bg relative">
-    <div class="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
+    <div class="circuit-bg">
+      <div class="circuit-layer-1"></div>
+      <div class="circuit-layer-2"></div>
+      <!-- Randomly placed glowing nodes -->
+      <div class="circuit-node-pulse" style="top: 20%; left: 15%;"></div>
+      <div class="circuit-node-pulse" style="top: 45%; left: 80%;"></div>
+      <div class="circuit-node-pulse" style="top: 70%; left: 30%;"></div>
+      <div class="circuit-node-pulse" style="top: 10%; left: 60%;"></div>
+      <div class="circuit-node-pulse" style="top: 85%; lefts: 70%;"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8 relative z-10">
       <!-- Header -->
       <div class="text-center mb-6 sm:mb-8 relative z-10">
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 flex items-center justify-center gap-2 sm:gap-3">

@@ -8,6 +8,7 @@
     :class="[
       'aspect-square flex items-center justify-center p-1.5 sm:p-2 rounded-lg cursor-pointer transition-all duration-200 select-none',
       'text-[10px] xs:text-xs sm:text-sm font-medium',
+      'bingo-square-hover',
       cell.isFree 
         ? 'bg-gradient-to-br from-yellow-400 to-orange-500 text-white shadow-lg' 
         : cell.marked

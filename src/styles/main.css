@@ -139,19 +139,25 @@
   background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
 }
 
-/* Responsive text sizing */
-@media (max-width: 640px) {
-  .bingo-text {
-    font-size: 0.7rem;
+/* Theme picker pulsing glow */
+@keyframes theme-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--theme-accent);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--theme-accent), 0 0 5px var(--theme-accent);
   }
 }
 
-/* Touch-friendly tap targets */
-@media (max-width: 640px) {
-  .touch-target {
-    min-height: 44px;
-    min-width: 44px;
-  }
+.theme-selected-pulse {
+  animation: theme-pulse 2s ease-in-out infinite;
+  border-color: var(--theme-accent) !important;
+}
+
+/* Player avatar glow ring */
+.avatar-glow-ring {
+  box-shadow: 0 0 8px var(--theme-accent);
+  border: 2px solid var(--theme-accent);
 }
 
 /* ===========================================
@@ -165,12 +171,12 @@
 
 .btn-game:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px var(--theme-accent), 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn-game:active {
   transform: scale(0.95);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px var(--theme-accent), 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* ===========================================
@@ -216,6 +222,16 @@
 
 .square-marked {
   animation: mark-pop 300ms ease-out;
+}
+
+/* Neon glow for Bingo squares on hover */
+.bingo-square-hover {
+  transition: box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.bingo-square-hover:hover {
+  box-shadow: 0 0 15px var(--theme-accent), 0 0 5px var(--theme-accent);
+  border-color: var(--theme-accent) !important;
 }
 
 /* ===========================================

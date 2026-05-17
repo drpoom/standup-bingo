@@ -1,21 +1,22 @@
 <template>
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center transform animate-bounce-in">
+  <div class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm" :style="{ backgroundColor: 'var(--theme-overlay)' }">
+    <div class="rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center transform animate-bounce-in" :style="{ backgroundColor: 'var(--theme-surface)' }">
       <div class="text-6xl mb-4">🎉</div>
-      <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-2">
+      <h2 class="text-4xl font-bold mb-2" :style="{ background: 'var(--theme-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }">
         BINGO!
       </h2>
-      <p class="text-slate-600 mb-6">
+      <p class="mb-6" :style="{ color: 'var(--theme-text-muted)' }">
         {{ victoryMessages[Math.floor(Math.random() * victoryMessages.length)] }}
       </p>
 
-      <div class="bg-slate-50 rounded-lg p-4 mb-6">
-        <div class="text-sm text-slate-500 mb-1">Winning pattern</div>
+      <div class="rounded-lg p-4 mb-6" :style="{ backgroundColor: 'var(--theme-bg-secondary)' }">
+        <div class="text-sm mb-1" :style="{ color: 'var(--theme-text-muted)' }">Winning pattern</div>
         <div class="flex flex-wrap gap-2 justify-center">
           <span
             v-for="(bingo, index) in bingos"
             :key="index"
-            class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+            class="px-3 py-1 rounded-full text-sm font-medium"
+            :style="{ backgroundColor: 'var(--theme-accent-light)', color: 'var(--theme-accent)' }"
           >
             {{ formatBingoType(bingo) }}
           </span>
@@ -24,7 +25,8 @@
 
       <button
         @click="$emit('continue')"
-        class="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 btn-game"
+        class="w-full font-semibold py-4 rounded-lg transition transform hover:scale-105 btn-game"
+        :style="{ background: 'var(--theme-gradient)', color: 'var(--theme-text-inverse)' }"
       >
         Keep Playing
       </button>
