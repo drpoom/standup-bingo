@@ -123,21 +123,25 @@
             </p>
           </div>
 
-          <!-- Board Preview + Reseed -->
-          <div v-if="boardPreview" class="mt-4">
+          <!-- Board Preview -->
+          <div v-if="boardPreview && boardPreview.length === 25" class="mt-4">
             <div class="flex items-center justify-between mb-2">
-              <span class="text-sm text-white/70">Your Board Preview:</span>
-              <button @click="reseedBoard" class="text-xs text-blue-400 hover:text-blue-300">
-                🔄 Reseed
+              <span class="text-xs text-white/70">Your Board:</span>
+              <button @click="reseedBoard" class="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1">
+                <span>🔄</span> Reseed
               </button>
             </div>
-            <div class="grid grid-cols-5 gap-1 p-2 bg-white/5 rounded">
-              <div v-for="(cell, idx) in boardPreview.slice(0, 9)" :key="idx" 
-                class="aspect-square bg-white/10 rounded text-[8px] flex items-center justify-center text-white/50">
-                {{ cell.phrase.substring(0, 10) }}...
+            <div class="grid grid-cols-5 gap-0.5 w-48">
+              <div v-for="(cell, idx) in boardPreview" :key="idx" 
+                class="aspect-square bg-white/10 rounded-[2px] flex items-center justify-center overflow-hidden"
+                :title="cell.phrase"
+              >
+                <span class="text-[6px] text-white/50 truncate px-0.5 leading-tight">
+                  {{ cell.phrase.split(' ').slice(0, 2).join(' ') }}
+                </span>
               </div>
             </div>
-            <p class="text-xs text-white/50 mt-1">Showing 9 of 25 cells</p>
+            <p class="text-[10px] text-white/40 mt-1">Click Reseed for new random board</p>
           </div>
 
           <button
