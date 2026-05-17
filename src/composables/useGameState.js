@@ -15,7 +15,8 @@ export function useGameState() {
     bingoTime: null,
     seed: null,
     customPhrases: null,
-    hostPeerId: null
+    hostPeerId: null,
+    boardSharing: 'separate' // 'separate' or 'shared'
   })
 
   function enterLobby(teamCode = '', playerName = '') {

@@ -27,6 +27,7 @@ export function usePeerEvents(deps) {
     setHostPeerId,
     setCustomPhrases,
     playBingoSound,
+    playBingoVoice,
     burstConfetti
   } = deps
 
@@ -94,6 +95,9 @@ export function usePeerEvents(deps) {
   function handlePeerBingo(data) {
     // Play bingo sound for peer bingo too
     playBingoSound()
+    
+    // Play BINGO! voice
+    playBingoVoice()
 
     // Set peer bingo state for celebration overlay
     peerBingo.value = {

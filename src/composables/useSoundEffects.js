@@ -69,6 +69,17 @@ function playBingoSound() {
   }
 }
 
+// BINGO! voice using Web Speech API
+function playBingoVoice() {
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance('BINGO!')
+    utterance.volume = 1
+    utterance.rate = 0.9
+    utterance.pitch = 1.2
+    speechSynthesis.speak(utterance)
+  }
+}
+
 function toggleMute() {
   isMuted.value = !isMuted.value
   if (typeof localStorage !== 'undefined') {
@@ -89,6 +100,7 @@ export function useSoundEffects() {
   return {
     playMarkSound,
     playBingoSound,
+    playBingoVoice,
     toggleMute,
     isMuted
   }

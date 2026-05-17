@@ -157,6 +157,17 @@ const { gameState, toggleMark, formatTime, allPlayers, connected, playerCount } 
 const modalPlayer = ref(null)
 const peerBingo = ref(null)
 
+function handlePeerBingo(data) {
+  peerBingo.value = {
+    playerName: data.playerName,
+    bingoType: data.bingoType
+  }
+  // Auto-dismiss after 4 seconds
+  setTimeout(() => {
+    peerBingo.value = null
+  }, 4000)
+}
+
 function handleToggle(row, col) {
   const wins = toggleMark(row, col)
   emit('toggle', { row, col, wins })
@@ -185,7 +196,7 @@ if (typeof window !== 'undefined') {
   window.addEventListener('peer-data', (event) => {
     const data = event.detail
     if (data.type === 'BINGO') {
-      emit('peer-bingo', data)
+      handlePeerBingo(data)
     }
   })
 }

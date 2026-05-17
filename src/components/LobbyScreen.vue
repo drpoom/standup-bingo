@@ -97,6 +97,49 @@
             </span>
           </div>
 
+          <!-- Board Sharing -->
+          <div>
+            <label class="block text-sm font-medium text-white/90 mb-2">
+              Board Sharing
+            </label>
+            <div class="flex gap-2">
+              <button
+                @click.prevent="boardSharing = 'separate'"
+                :class="boardSharing === 'separate' ? 'bg-blue-500 text-white' : 'bg-white/10 text-white/70'"
+                class="px-4 py-2 rounded-lg transition text-sm"
+              >
+                Separate
+              </button>
+              <button
+                @click.prevent="boardSharing = 'shared'"
+                :class="boardSharing === 'shared' ? 'bg-blue-500 text-white' : 'bg-white/10 text-white/70'"
+                class="px-4 py-2 rounded-lg transition text-sm"
+              >
+                Shared
+              </button>
+            </div>
+            <p class="text-xs text-white/50 mt-1">
+              {{ boardSharing === 'separate' ? 'Each player gets random board' : 'All players same board' }}
+            </p>
+          </div>
+
+          <!-- Board Preview + Reseed -->
+          <div v-if="boardPreview" class="mt-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-white/70">Your Board Preview:</span>
+              <button @click="reseedBoard" class="text-xs text-blue-400 hover:text-blue-300">
+                🔄 Reseed
+              </button>
+            </div>
+            <div class="grid grid-cols-5 gap-1 p-2 bg-white/5 rounded">
+              <div v-for="(cell, idx) in boardPreview.slice(0, 9)" :key="idx" 
+                class="aspect-square bg-white/10 rounded text-[8px] flex items-center justify-center text-white/50">
+                {{ cell.phrase.substring(0, 10) }}...
+              </div>
+            </div>
+            <p class="text-xs text-white/50 mt-1">Showing 9 of 25 cells</p>
+          </div>
+
           <button
             type="submit"
             class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 text-lg shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 btn-game min-h-[44px]"
@@ -277,6 +320,7 @@ import ThemePicker from './ThemePicker.vue'
 import PlayerAvatar from './PlayerAvatar.vue'
 import CustomPhraseEditor from './CustomPhraseEditor.vue'
 import { useSoundEffects } from '../composables/useSoundEffects.js'
+import { useBingoCard } from '../composables/useBingoCard.js'
 
 const props = defineProps({
   networking: {
@@ -301,7 +345,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['join', 'start-game', 'end-game', 'transfer-host', 'toggle-ready', 'custom-phrases-updated'])
+const emit = defineEmits(['join', 'start-game', 'end-game', 'transfer-host', 'toggle-ready', 'custom-phrases-updated', 'reseed'])
 
 const { isMuted, toggleMute } = useSoundEffects()
 
@@ -313,6 +357,36 @@ const teamCode = ref('')
 const playerName = ref('')
 const selectedTheme = ref('default')
 const dateISO = ref('')
+const boardSharing = ref('separate')
+const boardPreview = ref(null)
+const { generateCard } = useBingoCard()
+
+function reseedBoard() {
+  if (!teamCode.value.trim() || !playerName.value.trim()) return
+  
+  const newSeed = Date.now()
+  const grid = generateCard(
+    teamCode.value.trim().toUpperCase(),
+    playerName.value.trim(),
+    dateISO.value || new Date().toISOString().split('T')[0],
+    selectedTheme.value,
+    null,
+    newSeed,
+    boardSharing.value
+  )
+  // Flatten grid to array for preview
+  boardPreview.value = grid.flat()
+}
+
+// Watch for changes to update preview
+watch([teamCode, playerName, selectedTheme, boardSharing], () => {
+  if (teamCode.value.trim() && playerName.value.trim()) {
+    reseedBoard()
+  } else {
+    boardPreview.value = null
+  }
+}, { immediate: true })
+
 const inRoom = computed(() => !!props.gameState.teamCode)
 const lobbyDate = computed(() => dateISO.value || new Date().toISOString().split('T')[0])
 
@@ -351,7 +425,8 @@ function handleJoin() {
   if (teamCode.value.trim() && playerName.value.trim()) {
     dateISO.value = new Date().toISOString().split('T')[0]
     props.gameState.teamCode = teamCode.value.trim().toUpperCase()
-    emit('join', teamCode.value.trim().toUpperCase(), playerName.value.trim(), selectedTheme.value, dateISO.value)
+    props.gameState.boardSharing = boardSharing.value
+    emit('join', teamCode.value.trim().toUpperCase(), playerName.value.trim(), selectedTheme.value, dateISO.value, boardSharing.value)
   }
 }
 

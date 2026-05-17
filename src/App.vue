@@ -29,6 +29,7 @@
       @transfer-host="handleTransferHost"
       @toggle-ready="handleToggleReady"
       @custom-phrases-updated="handleCustomPhrasesUpdated"
+      @reseed="handleReseed"
     />
 
     <!-- Game Screen -->
@@ -43,7 +44,6 @@
       :isHost="networking.isHost.value"
       @continue="handleContinue"
       @toggle="handleToggleEmit"
-      @peer-bingo="handlePeerBingo"
       @end-game="handleEndGame"
     />
 
@@ -90,7 +90,7 @@ const { gameState, enterLobby, startGame, toggleMark, finishGame, endGame, reset
 const { stats, recordGame } = usePersistence()
 const { canvasRef, burst: burstConfetti, stop: stopConfetti } = useConfetti()
 const networking = useNetworking()
-const { playMarkSound, playBingoSound } = useSoundEffects()
+const { playMarkSound, playBingoSound, playBingoVoice } = useSoundEffects()
 
 const showOnboarding = ref(false)
 
@@ -111,6 +111,7 @@ const {
   setHostPeerId,
   setCustomPhrases,
   playBingoSound,
+  playBingoVoice,
   burstConfetti
 })
 
@@ -176,9 +177,10 @@ function dismissOnboarding() {
   localStorage.setItem('standup-bingo-seen', 'true')
 }
 
-function handleJoin(teamCode, playerName, theme, dateISO) {
+function handleJoin(teamCode, playerName, theme, dateISO, boardSharing = 'separate') {
   enterLobby(teamCode, playerName)
   gameState.theme = theme
+  gameState.boardSharing = boardSharing
   
   const roomId = `${teamCode.toUpperCase()}-${dateISO}`
   
@@ -208,12 +210,12 @@ function handleStartGame(theme) {
   const seed = Date.now()
   
   // Generate card locally first
-  const grid = generateCard(gameState.teamCode, gameState.playerName, dateISO, theme, gameState.customPhrases, seed)
+  const grid = generateCard(gameState.teamCode, gameState.playerName, dateISO, theme, gameState.customPhrases, seed, gameState.boardSharing)
   startGame(gameState.teamCode, gameState.playerName, grid, theme, seed, gameState.customPhrases)
   lobbyGamePhase.value = 'PLAYING'
   
   // Broadcast to peers
-  networking.startGame(theme, seed, dateISO)
+  networking.startGame(theme, seed, dateISO, gameState.boardSharing)
 }
 
 function handleTransferHost(newHostPeerId) {
@@ -272,6 +274,26 @@ function handleEndGame() {
   endGame()
   lobbyGamePhase.value = 'LOBBY'
   networking.endGame()
+}
+
+function handleReseed() {
+  const newSeed = Date.now()
+  gameState.seed = newSeed
+  // Regenerate card with new seed
+  const grid = generateCard(
+    gameState.teamCode,
+    gameState.playerName,
+    gameState.dateISO,
+    gameState.theme,
+    newSeed,
+    gameState.boardSharing
+  )
+  gameState.grid = grid
+  
+  // Broadcast reseed to all players (if shared board)
+  if (gameState.boardSharing === 'shared' && networking.isHost.value) {
+    networking.reseed(newSeed)
+  }
 }
 
 // Watch for phase changes (debug)

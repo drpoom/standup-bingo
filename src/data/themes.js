@@ -3,6 +3,10 @@ export const THEMES = {
     id: 'default',
     name: 'General Dev',
     description: 'Standard development team phrases for daily standups.',
+    boardSharing: {
+      default: 'separate', // 'separate' or 'shared'
+      label: 'Board Sharing'
+    },
     colors: {
       background: '#0a0e17',
       card: '#1a1f2e',
@@ -58,6 +62,10 @@ export const THEMES = {
     id: 'embedded',
     name: 'Embedded Dev',
     description: 'Specialized phrases for embedded systems and IoT development.',
+    boardSharing: {
+      default: 'separate', // 'separate' or 'shared'
+      label: 'Board Sharing'
+    },
     colors: {
       background: '#0f172a',
       card: '#1e293b',

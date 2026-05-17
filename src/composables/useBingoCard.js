@@ -29,9 +29,12 @@ function mergePhrases(themePhrases, customPhrases) {
 
 // Generate a bingo card based on seed and theme
 export function useBingoCard() {
-  function generateCard(teamCode, playerName, dateISO, theme = 'default', customPhrases = null, seed = null) {
-    // Use provided seed or generate from inputs
-    const seedString = seed ? String(seed) : `${teamCode.toUpperCase()}${dateISO}${playerName}${theme}`
+  function generateCard(teamCode, playerName, dateISO, theme = 'default', customPhrases = null, seed = null, boardSharing = 'separate') {
+    // If separate: include playerName in seed
+    // If shared: use seed only (no playerName)
+    const seedString = boardSharing === 'shared' && seed 
+      ? String(seed) 
+      : `${teamCode.toUpperCase()}${dateISO}${playerName}${theme}${seed || ''}`
     const seedValue = typeof seed === 'number' ? seed : hashString(seedString)
     const rng = mulberry32(seedValue)
 
