@@ -33,6 +33,7 @@ export function usePeerEvents(deps) {
   // Reactive state for peer events
   const networkPlayers = ref([])
   const toastMessage = ref('')
+  const peerBingo = ref(null)
   const lobbyGamePhase = ref('LOBBY') // 'LOBBY' | 'PLAYING' for host controls visibility
 
   /**
@@ -93,6 +94,12 @@ export function usePeerEvents(deps) {
   function handlePeerBingo(data) {
     // Play bingo sound for peer bingo too
     playBingoSound()
+
+    // Set peer bingo state for celebration overlay
+    peerBingo.value = {
+      playerName: data.playerName,
+      bingoType: data.bingoType || null
+    }
 
     // Show toast notification
     toastMessage.value = `${data.playerName} got BINGO! 🎉`
@@ -169,6 +176,7 @@ export function usePeerEvents(deps) {
     // Reactive state
     networkPlayers,
     toastMessage,
+    peerBingo,
     lobbyGamePhase,
 
     // Event handlers

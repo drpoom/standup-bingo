@@ -32,25 +32,17 @@
       <!-- Bingo Card -->
       <div class="p-6">
         <div class="grid grid-cols-5 gap-2">
-          <div
-            v-for="(row, rowIndex) in grid"
-            :key="rowIndex"
-            class="flex"
-          >
-            <div
-              v-for="(cell, colIndex) in row"
-              :key="colIndex"
+          <template v-for="(row, rowIndex) in grid" :key="`row-${rowIndex}`">
+            <div v-for="(cell, colIndex) in row" :key="`cell-${rowIndex}-${colIndex}`"
               :class="[
-                'aspect-square flex items-center justify-center p-2 text-xs font-medium rounded border transition',
-                cell.marked
-                  ? 'bg-blue-500 text-white border-blue-600'
-                  : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300',
-                cell.isFree ? 'bg-green-500 text-white' : ''
+                'aspect-square rounded flex items-center justify-center text-xs font-medium transition',
+                cell.marked ? 'square-marked' : 'bg-white/10'
               ]"
+              :style="{ background: cell.marked ? 'var(--theme-accent)' : '' }"
             >
               <span class="text-center leading-tight">{{ cell.phrase }}</span>
             </div>
-          </div>
+          </template>
         </div>
       </div>
     </div>

@@ -12,20 +12,11 @@
       
       <!-- Mini Bingo Grid (5x5 tiny squares) -->
       <div class="grid grid-cols-5 gap-px bg-slate-200 rounded overflow-hidden">
-        <div
-          v-for="(row, rowIndex) in grid"
-          :key="rowIndex"
-          class="flex"
-        >
-          <div
-            v-for="(cell, colIndex) in row"
-            :key="colIndex"
-            :class="[
-              'w-4 h-4',
-              cell.marked ? 'bg-blue-500' : 'bg-white'
-            ]"
+        <template v-for="(row, rowIndex) in grid" :key="`row-${rowIndex}`">
+          <div v-for="(cell, colIndex) in row" :key="`cell-${rowIndex}-${colIndex}`"
+            :class="['w-4 h-4', cell.marked ? 'bg-blue-500' : 'bg-white']"
           />
-        </div>
+        </template>
       </div>
       
       <!-- Bingo Count -->

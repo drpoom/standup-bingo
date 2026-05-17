@@ -36,6 +36,10 @@
             </div>
             <div class="text-xs" :style="{ color: 'var(--theme-text-muted)' }">Elapsed time</div>
           </div>
+          <!-- Seed Display -->
+          <div class="text-xs" :style="{ color: 'var(--theme-text-muted)' }">
+            Seed: {{ gameState.seed }}
+          </div>
           <!-- Host End Game Button -->
           <button
             v-if="isHost"
@@ -97,6 +101,13 @@
       :bingos="gameState.bingos"
       @continue="handleContinue"
     />
+
+    <BingoCelebration
+      v-if="peerBingo"
+      :playerName="peerBingo.playerName"
+      :bingoType="peerBingo.bingoType"
+      @dismiss="peerBingo = null"
+    />
   </div>
 </template>
 
@@ -104,6 +115,7 @@
 import { ref, reactive, watch } from 'vue'
 import BingoCard from './BingoCard.vue'
 import WinOverlay from './WinOverlay.vue'
+import BingoCelebration from './BingoCelebration.vue'
 import PlayerBoardThumbnail from './PlayerBoardThumbnail.vue'
 import PlayerBoardModal from './PlayerBoardModal.vue'
 
@@ -143,6 +155,7 @@ const emit = defineEmits(['continue', 'toggle', 'open-modal', 'close-modal', 'en
 const { gameState, toggleMark, formatTime, allPlayers, connected, playerCount } = props
 
 const modalPlayer = ref(null)
+const peerBingo = ref(null)
 
 function handleToggle(row, col) {
   const wins = toggleMark(row, col)
