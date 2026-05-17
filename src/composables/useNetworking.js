@@ -270,11 +270,12 @@ export function useNetworking() {
     })
   }
 
-  function sendToPeers(data) {
+  function sendToPeers(data, excludePeerId) {
     connections.value.forEach(conn => {
-      if (conn.open) {
-        conn.send(data)
+      if (excludePeerId && conn.peer === excludePeerId) {
+        return
       }
+      conn.send(data)
     })
   }
 
@@ -294,21 +295,23 @@ export function useNetworking() {
     })
   }
 
-  function broadcastMarkUpdate(row, col, marked) {
+  function broadcastMarkUpdate(row, col, marked, peerId) {
     sendToPeers({
       type: 'MARK_UPDATE',
       row,
       col,
       marked,
+      peerId,
       timestamp: Date.now()
     })
   }
 
-  function broadcastGameStart(theme, seed) {
+  function broadcastGameStart(theme, seed, dateISO) {
     broadcast({
       type: 'GAME_START',
       theme,
       seed,
+      dateISO,
       timestamp: Date.now()
     })
   }
@@ -362,9 +365,9 @@ export function useNetworking() {
     }
   }
 
-  function startGame(theme, seed) {
+  function startGame(theme, seed, dateISO) {
     if (isHost.value) {
-      broadcastGameStart(theme, seed)
+      broadcastGameStart(theme, seed, dateISO)
     }
   }
 

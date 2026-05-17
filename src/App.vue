@@ -72,7 +72,7 @@
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { THEMES } from './data/themes.js'
 
-const VERSION = '2.2.7'
+const VERSION = '2.2.8'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
@@ -213,7 +213,7 @@ function handleStartGame(theme) {
   lobbyGamePhase.value = 'PLAYING'
   
   // Broadcast to peers
-  networking.startGame(theme, seed)
+  networking.startGame(theme, seed, dateISO)
 }
 
 function handleTransferHost(newHostPeerId) {
@@ -237,7 +237,7 @@ function handleToggleMark(row, col) {
   
   // Broadcast mark update
   const cell = gameState.grid[row][col]
-  networking.broadcastMarkUpdate(row, col, cell.marked)
+  networking.broadcastMarkUpdate(row, col, cell.marked, networking.myPeerId.value)
   
   // If bingo, broadcast
   if (wins && wins.length > 0 && gameState.bingos.length === 1) {

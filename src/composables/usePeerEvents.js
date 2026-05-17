@@ -40,10 +40,9 @@ export function usePeerEvents(deps) {
    * @param {Object} data - Game start data with theme and seed
    */
   function handleRemoteGameStart(data) {
-    const { theme, seed } = data
+    const { theme, seed, dateISO } = data
     const teamCode = gameState.value.teamCode
     const playerName = gameState.value.playerName
-    const dateISO = new Date().toISOString().split('T')[0]
 
     // Generate card with same seed
     const grid = generateCard(teamCode, playerName, dateISO, theme, gameState.value.customPhrases, seed)
@@ -144,6 +143,10 @@ export function usePeerEvents(deps) {
 
       case 'MARK_UPDATE':
         handleRemoteMarkUpdate(data)
+        // Rebroadcast to all peers except sender if host
+        if (networking.isHost.value && data.peerId) {
+          networking.sendToPeers(data, data.peerId)
+        }
         break
     }
   }

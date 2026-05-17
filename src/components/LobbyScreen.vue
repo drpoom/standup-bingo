@@ -327,7 +327,7 @@ watch(() => props.gameState.phase, (newPhase) => {
     }
   }
 }, { immediate: true })
-const isReady = ref(false)
+const isReady = computed(() => props.players.find(p => p.peerId === props.networking.myPeerId.value)?.ready ?? false)
 const selectedTransferTarget = ref('')
 const customPhrases = ref(null)
 
@@ -356,8 +356,7 @@ function handleJoin() {
 }
 
 function toggleReady() {
-  isReady.value = !isReady.value
-  emit('toggle-ready', isReady.value)
+  emit('toggle-ready', !isReady.value)
 }
 
 function handleStartGame() {
