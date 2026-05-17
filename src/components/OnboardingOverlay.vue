@@ -32,7 +32,7 @@
 
       <button
         @click="$emit('dismiss')"
-        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-xl transition transform hover:scale-105 shadow-lg shadow-blue-500/30"
+        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 min-h-[44px] rounded-xl transition transform hover:scale-105 shadow-lg shadow-blue-500/30"
       >
         Got it!
       </button>

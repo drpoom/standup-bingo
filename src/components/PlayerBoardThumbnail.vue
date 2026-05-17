@@ -6,7 +6,7 @@
     <div class="bg-white rounded-lg shadow-md p-3 border-2" :style="{ borderColor: themeColors.border }">
       <!-- Avatar + Name -->
       <div class="flex items-center gap-2 mb-2">
-        <PlayerAvatar :playerName="playerName" :size="24" />
+        <PlayerAvatar :name="playerName" :size="24" />
         <span class="text-sm font-semibold truncate">{{ playerName }}</span>
       </div>
       

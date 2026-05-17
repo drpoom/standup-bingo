@@ -25,7 +25,7 @@
 
       <button
         @click="$emit('continue')"
-        class="w-full font-semibold py-4 rounded-lg transition transform hover:scale-105 btn-game"
+        class="w-full font-semibold py-4 min-h-[44px] rounded-lg transition transform hover:scale-105 btn-game"
         :style="{ background: 'var(--theme-gradient)', color: 'var(--theme-text-inverse)' }"
       >
         Keep Playing

@@ -10,6 +10,8 @@
   z-index: -1;
   background-color: #0f172a; /* Deep dark blue/black */
   overflow: hidden;
+  /* Prevent any horizontal scroll from oversized parallax layers on mobile */
+  max-width: 100vw;
 }
 
 /* Parallax Layer 1: Subtle Circuit Traces (SVG Pattern) */

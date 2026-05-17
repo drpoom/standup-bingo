@@ -6,14 +6,14 @@
     <div class="flex gap-2 mb-4">
       <button
         @click="triggerFileUpload"
-        class="flex-1 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition flex items-center justify-center gap-2"
+        class="flex-1 py-2 min-h-[44px] bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition flex items-center justify-center gap-2"
       >
         📥 Import JSON
       </button>
       <button
         @click="handleExport"
         :disabled="!hasCustomPhrases"
-        class="flex-1 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-lg font-medium transition disabled:opacity-50 disabled:cursor-not-allowed"
+        class="flex-1 py-2 min-h-[44px] bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-lg font-medium transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
         📤 Export JSON
       </button>
@@ -36,7 +36,7 @@
     <div v-if="isHost" class="mb-4">
       <button
         @click="showAddCategory = true"
-        class="w-full py-2 border-2 border-dashed border-slate-300 hover:border-blue-400 text-slate-500 hover:text-blue-500 rounded-lg font-medium transition flex items-center justify-center gap-2"
+        class="w-full py-2 min-h-[44px] border-2 border-dashed border-slate-300 hover:border-blue-400 text-slate-500 hover:text-blue-500 rounded-lg font-medium transition flex items-center justify-center gap-2"
       >
         <span class="text-lg">+</span> Add Category
       </button>

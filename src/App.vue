@@ -37,9 +37,9 @@
       :gameState="gameState"
       :toggleMark="handleToggleMark"
       :formatTime="formatTime"
-      :allPlayers="networkPlayers"
+      :allPlayers="allPlayersList"
       :connected="networking.connected.value"
-      :playerCount="networkPlayers.length"
+      :playerCount="allPlayersList.length"
       :isHost="networking.isHost.value"
       @continue="handleContinue"
       @toggle="handleToggleEmit"
@@ -117,6 +117,23 @@ const {
 const showConfetti = computed(() => gameState.phase === 'WON')
 const screenShake = ref(false)
 
+// Computed: merge local player with network players for sidebar display
+const allPlayersList = computed(() => {
+  const selfPlayer = {
+    name: gameState.playerName,
+    grid: gameState.grid,
+    bingoCount: gameState.bingos.length,
+    theme: gameState.theme,
+    peerId: networking.myPeerId.value || 'self',
+    isSelf: true
+  }
+  // Include self + remote players (avoid duplicates by peerId)
+  const remotePlayers = networkPlayers.value.filter(
+    p => p.peerId !== (networking.myPeerId.value || 'self')
+  )
+  return [selfPlayer, ...remotePlayers]
+})
+
 // Apply theme CSS custom properties to document root
 function applyTheme(themeId) {
   const theme = THEMES[themeId] || THEMES.default
@@ -186,12 +203,6 @@ function handleStartGame(theme) {
   networking.startGame(theme, seed)
 }
 
-function handleEndGame() {
-  endGame()
-  lobbyGamePhase.value = 'LOBBY'
-  networking.endGame()
-}
-
 function handleTransferHost(newHostPeerId) {
   networking.transferHost(newHostPeerId)
 }
@@ -229,16 +240,35 @@ function handleToggleEmit({ row, col, wins }) {
 }
 
 function handleContinue() {
+  console.log('[DEBUG] handleContinue called, phase before:', gameState.phase)
   gameState.phase = 'PLAYING'
+  console.log('[DEBUG] handleContinue: phase after:', gameState.phase)
   stopConfetti()
 }
 
 function handlePlayAgain() {
+  console.log('[DEBUG] handlePlayAgain called')
   resetGame()
   lobbyGamePhase.value = 'LOBBY'
   networking.disconnect()
   networkPlayers.value = []
 }
+
+function handleEndGame() {
+  console.log('[DEBUG] handleEndGame called')
+  endGame()
+  lobbyGamePhase.value = 'LOBBY'
+  networking.endGame()
+}
+
+// Watch for phase changes (debug)
+watch(
+  () => gameState.phase,
+  (newPhase, oldPhase) => {
+    console.log('[DEBUG] Phase changed:', oldPhase, '->', newPhase)
+    console.trace('[DEBUG] Phase change trace')
+  }
+)
 
 // Watch for bingo and trigger confetti
 watch(
@@ -295,12 +325,14 @@ body {
   background: var(--theme-bg, #f8fafc);
   color: var(--theme-text, #1e293b);
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 .app {
   min-height: 100vh;
   background: var(--theme-bg, #f8fafc);
   transition: background 0.3s ease;
+  overflow-x: hidden;
 }
 
 .version-badge {

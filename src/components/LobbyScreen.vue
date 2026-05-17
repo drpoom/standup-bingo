@@ -99,7 +99,7 @@
 
           <button
             type="submit"
-            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 text-lg shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 btn-game"
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition transform hover:scale-105 text-lg shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 btn-game min-h-[44px]"
           >
             <img src="../assets/icons/ui/start.svg" alt="" class="w-5 h-5" />
             Join Room
@@ -112,8 +112,8 @@
         <!-- Room Info -->
         <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/20">
           <div>
-            <h2 class="text-xl font-semibold text-white">Room: {{ teamCode }}</h2>
-            <p class="text-sm text-white/60">Date: {{ dateISO }}</p>
+            <h2 class="text-xl font-semibold text-white">Room: {{ gameState.teamCode }}</h2>
+            <p class="text-sm text-white/60">Date: {{ lobbyDate }}</p>
           </div>
           <div class="text-sm text-white/80">
             {{ players.length }} player{{ players.length !== 1 ? 's' : '' }} in room
@@ -167,11 +167,11 @@
           <button
             @click="toggleReady"
             :class="[
-              'w-full py-3 rounded-lg font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2 btn-game',
+              'w-full py-3 min-h-[44px] rounded-lg font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2 btn-game',
               isReady
                 ? 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/30'
                 : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
-            ]"
+            ]""
           >
             <img v-if="isReady" src="../assets/icons/steps/mark.svg" alt="" class="w-5 h-5" />
             <span v-else class="w-5 h-5 border-2 border-white rounded-sm"></span>
@@ -184,11 +184,11 @@
           <button
             @click="toggleMute"
             :class="[
-              'w-full py-3 rounded-lg font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2 btn-game',
+              'w-full py-3 min-h-[44px] rounded-lg font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2 btn-game',
               isMuted
                 ? 'bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg shadow-yellow-500/30'
                 : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
-            ]"
+            ]""
           >
             <img :src="isMuted ? muteIconUrl : unmuteIconUrl" alt="" class="w-5 h-5" />
             {{ isMuted ? 'Unmute' : 'Mute' }}
@@ -207,9 +207,9 @@
               v-if="gamePhase === 'LOBBY'"
               @click="handleStartGame"
               :class="[
-                'flex-1 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 btn-game',
+                'flex-1 py-3 min-h-[44px] rounded-lg font-semibold transition flex items-center justify-center gap-2 btn-game',
                 'bg-green-500 hover:bg-green-600 text-white'
-              ]"
+              ]""
             >
               <img src="../assets/icons/ui/start.svg" alt="" class="w-5 h-5" />
               Start Game
@@ -217,7 +217,7 @@
             <button
               v-if="gamePhase === 'PLAYING'"
               @click="handleEndGame"
-              class="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 btn-game"
+              class="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 min-h-[44px] rounded-lg font-semibold transition flex items-center justify-center gap-2 btn-game"
             >
               <img src="../assets/icons/ui/end.svg" alt="" class="w-5 h-5" />
               End Game
@@ -245,7 +245,7 @@
               <button
                 @click="handleTransferHost"
                 :disabled="!selectedTransferTarget"
-                class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition disabled:opacity-50 shadow-lg shadow-blue-500/30 flex items-center gap-2 btn-game"
+                class="px-4 py-2 min-h-[44px] bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition disabled:opacity-50 shadow-lg shadow-blue-500/30 flex items-center gap-2 btn-game"
               >
                 <img src="../assets/icons/ui/transfer.svg" alt="" class="w-4 h-4" />
                 Transfer
@@ -272,7 +272,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import ThemePicker from './ThemePicker.vue'
 import PlayerAvatar from './PlayerAvatar.vue'
 import CustomPhraseEditor from './CustomPhraseEditor.vue'
@@ -314,6 +314,19 @@ const playerName = ref('')
 const selectedTheme = ref('default')
 const dateISO = ref('')
 const inRoom = computed(() => !!props.gameState.teamCode)
+const lobbyDate = computed(() => dateISO.value || new Date().toISOString().split('T')[0])
+
+// Sync local refs from gameState when returning from a game (End Game)
+watch(() => props.gameState.phase, (newPhase) => {
+  if (newPhase === 'LOBBY' && props.gameState.teamCode) {
+    teamCode.value = props.gameState.teamCode
+    playerName.value = props.gameState.playerName
+    selectedTheme.value = props.gameState.theme || 'default'
+    if (!dateISO.value) {
+      dateISO.value = new Date().toISOString().split('T')[0]
+    }
+  }
+}, { immediate: true })
 const isReady = ref(false)
 const selectedTransferTarget = ref('')
 const customPhrases = ref(null)

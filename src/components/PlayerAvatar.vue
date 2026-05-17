@@ -1,7 +1,7 @@
 <template>
   <img
     :src="avatarUrl"
-    :alt="playerName + ' avatar'"
+    :alt="name + ' avatar'"
     class="rounded-lg object-cover"
     :style="{ width: size + 'px', height: size + 'px' }"
     loading="lazy"

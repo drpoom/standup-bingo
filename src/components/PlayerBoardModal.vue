@@ -11,7 +11,7 @@
       <!-- Header -->
       <div class="sticky top-0 bg-white border-b border-slate-200 p-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <PlayerAvatar :playerName="playerName" :size="48" />
+          <PlayerAvatar :name="playerName" :size="48" />
           <div>
             <h2 class="text-xl font-bold text-slate-800">{{ playerName }}</h2>
             <p class="text-sm text-green-600 font-semibold">

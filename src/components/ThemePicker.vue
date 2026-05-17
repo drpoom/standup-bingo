@@ -9,7 +9,7 @@
         :key="theme.id"
         @click="selectTheme(theme.id)"
         :class="[
-          'p-4 rounded-lg border-2 transition transform hover:scale-105',
+          'p-4 min-h-[44px] rounded-lg border-2 transition transform hover:scale-105',
           selectedTheme === theme.id
             ? 'border-blue-500 bg-blue-50'
             : 'border-slate-200 bg-white hover:border-slate-300'

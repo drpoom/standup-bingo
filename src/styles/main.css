@@ -161,6 +161,19 @@
 }
 
 /* ===========================================
+   MOBILE RESPONSIVENESS
+   Ensure buttons are tappable (44px min) on mobile
+   =========================================== */
+@media (max-width: 640px) {
+  .btn-game,
+  .glass-card button,
+  .lobby-bg button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ===========================================
    TASK 3.3: Button Hover/Click Feedback
    Tactile, responsive button interactions
    =========================================== */

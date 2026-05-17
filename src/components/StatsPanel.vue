@@ -43,7 +43,7 @@
 
       <button
         @click="$emit('playAgain')"
-        class="w-full font-semibold py-4 rounded-lg transition transform hover:scale-105 btn-game"
+        class="w-full font-semibold py-4 min-h-[44px] rounded-lg transition transform hover:scale-105 btn-game"
         :style="{ backgroundColor: 'var(--theme-accent)', color: 'var(--theme-text-inverse)' }"
       >
         🎮 Play Again

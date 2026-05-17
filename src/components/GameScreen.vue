@@ -40,7 +40,7 @@
           <button
             v-if="isHost"
             @click="handleEndGame"
-            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 btn-game"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 min-h-[44px] rounded-lg text-sm font-semibold transition flex items-center gap-2 btn-game"
           >
             <img src="../assets/icons/ui/end.svg" alt="" class="w-4 h-4" />
             End Game
