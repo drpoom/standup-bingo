@@ -88,6 +88,7 @@ export function useNetworking() {
       const conn = peer.value.connect(roomId.value)
       conn.on('open', () => {
         setupConnection(conn)
+        connected.value = true
         // Send join event
         sendToPeers({ 
           type: 'JOIN', 
@@ -103,6 +104,10 @@ export function useNetworking() {
 
     peer.value.on('error', (err) => {
       console.error('PeerJS error:', err)
+      // If the host peer is unavailable, mark as not connected so fallback can trigger
+      if (err.type === 'peer-unavailable') {
+        connected.value = false
+      }
     })
 
     peer.value.on('disconnected', () => {
@@ -145,6 +150,17 @@ export function useNetworking() {
   }
 
   function handlePeerData(data) {
+    // PeerJS may deliver data as a string if sender used JSON.stringify,
+    // or as an object if sent directly. Normalize to object.
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data)
+      } catch (e) {
+        console.error('Failed to parse peer data:', data)
+        return
+      }
+    }
+    
     // Emit custom event for parent to handle
     window.dispatchEvent(new CustomEvent('peer-data', { detail: data }))
     
@@ -255,10 +271,9 @@ export function useNetworking() {
   }
 
   function sendToPeers(data) {
-    const message = JSON.stringify(data)
     connections.value.forEach(conn => {
       if (conn.open) {
-        conn.send(message)
+        conn.send(data)
       }
     })
   }

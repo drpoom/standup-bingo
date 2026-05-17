@@ -19,7 +19,7 @@
     <LobbyScreen
       v-if="gameState.phase === 'LOBBY'"
       :networking="networking"
-      :players="networkPlayers"
+      :players="allLobbyPlayers"
       :isHost="networking.isHost.value"
       :gamePhase="lobbyGamePhase"
       :gameState="gameState"
@@ -72,7 +72,7 @@
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { THEMES } from './data/themes.js'
 
-const VERSION = '2.2.6'
+const VERSION = '2.2.7'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
@@ -134,6 +134,17 @@ const allPlayersList = computed(() => {
   return [selfPlayer, ...remotePlayers]
 })
 
+// Computed: merge networking players with peer event players for lobby display
+const allLobbyPlayers = computed(() => {
+  // Start with networking players (includes self for host)
+  const netPlayers = networking.players.value || []
+  // Merge with peer event players, avoiding duplicates by peerId
+  const peerPlayers = networkPlayers.value.filter(
+    p => !netPlayers.find(np => np.peerId === p.peerId)
+  )
+  return [...netPlayers, ...peerPlayers]
+})
+
 // Apply theme CSS custom properties to document root
 function applyTheme(themeId) {
   const theme = THEMES[themeId] || THEMES.default
@@ -175,12 +186,14 @@ function handleJoin(teamCode, playerName, theme, dateISO) {
   networking.initializeAsClient(teamCode, dateISO, playerName)
   
   // Add one-time handler for connection failure to become host
+  // Give PeerJS more time to establish WebRTC connection (5s instead of 1s)
   const checkConnection = setTimeout(() => {
     if (!networking.connected.value && networking.players.value.length === 0) {
-      // Become host
+      // Disconnect client peer first, then become host
+      networking.disconnect()
       networking.initializeAsHost(teamCode, dateISO, playerName)
     }
-  }, 1000)
+  }, 5000)
   
   // Store cleanup
   watch(() => networking.connected.value, (connected) => {
