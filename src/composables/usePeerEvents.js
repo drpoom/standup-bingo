@@ -41,12 +41,12 @@ export function usePeerEvents(deps) {
    */
   function handleRemoteGameStart(data) {
     const { theme, seed, dateISO } = data
-    const teamCode = gameState.value.teamCode
-    const playerName = gameState.value.playerName
+    const teamCode = gameState.teamCode
+    const playerName = gameState.playerName
 
     // Generate card with same seed
-    const grid = generateCard(teamCode, playerName, dateISO, theme, gameState.value.customPhrases, seed)
-    startGame(teamCode, playerName, grid, theme, seed, gameState.value.customPhrases)
+    const grid = generateCard(teamCode, playerName, dateISO, theme, gameState.customPhrases, seed)
+    startGame(teamCode, playerName, grid, theme, seed, gameState.customPhrases)
     lobbyGamePhase.value = 'PLAYING'
   }
 
@@ -81,8 +81,8 @@ export function usePeerEvents(deps) {
    */
   function handleRemoteMarkUpdate(data) {
     const { row, col, marked } = data
-    if (gameState.value.grid[row] && gameState.value.grid[row][col]) {
-      gameState.value.grid[row][col].marked = marked
+    if (gameState.grid[row] && gameState.grid[row][col]) {
+      gameState.grid[row][col].marked = marked
     }
   }
 
