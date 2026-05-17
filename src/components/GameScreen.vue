@@ -16,7 +16,7 @@
           <img src="../assets/icons/ui/start.svg" alt="" class="w-6 h-6 flex-shrink-0" />
           <div class="min-w-0">
             <h1 class="text-lg sm:text-xl font-bold truncate" :style="{ color: 'var(--theme-text)' }">Standup Bingo</h1>
-            <p class="text-xs sm:text-sm truncate" :style="{ color: 'var(--theme-text-muted)' }">{{ playerName }}</p>
+            <p class="text-xs sm:text-sm truncate" :style="{ color: 'var(--theme-text-muted)' }">{{ gameState.playerName }}</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
@@ -58,10 +58,10 @@
         <!-- Stats -->
         <div class="mt-6 flex justify-center gap-4 text-sm" :style="{ color: 'var(--theme-text)' }">
           <div class="px-4 py-2 rounded-lg shadow" :style="{ background: 'var(--theme-primary)' }">
-            <span class="font-bold" :style="{ color: 'var(--theme-accent-blue, #3b82f6)' }">{{ marksCount }}</span> marked
+            <span class="font-bold" :style="{ color: 'var(--theme-accent-blue, #3b82f6)' }">{{ gameState.marksCount }}</span> marked
           </div>
           <div class="px-4 py-2 rounded-lg shadow" :style="{ background: 'var(--theme-primary)' }">
-            <span class="font-bold" :style="{ color: 'var(--theme-accent-green, #22c55e)' }">{{ bingos.length }}</span> bingo{{ bingos.length !== 1 ? 's' : '' }}
+            <span class="font-bold" :style="{ color: 'var(--theme-accent-green, #22c55e)' }">{{ gameState.bingos.length }}</span> bingo{{ gameState.bingos.length !== 1 ? 's' : '' }}
           </div>
         </div>
       </div>
@@ -93,8 +93,8 @@
 
     <!-- Win Overlay -->
     <WinOverlay
-      v-if="gameState.phase === 'won'"
-      :bingos="bingos"
+      v-if="gameState.phase === 'WON'"
+      :bingos="gameState.bingos"
       @continue="handleContinue"
     />
   </div>
@@ -166,11 +166,6 @@ function closeModal() {
 function handleEndGame() {
   emit('end-game')
 }
-
-// Computed helpers
-const marksCount = gameState.marksCount
-const bingos = gameState.bingos
-const playerName = gameState.playerName
 
 // Listen for peer bingo events
 if (typeof window !== 'undefined') {

@@ -71,7 +71,7 @@
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { THEMES } from './data/themes.js'
 
-const VERSION = '2.2.3'
+const VERSION = '2.2.4'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
@@ -278,6 +278,7 @@ onUnmounted(() => {
 <style>
 @import 'tailwindcss';
 @import './src/styles/circuit-bg.css';
+@import './styles/main.css';
 
 * {
   margin: 0;
