@@ -131,13 +131,15 @@
                 <span>🔄</span> Reseed
               </button>
             </div>
-            <div class="grid grid-cols-5 gap-0.5 w-48">
-              <div v-for="(cell, idx) in boardPreview" :key="idx" 
-                class="aspect-square bg-white/10 rounded-[2px] flex items-center justify-center overflow-hidden"
+            <div class="grid grid-cols-5 gap-1 w-56">
+              <div 
+                v-for="(cell, idx) in boardPreview" 
+                :key="idx"
+                class="aspect-square bg-white/10 rounded-sm flex items-center justify-center p-1 overflow-hidden"
                 :title="cell.phrase"
               >
-                <span class="text-[6px] text-white/50 truncate px-0.5 leading-tight">
-                  {{ cell.phrase.split(' ').slice(0, 2).join(' ') }}
+                <span class="text-[10px] text-white/80 text-center leading-tight break-words line-clamp-3">
+                  {{ cell.phrase }}
                 </span>
               </div>
             </div>
@@ -152,6 +154,34 @@
             Join Room
           </button>
         </form>
+      </div>
+
+      <!-- Late Join Confirmation Dialog -->
+      <div v-if="showLateJoinDialog" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+        <div class="glass-card max-w-md w-full p-6 sm:p-8">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-yellow-500/20 flex items-center justify-center">
+              <span class="text-3xl">⚠️</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Game in Progress</h3>
+            <p class="text-white/80">A game is already underway. Do you want to join anyway?</p>
+          </div>
+          
+          <div class="flex gap-3">
+            <button
+              @click="cancelLateJoin"
+              class="flex-1 bg-white/20 hover:bg-white/30 text-white font-semibold py-3 rounded-lg transition border border-white/30 min-h-[44px]"
+            >
+              Cancel
+            </button>
+            <button
+              @click="confirmLateJoin"
+              class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition transform hover:scale-105 shadow-lg shadow-blue-500/30 min-h-[44px]"
+            >
+              Join Anyway
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Lobby (shown when in room) -->
@@ -310,8 +340,15 @@
 
         <!-- Non-host waiting message -->
         <div v-else class="border-t border-white/20 pt-6 text-center text-white/70">
-          <p>Waiting for host to start the game...</p>
-          <p class="text-sm mt-2">Host: {{ hostPlayer?.name || 'Unknown' }}</p>
+          <div v-if="gamePhase === 'PLAYING'" class="space-y-3">
+            <p class="text-lg text-yellow-400 font-semibold">🎮 Game in Progress!</p>
+            <p>You've joined an ongoing game. Your board is being generated...</p>
+            <p class="text-sm">You can start marking your board immediately based on the standup updates.</p>
+          </div>
+          <div v-else>
+            <p>Waiting for host to start the game...</p>
+            <p class="text-sm mt-2">Host: {{ hostPlayer?.name || 'Unknown' }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -363,6 +400,8 @@ const selectedTheme = ref('default')
 const dateISO = ref('')
 const boardSharing = ref('separate')
 const boardPreview = ref(null)
+const showLateJoinDialog = ref(false)
+const pendingJoinData = ref(null)
 const { generateCard } = useBingoCard()
 
 function reseedBoard() {
@@ -393,6 +432,16 @@ watch([teamCode, playerName, selectedTheme, boardSharing], () => {
 
 const inRoom = computed(() => !!props.gameState.teamCode)
 const lobbyDate = computed(() => dateISO.value || new Date().toISOString().split('T')[0])
+
+// Watch for phase changes during pending join - triggers late-join dialog
+watch(() => props.gamePhase, (newPhase) => {
+  if (newPhase === 'PLAYING' && pendingJoinData.value) {
+    // Game started while we were connecting - show late join confirmation
+    showLateJoinDialog.value = true
+    // Clear pending data to prevent re-triggering
+    pendingJoinData.value = null
+  }
+})
 
 // Sync local refs from gameState when returning from a game (End Game)
 watch(() => props.gameState.phase, (newPhase) => {
@@ -427,11 +476,56 @@ function handleThemeSelect(themeId) {
 
 function handleJoin() {
   if (teamCode.value.trim() && playerName.value.trim()) {
-    dateISO.value = new Date().toISOString().split('T')[0]
-    props.gameState.teamCode = teamCode.value.trim().toUpperCase()
-    props.gameState.boardSharing = boardSharing.value
-    emit('join', teamCode.value.trim().toUpperCase(), playerName.value.trim(), selectedTheme.value, dateISO.value, boardSharing.value)
+    // Store join data for potential late-join detection
+    pendingJoinData.value = {
+      teamCode: teamCode.value.trim().toUpperCase(),
+      playerName: playerName.value.trim(),
+      theme: selectedTheme.value,
+      date: new Date().toISOString().split('T')[0],
+      boardSharing: boardSharing.value
+    }
+    
+    // Check if game is already in progress
+    if (props.gameState.phase === 'PLAYING') {
+      // Game already started - show confirmation dialog immediately
+      showLateJoinDialog.value = true
+    } else {
+      // Normal join flow for games not yet started
+      dateISO.value = pendingJoinData.value.date
+      props.gameState.teamCode = pendingJoinData.value.teamCode
+      props.gameState.boardSharing = pendingJoinData.value.boardSharing
+      emit('join', 
+        pendingJoinData.value.teamCode, 
+        pendingJoinData.value.playerName, 
+        pendingJoinData.value.theme, 
+        pendingJoinData.value.date, 
+        pendingJoinData.value.boardSharing
+      )
+    }
   }
+}
+
+function confirmLateJoin() {
+  if (pendingJoinData.value) {
+    dateISO.value = pendingJoinData.value.date
+    props.gameState.teamCode = pendingJoinData.value.teamCode
+    props.gameState.boardSharing = pendingJoinData.value.boardSharing
+    emit('join', 
+      pendingJoinData.value.teamCode, 
+      pendingJoinData.value.playerName, 
+      pendingJoinData.value.theme, 
+      pendingJoinData.value.date, 
+      pendingJoinData.value.boardSharing
+    )
+    showLateJoinDialog.value = false
+    pendingJoinData.value = null
+  }
+}
+
+function cancelLateJoin() {
+  showLateJoinDialog.value = false
+  // Clear pending join data on cancel
+  pendingJoinData.value = null
 }
 
 function toggleReady() {

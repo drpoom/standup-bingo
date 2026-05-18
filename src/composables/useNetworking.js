@@ -10,6 +10,7 @@ export function useNetworking() {
   const players = ref([])
   const myPeerId = ref(null)
   const hostPeerId = ref(null)
+  const lobbyGamePhase = ref('LOBBY') // 'LOBBY' | 'PLAYING'
 
   // Player tracking
   const playerJoinTimes = ref({})
@@ -188,6 +189,11 @@ export function useNetworking() {
       case 'MARK_UPDATE':
         // Existing events, handled by parent
         break
+      case 'REQUEST_GAME_STATE':
+        // Late joiner requesting current game state - emit for parent to handle
+        // Host should respond with current game state via sendGameStateToPeer
+        window.dispatchEvent(new CustomEvent('peer-request-game-state', { detail: data }))
+        break
     }
   }
 
@@ -258,14 +264,28 @@ export function useNetworking() {
     }
   }
 
+  function updatePlayerGrid(peerId, grid) {
+    const player = players.value.find(p => p.peerId === peerId)
+    if (player) {
+      player.grid = grid
+    }
+  }
+
   function removePlayer(peerId) {
     players.value = players.value.filter(p => p.peerId !== peerId)
   }
 
   function broadcastPlayerList() {
+    // Include grid for each player if available
+    const playersWithGrid = players.value.map(p => ({
+      ...p,
+      grid: p.grid || null
+    }))
+    
     broadcast({
       type: 'PLAYER_LIST',
-      players: players.value,
+      players: playersWithGrid,
+      gamePhase: lobbyGamePhase.value,
       timestamp: Date.now()
     })
   }
@@ -307,6 +327,7 @@ export function useNetworking() {
   }
 
   function broadcastGameStart(theme, seed, dateISO) {
+    lobbyGamePhase.value = 'PLAYING'
     broadcast({
       type: 'GAME_START',
       theme,
@@ -317,6 +338,7 @@ export function useNetworking() {
   }
 
   function broadcastGameEnd() {
+    lobbyGamePhase.value = 'LOBBY'
     broadcast({
       type: 'GAME_END',
       timestamp: Date.now()
@@ -346,6 +368,18 @@ export function useNetworking() {
       phrases,
       timestamp: Date.now()
     })
+  }
+
+  function sendGameStateToPeer(peerId, gameStateData) {
+    // Send game state to a specific peer (e.g., late joiner)
+    const conn = connections.value.find(c => c.peer === peerId)
+    if (conn && conn.open) {
+      conn.send({
+        type: 'GAME_STATE',
+        ...gameStateData,
+        timestamp: Date.now()
+      })
+    }
   }
 
   function toggleReady(ready) {
@@ -410,6 +444,7 @@ export function useNetworking() {
     players,
     myPeerId,
     hostPeerId,
+    lobbyGamePhase,
     initializeAsHost,
     initializeAsClient,
     sendToPeers,
@@ -426,6 +461,8 @@ export function useNetworking() {
     startGame,
     endGame,
     sendCustomPhrases,
+    sendGameStateToPeer,
+    updatePlayerGrid,
     disconnect
   }
 }

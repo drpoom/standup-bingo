@@ -36,6 +36,8 @@
     <GameScreen
       v-else-if="gameState.phase === 'PLAYING' || gameState.phase === 'WON'"
       :gameState="gameState"
+      :timer="timer"
+      :marksCount="marksCount"
       :toggleMark="handleToggleMark"
       :formatTime="formatTime"
       :allPlayers="allPlayersList"
@@ -52,7 +54,7 @@
       v-else-if="gameState.phase === 'FINISHED'"
       :playerName="gameState.playerName"
       :bingos="gameState.bingos.length"
-      :marksCount="gameState.marksCount"
+      :marksCount="marksCount"
       :bingoTime="gameState.bingoTime"
       :stats="stats"
       @playAgain="handlePlayAgain"
@@ -86,7 +88,7 @@ import StatsPanel from './components/StatsPanel.vue'
 import OnboardingOverlay from './components/OnboardingOverlay.vue'
 
 const { generateCard, mergePhrases } = useBingoCard()
-const { gameState, enterLobby, startGame, toggleMark, finishGame, endGame, resetGame, formatTime, setHostPeerId, setCustomPhrases } = useGameState()
+const { gameState, timer, marksCount, enterLobby, startGame, toggleMark, finishGame, endGame, resetGame, formatTime, setHostPeerId, setCustomPhrases } = useGameState()
 const { stats, recordGame } = usePersistence()
 const { canvasRef, burst: burstConfetti, stop: stopConfetti } = useConfetti()
 const networking = useNetworking()
@@ -211,11 +213,11 @@ function handleStartGame(theme) {
   
   // Generate card locally first
   const grid = generateCard(gameState.teamCode, gameState.playerName, dateISO, theme, gameState.customPhrases, seed, gameState.boardSharing)
-  startGame(gameState.teamCode, gameState.playerName, grid, theme, seed, gameState.customPhrases)
+  startGame(gameState.teamCode, gameState.playerName, grid, theme, seed, gameState.customPhrases, dateISO)
   lobbyGamePhase.value = 'PLAYING'
   
   // Broadcast to peers
-  networking.startGame(theme, seed, dateISO, gameState.boardSharing)
+  networking.startGame(theme, seed, dateISO)
 }
 
 function handleTransferHost(newHostPeerId) {
@@ -256,7 +258,24 @@ function handleToggleEmit({ row, col, wins }) {
 
 function handleContinue() {
   console.log('[DEBUG] handleContinue called, phase before:', gameState.phase)
+  // Start a new round: regenerate grid and reset state
+  const dateISO = new Date().toISOString().split('T')[0]
+  const seed = Date.now()
+  const grid = generateCard(gameState.teamCode, gameState.playerName, dateISO, gameState.theme, gameState.customPhrases, seed, gameState.boardSharing)
+  
   gameState.phase = 'PLAYING'
+  gameState.grid = grid
+  gameState.bingos = []
+  gameState.startTime = Date.now()
+  gameState.bingoTime = null
+  gameState.seed = seed
+  gameState.dateISO = dateISO
+  
+  // Broadcast new round to peers
+  if (networking.isHost.value) {
+    networking.startGame(gameState.theme, seed, dateISO)
+  }
+  
   console.log('[DEBUG] handleContinue: phase after:', gameState.phase)
   stopConfetti()
 }

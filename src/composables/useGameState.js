@@ -1,8 +1,25 @@
-import { reactive, ref } from 'vue'
+import { reactive, computed, ref } from 'vue'
 import { checkBingo } from '../utils/bingoCheck.js'
 import { formatTime } from '../utils/formatTime.js'
 
 export function useGameState() {
+  const timer = ref(0)
+  let timerInterval = null
+
+  function startTimer() {
+    if (timerInterval) clearInterval(timerInterval)
+    timer.value = 0
+    timerInterval = setInterval(() => {
+      timer.value++
+    }, 1000)
+  }
+
+  function stopTimer() {
+    if (timerInterval) {
+      clearInterval(timerInterval)
+      timerInterval = null
+    }
+  }
   const gameState = reactive({
     phase: 'LOBBY', // 'LOBBY' | 'PLAYING' | 'WON' | 'FINISHED'
     teamCode: '',
@@ -10,13 +27,13 @@ export function useGameState() {
     theme: 'default',
     grid: [],
     bingos: [],
-    marksCount: 0,
     startTime: null,
     bingoTime: null,
     seed: null,
     customPhrases: null,
     hostPeerId: null,
-    boardSharing: 'separate' // 'separate' or 'shared'
+    boardSharing: 'separate', // 'separate' or 'shared'
+    dateISO: ''
   })
 
   function enterLobby(teamCode = '', playerName = '') {
@@ -25,23 +42,35 @@ export function useGameState() {
     if (playerName) gameState.playerName = playerName
     gameState.grid = []
     gameState.bingos = []
-    gameState.marksCount = 0
     gameState.startTime = null
     gameState.bingoTime = null
   }
 
-  function startGame(teamCode, playerName, grid, theme = 'default', seed = null, customPhrases = null) {
+  function startGame(teamCode, playerName, grid, theme = 'default', seed = null, customPhrases = null, dateISO = null) {
     gameState.phase = 'PLAYING'
     gameState.teamCode = teamCode
     gameState.playerName = playerName
     gameState.theme = theme
+    // Reset all cell marks to ensure marksCount starts at 0
+    if (grid && Array.isArray(grid)) {
+      for (const row of grid) {
+        if (Array.isArray(row)) {
+          for (const cell of row) {
+            if (cell && !cell.isFree) {
+              cell.marked = false
+            }
+          }
+        }
+      }
+    }
     gameState.grid = grid
     gameState.bingos = []
-    gameState.marksCount = 0
     gameState.startTime = Date.now()
     gameState.bingoTime = null
     gameState.seed = seed
     gameState.customPhrases = customPhrases
+    if (dateISO) gameState.dateISO = dateISO
+    startTimer()
   }
 
   function toggleMark(row, col) {
@@ -54,11 +83,6 @@ export function useGameState() {
     if (cell.isFree) return null
 
     cell.marked = !cell.marked
-    if (cell.marked) {
-      gameState.marksCount++
-    } else {
-      gameState.marksCount--
-    }
 
     // Check for bingo
     const wins = checkBingo(gameState.grid)
@@ -79,6 +103,7 @@ export function useGameState() {
 
   function finishGame() {
     gameState.phase = 'FINISHED'
+    stopTimer()
   }
 
   function endGame() {
@@ -86,10 +111,11 @@ export function useGameState() {
     gameState.phase = 'LOBBY'
     gameState.grid = []
     gameState.bingos = []
-    gameState.marksCount = 0
     gameState.startTime = null
     gameState.bingoTime = null
     gameState.seed = null
+    gameState.dateISO = ''
+    stopTimer()
     // Keep teamCode, playerName, theme, customPhrases
   }
 
@@ -100,12 +126,12 @@ export function useGameState() {
     gameState.theme = 'default'
     gameState.grid = []
     gameState.bingos = []
-    gameState.marksCount = 0
     gameState.startTime = null
     gameState.bingoTime = null
     gameState.seed = null
     gameState.customPhrases = null
     gameState.hostPeerId = null
+    stopTimer()
   }
 
   function setHostPeerId(peerId) {
@@ -116,8 +142,22 @@ export function useGameState() {
     gameState.customPhrases = phrases
   }
 
+  const marksCount = computed(() => {
+    if (!gameState.grid || !Array.isArray(gameState.grid)) return 0
+    let count = 0
+    for (const row of gameState.grid) {
+      if (!Array.isArray(row)) continue
+      for (const cell of row) {
+        if (cell && cell.marked) count++
+      }
+    }
+    return count
+  })
+
   return {
     gameState,
+    timer,
+    marksCount,
     enterLobby,
     startGame,
     toggleMark,

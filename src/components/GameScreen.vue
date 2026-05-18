@@ -32,7 +32,7 @@
           <!-- Elapsed Time -->
           <div class="text-right">
             <div class="text-2xl font-bold" :style="{ color: 'var(--theme-text)' }">
-              {{ formatTime(gameState.startTime) }}
+              {{ formatTimer(timer) }}
             </div>
             <div class="text-xs" :style="{ color: 'var(--theme-text-muted)' }">Elapsed time</div>
           </div>
@@ -62,7 +62,7 @@
         <!-- Stats -->
         <div class="mt-6 flex justify-center gap-4 text-sm" :style="{ color: 'var(--theme-text)' }">
           <div class="px-4 py-2 rounded-lg shadow" :style="{ background: 'var(--theme-primary)' }">
-            <span class="font-bold" :style="{ color: 'var(--theme-accent-blue, #3b82f6)' }">{{ gameState.marksCount }}</span> marked
+            <span class="font-bold" :style="{ color: 'var(--theme-accent-blue, #3b82f6)' }">{{ marksCount }}</span> marked
           </div>
           <div class="px-4 py-2 rounded-lg shadow" :style="{ background: 'var(--theme-primary)' }">
             <span class="font-bold" :style="{ color: 'var(--theme-accent-green, #22c55e)' }">{{ gameState.bingos.length }}</span> bingo{{ gameState.bingos.length !== 1 ? 's' : '' }}
@@ -124,6 +124,14 @@ const props = defineProps({
     type: Object,
     required: true
   },
+  timer: {
+    type: Number,
+    required: true
+  },
+  marksCount: {
+    type: Number,
+    required: true
+  },
   toggleMark: {
     type: Function,
     required: true
@@ -152,7 +160,13 @@ const props = defineProps({
 
 const emit = defineEmits(['continue', 'toggle', 'open-modal', 'close-modal', 'end-game'])
 
-const { gameState, toggleMark, formatTime, allPlayers, connected, playerCount } = props
+const { gameState, timer, marksCount, toggleMark, formatTime, allPlayers, connected, playerCount } = props
+
+function formatTimer(seconds) {
+  const mins = Math.floor(seconds / 60)
+  const secs = seconds % 60
+  return `${mins}:${secs.toString().padStart(2, '0')}`
+}
 
 const modalPlayer = ref(null)
 const peerBingo = ref(null)
