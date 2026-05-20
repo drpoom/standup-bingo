@@ -42,13 +42,20 @@ export function usePeerEvents(deps) {
    * @param {Object} data - Game start data with theme and seed
    */
   function handleRemoteGameStart(data) {
-    const { theme, seed, dateISO } = data
+    const { theme, seed, dateISO, boardSharing } = data
     const teamCode = gameState.teamCode
     const playerName = gameState.playerName
+
+    // Apply board sharing setting from host
+    if (boardSharing) {
+      gameState.boardSharing = boardSharing
+    }
 
     // Generate card with same seed
     const grid = generateCard(teamCode, playerName, dateISO, theme, gameState.customPhrases, seed, gameState.boardSharing)
     startGame(teamCode, playerName, grid, theme, seed, gameState.customPhrases, dateISO)
+    // For remote games, we don't know if the seed was user-provided, so show the seed value
+    gameState.userSeed = seed
     lobbyGamePhase.value = 'PLAYING'
   }
 
@@ -226,6 +233,12 @@ export function usePeerEvents(deps) {
           }
           
           startGame(teamCode, playerName, grid, data.theme, data.seed, data.customPhrases, dateISO)
+          // For late joiners, show the seed value since we don't know if it was user-provided
+          gameState.userSeed = data.seed
+          // Apply board sharing setting from host
+          if (data.boardSharing) {
+            gameState.boardSharing = data.boardSharing
+          }
           lobbyGamePhase.value = 'PLAYING'
         }
         break

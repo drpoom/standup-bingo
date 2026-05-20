@@ -179,11 +179,10 @@ function dismissOnboarding() {
   localStorage.setItem('standup-bingo-seen', 'true')
 }
 
-function handleJoin(teamCode, playerName, theme, dateISO, boardSharing = 'separate', seed) {
+function handleJoin(teamCode, playerName, theme, dateISO) {
   enterLobby(teamCode, playerName)
   gameState.theme = theme
-  gameState.boardSharing = boardSharing
-  gameState.seed = seed || Date.now()
+  // boardSharing and seed are set by host when starting the game
   
   const roomId = `${teamCode.toUpperCase()}-${dateISO}`
   
@@ -208,17 +207,20 @@ function handleJoin(teamCode, playerName, theme, dateISO, boardSharing = 'separa
   }, { once: true })
 }
 
-function handleStartGame(theme) {
+function handleStartGame(theme, seed = null, boardSharing = 'separate') {
   const dateISO = new Date().toISOString().split('T')[0]
-  const seed = Date.now()
+  // Use provided seed if available, otherwise generate random
+  const actualSeed = seed || Date.now()
+  gameState.boardSharing = boardSharing
+  gameState.userSeed = seed  // null if random, number if user-provided
   
   // Generate card locally first
-  const grid = generateCard(gameState.teamCode, gameState.playerName, dateISO, theme, gameState.customPhrases, seed, gameState.boardSharing)
-  startGame(gameState.teamCode, gameState.playerName, grid, theme, seed, gameState.customPhrases, dateISO)
+  const grid = generateCard(gameState.teamCode, gameState.playerName, dateISO, theme, gameState.customPhrases, actualSeed, boardSharing)
+  startGame(gameState.teamCode, gameState.playerName, grid, theme, actualSeed, gameState.customPhrases, dateISO)
   lobbyGamePhase.value = 'PLAYING'
   
   // Broadcast to peers
-  networking.startGame(theme, seed, dateISO)
+  networking.startGame(theme, actualSeed, dateISO, boardSharing)
 }
 
 function handleTransferHost(newHostPeerId) {
@@ -270,11 +272,12 @@ function handleContinue() {
   gameState.startTime = Date.now()
   gameState.bingoTime = null
   gameState.seed = seed
+  gameState.userSeed = null  // New round is always random
   gameState.dateISO = dateISO
   
   // Broadcast new round to peers
   if (networking.isHost.value) {
-    networking.startGame(gameState.theme, seed, dateISO)
+    networking.startGame(gameState.theme, seed, dateISO, gameState.boardSharing)
   }
   
   console.log('[DEBUG] handleContinue: phase after:', gameState.phase)
@@ -299,6 +302,7 @@ function handleEndGame() {
 function handleReseed() {
   const newSeed = Date.now()
   gameState.seed = newSeed
+  gameState.userSeed = null  // Reseed is always random
   // Regenerate card with new seed
   const grid = generateCard(
     gameState.teamCode,

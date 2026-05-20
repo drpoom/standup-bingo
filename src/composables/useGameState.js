@@ -30,6 +30,7 @@ export function useGameState() {
     startTime: null,
     bingoTime: null,
     seed: null,
+    userSeed: null, // The seed value the user entered, or null if random
     customPhrases: null,
     hostPeerId: null,
     boardSharing: 'separate', // 'separate' or 'shared'
@@ -114,6 +115,7 @@ export function useGameState() {
     gameState.startTime = null
     gameState.bingoTime = null
     gameState.seed = null
+    gameState.userSeed = null
     gameState.dateISO = ''
     stopTimer()
     // Keep teamCode, playerName, theme, customPhrases
@@ -129,6 +131,7 @@ export function useGameState() {
     gameState.startTime = null
     gameState.bingoTime = null
     gameState.seed = null
+    gameState.userSeed = null
     gameState.customPhrases = null
     gameState.hostPeerId = null
     stopTimer()

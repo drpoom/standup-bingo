@@ -326,13 +326,14 @@ export function useNetworking() {
     })
   }
 
-  function broadcastGameStart(theme, seed, dateISO) {
+  function broadcastGameStart(theme, seed, dateISO, boardSharing) {
     lobbyGamePhase.value = 'PLAYING'
     broadcast({
       type: 'GAME_START',
       theme,
       seed,
       dateISO,
+      boardSharing: boardSharing || gameState.boardSharing,
       timestamp: Date.now()
     })
   }
@@ -399,9 +400,9 @@ export function useNetworking() {
     }
   }
 
-  function startGame(theme, seed, dateISO) {
+  function startGame(theme, seed, dateISO, boardSharing) {
     if (isHost.value) {
-      broadcastGameStart(theme, seed, dateISO)
+      broadcastGameStart(theme, seed, dateISO, boardSharing)
     }
   }
 

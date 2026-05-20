@@ -38,7 +38,7 @@
           </div>
           <!-- Seed Display -->
           <div class="text-xs" :style="{ color: 'var(--theme-text-muted)' }">
-            Seed: {{ gameState.seed }}
+            Seed: {{ gameState.userSeed || 'Random' }}
           </div>
           <!-- Host End Game Button -->
           <button
