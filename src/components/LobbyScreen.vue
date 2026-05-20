@@ -90,12 +90,37 @@
             />
           </div>
 
-          <ThemePicker v-model:theme="selectedTheme" @select="handleThemeSelect" />
-          <div class="text-right">
-            <span class="cursor-help text-white/50 hover:text-white transition-colors text-xs" title="Themes change the set of phrases on the bingo cards to match your team's vibe.">
-              ℹ️ What is a theme?
+          <!-- Remember Me -->
+          <div class="flex items-center gap-2">
+            <input
+              id="rememberMe"
+              v-model="rememberMe"
+              type="checkbox"
+              class="w-4 h-4 rounded border-white/30 bg-white/10 text-blue-500 focus:ring-blue-400 focus:ring-offset-0 cursor-pointer"
+            />
+            <label for="rememberMe" class="text-sm text-white/80 cursor-pointer select-none">
+              Remember me
+            </label>
+            <span v-if="hasSavedData" class="text-xs text-green-400/80 flex items-center gap-1">
+              ✨ Restored
             </span>
           </div>
+
+          <!-- Seed Input -->
+          <div>
+            <label for="seedInput" class="block text-sm font-medium text-white/90 mb-2">
+              Board Seed (optional)
+            </label>
+            <input
+              id="seedInput"
+              v-model="seedInput"
+              type="text"
+              placeholder="Leave empty for random, or enter a number for reproducible board"
+              class="w-full px-4 py-3 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition text-lg bg-white/10 text-white placeholder-white/50"
+            />
+            <p class="text-xs text-white/50 mt-1">Same seed = same board for all players</p>
+          </div>
+
 
           <!-- Board Sharing -->
           <div>
@@ -123,28 +148,6 @@
             </p>
           </div>
 
-          <!-- Board Preview -->
-          <div v-if="boardPreview && boardPreview.length === 25" class="mt-4">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs text-white/70">Your Board:</span>
-              <button @click="reseedBoard" class="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1">
-                <span>🔄</span> Reseed
-              </button>
-            </div>
-            <div class="grid grid-cols-5 gap-1 w-56">
-              <div 
-                v-for="(cell, idx) in boardPreview" 
-                :key="idx"
-                class="aspect-square bg-white/10 rounded-sm flex items-center justify-center p-1 overflow-hidden"
-                :title="cell.phrase"
-              >
-                <span class="text-[10px] text-white/80 text-center leading-tight break-words line-clamp-3">
-                  {{ cell.phrase }}
-                </span>
-              </div>
-            </div>
-            <p class="text-[10px] text-white/40 mt-1">Click Reseed for new random board</p>
-          </div>
 
           <button
             type="submit"
@@ -357,11 +360,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import ThemePicker from './ThemePicker.vue'
 import PlayerAvatar from './PlayerAvatar.vue'
 import CustomPhraseEditor from './CustomPhraseEditor.vue'
 import { useSoundEffects } from '../composables/useSoundEffects.js'
-import { useBingoCard } from '../composables/useBingoCard.js'
 
 const props = defineProps({
   networking: {
@@ -394,41 +395,25 @@ const { isMuted, toggleMute } = useSoundEffects()
 const muteIconUrl = new URL('../assets/icons/ui/mute.svg', import.meta.url).href
 const unmuteIconUrl = new URL('../assets/icons/ui/unmute.svg', import.meta.url).href
 
-const teamCode = ref('')
-const playerName = ref('')
-const selectedTheme = ref('default')
-const dateISO = ref('')
-const boardSharing = ref('separate')
-const boardPreview = ref(null)
-const showLateJoinDialog = ref(false)
-const pendingJoinData = ref(null)
-const { generateCard } = useBingoCard()
-
-function reseedBoard() {
-  if (!teamCode.value.trim() || !playerName.value.trim()) return
-  
-  const newSeed = Date.now()
-  const grid = generateCard(
-    teamCode.value.trim().toUpperCase(),
-    playerName.value.trim(),
-    dateISO.value || new Date().toISOString().split('T')[0],
-    selectedTheme.value,
-    null,
-    newSeed,
-    boardSharing.value
-  )
-  // Flatten grid to array for preview
-  boardPreview.value = grid.flat()
+// Load saved values from localStorage for "Remember me" functionality
+const STORAGE_KEYS = {
+  teamCode: 'standup-bingo-teamCode',
+  playerName: 'standup-bingo-playerName',
+  theme: 'standup-bingo-theme',
+  boardSharing: 'standup-bingo-boardSharing'
 }
 
-// Watch for changes to update preview
-watch([teamCode, playerName, selectedTheme, boardSharing], () => {
-  if (teamCode.value.trim() && playerName.value.trim()) {
-    reseedBoard()
-  } else {
-    boardPreview.value = null
-  }
-}, { immediate: true })
+const teamCode = ref(localStorage.getItem(STORAGE_KEYS.teamCode) || '')
+const playerName = ref(localStorage.getItem(STORAGE_KEYS.playerName) || '')
+const selectedTheme = ref(localStorage.getItem(STORAGE_KEYS.theme) || 'default')
+const dateISO = ref('')
+const boardSharing = ref(localStorage.getItem(STORAGE_KEYS.boardSharing) || 'separate')
+const seedInput = ref('')
+const showLateJoinDialog = ref(false)
+const pendingJoinData = ref(null)
+const rememberMe = ref(!!(localStorage.getItem(STORAGE_KEYS.teamCode) || localStorage.getItem(STORAGE_KEYS.playerName)))
+const hasSavedData = ref(rememberMe.value)
+
 
 const inRoom = computed(() => !!props.gameState.teamCode)
 const lobbyDate = computed(() => dateISO.value || new Date().toISOString().split('T')[0])
@@ -470,19 +455,46 @@ const readyCount = computed(() => {
   return props.players.filter(p => p.ready).length
 })
 
-function handleThemeSelect(themeId) {
-  selectedTheme.value = themeId
+
+function saveToLocalStorage() {
+  if (rememberMe.value) {
+    localStorage.setItem(STORAGE_KEYS.teamCode, teamCode.value.trim().toUpperCase())
+    localStorage.setItem(STORAGE_KEYS.playerName, playerName.value.trim())
+    localStorage.setItem(STORAGE_KEYS.theme, selectedTheme.value)
+    localStorage.setItem(STORAGE_KEYS.boardSharing, boardSharing.value)
+  }
 }
+
+function clearLocalStorage() {
+  localStorage.removeItem(STORAGE_KEYS.teamCode)
+  localStorage.removeItem(STORAGE_KEYS.playerName)
+  localStorage.removeItem(STORAGE_KEYS.theme)
+  localStorage.removeItem(STORAGE_KEYS.boardSharing)
+  hasSavedData.value = false
+}
+
+// Watch rememberMe to clear storage when unchecked
+watch(rememberMe, (val) => {
+  if (!val) {
+    clearLocalStorage()
+  }
+})
 
 function handleJoin() {
   if (teamCode.value.trim() && playerName.value.trim()) {
+    // Save to localStorage for next visit
+    saveToLocalStorage()
+    // Determine seed value
+    const seed = seedInput.value.trim() ? Number(seedInput.value.trim()) : Date.now()
+
     // Store join data for potential late-join detection
     pendingJoinData.value = {
       teamCode: teamCode.value.trim().toUpperCase(),
       playerName: playerName.value.trim(),
       theme: selectedTheme.value,
       date: new Date().toISOString().split('T')[0],
-      boardSharing: boardSharing.value
+      boardSharing: boardSharing.value,
+      seed
     }
     
     // Check if game is already in progress
@@ -499,7 +511,8 @@ function handleJoin() {
         pendingJoinData.value.playerName, 
         pendingJoinData.value.theme, 
         pendingJoinData.value.date, 
-        pendingJoinData.value.boardSharing
+        pendingJoinData.value.boardSharing,
+        pendingJoinData.value.seed
       )
     }
   }
@@ -515,7 +528,8 @@ function confirmLateJoin() {
       pendingJoinData.value.playerName, 
       pendingJoinData.value.theme, 
       pendingJoinData.value.date, 
-      pendingJoinData.value.boardSharing
+      pendingJoinData.value.boardSharing,
+      pendingJoinData.value.seed
     )
     showLateJoinDialog.value = false
     pendingJoinData.value = null

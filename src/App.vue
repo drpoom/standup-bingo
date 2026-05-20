@@ -74,7 +74,7 @@
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { THEMES } from './data/themes.js'
 
-const VERSION = '2.3.1'
+const VERSION = '2.4.0'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
