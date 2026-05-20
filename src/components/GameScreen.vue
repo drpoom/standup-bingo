@@ -92,6 +92,7 @@
       :playerName="modalPlayer.name"
       :grid="modalPlayer.grid"
       :bingoCount="modalPlayer.bingoCount"
+      :theme="modalPlayer.theme || 'default'"
       @close="closeModal"
     />
 

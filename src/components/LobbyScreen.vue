@@ -393,6 +393,40 @@
             <p class="text-sm text-white/50">Host: {{ hostPlayer?.name || 'Unknown' }}</p>
           </div>
         </div>
+
+        <!-- Board Preview Section -->
+        <div v-if="playerPreviews.length > 0" class="glass-card p-5 sm:p-6 mb-4">
+          <h3 class="font-semibold text-white mb-3 flex items-center gap-2">
+            <img src="../assets/icons/ui/start.svg" alt="" class="w-5 h-5" />
+            Board Preview
+            <span class="text-xs text-white/50 ml-1">
+              {{ boardSharing === 'shared' ? '(Shared board)' : '(Separate boards)' }}
+            </span>
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            <PlayerBoardThumbnail
+              v-for="player in playerPreviews"
+              :key="player.peerId"
+              :playerName="player.name"
+              :grid="player.grid"
+              :bingoCount="player.bingoCount"
+              :theme="player.theme"
+              @click="openPreviewModal(player)"
+            />
+          </div>
+          <p class="text-xs text-white/40 mt-3 text-center">Click a board to preview it in detail</p>
+        </div>
+
+        <!-- Board Preview Modal -->
+        <PlayerBoardModal
+          v-if="previewModalPlayer"
+          :visible="!!previewModalPlayer"
+          :playerName="previewModalPlayer.name"
+          :grid="previewModalPlayer.grid"
+          :bingoCount="previewModalPlayer.bingoCount"
+          :theme="previewModalPlayer.theme"
+          @close="closePreviewModal"
+        />
       </div>
     </div>
   </div>
@@ -402,6 +436,9 @@
 import { ref, computed, watch } from 'vue'
 import PlayerAvatar from './PlayerAvatar.vue'
 import CustomPhraseEditor from './CustomPhraseEditor.vue'
+import PlayerBoardThumbnail from './PlayerBoardThumbnail.vue'
+import PlayerBoardModal from './PlayerBoardModal.vue'
+import { useBingoCard } from '../composables/useBingoCard.js'
 import { useSoundEffects } from '../composables/useSoundEffects.js'
 
 const props = defineProps({
@@ -430,6 +467,7 @@ const props = defineProps({
 const emit = defineEmits(['join', 'start-game', 'end-game', 'transfer-host', 'toggle-ready', 'custom-phrases-updated', 'reseed'])
 
 const { isMuted, toggleMute } = useSoundEffects()
+const { generateCard } = useBingoCard()
 
 // Pre-compute icon URLs (import.meta.url can't be used in template expressions)
 const muteIconUrl = new URL('../assets/icons/ui/mute.svg', import.meta.url).href
@@ -490,6 +528,58 @@ const otherPlayers = computed(() => {
 const hostPlayer = computed(() => {
   return props.players.find(p => p.isHost)
 })
+
+// Board preview: generate a preview grid for each player
+const previewDateISO = computed(() => new Date().toISOString().split('T')[0])
+
+// Compute the effective seed for preview: if shared mode, use host's seed; if separate, each player uses their own
+const effectiveSeed = computed(() => {
+  const raw = seedInput.value.trim()
+  return raw ? Number(raw) : null
+})
+
+// Generate preview grids for all players
+const playerPreviews = computed(() => {
+  if (!props.gameState.teamCode) return []
+  
+  return props.players.map(player => {
+    let grid = []
+    try {
+      const seed = effectiveSeed.value ?? Date.now()
+      grid = generateCard(
+        props.gameState.teamCode,
+        player.name,
+        previewDateISO.value,
+        selectedTheme.value,
+        null, // customPhrases not available in preview
+        seed,
+        boardSharing.value
+      )
+    } catch (e) {
+      // If card generation fails, show empty grid
+      grid = []
+    }
+    return {
+      name: player.name,
+      grid,
+      bingoCount: 0,
+      theme: selectedTheme.value,
+      peerId: player.peerId,
+      isSelf: player.peerId === props.networking.myPeerId.value
+    }
+  })
+})
+
+// Modal state for viewing a player's board
+const previewModalPlayer = ref(null)
+
+function openPreviewModal(player) {
+  previewModalPlayer.value = player
+}
+
+function closePreviewModal() {
+  previewModalPlayer.value = null
+}
 
 const readyCount = computed(() => {
   return props.players.filter(p => p.ready).length

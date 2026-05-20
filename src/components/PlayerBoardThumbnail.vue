@@ -3,26 +3,29 @@
     @click="$emit('click')"
     class="player-board-thumbnail cursor-pointer hover:scale-105 transition-transform"
   >
-    <div class="bg-white rounded-lg shadow-md p-3 border-2" :style="{ borderColor: themeColors.border }">
+    <div class="rounded-lg shadow-md p-2 border-2" :style="{ borderColor: themeColors.border, background: themeColors.card }">
       <!-- Avatar + Name -->
-      <div class="flex items-center gap-2 mb-2">
-        <PlayerAvatar :name="playerName" :size="24" />
-        <span class="text-sm font-semibold truncate">{{ playerName }}</span>
+      <div class="flex items-center gap-1.5 mb-1.5">
+        <PlayerAvatar :name="playerName" :size="20" />
+        <span class="text-xs font-semibold truncate" :style="{ color: themeColors.text }">{{ playerName }}</span>
       </div>
       
-      <!-- Mini Bingo Grid (5x5 tiny squares) -->
-      <div class="grid grid-cols-5 gap-px bg-slate-200 rounded overflow-hidden">
+      <!-- Mini Bingo Grid (5x5 compact squares) -->
+      <div class="grid grid-cols-5 gap-0.5 rounded overflow-hidden">
         <template v-for="(row, rowIndex) in grid" :key="`row-${rowIndex}`">
           <div v-for="(cell, colIndex) in row" :key="`cell-${rowIndex}-${colIndex}`"
-            :class="['w-4 h-4', cell.marked ? 'bg-blue-500' : 'bg-white']"
-          />
+            class="aspect-square rounded-sm flex items-center justify-center"
+            :style="{ background: cell.marked ? themeColors.accent : themeColors.background }"
+          >
+            <span v-if="cell.isFree" class="text-[5px] font-bold" :style="{ color: themeColors.text }">★</span>
+          </div>
         </template>
       </div>
       
       <!-- Bingo Count -->
-      <div class="mt-2 text-center">
-        <span class="text-xs font-bold text-green-600">
-          🎉 {{ bingoCount }} BINGO{{ bingoCount !== 1 ? 'S' : '' }}
+      <div class="mt-1.5 text-center">
+        <span class="text-[10px] font-bold" :style="{ color: themeColors.accent }">
+          {{ bingoCount }} BINGO{{ bingoCount !== 1 ? 'S' : '' }}
         </span>
       </div>
     </div>
