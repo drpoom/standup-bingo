@@ -179,10 +179,11 @@ function dismissOnboarding() {
   localStorage.setItem('standup-bingo-seen', 'true')
 }
 
-function handleJoin(teamCode, playerName, theme, dateISO, boardSharing = 'separate') {
+function handleJoin(teamCode, playerName, theme, dateISO, boardSharing = 'separate', seed) {
   enterLobby(teamCode, playerName)
   gameState.theme = theme
   gameState.boardSharing = boardSharing
+  gameState.seed = seed || Date.now()
   
   const roomId = `${teamCode.toUpperCase()}-${dateISO}`
   
@@ -304,6 +305,7 @@ function handleReseed() {
     gameState.playerName,
     gameState.dateISO,
     gameState.theme,
+    gameState.customPhrases,
     newSeed,
     gameState.boardSharing
   )

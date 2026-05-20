@@ -140,19 +140,6 @@
 }
 
 /* Theme picker pulsing glow */
-@keyframes theme-pulse {
-  0%, 100% {
-    box-shadow: 0 0 5px var(--theme-accent);
-  }
-  50% {
-    box-shadow: 0 0 15px var(--theme-accent), 0 0 5px var(--theme-accent);
-  }
-}
-
-.theme-selected-pulse {
-  animation: theme-pulse 2s ease-in-out infinite;
-  border-color: var(--theme-accent) !important;
-}
 
 /* Player avatar glow ring */
 .avatar-glow-ring {

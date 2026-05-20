@@ -8,7 +8,7 @@
       <div class="circuit-node-pulse" style="top: 45%; left: 80%;"></div>
       <div class="circuit-node-pulse" style="top: 70%; left: 30%;"></div>
       <div class="circuit-node-pulse" style="top: 10%; left: 60%;"></div>
-      <div class="circuit-node-pulse" style="top: 85%; lefts: 70%;"></div>
+      <div class="circuit-node-pulse" style="top: 85%; left: 70%;"></div>
     </div>
     <div class="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8 relative z-10">
       <!-- Header -->
