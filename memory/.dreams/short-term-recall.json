@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-10T21:10:08.981Z",
+  "updatedAt": "2026-05-24T05:58:00.464Z",
   "entries": {
     "memory:memory/2026-04-09.md:29:63": {
       "key": "memory:memory/2026-04-09.md:29:63",
@@ -1178,23 +1178,25 @@
       "endLine": 21,
       "source": "memory",
       "snippet": "# 2026-04-21 Memory Log ## Elango Surfers - Fixed grass texture rolling direction: Changed `grassTileTex.offset.y` from `-=` to `+=` to ensure movement is \"into\" the screen. - Fixed frame shift bug: Updated `#game-container` in `game.css` to `position: absolute; top: 0; left: 0;` to prevent right-shift on PC browsers. - Version bumped to `v4.5.10` and deployed. - Initiated a request for Scout to design an automated testing strategy (Regression, Visual Snapshots, Stability). ## User Preferences - **Constraint**: Never use LaTeX-style symbols or arrows (e.g., $\\rightarrow$). Use plain text or emojis. ## Technical Notes - Discovered that the `gh` command on the host was an outdated npm packa",
-      "recallCount": 5,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.9637801349163055,
-      "maxScore": 0.40538233816623687,
+      "totalScore": 2.435019788146019,
+      "maxScore": 0.4712396532297134,
       "firstRecalledAt": "2026-04-21T05:35:09.012Z",
-      "lastRecalledAt": "2026-05-02T19:18:55.907Z",
+      "lastRecalledAt": "2026-05-13T05:25:01.519Z",
       "queryHashes": [
         "b26d17e4553d",
         "a454de910cc7",
         "6d9575045c67",
         "c1840ece68de",
-        "9294d9b62c52"
+        "9294d9b62c52",
+        "75bba125964c"
       ],
       "recallDays": [
         "2026-04-21",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-13"
       ],
       "conceptTags": [
         "grasstiletex.offset.y",
@@ -2323,18 +2325,22 @@
       "endLine": 1288,
       "source": "memory",
       "snippet": "✓ Game loads at correct URL (https://www.drpoom.com/elango-surfers/) ✓ Page title contains \"Elango\" ✓ Game canvas renders (screenshot captured) ``` **Run Commands:** ```bash npm run test # Headless npm run test:headed # See browser npm run test:debug # Debug mode ``` **Results:** 3/3 passing, ~52s runtime --- ## 🌐 Browser Automation — LIVE **OpenClaw Browser Tool Integration:** ```javascript // Open game browser({ action: \"open\", url: \"https://www.drpoom.com/elango-surfers/\" }) // Take screenshot browser({ action: \"screenshot\", fullPage: true }) // Read game state browser({ action: \"snapshot\", refs: \"role\" }) // Interact (pause) browser({ action: \"act\", kind: \"press\",",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4300396531820297,
-      "maxScore": 0.4300396531820297,
+      "totalScore": 1.5475646419839642,
+      "maxScore": 0.7403572066144728,
       "firstRecalledAt": "2026-04-28T10:04:04.818Z",
-      "lastRecalledAt": "2026-04-28T10:04:04.818Z",
+      "lastRecalledAt": "2026-05-17T15:50:00.985Z",
       "queryHashes": [
-        "ec07fc20cb26"
+        "ec07fc20cb26",
+        "7bb63c60ae79",
+        "f16b28825cf0"
       ],
       "recallDays": [
-        "2026-04-28"
+        "2026-04-28",
+        "2026-05-12",
+        "2026-05-17"
       ],
       "conceptTags": [
         "www.drpoom.com/elango-surfers",
@@ -2354,18 +2360,24 @@
       "endLine": 788,
       "source": "memory",
       "snippet": "## 🌐 Browser Automation — LIVE **OpenClaw Browser Tool Integration:** ```javascript // Open game browser({ action: \"open\", url: \"https://www.drpoom.com/elango-surfers/\" }) // Take screenshot browser({ action: \"screenshot\", fullPage: true }) // Read game state browser({ action: \"snapshot\", refs: \"role\" }) // Interact (pause) browser({ action: \"act\", kind: \"press\", key: \"p\" }) ``` **Demo Session:** Successfully captured v5.0.18 screenshot with score visible. --- ## 🐛 Key Debug Lessons ### Problem: Pause/Resume Spawning Bug (v5.0.18 → v5.0.19) **Root Cause:** `clock.getElapsedTime()` kept running even after `clock.stop()`, causing spawn timers to freeze. **Fix:** ```javascript let pa",
-      "recallCount": 1,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.42454789280891414,
-      "maxScore": 0.42454789280891414,
+      "totalScore": 2.3279844142130415,
+      "maxScore": 0.7197682000330486,
       "firstRecalledAt": "2026-04-28T10:04:04.818Z",
-      "lastRecalledAt": "2026-04-28T10:04:04.818Z",
+      "lastRecalledAt": "2026-05-17T15:50:04.183Z",
       "queryHashes": [
-        "ec07fc20cb26"
+        "ec07fc20cb26",
+        "7bb63c60ae79",
+        "889b7b5a04b4",
+        "f16b28825cf0",
+        "54ddd472821b"
       ],
       "recallDays": [
-        "2026-04-28"
+        "2026-04-28",
+        "2026-05-12",
+        "2026-05-17"
       ],
       "conceptTags": [
         "www.drpoom.com/elango-surfers",
@@ -2385,22 +2397,24 @@
       "endLine": 165,
       "source": "memory",
       "snippet": "# Fresh clone when workspace corrupted cd /tmp && rm -rf elango-surfers-fix && mkdir elango-surfers-fix && cd elango-surfers-fix git clone https://github.com/drpoom/elango-surfers.git . git checkout c40ca12 # or main for latest npm install npm run build # Deploy via GitHub Actions (push to main) ``` ### Version History - v5.1.9 — Coin spawn fix (`coinManager.scene = scene`), Stage 2 texture loading - v5.1.10 — Swipe controls + grass texture visibility # 2026-04-24 — Elango Surfers Debug & Movement Fixes ## Deployments ### v5.1.16 — Debug Overlay System - **Bundle**: `index-CI1Jkzu7.js` - **Commit**: `488ca26` - **Feature**: Remote debugging overlay for runtime diagnostics - **Activation*",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.1894057273864744,
+      "totalScore": 1.5952791690826413,
       "maxScore": 0.41597146987915035,
       "firstRecalledAt": "2026-04-28T10:04:04.818Z",
-      "lastRecalledAt": "2026-05-03T06:13:30.531Z",
+      "lastRecalledAt": "2026-05-17T09:45:41.996Z",
       "queryHashes": [
         "ec07fc20cb26",
         "6d9575045c67",
-        "51e386793eb4"
+        "51e386793eb4",
+        "cab13cf6e277"
       ],
       "recallDays": [
         "2026-04-28",
         "2026-05-02",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-17"
       ],
       "conceptTags": [
         "elango-surfers-fix",
@@ -2420,15 +2434,14 @@
       "endLine": 1487,
       "source": "memory",
       "snippet": "await expect(debugBtn).toBeEnabled(); // Verify clickable // Don't click - avoids race condition ``` **For full integration testing:** Use separate test file with explicit waits and state verification. --- ### **CI/CD Pipeline Status** GitHub Actions workflow: `.github/workflows/playwright.yml` - Triggers: push to main, pull requests - Runs: All 14 tests on Ubuntu latest - Artifacts: Screenshots, videos, test results - Timeout: 60s per test --- **Session End:** 2026-04-25 00:54 CET **Status:** ✅ All tests passing, baselines established --- ## 🎯 **Agent Team Workflow — Proven Pattern (2026-04-25 02:00-02:45 CET)** ### **Agent Model Configuration (Final)** | Agent | Model | Tempera",
-      "recallCount": 22,
+      "recallCount": 33,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 8.778788542747497,
-      "maxScore": 0.434198397397995,
+      "totalScore": 13.273863345384598,
+      "maxScore": 0.4663158923387527,
       "firstRecalledAt": "2026-04-29T05:32:36.234Z",
-      "lastRecalledAt": "2026-05-10T07:23:30.073Z",
+      "lastRecalledAt": "2026-05-24T00:42:34.890Z",
       "queryHashes": [
-        "f9e77edd555e",
         "da1653fa953d",
         "6d9575045c67",
         "c52df87c7df3",
@@ -2449,14 +2462,30 @@
         "323704ebe18c",
         "77531f414631",
         "f67bb1f86a87",
-        "b19f31ebff39"
+        "b19f31ebff39",
+        "6d531c4ce86d",
+        "5a9ceb05e917",
+        "df4c9d71aaf9",
+        "086f24bd77db",
+        "5d67badb41ce",
+        "47d243d21d60",
+        "a6a1519fb8c1",
+        "49c438a4ba7f",
+        "7d87f400af07",
+        "8bebba971d38",
+        "86bfa405cf38"
       ],
       "recallDays": [
         "2026-04-29",
         "2026-05-02",
         "2026-05-03",
         "2026-05-09",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-12",
+        "2026-05-15",
+        "2026-05-17",
+        "2026-05-18",
+        "2026-05-24"
       ],
       "conceptTags": [
         "ci/cd",
@@ -2476,20 +2505,23 @@
       "endLine": 41,
       "source": "memory",
       "snippet": "# 2026-04-27 — CI Protocol Violation & Test Fixes ## Protocol Violation (2026-04-26) - **Issue**: Got stuck in CI polling loop (~15 polls over 30 min) - **Cause**: Impatient waiting for Playwright tests, didn't use cron properly - **Fix**: Should use initial wait (5-8 min) → single check → cron reminder if still running - **Lesson**: Never poll in rapid loops; trust async completion signals or use cron ## Stage Texture Tests - **Problem**: Tests timing out trying to click settings button (⚙️) - **Root cause**: UI click unreliable during game rendering - **Fix**: Switched to keyboard controls (d-e-b-u-g for debug mode, then 1/2/3 for stages) - **Status**: Tests rewritten, awaiting CI result",
-      "recallCount": 2,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8841906934976578,
+      "totalScore": 1.6615757673978804,
       "maxScore": 0.4749461382627487,
       "firstRecalledAt": "2026-04-29T05:32:42.402Z",
-      "lastRecalledAt": "2026-05-10T08:48:00.987Z",
+      "lastRecalledAt": "2026-05-17T15:50:04.183Z",
       "queryHashes": [
         "4dae0f203b65",
-        "532340915169"
+        "532340915169",
+        "f16b28825cf0",
+        "54ddd472821b"
       ],
       "recallDays": [
         "2026-04-29",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-17"
       ],
       "conceptTags": [
         "5-8",
@@ -2540,20 +2572,31 @@
       "endLine": 123,
       "source": "memory",
       "snippet": "subagents.runTimeoutSeconds: 300 → 600 (10 min) ``` Hot-reloaded without restart. ### Lesson Complex subagent tasks (test creation, multi-file edits, CI waiting) need explicit timeout overrides. Default 5 min is too tight for anything involving test runs or multiple commits. --- ## v5.2.1 Critical Bug — Spawning Broken (11:36 AM) ### Reported User (John) reports that obstacles, coins, and items are NOT spawning after game start in v5.2.1. ### Investigation Status - `resetStage()` sets `lastSpawnTime = -2` and `gameDuration = 0` - `animate()` has a grace period: `const spawnGraceActive = gameDuration < 1.5` - During countdown, `countdownLocked = true` → animate returns early, `clock.getD",
-      "recallCount": 2,
+      "recallCount": 9,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.976379010081291,
+      "totalScore": 4.181497323513031,
       "maxScore": 0.5088929265737533,
       "firstRecalledAt": "2026-04-29T11:18:22.880Z",
-      "lastRecalledAt": "2026-05-02T11:53:38.511Z",
+      "lastRecalledAt": "2026-05-18T08:56:23.861Z",
       "queryHashes": [
         "ad2e45327c94",
-        "f432e271ff45"
+        "f432e271ff45",
+        "5a6044322003",
+        "482c49414248",
+        "c27b47f07258",
+        "f9a6e43f6416",
+        "9510e533fc6b",
+        "ddec267b3d5e",
+        "93bf93ce5564"
       ],
       "recallDays": [
         "2026-04-29",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "subagents.runtimeoutseconds",
@@ -2573,13 +2616,13 @@
       "endLine": 61,
       "source": "memory",
       "snippet": "- `6e97b92` — Loading screen text + countdown timing - `1b28104` — Boss warning fix for rainbow stage - Test fix commit — Texture loading test flakiness ## Subagent Timeout Issue ### Problem - Byte #2 (texture loading fix): timed out at 5m - Byte #4 (boss-rainbow fix): timed out at 5m - Scout (test creation): timed out at 4m37s ### Root Cause Default `runTimeoutSeconds` was **300 (5 min)** in agent config. ### Fix Updated `~/.openclaw/agents/main/agent/config.json`: ``` subagents.runTimeoutSeconds: 300 → 600 (10 min) ``` Hot-reloaded without restart. ### Lesson Complex subagent tasks (test creation, multi-file edits, CI waiting) need explicit timeout overrides. Default 5 min is too ti",
-      "recallCount": 8,
+      "recallCount": 20,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3.360124990344047,
+      "totalScore": 8.713637518882752,
       "maxScore": 0.49422092437744136,
       "firstRecalledAt": "2026-04-29T11:18:22.880Z",
-      "lastRecalledAt": "2026-05-03T06:13:30.531Z",
+      "lastRecalledAt": "2026-05-24T05:58:00.464Z",
       "queryHashes": [
         "ad2e45327c94",
         "f432e271ff45",
@@ -2588,12 +2631,29 @@
         "77531f414631",
         "fb5a7c958b62",
         "d7648434137a",
-        "51e386793eb4"
+        "51e386793eb4",
+        "280f0d393130",
+        "c04aaa1c04eb",
+        "482c49414248",
+        "f9a6e43f6416",
+        "47d243d21d60",
+        "a6a1519fb8c1",
+        "9510e533fc6b",
+        "ddec267b3d5e",
+        "4029b841c017",
+        "93bf93ce5564",
+        "3f8ef5d50dac",
+        "9ab73779252c"
       ],
       "recallDays": [
         "2026-04-29",
         "2026-05-02",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-13",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18",
+        "2026-05-24"
       ],
       "conceptTags": [
         "boss-rainbow",
@@ -2613,13 +2673,13 @@
       "endLine": 173,
       "source": "memory",
       "snippet": "- `d4b2019` — Magnet visual + cold drink item - `6e97b92` — Loading screen text + countdown timing - `1b28104` — Boss warning fix for rainbow stage - Test fix commit — Texture loading test flakiness ## Subagent Timeout Issue ### Problem - Byte #2 (texture loading fix): timed out at 5m - Byte #4 (boss-rainbow fix): timed out at 5m - Scout (test creation): timed out at 4m37s ### Root Cause Default `runTimeoutSeconds` was **300 (5 min)** in agent config. ### Fix Updated `~/.openclaw/agents/main/agent/config.json`: ``` subagents.runTimeoutSeconds: 300 → 600 (10 min) ``` Hot-reloaded without restart. ### Lesson Complex subagent tasks (test creation, multi-file edits, CI waiting) need expli",
-      "recallCount": 12,
+      "recallCount": 24,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4.872994416952133,
+      "totalScore": 10.216658172011375,
       "maxScore": 0.4920899718999862,
       "firstRecalledAt": "2026-04-29T11:18:22.880Z",
-      "lastRecalledAt": "2026-05-10T07:23:30.073Z",
+      "lastRecalledAt": "2026-05-24T05:58:00.464Z",
       "queryHashes": [
         "ad2e45327c94",
         "f432e271ff45",
@@ -2632,13 +2692,31 @@
         "77531f414631",
         "d7648434137a",
         "51e386793eb4",
-        "b19f31ebff39"
+        "b19f31ebff39",
+        "c04aaa1c04eb",
+        "482c49414248",
+        "f9a6e43f6416",
+        "47d243d21d60",
+        "a6a1519fb8c1",
+        "bca635374533",
+        "ddec267b3d5e",
+        "4029b841c017",
+        "93bf93ce5564",
+        "dcd8aa4e9697",
+        "86bfa405cf38",
+        "9ab73779252c"
       ],
       "recallDays": [
         "2026-04-29",
         "2026-05-02",
         "2026-05-03",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-13",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18",
+        "2026-05-20",
+        "2026-05-24"
       ],
       "conceptTags": [
         "boss-rainbow",
@@ -2658,26 +2736,39 @@
       "endLine": 220,
       "source": "memory",
       "snippet": "- `clock.getElapsedTime()` returned stale time - `willSpawn` calculation failed → nothing spawned **Fix:** Added `clock.start()` and `lastSpawnTime = 0` after state reset in `resetStage()` - File: `/home/poomk/.openclaw/workspace/elango-surfers/src/App.vue` - Commit: `6c3202f` - \"🐛 v5.2.13 - CRITICAL FIX: Restart clock after resetStage()\" - Tests: ✅ All 3 spawn-after-restart tests pass when run in isolation ## CI Pipeline Fix **Problem:** 9 tests failing (visual regression + essential + gameplay), blocking all deployments **Solution:** Run ONLY critical spawn tests in CI pre-deploy - Critical: `tests/spawn-after-restart.spec.ts` (obstacles/coins spawning) - Non-critical: visual regressio",
-      "recallCount": 6,
+      "recallCount": 14,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.519770413637161,
-      "maxScore": 0.48421658575534815,
+      "totalScore": 6.115541985630987,
+      "maxScore": 0.4909332156181335,
       "firstRecalledAt": "2026-04-29T11:18:22.880Z",
-      "lastRecalledAt": "2026-05-10T08:48:00.987Z",
+      "lastRecalledAt": "2026-05-24T05:58:00.464Z",
       "queryHashes": [
         "ad2e45327c94",
         "d1bbd8e016fb",
         "f67bb1f86a87",
         "41e648f39669",
         "b19f31ebff39",
-        "532340915169"
+        "532340915169",
+        "280f0d393130",
+        "a4c509c3ff32",
+        "47d243d21d60",
+        "35d0c079fcd7",
+        "bca635374533",
+        "5310e5b33e26",
+        "4e1fa4bc4f77",
+        "9ab73779252c"
       ],
       "recallDays": [
         "2026-04-29",
         "2026-05-06",
         "2026-05-09",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-13",
+        "2026-05-15",
+        "2026-05-17",
+        "2026-05-18",
+        "2026-05-24"
       ],
       "conceptTags": [
         "clock.getelapsedtime",
@@ -2697,24 +2788,33 @@
       "endLine": 62,
       "source": "memory",
       "snippet": "- **New behavior:** Mickey acknowledges requests immediately, spawns Archie for spec work, then delegates. No more disappearing for 10+ min while figuring out entire solution. ### Communication Protocol - **User feedback:** \"I don't like that you stop responding when tasks are not completed\" - **New rule:** Always report progress/failures, never go silent. Even if build breaks or task times out, explain what happened and what's next. ## New Project Ideas (Brainstormed) - **Standup Survivor:** Trivia battle royale about sprint/project knowledge - **Daily Quest Board:** Co-op RPG with random standup quests - **Hot Potato Retro:** Pass-the-parcel with retro questions - **Bug Bounty Hunt:** Co",
-      "recallCount": 6,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.706035034486191,
-      "maxScore": 0.5785385773862763,
+      "totalScore": 5.330040467728319,
+      "maxScore": 0.6642692827389688,
       "firstRecalledAt": "2026-04-30T05:49:30.361Z",
-      "lastRecalledAt": "2026-05-10T08:48:00.987Z",
+      "lastRecalledAt": "2026-05-20T13:41:41.716Z",
       "queryHashes": [
         "f0ff2efae4dd",
         "2b3909287e5b",
         "41e648f39669",
         "b19f31ebff39",
         "f3ed391c0742",
-        "532340915169"
+        "532340915169",
+        "3a2780b25aff",
+        "abbf1b86e51e",
+        "5c0a68ff2304",
+        "f16b28825cf0",
+        "54ddd472821b",
+        "cf17c71f288c"
       ],
       "recallDays": [
         "2026-04-30",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-12",
+        "2026-05-17",
+        "2026-05-20"
       ],
       "conceptTags": [
         "progress/failures",
@@ -2734,22 +2834,40 @@
       "endLine": 650,
       "source": "memory",
       "snippet": "TOTAL: ~22 minutes ``` **Results:** - ✅ 7/7 issues fixed - ✅ 14/14 tests passing - ✅ Commit: f6c2c3c pushed to main - ✅ Version: v5.0.19 **Files Changed:** 12 files (9 textures + 1 code + 1 docs + 1 config) --- ### **Lessons Learned** 1. **Scout timeout handling** — If Scout times out, Mickey can run QA directly 2. **Gateway timeouts** — Long-running subagents may hit gateway limits; design for idempotency 3. **Texture vs code fixes** — Visual issues may need both Sashay (assets) + Byte (materials) 4. **TASKS.md prevents confusion** — Clear agent assignments avoid duplicate work 5. **Parallel tracks save 30% time** — Byte + Sashay simultaneous = faster delivery --- ### **Agent",
-      "recallCount": 3,
+      "recallCount": 15,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.2916226655244827,
-      "maxScore": 0.45422188639640804,
+      "totalScore": 6.792323809862137,
+      "maxScore": 0.5154723703861236,
       "firstRecalledAt": "2026-04-30T05:49:30.361Z",
-      "lastRecalledAt": "2026-05-03T05:33:47.936Z",
+      "lastRecalledAt": "2026-05-18T20:23:52.283Z",
       "queryHashes": [
         "f0ff2efae4dd",
         "f432e271ff45",
-        "77531f414631"
+        "77531f414631",
+        "52ad42e409ea",
+        "c04aaa1c04eb",
+        "a4c509c3ff32",
+        "482c49414248",
+        "f9a6e43f6416",
+        "35d0c079fcd7",
+        "bca635374533",
+        "ddec267b3d5e",
+        "4029b841c017",
+        "93bf93ce5564",
+        "3f8ef5d50dac",
+        "4e1fa4bc4f77"
       ],
       "recallDays": [
         "2026-04-30",
         "2026-05-02",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-12",
+        "2026-05-13",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "gateway",
@@ -2769,20 +2887,29 @@
       "endLine": 2062,
       "source": "memory",
       "snippet": "### Target Version: v5.0.24 - Plan written to `elango-surfers/TASKS.md` - Ready to dispatch Byte (code) + Sashay (3D building design) + Scout (tests) --- ## ⚙️ **Gateway Config — LLM Idle Timeout Disabled (2026-04-25 19:53 CET)** ### Problem Error: \"The model did not produce a response before the LLM idle timeout\" **Root cause:** After Archie's 3-minute analysis (~79k tokens context), the main model (`deepseek-v4-flash:cloud`) took >90 seconds to start generating. The gateway's `idleTimeoutSeconds: 90` killed the request. ### Fix ```json \"llm\": { \"idleTimeoutSeconds\": 0 } ``` - `0` = wait indefinitely for first token - `timeoutSeconds: 600` (10 min) still applies for total request dur",
-      "recallCount": 2,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8776821792125702,
-      "maxScore": 0.44672953784465785,
+      "totalScore": 3.5831880897283557,
+      "maxScore": 0.4669184178113937,
       "firstRecalledAt": "2026-04-30T05:49:35.570Z",
-      "lastRecalledAt": "2026-05-03T05:34:10.061Z",
+      "lastRecalledAt": "2026-05-17T06:26:11.721Z",
       "queryHashes": [
         "ecea83304ccd",
-        "5e3c331db453"
+        "5e3c331db453",
+        "280f0d393130",
+        "c04aaa1c04eb",
+        "a4c509c3ff32",
+        "47d243d21d60",
+        "8c751ce9ddf0",
+        "7fe3a13fba4b"
       ],
       "recallDays": [
         "2026-04-30",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-13",
+        "2026-05-15",
+        "2026-05-17"
       ],
       "conceptTags": [
         "gateway",
@@ -2802,18 +2929,22 @@
       "endLine": 846,
       "source": "memory",
       "snippet": "**Root Cause:** baseURL in playwright.config.ts was redirecting to portfolio site. **Fix:** Use full URL in tests: `https://www.drpoom.com/elango-surfers/` --- ## 📋 Debug Enhancement Options (Future) | Option | Effort | Value | |--------|--------|-------| | Enhanced debug overlay (spawn timers, pause state) | Low | High | | Visual regression (screenshot compare) | Medium | High | | Nightly cron-based QA checks | Low | Medium | | Stage 3 boss fight tests | High | High | --- ## 🛠️ Team Debug Workflow ``` User Bug Report → Mickey (Router) ↓ ├─→ Byte (Coder) — Fix implementation ├─→ Scout (QA) — Verify fix + regression tests └─→ Archie (Architect) — Root cause analysis `",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4179790049791336,
-      "maxScore": 0.4179790049791336,
+      "totalScore": 1.319034257531166,
+      "maxScore": 0.46416833400726315,
       "firstRecalledAt": "2026-05-01T06:30:09.315Z",
-      "lastRecalledAt": "2026-05-01T06:30:09.315Z",
+      "lastRecalledAt": "2026-05-19T05:08:26.025Z",
       "queryHashes": [
-        "06a102860b03"
+        "06a102860b03",
+        "7bb63c60ae79",
+        "1f6409ed18fa"
       ],
       "recallDays": [
-        "2026-05-01"
+        "2026-05-01",
+        "2026-05-12",
+        "2026-05-19"
       ],
       "conceptTags": [
         "router",
@@ -2833,19 +2964,30 @@
       "endLine": 92,
       "source": "memory",
       "snippet": "6. **Parallel spawning works:** 5 subagents simultaneously maximizes throughput when tasks are atomic ## Next Steps - Deploy to GitHub Pages (dev: `/dev/`, production: custom domain `www.drpoom.com`) - User testing for difficulty balance - Consider Stage 4 concepts (if requested) ## Session Stats - **Total subagents spawned:** ~40+ - **Success rate:** ~85% (some required 2-3 retries) - **Total time:** ~2 hours (00:36 - 00:58) - **Parallelization:** 5 concurrent subagents max",
-      "recallCount": 2,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8702061653137206,
+      "totalScore": 3.4771413117647167,
       "maxScore": 0.4588208734989166,
       "firstRecalledAt": "2026-05-02T11:53:23.991Z",
-      "lastRecalledAt": "2026-05-02T11:53:38.511Z",
+      "lastRecalledAt": "2026-05-18T08:56:14.494Z",
       "queryHashes": [
         "ac12dcb80528",
-        "f432e271ff45"
+        "f432e271ff45",
+        "52ad42e409ea",
+        "5a6044322003",
+        "482c49414248",
+        "f9a6e43f6416",
+        "9510e533fc6b",
+        "ddec267b3d5e"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-12",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "www.drpoom.com",
@@ -2865,18 +3007,28 @@
       "endLine": 232,
       "source": "memory",
       "snippet": "subagents.runTimeoutSeconds: 300 → 600 (10 min) ``` Hot-reloaded without restart. ### Lesson Complex subagent tasks (test creation, multi-file edits, CI waiting) need explicit timeout overrides. Default 5 min is too tight for anything involving test runs or multiple commits. --- ## v5.2.1 Critical Bug — Spawning Broken (11:36 AM) ### Reported User (John) reports that obstacles, coins, and items are NOT spawning after game start in v5.2.1. ### Investigation Status - `resetStage()` sets `lastSpawnTime = -2` and `gameDuration = 0` - `animate()` has a grace period: `const spawnGraceActive = gameDuration < 1.5` - During countdown, `countdownLocked = true` → animate returns early, `clock.getD",
-      "recallCount": 1,
+      "recallCount": 7,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4697825729846954,
-      "maxScore": 0.4697825729846954,
+      "totalScore": 3.219423547387123,
+      "maxScore": 0.49662195146083826,
       "firstRecalledAt": "2026-05-02T11:53:38.511Z",
-      "lastRecalledAt": "2026-05-02T11:53:38.511Z",
+      "lastRecalledAt": "2026-05-18T08:56:23.861Z",
       "queryHashes": [
-        "f432e271ff45"
+        "f432e271ff45",
+        "5a6044322003",
+        "482c49414248",
+        "f9a6e43f6416",
+        "9510e533fc6b",
+        "ddec267b3d5e",
+        "93bf93ce5564"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "subagents.runtimeoutseconds",
@@ -2896,18 +3048,33 @@
       "endLine": 1129,
       "source": "memory",
       "snippet": "2. **Gateway timeouts** — Long-running subagents may hit gateway limits; design for idempotency 3. **Texture vs code fixes** — Visual issues may need both Sashay (assets) + Byte (materials) 4. **TASKS.md prevents confusion** — Clear agent assignments avoid duplicate work 5. **Parallel tracks save 30% time** — Byte + Sashay simultaneous = faster delivery --- ### **Agent Orchestration Code Pattern** ```javascript // Mickey: Spawn Archie with full context const context = await read(\"src/App.vue\"); sessions_spawn({ agentId: \"archie\", task: `Plan: ${request}\\n\\nContext:\\n${context}`, lightContext: false // Archie needs full context }); // After TASKS.md created const tasks = parseTasks",
-      "recallCount": 1,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4272962033748626,
-      "maxScore": 0.4272962033748626,
+      "totalScore": 5.466980683803557,
+      "maxScore": 0.5049423605203628,
       "firstRecalledAt": "2026-05-02T11:53:38.511Z",
-      "lastRecalledAt": "2026-05-02T11:53:38.511Z",
+      "lastRecalledAt": "2026-05-18T20:23:47.945Z",
       "queryHashes": [
-        "f432e271ff45"
+        "f432e271ff45",
+        "5a6044322003",
+        "a4c509c3ff32",
+        "482c49414248",
+        "f9a6e43f6416",
+        "35d0c079fcd7",
+        "bca635374533",
+        "9510e533fc6b",
+        "ddec267b3d5e",
+        "7d87f400af07",
+        "93bf93ce5564",
+        "3f8ef5d50dac"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "gateway",
@@ -2972,19 +3139,21 @@
       "endLine": 230,
       "source": "memory",
       "snippet": "## Files Modified - `src/composables/useAudio.js` — SFX fallback logic - `src/composables/useScene.js` — Scene initialization guards - `src/composables/useObstacles.js` — Scene guards - `src/App.vue` — Touch handler variable shadowing fix ## Next Steps - User testing on Android with debug overlay enabled (`?debug=1`) - Collect runtime data from debug panel to diagnose any remaining issues - Monitor for grass rendering order + stage change button behavior --- ## 2026-04-24 11:00 — v5.1.18 & v5.1.19 Deployments ### v5.1.18 — Grass/Mountain Depth Sorting - **Bundle**: `index-Dz0SNYTB.js` - **Commit**: `cf0da48` - **Workflow**: #237 ✅ **Bug**: Mountains positioned at z=-90, but grass exte",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7922217577695846,
+      "totalScore": 1.1963582187891006,
       "maxScore": 0.40440054833889005,
       "firstRecalledAt": "2026-05-02T15:49:08.425Z",
-      "lastRecalledAt": "2026-05-02T16:36:31.652Z",
+      "lastRecalledAt": "2026-05-17T09:45:41.996Z",
       "queryHashes": [
         "990e378e2da9",
-        "6d9575045c67"
+        "6d9575045c67",
+        "cab13cf6e277"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-17"
       ],
       "conceptTags": [
         "src/composables/useaudio.js",
@@ -3067,18 +3236,28 @@
       "endLine": 1921,
       "source": "memory",
       "snippet": "- Commit: `🚀 v5.0.20: Loading screen, cobblestone scroll fix, mute fix` --- ## 🎨 **Stage 3 Rendering Fixes — v5.0.20 (2026-04-25 15:00-15:30 CET)** ### 5 Issues Fixed by Byte ⚡ | # | Issue | Root Cause | Fix | |---|-------|------------|-----| | 1 | Skyscraper white background | RGB (no alpha), 69% white pixels | Converted to RGBA PNG, white → transparent | | 2 | Boss meatball white background | RGB (no alpha), 74% white pixels | Converted to RGBA PNG, white → transparent | | 3 | Metal beam gray background | RGB (no alpha), gray [162,162,162] bg | Converted to RGBA PNG, gray → transparent | | 4 | Boss tentacles at bottom | Positioned at y=1.5 (below meatball at y=2.5) | Centered at y=2.",
-      "recallCount": 1,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.37089264690876006,
-      "maxScore": 0.37089264690876006,
+      "totalScore": 2.3465127140283584,
+      "maxScore": 0.4683327734470367,
       "firstRecalledAt": "2026-05-02T15:49:08.425Z",
-      "lastRecalledAt": "2026-05-02T15:49:08.425Z",
+      "lastRecalledAt": "2026-05-24T00:42:45.703Z",
       "queryHashes": [
-        "990e378e2da9"
+        "990e378e2da9",
+        "a0a9ccdc8bc0",
+        "5a9ceb05e917",
+        "fdd73aa5e0c5",
+        "4029b841c017",
+        "a120ef5b9b0f"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-11",
+        "2026-05-15",
+        "2026-05-17",
+        "2026-05-18",
+        "2026-05-24"
       ],
       "conceptTags": [
         "v5.0.20",
@@ -3129,13 +3308,13 @@
       "endLine": 2007,
       "source": "memory",
       "snippet": "- **Loading screen tests:** 3/3 passed (42.8s total) - Test 1: Loading screen visible + version displayed ✅ - Test 2: Keypress dismisses + canvas appears ✅ - Test 3: Progress percentage shown (or fast-load fallback) ✅ ### Version Bump - `v5.0.20` → `v5.0.21` - Updated in `src/App.vue` (VERSION constant) and `package.json` ### Deploy - Built and published to gh-pages - Commit: `🚀 v5.0.21: Fix loading screen keypress + loading progress bar` - Verified live: new bundle hash `index-CKk5NOOS.js`, v5.0.21 displayed --- **Session End:** 2026-04-25 16:56 CET **Version:** v5.0.21 **Status:** ✅ All fixes deployed, tests passing, pipeline discipline restored --- ## 🚀 **v5.0.23 — CI Green, All 2",
-      "recallCount": 9,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3.5597078919410703,
+      "totalScore": 4.707949542999267,
       "maxScore": 0.4346609830856323,
       "firstRecalledAt": "2026-05-02T15:49:12.000Z",
-      "lastRecalledAt": "2026-05-10T07:23:30.073Z",
+      "lastRecalledAt": "2026-05-17T09:19:29.070Z",
       "queryHashes": [
         "3caa5221bd9e",
         "6274ca547ac9",
@@ -3145,12 +3324,17 @@
         "3aa18e22aaec",
         "671aa444daa4",
         "fb5a7c958b62",
-        "b19f31ebff39"
+        "b19f31ebff39",
+        "1f0723d868e4",
+        "a0a9ccdc8bc0",
+        "eb5e42657497"
       ],
       "recallDays": [
         "2026-05-02",
         "2026-05-03",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-11",
+        "2026-05-17"
       ],
       "conceptTags": [
         "3/3",
@@ -3170,20 +3354,22 @@
       "endLine": 608,
       "source": "memory",
       "snippet": "## Tasks ### Task N: [Name] **Agent:** Byte ⚡ | Sashay 🎨 **Status:** [ ] Todo [ ] In Progress [x] Done **File:** `path/to/file.js` **Type:** [new | refactor | fix | test | creative] **Spec:** - What it does - Inputs/outputs - Dependencies **Acceptance:** - [ ] Tests pass - [ ] Matches spec - [ ] No console errors ``` --- ### **Key Efficiency Principles** 1. **TASKS.md is source of truth** — Archie owns it, Byte/Sashay follow it, Scout verifies against it 2. **Parallel execution** — Byte (logic) + Sashay (creative) work simultaneously 3. **Atomic tasks** — <100 lines changed per task, prevents timeouts 4. **Temperature alignment** — Low temp (0.15-0.2) for analysis/code, high temp (0.7",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.1719271689653397,
+      "totalScore": 1.5423713117837905,
       "maxScore": 0.4002022713422775,
       "firstRecalledAt": "2026-05-02T15:49:12.000Z",
-      "lastRecalledAt": "2026-05-02T19:18:48.883Z",
+      "lastRecalledAt": "2026-05-14T23:54:11.191Z",
       "queryHashes": [
         "3caa5221bd9e",
         "a454de910cc7",
-        "53e0b6838feb"
+        "53e0b6838feb",
+        "5a9ceb05e917"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-15"
       ],
       "conceptTags": [
         "path/to/file.js",
@@ -3203,24 +3389,32 @@
       "endLine": 1581,
       "source": "memory",
       "snippet": "- [ ] No console errors ``` --- ### **Key Efficiency Principles** 1. **TASKS.md is source of truth** — Archie owns it, Byte/Sashay follow it, Scout verifies against it 2. **Parallel execution** — Byte (logic) + Sashay (creative) work simultaneously 3. **Atomic tasks** — <100 lines changed per task, prevents timeouts 4. **Temperature alignment** — Low temp (0.15-0.2) for analysis/code, high temp (0.7+) for creative 5. **Mickey never edits code** — Always delegate to Byte 6. **lightContext: true** — Lean prompts, faster execution --- ### **Live Test: Elango Surfers v5.0.19 (02:20-02:45 CET)** **User Request:** Fix 7 Stage 2/3 issues **Execution:** ``` [Archie 📐] 2m16s — Created TASKS",
-      "recallCount": 5,
+      "recallCount": 10,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.9751867085695265,
-      "maxScore": 0.429389876127243,
+      "totalScore": 4.111039853096008,
+      "maxScore": 0.48223057985305784,
       "firstRecalledAt": "2026-05-02T15:49:15.617Z",
-      "lastRecalledAt": "2026-05-09T17:41:39.917Z",
+      "lastRecalledAt": "2026-05-24T00:42:34.890Z",
       "queryHashes": [
         "d6e70ffeed44",
         "77531f414631",
         "8c5487e57782",
         "4300e7f9b6c6",
-        "f67bb1f86a87"
+        "f67bb1f86a87",
+        "5a9ceb05e917",
+        "99a020a1bf44",
+        "bca635374533",
+        "1db76cbccbeb",
+        "86bfa405cf38"
       ],
       "recallDays": [
         "2026-05-02",
         "2026-05-03",
-        "2026-05-09"
+        "2026-05-09",
+        "2026-05-15",
+        "2026-05-18",
+        "2026-05-24"
       ],
       "conceptTags": [
         "tasks.md",
@@ -3240,21 +3434,26 @@
       "endLine": 1036,
       "source": "memory",
       "snippet": "User Request → Mickey (Router, 30s) ↓ Reads context files, spawns Archie ↓ Archie (Architect, 2-5 min) ↓ Writes TASKS.md with atomic tasks + agent assignments ↓ Mickey parses TASKS.md (30s) ↓ Spawns Byte + Sashay [PARALLEL] ↓ ┌──────────────┬──────────────┐ │ Byte ⚡ │ Sashay 🎨 │ │ (Logic) │ (Creative) │ │ 5-8 min │ 3-5 min │ └──────────────┴──────────────┘ ↓ Scout (QA, 2-3 min) ↓ Runs tests, code review, visual check ↓ Mickey (Final, 30s) ↓ Commit + push + report ↓ ✅ DONE (10-15 min total) ``` --- ### **TASKS.md Format (Archie's Output)** ```markdown # Sprint: [Name] Date: YYYY-M",
-      "recallCount": 4,
+      "recallCount": 7,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.609327158331871,
-      "maxScore": 0.40922938883304594,
+      "totalScore": 2.941929233074188,
+      "maxScore": 0.47342090308666224,
       "firstRecalledAt": "2026-05-02T16:36:18.153Z",
-      "lastRecalledAt": "2026-05-02T18:51:46.984Z",
+      "lastRecalledAt": "2026-05-18T08:56:23.682Z",
       "queryHashes": [
         "a454de910cc7",
         "2928fc9aa55f",
         "187e6cb7cb2e",
-        "c1840ece68de"
+        "c1840ece68de",
+        "5d67badb41ce",
+        "99a020a1bf44",
+        "7d87f400af07"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-15",
+        "2026-05-18"
       ],
       "conceptTags": [
         "router",
@@ -3274,23 +3473,29 @@
       "endLine": 499,
       "source": "memory",
       "snippet": "4. Check `error-context.md` for details 5. Add console logs for timing issues --- ### **Test Reliability Patterns** **Fragile (avoid):** ```javascript await debugBtn.click(); // Clicks, expects immediate state change await debugBtn.click(); // Toggle off - may fail if text changed ``` **Robust (use):** ```javascript await expect(debugBtn).toBeVisible(); // Verify exists await expect(debugBtn).toBeEnabled(); // Verify clickable // Don't click - avoids race condition ``` **For full integration testing:** Use separate test file with explicit waits and state verification. --- ### **CI/CD Pipeline Status** GitHub Actions workflow: `.github/workflows/playwright.yml` - Triggers: push to",
-      "recallCount": 6,
+      "recallCount": 9,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.41601593196392,
-      "maxScore": 0.41856041848659514,
+      "totalScore": 3.7358089268207544,
+      "maxScore": 0.4748234927654266,
       "firstRecalledAt": "2026-05-02T16:36:18.153Z",
-      "lastRecalledAt": "2026-05-02T19:37:57.960Z",
+      "lastRecalledAt": "2026-05-18T08:56:14.689Z",
       "queryHashes": [
         "a454de910cc7",
         "d9ad0a41c64d",
         "187e6cb7cb2e",
         "53e0b6838feb",
         "9294d9b62c52",
-        "323704ebe18c"
+        "323704ebe18c",
+        "6d531c4ce86d",
+        "5d67badb41ce",
+        "4029b841c017"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-12",
+        "2026-05-15",
+        "2026-05-18"
       ],
       "conceptTags": [
         "error-context.md",
@@ -3310,20 +3515,22 @@
       "endLine": 1868,
       "source": "memory",
       "snippet": "4. **Byte must commit** — Config rule #6 ensures code is never orphaned 5. **Scout's config needs parallel rule** — Added explicit instruction to use parallel execution 6. **Archie → Byte/Scout pipeline works** — Plan first, then dispatch Byte (code) and Scout (tests) in parallel for fastest delivery --- **Session End:** 2026-04-25 12:34 CET **Status:** ✅ 24 tests passing, debug features deployed, agent configs updated --- ## 🐕 **Archie + Scout Protocol Update — 2026-04-25 14:38-14:40 CET** ### Archie's New Branch & Version Protocol Added to `~/.openclaw/agents/archie/agent/config.json`: ``` 1. All work → default branch (main), no feature branches 2. TASKS.md includes target version (e.",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.4788849413394929,
-      "maxScore": 0.37636221051216123,
+      "totalScore": 1.909194439649582,
+      "maxScore": 0.4303094983100891,
       "firstRecalledAt": "2026-05-02T16:36:32.137Z",
-      "lastRecalledAt": "2026-05-02T18:49:45.786Z",
+      "lastRecalledAt": "2026-05-18T08:56:30.450Z",
       "queryHashes": [
         "8c26356b65f5",
         "ff0beb74b7e1",
-        "3e8338b15dd9"
+        "3e8338b15dd9",
+        "1db76cbccbeb"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-18"
       ],
       "conceptTags": [
         "byte/scout",
@@ -3429,28 +3636,14 @@
       "endLine": 89,
       "source": "memory",
       "snippet": "- Hesai: IR website + SEC EDGAR (downloading) ⏳ **Not Started:** - GOOGL: SEC EDGAR - AAPL: SEC EDGAR - Thai stocks: SET filings ### Technical Achievements 1. **OCR Pipeline:** Tesseract installed + working (Partnership 1962-1970 scanned letters) 2. **Custom XBRL Parser:** Python HTML stripper for SEC iXBRL filings (TSM 20-F) 3. **Micro-batch Strategy:** 5-10 files per batch avoids 10-min timeouts 4. **Index Infrastructure:** Every stock has index.md with file tables ### Token Usage - Warren subagents: ~3-4M tokens total - Biggest: TSM 20-F (750k+ tokens each), OCR infrastructure (1.5M tokens) - Efficiency improved: 60-70k → 21k tokens/turn (65% reduction after April 19 optimization) ###",
-      "recallCount": 35,
+      "recallCount": 50,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 14.691821491718292,
+      "totalScore": 20.81628536880017,
       "maxScore": 0.48158712387084956,
       "firstRecalledAt": "2026-05-02T18:13:05.719Z",
-      "lastRecalledAt": "2026-05-10T21:10:08.981Z",
+      "lastRecalledAt": "2026-05-21T05:42:43.559Z",
       "queryHashes": [
-        "9a64c3bdcce7",
-        "36c50aea0385",
-        "4b06c12d71bf",
-        "0ee41f461853",
-        "4af2a745c65d",
-        "e1cd12da2572",
-        "6f288dc1cb42",
-        "531190e18085",
-        "79ae6b73a357",
-        "ff0beb74b7e1",
-        "7347f9102bff",
-        "5461eafc30f5",
-        "caefb1176782",
-        "14696dd857fc",
         "53e0b6838feb",
         "9294d9b62c52",
         "323704ebe18c",
@@ -3468,13 +3661,33 @@
         "f67bb1f86a87",
         "7119c66bf133",
         "e0dee0e07796",
-        "c398aad7f4da"
+        "c398aad7f4da",
+        "9a30c25d5bbe",
+        "d95a3b107832",
+        "774e6631398d",
+        "772f6624198e",
+        "8fffd3ce98fa",
+        "5d8113627829",
+        "cc4998e0480c",
+        "2f999490ccad",
+        "eadb72a91448",
+        "051babc2f7ea",
+        "99a020a1bf44",
+        "24930377767d",
+        "73faeaf23d9b",
+        "90b81a5f469f"
       ],
       "recallDays": [
         "2026-05-02",
         "2026-05-03",
         "2026-05-09",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-11",
+        "2026-05-13",
+        "2026-05-14",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-21"
       ],
       "conceptTags": [
         "1962-1970",
@@ -3494,19 +3707,21 @@
       "endLine": 255,
       "source": "memory",
       "snippet": "1. Manual reproduction first 2. Run 3-5 times to check consistency 3. Watch test video (`test-results/*/video.webm`) 4. Check `error-context.md` for details 5. Add console logs for timing issues --- ### **Test Reliability Patterns** **Fragile (avoid):** ```javascript await debugBtn.click(); // Clicks, expects immediate state change await debugBtn.click(); // Toggle off - may fail if text changed ``` **Robust (use):** ```javascript await expect(debugBtn).toBeVisible(); // Verify exists await expect(debugBtn).toBeEnabled(); // Verify clickable // Don't click - avoids race condition ``` **For full integration testing:** Use separate test file with explicit waits and state verification.",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8056985557079315,
+      "totalScore": 1.1842606663703918,
       "maxScore": 0.4170420467853546,
       "firstRecalledAt": "2026-05-02T18:13:13.675Z",
-      "lastRecalledAt": "2026-05-02T19:18:48.883Z",
+      "lastRecalledAt": "2026-05-12T05:37:24.164Z",
       "queryHashes": [
         "d9ad0a41c64d",
-        "53e0b6838feb"
+        "53e0b6838feb",
+        "6d531c4ce86d"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-12"
       ],
       "conceptTags": [
         "3-5",
@@ -3526,13 +3741,13 @@
       "endLine": 43,
       "source": "memory",
       "snippet": "# Memory Log — 2026-05-02 ## Warren Agent — Investment Infrastructure Build ### Agent Setup - Created Warren 🦅 (Value Investing Expert) skill at `/home/poomk/.openclaw/workspace/skills/warren/SKILL.md` - Config: `glm-5.1:cloud`, temp 0.1, thinking medium - Configured timeout: 600s (10 min), maxConcurrent: 3 - Added to OpenClaw allowAgents + agents.list ### Watchlist (12 Stocks) **International (8):** TSM, SK-Hynix, MU, GOOGL, AAPL, Hesai, Xiaomi, Trip.com **Thai (4):** Kamart, SIS, SISB, KBank ### Gap Closure Progress (Markitdown Conversions) **Completed: 117/166 files (70%)** ✅ **100% Complete Categories:** - Buffett/Munger Library: 85+ files (Berkshire 48 yrs, Partnership 30 letters,",
-      "recallCount": 19,
+      "recallCount": 27,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 7.953821730613708,
+      "totalScore": 11.511714828014371,
       "maxScore": 0.47638327479362486,
       "firstRecalledAt": "2026-05-02T18:34:42.939Z",
-      "lastRecalledAt": "2026-05-10T10:42:07.238Z",
+      "lastRecalledAt": "2026-05-17T06:23:12.100Z",
       "queryHashes": [
         "6f288dc1cb42",
         "531190e18085",
@@ -3552,13 +3767,24 @@
         "4300e7f9b6c6",
         "f67bb1f86a87",
         "859cb484a79e",
-        "3aa8a5a6dd48"
+        "3aa8a5a6dd48",
+        "051babc2f7ea",
+        "db61e673e15b",
+        "df4c9d71aaf9",
+        "1a2c8243aac7",
+        "901a8953b0b2",
+        "030289261212",
+        "8b3ba4fc7e6f",
+        "8c751ce9ddf0"
       ],
       "recallDays": [
         "2026-05-02",
         "2026-05-03",
         "2026-05-09",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17"
       ],
       "conceptTags": [
         "home/poomk",
@@ -3578,21 +3804,23 @@
       "endLine": 59,
       "source": "memory",
       "snippet": "- **Vite bundle hash stability** — Minor code changes (function extraction, material props) may not change bundle hash. Hash `index-DFGbwRCO.js` persisted across v5.1.9 → v5.1.10. Don't rely on hash change to verify deployment — check source code or runtime behavior. ### Commands That Worked ```bash # Fresh clone when workspace corrupted cd /tmp && rm -rf elango-surfers-fix && mkdir elango-surfers-fix && cd elango-surfers-fix git clone https://github.com/drpoom/elango-surfers.git . git checkout c40ca12 # or main for latest npm install npm run build # Deploy via GitHub Actions (push to main) ``` ### Version History - v5.1.9 — Coin spawn fix (`coinManager.scene = scene`), Stage 2 texture lo",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.1712191879749299,
-      "maxScore": 0.3972969353199005,
+      "totalScore": 1.6070330888032913,
+      "maxScore": 0.43581390082836147,
       "firstRecalledAt": "2026-05-02T18:51:50.797Z",
-      "lastRecalledAt": "2026-05-03T06:13:30.531Z",
+      "lastRecalledAt": "2026-05-19T05:06:22.028Z",
       "queryHashes": [
         "7347f9102bff",
         "d7648434137a",
-        "51e386793eb4"
+        "51e386793eb4",
+        "83dedf5063f6"
       ],
       "recallDays": [
         "2026-05-02",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-19"
       ],
       "conceptTags": [
         "index-dfgbwrco.js",
@@ -3653,13 +3881,13 @@
       "endLine": 152,
       "source": "memory",
       "snippet": "## 🚀 MASSIVE CONVERSION SESSION — 2026-05-02 Evening ### Conversion Progress (Evening Session) **Starting:** 117 files (70%) **Current:** 367+ files converted (47+ batches complete) **Remaining:** ~65-100 files (~6-8 batches) ### 🏆 100% CLUB MEMBERS (6 Stocks Complete!) 1. **SISB:** 22 files 🏆 (FIRST stock to 100%!) 2. **Hesai:** 12 files 🏆 3. **Xiaomi:** 60 files 🏆 4. **SIS:** 42 files 🏆 5. **SK-Hynix:** 76 files 🏆 6. **GOOGL:** 24 files 🏆 (10-Ks + 10-Qs, all SEC EDGAR) ### 🔄 IN PROGRESS (7 Stocks) - **Trip:** 31 files (4/8 batches) — 2025 earnings complete - **AAPL:** 62 files (7/12 batches) — FY2013-2020 10-Ks + 10-Qs - **TSM:** 48 files (4/9 batches) — 2020-2024 presentations",
-      "recallCount": 11,
+      "recallCount": 17,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4.882157447934151,
+      "totalScore": 7.536618256568909,
       "maxScore": 0.4996169090270996,
       "firstRecalledAt": "2026-05-02T22:55:44.516Z",
-      "lastRecalledAt": "2026-05-03T06:43:49.954Z",
+      "lastRecalledAt": "2026-05-16T20:54:42.066Z",
       "queryHashes": [
         "eed539dee6fe",
         "d730f9789c7f",
@@ -3671,10 +3899,18 @@
         "a5f91a455de1",
         "1d4720ac1ca2",
         "df52ed24f209",
-        "258c34776c98"
+        "258c34776c98",
+        "051babc2f7ea",
+        "db61e673e15b",
+        "901a8953b0b2",
+        "6a3746a3e5c3",
+        "030289261212",
+        "8b3ba4fc7e6f"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-15",
+        "2026-05-16"
       ],
       "conceptTags": [
         "65-100",
@@ -3694,13 +3930,13 @@
       "endLine": 123,
       "source": "memory",
       "snippet": "document_type: [10-K, Shareholder Letter, Reference Book, etc.] year: [YYYY] status: [indexed/unindexed] --- ``` **Index Manager Skill duties:** 1. Scan /data/ for .md files 2. Read YAML frontmatter 3. Generate 1-sentence summary 4. Append to stock_index.yaml or libraries_index.yaml 5. Update status: indexed 6. Log to MEMORY.md **Warren's workflow:** - Query YAML first (structured data) - Reference Markdown for citations - Update YAML on new data - Fill gaps proactively (download → convert → extract → update) ### File Locations - Workspace: `/home/poomk/.openclaw/workspace/investments/` - Library: `/home/poomk/.openclaw/workspace/investments/library/` - Stocks: `/home/poomk/.openclaw/work",
-      "recallCount": 14,
+      "recallCount": 21,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 6.005899226665496,
+      "totalScore": 8.92784487903118,
       "maxScore": 0.4697831779718399,
       "firstRecalledAt": "2026-05-02T22:55:44.516Z",
-      "lastRecalledAt": "2026-05-10T07:54:29.465Z",
+      "lastRecalledAt": "2026-05-16T20:14:22.709Z",
       "queryHashes": [
         "eed539dee6fe",
         "d730f9789c7f",
@@ -3715,12 +3951,22 @@
         "258c34776c98",
         "4300e7f9b6c6",
         "f67bb1f86a87",
-        "7119c66bf133"
+        "7119c66bf133",
+        "6d531c4ce86d",
+        "72157f983b04",
+        "086f24bd77db",
+        "e70f563d42b6",
+        "5d67badb41ce",
+        "99a020a1bf44",
+        "24930377767d"
       ],
       "recallDays": [
         "2026-05-03",
         "2026-05-09",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-12",
+        "2026-05-15",
+        "2026-05-16"
       ],
       "conceptTags": [
         "document-type",
@@ -3740,13 +3986,13 @@
       "endLine": 223,
       "source": "memory",
       "snippet": "*Logged by Mickey 🐕 during massive evening conversion session — 16 stocks, 6 at 100%, ~8.1 GB saved!* --- ## 🕐 ETA UPDATE — 2026-05-02 22:57 Berlin ### User Question: \"Estimate till when would it all be done\" **Mickey's Answer:** ~1-1.5 hours from 22:23 **ETA:** 23:30 - 00:00 Berlin time (midnight at latest) ### Rationale: - ~220-280 files remaining (~32-38 batches) - 6 concurrent batches @ 5-7 min average = ~1 batch/minute throughput - Includes timeout buffer for retries - YAML indexing: +15-30 min after hoarding ### Confidence: - ✅ Thai SET URLs confirmed (KAMART + KBANK) - ✅ SEC EDGAR format fixed (CIK without leading zeros, accession without dashes) - ✅ Micro-batch strategy (10 fi",
-      "recallCount": 10,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4.396107020974158,
+      "totalScore": 5.2299161583185185,
       "maxScore": 0.517707109451294,
       "firstRecalledAt": "2026-05-02T22:55:44.516Z",
-      "lastRecalledAt": "2026-05-09T17:41:39.917Z",
+      "lastRecalledAt": "2026-05-17T06:23:12.100Z",
       "queryHashes": [
         "eed539dee6fe",
         "d730f9789c7f",
@@ -3757,11 +4003,15 @@
         "4c4f419e473d",
         "a5f91a455de1",
         "df52ed24f209",
-        "f67bb1f86a87"
+        "f67bb1f86a87",
+        "774e6631398d",
+        "8c751ce9ddf0"
       ],
       "recallDays": [
         "2026-05-03",
-        "2026-05-09"
+        "2026-05-09",
+        "2026-05-11",
+        "2026-05-17"
       ],
       "conceptTags": [
         "8.1",
@@ -3781,24 +4031,29 @@
       "endLine": 206,
       "source": "memory",
       "snippet": "### 🎯 MODEL STRATEGY (Updated) - **qwen3.5:cloud:** Fast conversion (2-5 min/batch) — all new hoarding tasks - **glm-5.1:cloud:** Deep analysis (6-9 min/batch) — legacy batches, YAML indexing later ### 📁 DIRECTORY STRUCTURE CREATED **New stocks initialized:** - `/home/poomk/.openclaw/workspace/investments/stocks/META/` - `/home/poomk/.openclaw/workspace/investments/stocks/MU/` (had existing SEC data) - `/home/poomk/.openclaw/workspace/investments/stocks/KAMART/` - `/home/poomk/.openclaw/workspace/investments/stocks/KBANK/` All have: `10-K`, `10-Q`, `earnings`, `earnings-releases`, `investor-presentations`, `presentations`, `sec-filings` ### 🎯 NEXT STEPS (After Current Batches Complete)",
-      "recallCount": 6,
+      "recallCount": 9,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.5822587221860887,
+      "totalScore": 3.8245475441217422,
       "maxScore": 0.5128047108650208,
       "firstRecalledAt": "2026-05-02T22:55:44.516Z",
-      "lastRecalledAt": "2026-05-09T17:41:39.917Z",
+      "lastRecalledAt": "2026-05-17T06:48:43.722Z",
       "queryHashes": [
         "eed539dee6fe",
         "079f37ba2eda",
         "51e386793eb4",
         "4c4f419e473d",
         "a5f91a455de1",
-        "f67bb1f86a87"
+        "f67bb1f86a87",
+        "774e6631398d",
+        "47d243d21d60",
+        "49c438a4ba7f"
       ],
       "recallDays": [
         "2026-05-03",
-        "2026-05-09"
+        "2026-05-09",
+        "2026-05-11",
+        "2026-05-17"
       ],
       "conceptTags": [
         "qwen3.5",
@@ -3818,20 +4073,27 @@
       "endLine": 364,
       "source": "memory",
       "snippet": "- **Always wrap screenshots in try/catch with timeout** - font loading can hang - **Use `page.waitForSelector('canvas', { timeout: 2000 })` before focus** - **CI polling with `sleep 60` blocks responsiveness** - use shorter intervals or background monitoring ## Files Modified - `tests/helpers.js` - Added `focusCanvas()` and `screenshot()` helpers - `tests/user-journey.spec.ts` - Use new helpers - `tests/boss-fight.spec.ts` - Use new helpers - `tests/cobblestone-regression.spec.ts` - Use new helpers - `tests/spawn-after-restart.spec.ts` - Use new helpers - `tests/gameplay.spec.ts` - Use new helpers ## CI Status - Run `b85a126`: Stuck 2+ hours (screenshot hang) - Run `3afea5f`: 6 min, fail",
-      "recallCount": 2,
+      "recallCount": 7,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7884224385023118,
-      "maxScore": 0.4198337495326996,
+      "totalScore": 3.052074486017227,
+      "maxScore": 0.5069757431745529,
       "firstRecalledAt": "2026-05-03T05:33:47.936Z",
-      "lastRecalledAt": "2026-05-10T07:23:30.073Z",
+      "lastRecalledAt": "2026-05-18T20:23:47.870Z",
       "queryHashes": [
         "77531f414631",
-        "b19f31ebff39"
+        "b19f31ebff39",
+        "f16b28825cf0",
+        "54ddd472821b",
+        "bca635374533",
+        "4029b841c017",
+        "5310e5b33e26"
       ],
       "recallDays": [
         "2026-05-03",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "try/catch",
@@ -3851,18 +4113,25 @@
       "endLine": 331,
       "source": "memory",
       "snippet": "- **Archie (glm-5.1:cloud) for deep analysis**: 2m14s runtime, thorough code path tracing ### CI Status - 5 tests failing on commit `28f515a` (commit hash preserved) - Fix pending deployment verification # 2026-04-26 — Elango Surfers Test Debugging Session ## Critical Bugs Fixed ### 1. Production Spawn Bug (commit 230ec0d) **Root cause:** `THREE.Clock` created in `initGame()` but never started **Fix:** Added `clock.start()` at line 1371 **Impact:** Obstacles and coins now spawn correctly in production ### 2. Test Keyboard Timeouts **Root cause:** Canvas element needs focus before `keyboard.press()` works in Playwright **Fix:** Added `focusCanvas()` helper with 2s timeout, non-blocking (t",
-      "recallCount": 1,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.42209028899669643,
-      "maxScore": 0.42209028899669643,
+      "totalScore": 2.235695174336433,
+      "maxScore": 0.4722722202539444,
       "firstRecalledAt": "2026-05-03T05:33:55.838Z",
-      "lastRecalledAt": "2026-05-03T05:33:55.838Z",
+      "lastRecalledAt": "2026-05-18T08:56:11.077Z",
       "queryHashes": [
-        "8c5487e57782"
+        "8c5487e57782",
+        "280f0d393130",
+        "c04aaa1c04eb",
+        "47d243d21d60",
+        "bca635374533"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-13",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "glm-5.1",
@@ -3882,13 +4151,13 @@
       "endLine": 29,
       "source": "memory",
       "snippet": "# Memory Log — 2026-05-03 ## Warren Hoarding Pipeline — Session Notes ### Progress (as of 01:23) - **✅ Complete:** 466+ files (62+ batches) - **🏆 100% Club (8 stocks):** SISB (22), Hesai (12), Xiaomi (60), SIS (42), SK-Hynix (76), GOOGL (24), TRIP (55+), AAPL (85+) - **⏳ In Progress:** META (~40 done, ~15-20 remaining), MU (~25 done, ~25-30 remaining), KAMART (~15 done, ~10-15 remaining), KBANK (~11 done, ~15-20 remaining), TSM (~75 done, ~10-15 remaining) - **📊 Remaining:** ~130 files (~15-17 batches) ### Concurrency & Batch Strategy - **Max concurrent subagents:** 5 (hard system limit, not 9) - **Optimal batch sizes by source:** - SEC EDGAR (USA): 5 files/batch, 5-7 min runtime -",
-      "recallCount": 7,
+      "recallCount": 10,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3.1805705010890963,
+      "totalScore": 4.478307938575745,
       "maxScore": 0.47997364401817316,
       "firstRecalledAt": "2026-05-03T05:34:03.184Z",
-      "lastRecalledAt": "2026-05-03T06:42:47.017Z",
+      "lastRecalledAt": "2026-05-14T23:54:24.480Z",
       "queryHashes": [
         "fb5a7c958b62",
         "d7648434137a",
@@ -3896,10 +4165,14 @@
         "4c4f419e473d",
         "a5f91a455de1",
         "1d4720ac1ca2",
-        "df52ed24f209"
+        "df52ed24f209",
+        "051babc2f7ea",
+        "db61e673e15b",
+        "030289261212"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-15"
       ],
       "conceptTags": [
         "sk-hynix",
@@ -3950,19 +4223,29 @@
       "endLine": 69,
       "source": "memory",
       "snippet": "- Crash SFX (4 files: wood, glass, metal, assembly drill) - Portal whoosh SFX (white noise + echo) - Conveyor hum ambient (55Hz drone, 10s loop) ### Wave 4 (7/7) - Integration & QA - Asset wiring (7 obstacle textures → spawnObstacle switch) - Audio wiring (11 SFX files referenced) - Boss integration (health bar UI, orb collection, projectile volleys) - Motion sickness toggle (♿ reduce motion: skips flip/rotate, caps at 2s/20s cooldown) - Portal fairness (120 unit min entry-exit distance, exit lane clearance, 1s warning indicator) - Boss tuning (health scales 100→250 HP with game duration, orb count 4-7, charge speed 1.5×) - Build verification ✅ ## Build Output - **File:** `dist/assets/inde",
-      "recallCount": 2,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7505907148122787,
-      "maxScore": 0.387554994225502,
+      "totalScore": 3.1352480143308634,
+      "maxScore": 0.44014698565006255,
       "firstRecalledAt": "2026-05-03T06:07:59.636Z",
-      "lastRecalledAt": "2026-05-03T06:10:46.624Z",
+      "lastRecalledAt": "2026-05-24T00:42:45.703Z",
       "queryHashes": [
         "43dc3202cb58",
-        "d7648434137a"
+        "d7648434137a",
+        "73b43194dd95",
+        "8bebba971d38",
+        "d8d87fb38f5b",
+        "cf17c71f288c",
+        "86bfa405cf38",
+        "a120ef5b9b0f"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-17",
+        "2026-05-18",
+        "2026-05-20",
+        "2026-05-24"
       ],
       "conceptTags": [
         "7/7",
@@ -3982,24 +4265,26 @@
       "endLine": 62,
       "source": "memory",
       "snippet": "| TSMC Cloudflare | curl/wget blocked | → Browser tool automation | | KAMART language search | Agent searched for English versions | → Accept Thai files, download available | | Multitasking distractions | Verification, deduplication, searching | → Focused task: download + convert only | | KBANK site navigation | Empty sections, wrong paths | → Direct ZIP URLs from raw/ directory | ### Stock-Specific Learnings - **AAPL:** FY2013-FY2025 10-Qs complete. 3 filings per fiscal year (Q1-Q3; Q4 = 10-K) - **TRIP:** 2022-2025 earnings complete (16 quarters). Watch for duplicate naming conventions - **META:** CIK 1326801. Files 10-Q for Q1-Q3, 10-K for Q4 - **MU:** CIK 723125. Clean SEC EDGAR source,",
-      "recallCount": 6,
+      "recallCount": 7,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.696763283014297,
+      "totalScore": 3.0736781179904935,
       "maxScore": 0.45681709349155425,
       "firstRecalledAt": "2026-05-03T06:10:46.624Z",
-      "lastRecalledAt": "2026-05-10T07:54:29.465Z",
+      "lastRecalledAt": "2026-05-14T23:54:18.102Z",
       "queryHashes": [
         "d7648434137a",
         "51e386793eb4",
         "4c4f419e473d",
         "a5f91a455de1",
         "1d4720ac1ca2",
-        "7119c66bf133"
+        "7119c66bf133",
+        "df4c9d71aaf9"
       ],
       "recallDays": [
         "2026-05-03",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-15"
       ],
       "conceptTags": [
         "curl/wget",
@@ -4053,18 +4338,20 @@
       "endLine": 87,
       "source": "memory",
       "snippet": "- **Commit**: `5ca1c3e` - **Status**: ✅ Deployed ## Bugs Fixed in v5.1.17 | Bug | Root Cause | Fix | |-----|------------|-----| | **405 SFX errors** | Missing `.ogg` files (`sfx-crash-wood.ogg`, `sfx-crash-glass.ogg`, `sfx-crash-metal.ogg`, `sfx-assembly.ogg`, `sfx-portal-whoosh.ogg`) | Fallback to existing SFX in `useAudio.js` | | **\"scene undefined\" error** | Composable functions called before scene initialized | Added `if (!scene) return;` guards in `useScene.js`, `useObstacles.js` | | **Touch/swipe not working** | **Variable shadowing bug** in `handleTouchEnd()` | Fixed local `const` declarations shadowing refs | ## Critical Bug: Variable Shadowing **Location**: `src/App.vue` line 26",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.38987643420696255,
-      "maxScore": 0.38987643420696255,
+      "totalScore": 0.8027737140655518,
+      "maxScore": 0.41289727985858915,
       "firstRecalledAt": "2026-05-03T06:10:46.624Z",
-      "lastRecalledAt": "2026-05-03T06:10:46.624Z",
+      "lastRecalledAt": "2026-05-17T09:45:41.996Z",
       "queryHashes": [
-        "d7648434137a"
+        "d7648434137a",
+        "cab13cf6e277"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-17"
       ],
       "conceptTags": [
         "v5.1.17",
@@ -4148,19 +4435,26 @@
       "endLine": 304,
       "source": "memory",
       "snippet": "- **Mickey = Router/Orchestrator ONLY** — do not implement except trivial 1-2 turn tasks - **Complex work**: Spawn Archie (architecture) → Byte (code) → Scout (verify) - **Creative work**: Spawn Sashay (SFX, visuals, copy) - **Violations today**: Generated SFX directly (should be Sashay), fixed buildingTextures directly (should be Archie→Byte) ## Key Technical Lessons - Module scope vs function scope: Variables needed across functions must be declared at module level (after imports, before functions) - OGG 404 errors: Create actual audio files, not silent stubs — browsers may still report errors for empty/silent files - State machine gating: Use `bossType === 'truck'` condition to different",
-      "recallCount": 2,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7737114876508713,
-      "maxScore": 0.38775069713592525,
+      "totalScore": 2.540311166644096,
+      "maxScore": 0.4826899737119674,
       "firstRecalledAt": "2026-05-03T06:10:46.624Z",
-      "lastRecalledAt": "2026-05-03T06:13:30.531Z",
+      "lastRecalledAt": "2026-05-18T20:23:52.283Z",
       "queryHashes": [
         "d7648434137a",
-        "51e386793eb4"
+        "51e386793eb4",
+        "80a12e49a729",
+        "cab13cf6e277",
+        "5310e5b33e26",
+        "4e1fa4bc4f77"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "router",
@@ -4305,21 +4599,23 @@
       "endLine": 51,
       "source": "memory",
       "snippet": "- **Solution**: Added `getSurfaceZ()` function to `useCurve.js` that calculates actual Z-coordinate on sphere surface using `EARTH_R * sin(angle)` instead of linear Z. Updated spawn and recycle logic for both trees and buildings in `App.vue` to use this function. - **Version**: Bumped to `v4.5.11` and pushed to GitHub. # Memory Log — 2026-04-21 ## 🧹 Major System Cleanup **Completed:** Full cleanup of old multi-workspace agent structure **Deleted:** - 8+ old agent workspace directories (`workspace-archie`, `workspace-creative`, `workspace-qa`, `workspace-tech`, etc.) - 8 HEARTBEAT.md files scattered across system - 5 old SQLite memory databases (creative.sqlite, qa.sqlite, tech.sqlite, te",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.1879993200302124,
+      "totalScore": 1.5485738068819046,
       "maxScore": 0.41567039489746094,
       "firstRecalledAt": "2026-05-09T17:41:34.915Z",
-      "lastRecalledAt": "2026-05-10T05:41:12.692Z",
+      "lastRecalledAt": "2026-05-17T09:34:29.966Z",
       "queryHashes": [
         "4300e7f9b6c6",
         "f67bb1f86a87",
-        "859cb484a79e"
+        "859cb484a79e",
+        "73b43194dd95"
       ],
       "recallDays": [
         "2026-05-09",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-17"
       ],
       "conceptTags": [
         "usecurve.js",
@@ -4370,20 +4666,24 @@
       "endLine": 137,
       "source": "memory",
       "snippet": "- **Frontmatter matters:** Files without YAML frontmatter can't be indexed ### Atomic Task Success - **TSM 20-F frontmatter:** Added to 5 files (2019-2023) via direct write - **KAMART 56-1 frontmatter:** Already present, just needed index update - **KBANK:** Still needs gap-fill for missing years (2015-2020, 2022-2024) ### Next Actions 1. Categorize TSM \"unknown\" files → 20-F vs presentations vs transcripts 2. Categorize KAMART \"unknown\" files → 56-1 vs 56-6 vs presentations 3. KBANK gap-fill: Download ONLY missing annual reports (1 filing/batch, pdftotext fallback) 4. Rebuild stock_index.yaml with all categorized files 5. Build libraries_index.yaml 6. Create index_manager/SKILL.md 7. Extr",
-      "recallCount": 2,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8511125832796096,
+      "totalScore": 1.67846921980381,
       "maxScore": 0.4347402364015579,
       "firstRecalledAt": "2026-05-09T17:41:39.917Z",
-      "lastRecalledAt": "2026-05-10T07:54:29.465Z",
+      "lastRecalledAt": "2026-05-15T00:33:45.990Z",
       "queryHashes": [
         "f67bb1f86a87",
-        "7119c66bf133"
+        "7119c66bf133",
+        "8fffd3ce98fa",
+        "72157f983b04"
       ],
       "recallDays": [
         "2026-05-09",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-11",
+        "2026-05-15"
       ],
       "conceptTags": [
         "20-f",
@@ -4403,19 +4703,33 @@
       "endLine": 65,
       "source": "memory",
       "snippet": "# 2026-05-10 — Investments LLM-Wiki Project ## Project: Investments Workspace Cleanup & LLM-Wiki Creation **Date:** Sunday, May 10, 2026 (00:00 - 01:00 CET) **Team:** Mickey 🐕 (orchestrator), Warren 🦅 (analysis + scripts), Scout 🔍 (QA) **Duration:** ~35 minutes **Trigger:** User request to transform unfinished investments workspace into maintainable LLM-wiki --- ## 📊 Before → After | Metric | Before | After | |--------|--------|-------| | Total MD files | 1,126 | 939 | | Files with YAML frontmatter | 592 (52.6%) | **939 (100%)** ✅ | | Exact duplicates | 107 | 0 | | Naming duplicates | 504 | 0 | | Orphan .tmp files | 12 (KBANK) | 0 | | Problematic filenames | 17 | 0 | | stock_i",
-      "recallCount": 2,
+      "recallCount": 13,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8704022020101547,
-      "maxScore": 0.4436917304992675,
+      "totalScore": 5.512618348002434,
+      "maxScore": 0.47121818661689757,
       "firstRecalledAt": "2026-05-10T05:41:12.692Z",
-      "lastRecalledAt": "2026-05-10T07:54:29.465Z",
+      "lastRecalledAt": "2026-05-21T05:41:33.853Z",
       "queryHashes": [
         "859cb484a79e",
-        "7119c66bf133"
+        "7119c66bf133",
+        "d95a3b107832",
+        "774e6631398d",
+        "772f6624198e",
+        "5d8113627829",
+        "051babc2f7ea",
+        "db61e673e15b",
+        "901a8953b0b2",
+        "030289261212",
+        "4bd7524d7b1a",
+        "72157f983b04",
+        "73faeaf23d9b"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-11",
+        "2026-05-15",
+        "2026-05-21"
       ],
       "conceptTags": [
         "llm-wiki",
@@ -4435,18 +4749,24 @@
       "endLine": 126,
       "source": "memory",
       "snippet": "- Added `countdownActive.value = false;` in `resetStage()` - Version bump: v5.2.2 → v5.2.3 **Commit**: `a8da484` - fix: Stage 3 assertion + countdownActive reset in resetStage --- ## Spawn Bug Fix - v5.2.4 (2026-04-27 13:00 UTC) **Issue**: CI tests still failing - obstacles/coins not spawning after debug stage jumps **Root cause**: Initial game load creates a pending `setTimeout` callback (~4.5s total delay for 3-2-1-GO countdown). When test enters debug mode and presses stage key: 1. `resetStage()` correctly sets `lastSpawnTime` with -0.1 buffer ✅ 2. **BUT** pending initial countdown timeout fires ~500ms later 3. It **overwrites** `lastSpawnTime` WITHOUT the -0.1 buffer ❌ 4. Spawning b",
-      "recallCount": 1,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.3680235683917999,
-      "maxScore": 0.3680235683917999,
+      "totalScore": 2.24045971930027,
+      "maxScore": 0.4913290441036224,
       "firstRecalledAt": "2026-05-10T07:23:30.073Z",
-      "lastRecalledAt": "2026-05-10T07:23:30.073Z",
+      "lastRecalledAt": "2026-05-18T20:23:52.283Z",
       "queryHashes": [
-        "b19f31ebff39"
+        "b19f31ebff39",
+        "280f0d393130",
+        "5310e5b33e26",
+        "3f8ef5d50dac",
+        "4e1fa4bc4f77"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-13",
+        "2026-05-18"
       ],
       "conceptTags": [
         "countdownactive.value",
@@ -4466,18 +4786,22 @@
       "endLine": 288,
       "source": "memory",
       "snippet": "- ✅ Scout verified all checks PASS (dragon background, truck charging, version string sync) ### v5.0.6 — Scope Fix + OGG Stubs - ✅ Fixed `buildingTextures is not defined` error — moved `buildingTextures` and `buildingDominantColors` from local scope (inside `createBackgroundElements()`) to module scope (lines 159-161) so accessible from `applyStageVisuals()` - ✅ Created 13 silent OGG stub files for missing SFX (crash wood/glass/metal, assembly, portal, cash register, intercom 1-5, IKEA polka BGM, conveyor hum) - ⚠️ Protocol violation: Generated SFX directly instead of spawning Sashay ### v5.0.7 — Proper SFX Generation - ✅ Replaced silent stubs with properly generated SFX using Web Audio AP",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.36093103289604184,
-      "maxScore": 0.36093103289604184,
+      "totalScore": 1.261597967147827,
+      "maxScore": 0.48170728683471675,
       "firstRecalledAt": "2026-05-10T07:23:30.073Z",
-      "lastRecalledAt": "2026-05-10T07:23:30.073Z",
+      "lastRecalledAt": "2026-05-18T20:23:52.283Z",
       "queryHashes": [
-        "b19f31ebff39"
+        "b19f31ebff39",
+        "80a12e49a729",
+        "4e1fa4bc4f77"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-16",
+        "2026-05-18"
       ],
       "conceptTags": [
         "v5.0.6",
@@ -4530,18 +4854,20 @@
       "endLine": 1833,
       "source": "memory",
       "snippet": "| A1 | **Secret Code** | `D→E→B→U→G` (within 2s) | Activates debug mode, 🐛 icon appears | | A2 | **Stage Jump** | `1/2/3` | Jump to Stage 1/2/3 (0-indexed) | | A3 | **Boss Spawn** | `B` | Spawn current stage boss immediately | | A4 | **God Mode** | `G` | Toggle invincible + gold glow | | A5 | **Guard Rails** | All | No-ops without debug code, no UI in normal play | ### **Implementation Details** - Key buffer with 2s timeout, clears on wrong key or timeout - Stage jump calls `resetStage(false, targetStage)` for proper transition - Boss spawn sets `bossActive = true`, skips countdown - God mode: `emissive: 0xffd700, intensity: 0.8` on player, collision checks include `!godMode.value` - All d",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.356211507320404,
-      "maxScore": 0.356211507320404,
+      "totalScore": 0.7557454138994216,
+      "maxScore": 0.3995339065790176,
       "firstRecalledAt": "2026-05-10T07:23:30.073Z",
-      "lastRecalledAt": "2026-05-10T07:23:30.073Z",
+      "lastRecalledAt": "2026-05-20T13:41:35.131Z",
       "queryHashes": [
-        "b19f31ebff39"
+        "b19f31ebff39",
+        "d8d87fb38f5b"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-20"
       ],
       "conceptTags": [
         "1/2/3",
@@ -4561,19 +4887,23 @@
       "endLine": 213,
       "source": "memory",
       "snippet": "- Rebuild indices when new data added - Run weekly validation (Sunday 3:00 AM cron) - Enforce schema: ticker, exchange, document_type, dates required - Report anomalies to user **User can trigger manually:** - \"Warren, run wiki maintenance\" - \"Warren, add this new filing to the wiki\" - \"Warren, rebuild the indices\" --- ## 📌 Reference: Watchlist (14 Tickers) **International (9):** TSM, SK Hynix, MU, Samsung, GOOGL, AAPL, Hesai, Xiaomi, Trip **Thai (4):** KAMART, SIS, SISB, KBank **Other (1):** META (found in index, not in WATCHLIST.md — needs sync) --- *Memory captured by Mickey 🐕 at 01:02 CET* --- ## ✅ Job Completed (07:42 CET) **User noticed:** \"I think you stopped last night",
-      "recallCount": 2,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8602249205112458,
-      "maxScore": 0.4480560451745987,
+      "totalScore": 1.718570041656494,
+      "maxScore": 0.4560434609651565,
       "firstRecalledAt": "2026-05-10T07:54:29.465Z",
-      "lastRecalledAt": "2026-05-10T08:44:01.426Z",
+      "lastRecalledAt": "2026-05-12T05:37:57.777Z",
       "queryHashes": [
         "7119c66bf133",
-        "f3ed391c0742"
+        "f3ed391c0742",
+        "d95a3b107832",
+        "80522d3ef6f3"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-11",
+        "2026-05-12"
       ],
       "conceptTags": [
         "document-type",
@@ -4593,19 +4923,29 @@
       "endLine": 103,
       "source": "memory",
       "snippet": "**Thai SET Filings (56-1, 56-6):** ```yaml --- converted_date: \"2026-05-10\" ticker: KAMART company: บริษัท การะเกด จำกัด (มหาชน) exchange: SET form_type: 56-1 fiscal_year: \"2021\" source_url: http://kamart.listedcompany.com/... --- ``` **Library Documents:** ```yaml --- converted_date: \"2026-05-10\" document_type: buffett_partnership_letter year: \"1965\" author: Warren Buffett file_path: investments/library/... status: indexed --- ``` ### Index Structure - `indices/stock_index.yaml` — 938 entries, auto-rebuilt from MD files - `indices/libraries_index.yaml` — 78 entries (author/year/summary empty — source files lack metadata) --- ## 🛠️ Automation Scripts Created **Location:** `/home/poomk",
-      "recallCount": 2,
+      "recallCount": 11,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.8003381192684174,
-      "maxScore": 0.43870557248592373,
+      "totalScore": 4.512093362212181,
+      "maxScore": 0.4443988353013992,
       "firstRecalledAt": "2026-05-10T07:54:29.465Z",
-      "lastRecalledAt": "2026-05-10T21:10:08.981Z",
+      "lastRecalledAt": "2026-05-14T23:54:24.480Z",
       "queryHashes": [
         "7119c66bf133",
-        "c398aad7f4da"
+        "c398aad7f4da",
+        "d95a3b107832",
+        "774e6631398d",
+        "772f6624198e",
+        "5d8113627829",
+        "cc4998e0480c",
+        "051babc2f7ea",
+        "db61e673e15b",
+        "030289261212"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-11",
+        "2026-05-15"
       ],
       "conceptTags": [
         "56-1",
@@ -4625,18 +4965,25 @@
       "endLine": 2150,
       "source": "memory",
       "snippet": "- Waited for natural Stage 2 progression (timeout risk) - Tried to detect game over screen and click restart - Used fragile DOM queries **Solution:** Simplified to use debug mode: - `debug` + `2` → instantly load Stage 2 - Direct `window.THREE_SCENE` check for cobblestone texture - `o` key → trigger game over, then restart **Commit:** `b2c6efb` — Fixed test, CI passing ### **Gateway Config Change** **Idle timeout:** Changed from `0` (disabled) to `180` seconds (3 minutes) **Rationale:** - ✅ Fast models (qwen3.5, deepseek-v4-flash) will alert if they crash/hang due to Ollama server load - ✅ Slow analyses (Archie's 3-min deep thinking) still have enough time to start producing tokens - ⚠️",
-      "recallCount": 1,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4629666626453399,
-      "maxScore": 0.4629666626453399,
+      "totalScore": 2.2453905314207074,
+      "maxScore": 0.4701460868120193,
       "firstRecalledAt": "2026-05-10T08:48:00.987Z",
-      "lastRecalledAt": "2026-05-10T08:48:00.987Z",
+      "lastRecalledAt": "2026-05-18T08:56:14.689Z",
       "queryHashes": [
-        "532340915169"
+        "532340915169",
+        "280f0d393130",
+        "47d243d21d60",
+        "7fe3a13fba4b",
+        "4029b841c017"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-13",
+        "2026-05-17",
+        "2026-05-18"
       ],
       "conceptTags": [
         "gateway",
@@ -4656,18 +5003,20 @@
       "endLine": 316,
       "source": "memory",
       "snippet": "| `dhandho_3_airwater.md` | 7,977 bytes | Full Air Water deep-dive thesis | | `dhandho_3_mueller.md` | 8,057 bytes | Full Mueller Water deep-dive thesis | | `dhandho_3_report.md` | ~20KB | Combined report (361 lines) | **Delivery:** All 3 individual reports sent to Telegram (@drpoom, chat_id: 425039645) as separate document attachments. --- ## 🏗️ Task Decomposition Protocol (Critical Upgrade) **Issue:** Warren initially violated AGENTS.md by not decomposing complex tasks into atomic 1-2 min subtasks. **Fix Applied:** Updated 3 analyst skills with mandatory decomposition protocol: - `skills/warren-investing/SKILL.md` - `skills/security-audit/SKILL.md` - `skills/performance-profiling/SKI",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.3839450150728225,
-      "maxScore": 0.3839450150728225,
+      "totalScore": 0.8323997676372528,
+      "maxScore": 0.4484547525644302,
       "firstRecalledAt": "2026-05-10T21:10:08.981Z",
-      "lastRecalledAt": "2026-05-10T21:10:08.981Z",
+      "lastRecalledAt": "2026-05-18T08:56:23.682Z",
       "queryHashes": [
-        "c398aad7f4da"
+        "c398aad7f4da",
+        "7d87f400af07"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-18"
       ],
       "conceptTags": [
         "dhandho-3-airwater.md",
@@ -4687,18 +5036,24 @@
       "endLine": 283,
       "source": "memory",
       "snippet": "- Index: ✅ Rebuilt - Watchlist: ✅ Updated (if new ticker) - Commit: a3f8b2c ``` --- --- ## 🦅 Dhandho 3.0 — Overlooked Industries + Supplier Gems (Completed 20:32 CET) **Date:** Sunday, May 10, 2026 **Team:** Mickey 🐕 (orchestrator), Warren 🦅 (analysis) **Duration:** ~6 hours (with task decomposition protocol) **Trigger:** User request for \"3 additional Dhandho picks from overlooked industries + supplier chain hidden gems\" --- ## 📊 3 Deep-Dive Picks Delivered | Pick | Industry | Ticker | P/E | EV/EBITDA | P/B | Moat | Expected Return (Bull) | |------|----------|--------|-----|-----------|-----|------|------------------------| | **Lanxess** | Specialty Chemicals | LXS (XETRA)",
-      "recallCount": 1,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.3780803322792053,
-      "maxScore": 0.3780803322792053,
+      "totalScore": 2.0778300583362577,
+      "maxScore": 0.43737846016883847,
       "firstRecalledAt": "2026-05-10T21:10:08.981Z",
-      "lastRecalledAt": "2026-05-10T21:10:08.981Z",
+      "lastRecalledAt": "2026-05-17T05:11:26.618Z",
       "queryHashes": [
-        "c398aad7f4da"
+        "c398aad7f4da",
+        "72157f983b04",
+        "086f24bd77db",
+        "2eda0416d3e8",
+        "6c1084c30add"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-15",
+        "2026-05-17"
       ],
       "conceptTags": [
         "3.0",
@@ -4709,6 +5064,1088 @@
         "index",
         "rebuilt",
         "watchlist"
+      ]
+    },
+    "memory:memory/2026-05-10.md:202:254": {
+      "key": "memory:memory/2026-05-10.md:202:254",
+      "path": "memory/2026-05-10.md",
+      "startLine": 202,
+      "endLine": 254,
+      "source": "memory",
+      "snippet": "**LLM-Wiki is now production-ready.** 🎉 --- ## 🦅 Warren Auto-Update Protocol (Added 01:10 CET) **User Request:** \"When Warren gets information on new stocks, I want him to add it to his wiki automatically.\" **Implementation:** Updated `skills/warren-investing/SKILL.md` with automatic LLM-wiki update protocol. ### Automatic 5-Step Workflow When Warren discovers new stock data (filings, presentations, transcripts): 1. **Convert** PDF/HTML → Markdown (`markitdown`) 2. **Inject** YAML frontmatter (`inject_frontmatter.py`) 3. **Rebuild** stock index (`rebuild_index.py --ticker <TICKER>`) 4. **Update** WATCHLIST.md if new ticker 5. **Git commit** with descriptive message ### Trigger Scen",
+      "recallCount": 18,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 7.311454537510871,
+      "maxScore": 0.4360498249530792,
+      "firstRecalledAt": "2026-05-11T05:02:41.914Z",
+      "lastRecalledAt": "2026-05-21T05:42:43.559Z",
+      "queryHashes": [
+        "9a30c25d5bbe",
+        "d95a3b107832",
+        "8fffd3ce98fa",
+        "5d8113627829",
+        "323e5c3b2b72",
+        "cc4998e0480c",
+        "2f999490ccad",
+        "eadb72a91448",
+        "051babc2f7ea",
+        "df4c9d71aaf9",
+        "4bd7524d7b1a",
+        "72157f983b04",
+        "086f24bd77db",
+        "abbf1b86e51e",
+        "1f6409ed18fa",
+        "73faeaf23d9b",
+        "90b81a5f469f"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-13",
+        "2026-05-14",
+        "2026-05-15",
+        "2026-05-17",
+        "2026-05-19",
+        "2026-05-21"
+      ],
+      "conceptTags": [
+        "llm-wiki",
+        "production-ready",
+        "auto-update",
+        "skills/warren-investing/skill.md",
+        "5-step",
+        "pdf/html",
+        "inject-frontmatter.py",
+        "rebuild-index.py"
+      ]
+    },
+    "memory:memory/2026-05-10.md:91:131": {
+      "key": "memory:memory/2026-05-10.md:91:131",
+      "path": "memory/2026-05-10.md",
+      "startLine": 91,
+      "endLine": 131,
+      "source": "memory",
+      "snippet": "| `rebuild_index.py` | Index YAML regeneration | Both stock + library indices | | `validate_wiki.sh` | Full validation suite | All P0/P1/P2 checks | --- ## 📅 Automation Setup **Cron Job Created:** `0e5e93f4-af14-4a7a-9929-360dff85c8b9` | Schedule | Job | Agent | |----------|-----|-------| | **Sunday 3:00 AM** | LLM-Wiki Maintenance | Warren 🦅 | **Weekly Tasks:** 1. Audit all MD files 2. Auto-inject frontmatter if missing 3. Dedup if needed 4. Rebuild both indices 5. Run validation 6. Report status to user (Telegram) --- ## 🎯 Key Lessons Learned ### What Worked Well - **Parallel execution** with `--ticker` flag prevented race conditions - **Git snapshots per phase** enabled safe ro",
+      "recallCount": 8,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3.233553877472877,
+      "maxScore": 0.42486467659473415,
+      "firstRecalledAt": "2026-05-11T15:39:09.439Z",
+      "lastRecalledAt": "2026-05-19T05:08:26.025Z",
+      "queryHashes": [
+        "d95a3b107832",
+        "774e6631398d",
+        "f187fcff590d",
+        "772f6624198e",
+        "8fffd3ce98fa",
+        "5d8113627829",
+        "24930377767d",
+        "1f6409ed18fa"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-16",
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "rebuild-index.py",
+        "validate-wiki.sh",
+        "p0/p1/p2",
+        "llm-wiki",
+        "auto-inject",
+        "index",
+        "regeneration",
+        "both"
+      ]
+    },
+    "memory:memory/2026-05-10.md:310:350": {
+      "key": "memory:memory/2026-05-10.md:310:350",
+      "path": "memory/2026-05-10.md",
+      "startLine": 310,
+      "endLine": 350,
+      "source": "memory",
+      "snippet": "### #1: Lanxess (LXS.DE) — Specialty Chemicals Turnaround **Why Dhandho:** Market sees cyclical commodity chemicals → actually oligopoly in flame retardants, microbial control, specialty additives **Key Catalysts:** - Chemical cycle recovery (H2 2026) - Envalior 41% stake sale (€1B+, 2026) - Urethane Systems divestiture (~€500M, 2026) - Debt paydown: 4x → 2x by 2027 **Thesis Invalidation (any = exit):** 1. EBITDA <€500M for 2+ consecutive years 2. Envalior stake sale fails or below book value 3. Debt/EBITDA >5x 4. Revenue decline >15% for 2+ years 5. Management abandons portfolio simplification --- ### #2: Air Water (4088.T) — Industrial Gas Bargain **Why Dhandho:** 60% valuation gap to",
+      "recallCount": 10,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4.115110477805137,
+      "maxScore": 0.45359683036804194,
+      "firstRecalledAt": "2026-05-11T15:39:09.508Z",
+      "lastRecalledAt": "2026-05-17T05:11:26.618Z",
+      "queryHashes": [
+        "774e6631398d",
+        "772f6624198e",
+        "5d8113627829",
+        "a0a9ccdc8bc0",
+        "5a9ceb05e917",
+        "6a3746a3e5c3",
+        "030289261212",
+        "0edba510b46e",
+        "035d7a85b46c",
+        "6c1084c30add"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "lxs.de",
+        "debt/ebitda",
+        "4088.t",
+        "lanxess",
+        "specialty",
+        "chemicals",
+        "turnaround",
+        "why"
+      ]
+    },
+    "memory:memory/2026-05-10.md:399:418": {
+      "key": "memory:memory/2026-05-10.md:399:418",
+      "path": "memory/2026-05-10.md",
+      "startLine": 399,
+      "endLine": 418,
+      "source": "memory",
+      "snippet": "**Delivery:** Report summary sent via Telegram; full report file available at `investments/theses/sndk-2026-05-10.md` --- ## 📊 Dhandho Portfolio Summary (2026-05-10) | Pick | Industry | Ticker | Verdict | Conviction | Position Size | |------|----------|--------|---------|------------|---------------| | Lanxess | Specialty Chemicals | LXS | STRONG BUY | High | 15-20% | | Air Water | Industrial Gases | 4088.T | STRONG BUY | High (most defensive) | 15% | | Mueller Water | Water Infrastructure | MWA | BUY | Moderate-High | 10-15% | **Total Dhandho 3.0 Allocation:** 40-50% (concentrated, high-conviction) **Remaining Capacity:** 50-60% for existing watchlist (TSM, SK Hynix, MU, etc.) + cash",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.0463381201028823,
+      "maxScore": 0.4278246074914932,
+      "firstRecalledAt": "2026-05-11T15:39:09.508Z",
+      "lastRecalledAt": "2026-05-14T23:54:18.252Z",
+      "queryHashes": [
+        "774e6631398d",
+        "8fffd3ce98fa",
+        "323e5c3b2b72",
+        "051babc2f7ea",
+        "1a2c8243aac7"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "15-20",
+        "4088.t",
+        "moderate-high",
+        "10-15",
+        "3.0",
+        "40-50",
+        "high-conviction",
+        "50-60"
+      ]
+    },
+    "memory:memory/2026-05-10.md:342:376": {
+      "key": "memory:memory/2026-05-10.md:342:376",
+      "path": "memory/2026-05-10.md",
+      "startLine": 342,
+      "endLine": 376,
+      "source": "memory",
+      "snippet": "5. Operating margin <8% for 3+ years --- ### #3: Mueller Water Products (MWA) — Water Infrastructure Duopoly **Why Dhandho:** Duopoly in fire hydrants (85% share with McWane), 60-65% revenue from non-discretionary municipal R&R, specification lock-in moat **Key Catalysts:** - Brass foundry completion (H2 2026) → 80-100bps margin improvement - Bipartisan Infrastructure Law water funding ($55B over 5 years) - Lead and Copper Rule compliance (6-10M lead service lines) - Smart water technology (EchoShore leak detection) **Thesis Invalidation (any = exit):** 1. EBITDA margin <20% for 2+ quarters 2. Municipal water spending declines >5% for 2+ years 3. Smart water technology fails to gain adop",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.6177143275737764,
+      "maxScore": 0.48661654889583583,
+      "firstRecalledAt": "2026-05-11T17:33:33.155Z",
+      "lastRecalledAt": "2026-05-17T05:11:26.618Z",
+      "queryHashes": [
+        "5d8113627829",
+        "6a3746a3e5c3",
+        "030289261212",
+        "2eda0416d3e8",
+        "035d7a85b46c",
+        "6c1084c30add"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "60-65",
+        "non-discretionary",
+        "lock-in",
+        "80-100bps",
+        "6-10m",
+        "operating",
+        "margin",
+        "years"
+      ]
+    },
+    "memory:memory/2026-05-11.md:118:163": {
+      "key": "memory:memory/2026-05-11.md:118:163",
+      "path": "memory/2026-05-11.md",
+      "startLine": 118,
+      "endLine": 163,
+      "source": "memory",
+      "snippet": "**Warren timeout pattern:** - 2m30s → Insufficient for multi-stock research - 5min → Works for catalyst calendars - 10min → Insufficient for full Munger+Dhandho screen - 20min → Required for deep fundamental screening **Fix:** Use 20min timeout for screens requiring web searches + financial analysis across multiple candidates. --- ## 📁 New Files Created Today ``` investments/ ├── catalyst-calendar-2026.md ├── scripts/ │ ├── catalyst-monitor.py │ ├── pre-earnings-briefing.py │ └── post-earnings-analysis.py ├── alerts/ │ ├── pre-earnings-Hesai-2026-05-19.md │ └── pre-earnings-Trip-2026-05-19.md └── WATCHLIST.md (updated with Samsung, STM coverage status) ai-mega-analysis/dhandh",
+      "recallCount": 23,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 10.482395779957224,
+      "maxScore": 0.7105201990339072,
+      "firstRecalledAt": "2026-05-11T17:33:33.155Z",
+      "lastRecalledAt": "2026-05-21T05:42:43.559Z",
+      "queryHashes": [
+        "5d8113627829",
+        "1f0723d868e4",
+        "323e5c3b2b72",
+        "cc4998e0480c",
+        "a0a9ccdc8bc0",
+        "6d531c4ce86d",
+        "2f999490ccad",
+        "eadb72a91448",
+        "df4c9d71aaf9",
+        "1a2c8243aac7",
+        "901a8953b0b2",
+        "030289261212",
+        "4bd7524d7b1a",
+        "72157f983b04",
+        "086f24bd77db",
+        "e70f563d42b6",
+        "0edba510b46e",
+        "8b3ba4fc7e6f",
+        "6c1084c30add",
+        "8c751ce9ddf0",
+        "73faeaf23d9b",
+        "90b81a5f469f"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-12",
+        "2026-05-13",
+        "2026-05-14",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-21"
+      ],
+      "conceptTags": [
+        "multi-stock",
+        "catalyst-calendar-2026.md",
+        "catalyst-monitor.py",
+        "pre-earnings-briefing.py",
+        "post-earnings-analysis.py",
+        "pre-earnings-hesai-2026-05-19.md",
+        "pre-earnings-trip-2026-05-19.md",
+        "watchlist.md"
+      ]
+    },
+    "memory:memory/2026-05-11.md:72:127": {
+      "key": "memory:memory/2026-05-11.md:72:127",
+      "path": "memory/2026-05-11.md",
+      "startLine": 72,
+      "endLine": 127,
+      "source": "memory",
+      "snippet": "**Coverage:** 37 events, May-Nov 2026 **Key catalysts:** - May 19: Hesai Q1, GOOGL I/O, Trip Q1 - Jun 2-5: COMPUTEX (TSM, Samsung, STM) - Jun 8-12: Apple WWDC - Jul: 6 of 10 stocks report earnings --- ## 🚨 Alert System Activated **Schedule (Europe/Berlin):** - 7:00 AM — Daily International Briefing - 7:05 AM — Daily Thai Briefing - 7:10 AM — Catalyst Alerts (7-day, pre-earnings, post-earnings) - 7:30 AM — Agent Performance Report - 8:00 PM Sun — Weekly Thesis Review (Warren) **Scripts created:** - `investments/scripts/catalyst-monitor.py` - `investments/scripts/pre-earnings-briefing.py` - `investments/scripts/post-earnings-analysis.py` --- ## 🏆 Munger + Dhandho Screen Results **To",
+      "recallCount": 9,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3.6969294905662533,
+      "maxScore": 0.4783582866191864,
+      "firstRecalledAt": "2026-05-11T17:33:33.155Z",
+      "lastRecalledAt": "2026-05-16T20:54:42.066Z",
+      "queryHashes": [
+        "5d8113627829",
+        "323e5c3b2b72",
+        "cc4998e0480c",
+        "df4c9d71aaf9",
+        "901a8953b0b2",
+        "72157f983b04",
+        "035d7a85b46c",
+        "8b3ba4fc7e6f"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-15",
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "may-nov",
+        "i/o",
+        "2-5",
+        "8-12",
+        "europe/berlin",
+        "7-day",
+        "pre-earnings",
+        "post-earnings"
+      ]
+    },
+    "memory:memory/2026-04-25.md:1765:1810": {
+      "key": "memory:memory/2026-04-25.md:1765:1810",
+      "path": "memory/2026-04-25.md",
+      "startLine": 1765,
+      "endLine": 1810,
+      "source": "memory",
+      "snippet": "| 5 | Debug overlay toggles on/off | ~20s | **Boss Fight Tests:** | # | Test | Duration | |---|------|----------| | 1 | Stage 1 Boss (Truck) | 29.0s | | 2 | Stage 2 Boss (Dragon) | 28.6s | | 3 | Stage 3 Boss (Beholder) | 28.6s | | 4 | God mode survives boss | 32.2s | | 5 | Player death by boss | 39.9s | ### **Scout Config Updated for Parallel Execution** Added to `~/.openclaw/agents/qa/agent/config.json`: - Rule: \"Always run tests in parallel mode for speed\" - Tool: `npx playwright test --workers=4` ### **playwright.config.ts Updated** ```typescript workers: 4, // 4 parallel workers fullyParallel: true, ``` ### **Total Test Suite: 24 Tests** - `essential.spec.ts` — 3 smoke tests - `game",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.9979574650526046,
+      "maxScore": 0.47147545218467707,
+      "firstRecalledAt": "2026-05-11T18:45:53.232Z",
+      "lastRecalledAt": "2026-05-20T13:41:41.716Z",
+      "queryHashes": [
+        "a0a9ccdc8bc0",
+        "8bebba971d38",
+        "d8d87fb38f5b",
+        "dcd8aa4e9697",
+        "cf17c71f288c"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-18",
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "on/off",
+        "29.0s",
+        "28.6s",
+        "32.2s",
+        "39.9s",
+        "playwright.config.ts",
+        "essential.spec.ts",
+        "debug"
+      ]
+    },
+    "memory:memory/2026-04-25.md:683:743": {
+      "key": "memory:memory/2026-04-25.md:683:743",
+      "path": "memory/2026-04-25.md",
+      "startLine": 683,
+      "endLine": 743,
+      "source": "memory",
+      "snippet": "✅ Tests: 14/14 passed (4.8 min) ✅ Commit: f6c2c3c ✅ Deployed: origin/main ``` ### **Player-Visible Improvements** - Stage 3 buildings: No white halos - Stage 3 obstacles: Natural urban aesthetic - Stage 3 audio: Consistent crash sounds - Stage 2 road: Proper cobblestone rendering - Stage 3 boss: Epic beholder tentacle crown 🍝👁️ - Stage 3 boss attacks: Fair, dodgeable patterns --- **Version:** v5.0.19 **Date:** 2026-04-25 **Status:** ✅ Production stable # Memory: 2026-04-25 — Elango Surfers Debug Infrastructure ## 🎭 Playwright Test Suite — DEPLOYED **Files Created:** - `playwright.config.ts` — Test config (Chromium, 60s timeout) - `tests/essential.spec.ts` — 3 core smoke tests (all pa",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7525649338960647,
+      "maxScore": 0.3883587718009949,
+      "firstRecalledAt": "2026-05-11T18:45:53.232Z",
+      "lastRecalledAt": "2026-05-17T09:19:29.070Z",
+      "queryHashes": [
+        "a0a9ccdc8bc0",
+        "eb5e42657497"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "14/14",
+        "4.8",
+        "origin/main",
+        "player-visible",
+        "v5.0.19",
+        "playwright.config.ts",
+        "tests/essential.spec.ts",
+        "tests"
+      ]
+    },
+    "memory:memory/2026-05-11.md:25:85": {
+      "key": "memory:memory/2026-05-11.md:25:85",
+      "path": "memory/2026-05-11.md",
+      "startLine": 25,
+      "endLine": 85,
+      "source": "memory",
+      "snippet": "3. Index rebuild check — Is `stock_index.yaml` updated? 4. Watchlist check — Are new tickers in WATCHLIST.md? ### Updated Timeline - Phase 0: ✅ Complete (00:03) - Phase 1: ~15 min → 00:18 - Phase 2: ~20 min → 00:38 - Phase 3: ~30 min → 01:08 - Phase 4: ~15 min → 01:23 - Scout QA: ~15 min → 01:38 - **Buffer before 2 AM:** ~22 minutes ✅ --- ## Protocol Lessons (Reinforced) - Pre-flight decomposition check prevented wasted execution - Wiki/database-first approach saved 40%+ of work - Max 5 concurrent subagents respected throughout - Individual report delivery (not combined docs) confirmed # Memory Log — 2026-05-11 --- ## 📋 Watchlist Updates **Added:** Samsung Electronics (005930.KS) + ST",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.5746612697839737,
+      "maxScore": 0.4152349293231964,
+      "firstRecalledAt": "2026-05-13T05:24:02.068Z",
+      "lastRecalledAt": "2026-05-17T05:11:26.618Z",
+      "queryHashes": [
+        "2f999490ccad",
+        "eadb72a91448",
+        "72157f983b04",
+        "6c1084c30add"
+      ],
+      "recallDays": [
+        "2026-05-13",
+        "2026-05-14",
+        "2026-05-15",
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "stock-index.yaml",
+        "watchlist.md",
+        "pre-flight",
+        "wiki/database-first",
+        "005930.ks",
+        "index",
+        "rebuild",
+        "check"
+      ]
+    },
+    "memory:memory/2026-05-13.md:31:79": {
+      "key": "memory:memory/2026-05-13.md:31:79",
+      "path": "memory/2026-05-13.md",
+      "startLine": 31,
+      "endLine": 79,
+      "source": "memory",
+      "snippet": "**Fix (Option A — percentage-based):** ```javascript // Line 3537 bossHealth.value = 100 // Line 3545 stays as-is (already correct for percentage) ``` **Status:** Byte spawned, awaiting commit. Scout to verify post-fix. --- ## Stage 3 Skyscraper Bug — Root Cause Found **Location:** `elango-surfers/src/App.vue` lines 2060-2080, 510-560 **Problem:** Buildings positioned with CENTER at ground level instead of BOTTOM. ```javascript // Line 2070-2075 (regular buildings) buildingGroup.position.set( side * (10 + Math.random() * 10), height / 2 + getSurfaceY(bldgZ), // ← BUG: adds height/2 bldgZ ); // Line 520 (skyscrapers) building.position.set(0, height / 2, 0); // ← BUG: center, n",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8329325944185257,
+      "maxScore": 0.46609634459018706,
+      "firstRecalledAt": "2026-05-13T05:25:01.519Z",
+      "lastRecalledAt": "2026-05-17T14:40:42.004Z",
+      "queryHashes": [
+        "75bba125964c",
+        "5c0a68ff2304"
+      ],
+      "recallDays": [
+        "2026-05-13",
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "percentage-based",
+        "bosshealth.value",
+        "as-is",
+        "post-fix",
+        "elango-surfers/src/app.vue",
+        "2060-2080",
+        "510-560",
+        "2070-2075"
+      ]
+    },
+    "memory:memory/2026-05-13.md:1:46": {
+      "key": "memory:memory/2026-05-13.md:1:46",
+      "path": "memory/2026-05-13.md",
+      "startLine": 1,
+      "endLine": 46,
+      "source": "memory",
+      "snippet": "# Memory Flush — 2026-05-13 ## Agent Timeout Crisis **Pattern:** Subagents consistently timing out after 10+ minutes with minimal progress (4-15 tool calls) | Agent | Task | Runtime | Tool Calls | Status | |-------|------|---------|------------|--------| | Scout | Stage 3 skyscraper bug | 10m27s | ~4 | Timeout | | Archie | Boss HP analysis (attempt 2) | 3m39s | 15 | Timeout | | Byte | Gameplay testing | 10m46s | stuck | Timeout | | Sashay | Visual testing | 10m41s | 26 | Timeout | **Root cause hypothesis:** File reads on large `App.vue` (7000+ lines) are hanging or extremely slow. Agents spawn, start reading, then timeout before completing analysis. **Workaround:** Mickey should read fi",
+      "recallCount": 8,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3.7273570895195007,
+      "maxScore": 0.5011919409036636,
+      "firstRecalledAt": "2026-05-13T05:25:10.574Z",
+      "lastRecalledAt": "2026-05-18T20:23:52.283Z",
+      "queryHashes": [
+        "280f0d393130",
+        "c04aaa1c04eb",
+        "47d243d21d60",
+        "8c751ce9ddf0",
+        "bca635374533",
+        "5310e5b33e26",
+        "3f8ef5d50dac",
+        "4e1fa4bc4f77"
+      ],
+      "recallDays": [
+        "2026-05-13",
+        "2026-05-17",
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "4-15",
+        "app.vue",
+        "flush",
+        "timeout",
+        "crisis",
+        "pattern",
+        "subagents",
+        "consistently"
+      ]
+    },
+    "memory:memory/2026-04-25.md:1:63": {
+      "key": "memory:memory/2026-04-25.md:1:63",
+      "path": "memory/2026-04-25.md",
+      "startLine": 1,
+      "endLine": 63,
+      "source": "memory",
+      "snippet": "# Memory: 2026-04-25 — Elango Surfers Debug Infrastructure ## 🎭 Playwright Test Suite — DEPLOYED **Files Created:** - `playwright.config.ts` — Test config (Chromium, 60s timeout) - `tests/essential.spec.ts` — 3 core smoke tests (all passing) - `.github/workflows/playwright.yml` — CI/CD on push/PR - `BROWSER_TESTS.md` — Playwright + OpenClaw integration guide - `DEBUG_BROWSER.md` — OpenClaw browser automation scripts **Test Coverage:** ``` ✓ Game loads at correct URL (https://www.drpoom.com/elango-surfers/) ✓ Page title contains \"Elango\" ✓ Game canvas renders (screenshot captured) ``` **Run Commands:** ```bash npm run test # Headless npm run test:headed # See browser npm run t",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.3736920714378356,
+      "maxScore": 0.47530677318572995,
+      "firstRecalledAt": "2026-05-13T05:27:21.740Z",
+      "lastRecalledAt": "2026-05-18T20:23:47.945Z",
+      "queryHashes": [
+        "c04aaa1c04eb",
+        "8c751ce9ddf0",
+        "3f8ef5d50dac"
+      ],
+      "recallDays": [
+        "2026-05-13",
+        "2026-05-17",
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "playwright.config.ts",
+        "tests/essential.spec.ts",
+        "github/workflows/playwright.yml",
+        "ci/cd",
+        "push/pr",
+        "browser-tests.md",
+        "debug-browser.md",
+        "www.drpoom.com/elango-surfers"
+      ]
+    },
+    "memory:memory/2026-05-11.md:1:36": {
+      "key": "memory:memory/2026-05-11.md:1:36",
+      "path": "memory/2026-05-11.md",
+      "startLine": 1,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "# Memory Flush — 2026-05-11 ## AI Mega-Analysis Task (Started 2026-05-10 23:58) **Scope:** Option A — Full AI supply chain coverage (70+ companies across 10 layers) **Target:** Complete by 02:00 Europe/Berlin **Status:** Phase 0 complete (00:03), Phase 1 executing (5 parallel subagents) ### Key Wins - ✅ **Decomposition protocol working** — Warren reported plan BEFORE execution (no more \"execute wrong plan for 30 minutes\") - ✅ **Wiki reuse paying off** — 29 of 70 companies (41%) already had coverage from semiconductor-mega-analysis - SK Hynix, Samsung, TSM, Micron, ASML, Lam, AMAT, KLA, etc. - Saved ~15-20 min on Phase 1, ~30-40 min on Phase 2 - ✅ **Time savings:** Original 3h estimate",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7903746068477631,
+      "maxScore": 0.4212837785482406,
+      "firstRecalledAt": "2026-05-14T23:54:18.102Z",
+      "lastRecalledAt": "2026-05-14T23:54:18.252Z",
+      "queryHashes": [
+        "df4c9d71aaf9",
+        "1a2c8243aac7"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "mega-analysis",
+        "europe/berlin",
+        "semiconductor-mega-analysis",
+        "15-20",
+        "30-40",
+        "flush",
+        "mega",
+        "analysis"
+      ]
+    },
+    "memory:memory/2026-04-25.md:1471:1544": {
+      "key": "memory:memory/2026-04-25.md:1471:1544",
+      "path": "memory/2026-04-25.md",
+      "startLine": 1471,
+      "endLine": 1544,
+      "source": "memory",
+      "snippet": "- `~/.openclaw/agents/creative/agent/` → Sashay --- ### **Efficient Coding Pattern v3.0 (Complete Workflow)** ``` User Request → Mickey (Router, 30s) ↓ Reads context files, spawns Archie ↓ Archie (Architect, 2-5 min) ↓ Writes TASKS.md with atomic tasks + agent assignments ↓ Mickey parses TASKS.md (30s) ↓ Spawns Byte + Sashay [PARALLEL] ↓ ┌──────────────┬──────────────┐ │ Byte ⚡ │ Sashay 🎨 │ │ (Logic) │ (Creative) │ │ 5-8 min │ 3-5 min │ └──────────────┴──────────────┘ ↓ Scout (QA, 2-3 min) ↓ Runs tests, code review, visual check ↓ Mickey (Final, 30s) ↓ Commit + push + report ↓ ✅",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8929546415805816,
+      "maxScore": 0.4483029633760452,
+      "firstRecalledAt": "2026-05-15T21:02:38.887Z",
+      "lastRecalledAt": "2026-05-18T08:56:23.682Z",
+      "queryHashes": [
+        "5d67badb41ce",
+        "7d87f400af07"
+      ],
+      "recallDays": [
+        "2026-05-15",
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "router",
+        "openclaw/agents/creative/agent",
+        "v3.0",
+        "2-5",
+        "tasks.md",
+        "5-8",
+        "3-5",
+        "2-3"
+      ]
+    },
+    "memory:memory/2026-04-25.md:1578:1635": {
+      "key": "memory:memory/2026-04-25.md:1578:1635",
+      "path": "memory/2026-04-25.md",
+      "startLine": 1578,
+      "endLine": 1635,
+      "source": "memory",
+      "snippet": "1. **Scout timeout handling** — If Scout times out, Mickey can run QA directly 2. **Gateway timeouts** — Long-running subagents may hit gateway limits; design for idempotency 3. **Texture vs code fixes** — Visual issues may need both Sashay (assets) + Byte (materials) 4. **TASKS.md prevents confusion** — Clear agent assignments avoid duplicate work 5. **Parallel tracks save 30% time** — Byte + Sashay simultaneous = faster delivery --- ### **Agent Orchestration Code Pattern** ```javascript // Mickey: Spawn Archie with full context const context = await read(\"src/App.vue\"); sessions_spawn({ agentId: \"archie\", task: `Plan: ${request}\\n\\nContext:\\n${context}`, lightContext: false // Ar",
+      "recallCount": 9,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4.233058333396912,
+      "maxScore": 0.5120930165052414,
+      "firstRecalledAt": "2026-05-15T21:02:49.907Z",
+      "lastRecalledAt": "2026-05-18T20:23:47.945Z",
+      "queryHashes": [
+        "a4c509c3ff32",
+        "482c49414248",
+        "f9a6e43f6416",
+        "35d0c079fcd7",
+        "bca635374533",
+        "9510e533fc6b",
+        "ddec267b3d5e",
+        "93bf93ce5564",
+        "3f8ef5d50dac"
+      ],
+      "recallDays": [
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-17",
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "gateway",
+        "long-running",
+        "tasks.md",
+        "src/app.vue",
+        "sessions-spawn",
+        "scout",
+        "timeout",
+        "handling"
+      ]
+    },
+    "memory:memory/2026-04-25.md:1032:1075": {
+      "key": "memory:memory/2026-04-25.md:1032:1075",
+      "path": "memory/2026-04-25.md",
+      "startLine": 1032,
+      "endLine": 1075,
+      "source": "memory",
+      "snippet": "1. **TASKS.md is source of truth** — Archie owns it, Byte/Sashay follow it, Scout verifies against it 2. **Parallel execution** — Byte (logic) + Sashay (creative) work simultaneously 3. **Atomic tasks** — <100 lines changed per task, prevents timeouts 4. **Temperature alignment** — Low temp (0.15-0.2) for analysis/code, high temp (0.7+) for creative 5. **Mickey never edits code** — Always delegate to Byte 6. **lightContext: true** — Lean prompts, faster execution --- ### **Live Test: Elango Surfers v5.0.19 (02:20-02:45 CET)** **User Request:** Fix 7 Stage 2/3 issues **Execution:** ``` [Archie 📐] 2m16s — Created TASKS.md (7 tasks, 4 groups) [Sashay 🎨] ~5min — A1, A2 (skyscraper + ob",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8735148400068282,
+      "maxScore": 0.4460316121578216,
+      "firstRecalledAt": "2026-05-15T21:03:27.502Z",
+      "lastRecalledAt": "2026-05-18T08:56:30.450Z",
+      "queryHashes": [
+        "99a020a1bf44",
+        "1db76cbccbeb"
+      ],
+      "recallDays": [
+        "2026-05-15",
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "tasks.md",
+        "byte/sashay",
+        "0.15-0.2",
+        "analysis/code",
+        "0.7",
+        "v5.0.19",
+        "20-02",
+        "2/3"
+      ]
+    },
+    "memory:memory/2026-05-15.md:1:50": {
+      "key": "memory:memory/2026-05-15.md:1:50",
+      "path": "memory/2026-05-15.md",
+      "startLine": 1,
+      "endLine": 50,
+      "source": "memory",
+      "snippet": "# Memory Flush — 2026-05-15 ## Context Window Upgrade (v3.0) **Applied:** 2026-05-15 01:52 GMT+2 | Agent | Model | Context Window | |-------|-------|----------------| | Mickey 🐕 | Qwen3.5:cloud | 262k tokens | | Byte ⚡ | Qwen3.5:cloud | 262k tokens | | Sashay 🎨 | Qwen3.5:cloud | 262k tokens | | Archie 📐 | GLM-5.1:cloud | 204.8k tokens | | Scout 🔍 | GLM-5.1:cloud | 204.8k tokens | | Warren 🦅 | GLM-5.1:cloud | 204.8k tokens | **AGENTS.md Protocol v3.0:** - WARNING threshold: 100k (50%) - HARD STOP: 140k (67%) - CRITICAL: 170k (83%) **Config files updated:** - `/home/poomk/.openclaw/agents/main/agent/config.json` - `/home/poomk/.openclaw/agents/warren/agent/config.json` - `/home/poomk",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.45689332187175746,
+      "maxScore": 0.45689332187175746,
+      "firstRecalledAt": "2026-05-16T20:54:42.066Z",
+      "lastRecalledAt": "2026-05-16T20:54:42.066Z",
+      "queryHashes": [
+        "8b3ba4fc7e6f"
+      ],
+      "recallDays": [
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "v3.0",
+        "qwen3.5",
+        "glm-5.1",
+        "204.8k",
+        "agents.md",
+        "home/poomk",
+        "flush",
+        "context"
+      ]
+    },
+    "memory:memory/2026-05-12.md:1:43": {
+      "key": "memory:memory/2026-05-12.md:1:43",
+      "path": "memory/2026-05-12.md",
+      "startLine": 1,
+      "endLine": 43,
+      "source": "memory",
+      "snippet": "# Memory Flush — 2026-05-12 ## MCP Integration (Phase 1 + 2) **Installed:** - `@playwright/mcp@0.0.75` — network mocking, storage management - `chrome-devtools-mcp@0.26.0` — Lighthouse audits, performance profiling **Config:** `/home/poomk/.openclaw/openclaw.json` - Playwright MCP: `--caps=core,network,storage` (limited to control token usage) - Chrome DevTools MCP: requires Chrome with `--remote-debugging-port=9222` **Gateway:** Restarted (PID: 1090086, SIGUSR1) **Key Learning:** MCP browsers run as **separate instances** from OpenClaw's native browser tool to avoid conflicts. --- ## Elango Surfers QA Testing — Playwright MCP Limitations **Problem:** Playwright MCP **not suitable fo",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.8616651475429533,
+      "maxScore": 0.49086414277553553,
+      "firstRecalledAt": "2026-05-17T06:23:12.100Z",
+      "lastRecalledAt": "2026-05-20T13:41:39.586Z",
+      "queryHashes": [
+        "8c751ce9ddf0",
+        "3f8ef5d50dac",
+        "4e1fa4bc4f77",
+        "dcd8aa4e9697"
+      ],
+      "recallDays": [
+        "2026-05-17",
+        "2026-05-18",
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "gateway",
+        "network",
+        "playwright/mcp",
+        "0.0.75",
+        "chrome-devtools-mcp",
+        "0.26.0",
+        "home/poomk",
+        "openclaw/openclaw.json"
+      ]
+    },
+    "memory:memory/2026-05-12.md:67:84": {
+      "key": "memory:memory/2026-05-12.md:67:84",
+      "path": "memory/2026-05-12.md",
+      "startLine": 67,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "**Daily Catalyst Alerts (Job ID: 500fb6b6-1096-48af-b397-2c4a8691c32c):** - Fixed false-positive error alerts - Set `failureAlert.after: 100` consecutive errors (effectively disabled nuisance alerts) --- ## Performance Report Format **Script:** `/home/poomk/.openclaw/workspace/scripts/daily-performance-report.sh` **Table Format (Standardized):** - Task Outcomes - Model Performance - Top 10 Slowest Tasks - Project Activity **Memory:** Format spec saved to `/home/poomk/.openclaw/workspace/memory/distilled.md`",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4365638762712478,
+      "maxScore": 0.4365638762712478,
+      "firstRecalledAt": "2026-05-17T06:26:11.721Z",
+      "lastRecalledAt": "2026-05-17T06:26:11.721Z",
+      "queryHashes": [
+        "7fe3a13fba4b"
+      ],
+      "recallDays": [
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "false-positive",
+        "failurealert.after",
+        "home/poomk",
+        "catalyst",
+        "alerts",
+        "job",
+        "500fb6b6",
+        "48af"
+      ]
+    },
+    "memory:memory/2026-04-25.md:1616:1676": {
+      "key": "memory:memory/2026-04-25.md:1616:1676",
+      "path": "memory/2026-04-25.md",
+      "startLine": 1616,
+      "endLine": 1676,
+      "source": "memory",
+      "snippet": "lightContext: true, modelParams: { temperature: 0.7 } }); } // After both complete sessions_spawn({ agentId: \"qa\", task: \"Full verification: tests + review\", lightContext: true }); ``` --- **Session End:** 2026-04-25 02:48 CET **Status:** ✅ Complete workflow proven in production, v5.0.19 deployed --- ## 🎮 **Elango Surfers v5.0.19 — Stage 2/3 Fixes** ### **Issues Fixed (7/7)** | # | Issue | Fix | Agent | |---|-------|-----|-------| | 1 | Skyscraper white background | PNG transparency, tight crop | Sashay | | 2 | Stage 3 obstacles too bright | -20% brightness, -30% saturation | Sashay | | 3 | Stage 3 weird IKEA SFX | Common `crash` sounds | Byte | | 4 | Stage 2 cobblest",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3886234015226364,
+      "maxScore": 0.3886234015226364,
+      "firstRecalledAt": "2026-05-17T09:19:29.070Z",
+      "lastRecalledAt": "2026-05-17T09:19:29.070Z",
+      "queryHashes": [
+        "eb5e42657497"
+      ],
+      "recallDays": [
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "0.7",
+        "sessions-spawn",
+        "v5.0.19",
+        "2/3",
+        "7/7",
+        "lightcontext",
+        "true",
+        "modelparams"
+      ]
+    },
+    "memory:memory/2026-04-22.md:1:38": {
+      "key": "memory:memory/2026-04-22.md:1:38",
+      "path": "memory/2026-04-22.md",
+      "startLine": 1,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "# 2026-04-22 — Stage 3 \"The Infinite IKEA-pocalypse\" COMPLETE 🏆 ## Major Achievement **Stage 3: 100% COMPLETE (34/34 tasks)** ### Wave 1 (8/8) - Core Mechanics - Stage 3 config with Swedish color scheme (#005B99 blue, #FECC00 yellow) - Conveyor belt texture + physics (player moves forward automatically) - Swedish flag backdrop - Screen effects (flip, rotate, invert, mirror) - Meatball sprite (obstacle) - Allen key hazard (5-frame spinning obstacle) - Swedish polka BGM (placeholder) ### Wave 2 (11/11) - Obstacles & Boss - Return counter barrier (speed debuff 50% for 3s) - Slippery floor (1.5s uncontrollable slide at 1.3x speed, 1 per 20s) - Portal mechanics (wardrobe teleportation with sc",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.347779619693756,
+      "maxScore": 0.45342105031013485,
+      "firstRecalledAt": "2026-05-17T09:34:21.908Z",
+      "lastRecalledAt": "2026-05-24T00:42:45.703Z",
+      "queryHashes": [
+        "fdd73aa5e0c5",
+        "73b43194dd95",
+        "d8d87fb38f5b",
+        "cf17c71f288c",
+        "86bfa405cf38",
+        "a120ef5b9b0f"
+      ],
+      "recallDays": [
+        "2026-05-17",
+        "2026-05-20",
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "ikea-pocalypse",
+        "34/34",
+        "8/8",
+        "5-frame",
+        "11/11",
+        "1.5s",
+        "1.3x",
+        "stage"
+      ]
+    },
+    "memory:memory/2026-04-24.md:159:196": {
+      "key": "memory:memory/2026-04-24.md:159:196",
+      "path": "memory/2026-04-24.md",
+      "startLine": 159,
+      "endLine": 196,
+      "source": "memory",
+      "snippet": "| **\"scene undefined\" error** | Composable functions called before scene initialized | Added `if (!scene) return;` guards in `useScene.js`, `useObstacles.js` | | **Touch/swipe not working** | **Variable shadowing bug** in `handleTouchEnd()` | Fixed local `const` declarations shadowing refs | ## Critical Bug: Variable Shadowing **Location**: `src/App.vue` line 2661-2662 **Before (broken)**: ```javascript const touchEndX = e.changedTouches[0].clientX; // ❌ Shadows ref const diffX = touchEndX - touchStartX; // ❌ ref - number = NaN ``` **After (fixed)**: ```javascript const endX = e.changedTouches[0].clientX; // ✅ Local variable touchEndX.value = endX; // ✅ Update ref const diffX = touch",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.40931905210018155,
+      "maxScore": 0.40931905210018155,
+      "firstRecalledAt": "2026-05-17T09:45:41.996Z",
+      "lastRecalledAt": "2026-05-17T09:45:41.996Z",
+      "queryHashes": [
+        "cab13cf6e277"
+      ],
+      "recallDays": [
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "usescene.js",
+        "useobstacles.js",
+        "touch/swipe",
+        "src/app.vue",
+        "2661-2662",
+        "e.changedtouches",
+        "touchendx.value",
+        "scene"
+      ]
+    },
+    "memory:memory/2026-04-27.md:168:194": {
+      "key": "memory:memory/2026-04-27.md:168:194",
+      "path": "memory/2026-04-27.md",
+      "startLine": 168,
+      "endLine": 194,
+      "source": "memory",
+      "snippet": "2. **Stage preview rendering errors**: Applying textures immediately on button click caused Three.js rendering conflicts 3. **Spawn timing**: Still need to verify clock is running correctly after reset **Fixes** (commit `06efd28`): - Added `cleanupMedievalFlowers()` call in `resetStage()` to remove flowers when leaving Stage 2 - Removed immediate `applyStageVisuals()` from stage selection button clicks (reverted to \"next game start\" behavior) - Enhanced spawn debug logging to show: - `clock.getElapsedTime()` at reset - `lastSpawnTime` calculation - Expected `timeSinceLastSpawn` on first frame - Version display was already fixed in v5.2.5 **Commit**: `06efd28` - fix: Clean up medieval",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.38464120924472806,
+      "maxScore": 0.38464120924472806,
+      "firstRecalledAt": "2026-05-17T15:50:04.183Z",
+      "lastRecalledAt": "2026-05-17T15:50:04.183Z",
+      "queryHashes": [
+        "54ddd472821b"
+      ],
+      "recallDays": [
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "three.js",
+        "clock.getelapsedtime",
+        "v5.2.5",
+        "stage",
+        "preview",
+        "rendering",
+        "errors",
+        "applying"
+      ]
+    },
+    "memory:memory/2026-04-25.md:398:459": {
+      "key": "memory:memory/2026-04-25.md:398:459",
+      "path": "memory/2026-04-25.md",
+      "startLine": 398,
+      "endLine": 459,
+      "source": "memory",
+      "snippet": "- `visual-baselines/gameplay-screen.png` - `visual-baselines/settings-panel.png` --- ### **Debug Lesson: Flaky Test vs Real Bug** **Failed Test:** `debug overlay can be toggled` **Error Pattern:** ``` locator resolved to <button>🐛 Debug OFF</button> element is visible, enabled and stable attempting click action... TIMEOUT ``` **Diagnosis:** Flaky test (race condition), NOT a real bug. **Root Cause:** Button text changes on toggle (\"Debug\" → \"Debug OFF\"), causing locator to lose reference mid-click. **Fix:** Simplified test to verify element exists/is enabled without clicking (avoids race condition). --- ### **Decision Tree: Test Failure vs Real Bug** ``` Test Failed │ ├─→",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4709127306938171,
+      "maxScore": 0.4709127306938171,
+      "firstRecalledAt": "2026-05-18T08:56:14.689Z",
+      "lastRecalledAt": "2026-05-18T08:56:14.689Z",
+      "queryHashes": [
+        "4029b841c017"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "mid-click",
+        "exists/is",
+        "visual",
+        "baselines",
+        "gameplay",
+        "screen.png",
+        "settings",
+        "panel.png"
+      ]
+    },
+    "memory:memory/2026-04-26.md:111:144": {
+      "key": "memory:memory/2026-04-26.md:111:144",
+      "path": "memory/2026-04-26.md",
+      "startLine": 111,
+      "endLine": 144,
+      "source": "memory",
+      "snippet": "2. Add automated Playwright test to verify spawning works for all stages 3. Deploy fix + test # 2026-04-26 — Elango Surfers v5.2.1 & Subagent Timeout Fix ## Elango Surfers v5.2.1 — Shipped & Deployed **Live:** https://www.drpoom.com/elango-surfers/ ### Bugs Fixed | # | Bug | Fix | |---|-----|-----| | 1 | Loading screen text hard to read | White text with sharp black border (no blur) | | 2 | Game starts before loading screen ends | Game loop fully frozen during fade-out (`stageTransitioning.value = true` until countdown completes) | | 3 | No obstacles/coins/items at game start | Texture manifest preloads all Stage 1 textures via `preloadStageTextures(1)` in `initGame()` | | 4 | Magnet doe",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8074917584657668,
+      "maxScore": 0.4177016496658325,
+      "firstRecalledAt": "2026-05-18T09:48:34.445Z",
+      "lastRecalledAt": "2026-05-24T05:58:00.464Z",
+      "queryHashes": [
+        "8bebba971d38",
+        "9ab73779252c"
+      ],
+      "recallDays": [
+        "2026-05-18",
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "v5.2.1",
+        "www.drpoom.com/elango-surfers",
+        "fade-out",
+        "stagetransitioning.value",
+        "obstacles/coins/items",
+        "add",
+        "automated",
+        "playwright"
+      ]
+    },
+    "memory:memory/2026-04-25.md:878:938": {
+      "key": "memory:memory/2026-04-25.md:878:938",
+      "path": "memory/2026-04-25.md",
+      "startLine": 878,
+      "endLine": 938,
+      "source": "memory",
+      "snippet": "**Fix:** Simplified test to verify element exists/is enabled without clicking (avoids race condition). --- ### **Decision Tree: Test Failure vs Real Bug** ``` Test Failed │ ├─→ Can you reproduce manually? │ ├─ NO → Flaky test (fix test) │ └─ YES → Real bug (fix code) │ ├─→ Does it fail consistently (5/5 runs)? │ ├─ NO → Flaky test │ └─ YES → Real bug │ └─→ Does error show element issue? ├─ Element not found → Test selector wrong OR bug ├─ Element visible but click fails → Race condition └─ Page crashes → Real bug ``` **Best Practices:** 1. Manual reproduction first 2. Run 3-5 times to check consistency 3. Watch test",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.382030376791954,
+      "maxScore": 0.382030376791954,
+      "firstRecalledAt": "2026-05-18T09:48:34.445Z",
+      "lastRecalledAt": "2026-05-18T09:48:34.445Z",
+      "queryHashes": [
+        "8bebba971d38"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "exists/is",
+        "5/5",
+        "3-5",
+        "fix",
+        "simplified",
+        "test",
+        "verify",
+        "element"
+      ]
+    },
+    "memory:memory/2026-04-25.md:636:693": {
+      "key": "memory:memory/2026-04-25.md:636:693",
+      "path": "memory/2026-04-25.md",
+      "startLine": 636,
+      "endLine": 693,
+      "source": "memory",
+      "snippet": "task: `Implement: ${task.name}\\n\\n${task.spec}`, lightContext: true, modelParams: { temperature: 0.2 } }); } for (const task of sashayTasks) { sessions_spawn({ agentId: \"creative\", task: `Create: ${task.name}\\n\\n${task.spec}`, lightContext: true, modelParams: { temperature: 0.7 } }); } // After both complete sessions_spawn({ agentId: \"qa\", task: \"Full verification: tests + review\", lightContext: true }); ``` --- **Session End:** 2026-04-25 02:48 CET **Status:** ✅ Complete workflow proven in production, v5.0.19 deployed --- ## 🎮 **Elango Surfers v5.0.19 — Stage 2/3 Fixes** ### **Issues Fixed (7/7)** | # | Issue | Fix | Agent | |---|-------|----",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.46624454557895656,
+      "maxScore": 0.46624454557895656,
+      "firstRecalledAt": "2026-05-24T00:42:34.890Z",
+      "lastRecalledAt": "2026-05-24T00:42:34.890Z",
+      "queryHashes": [
+        "86bfa405cf38"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "task.name",
+        "task.spec",
+        "0.2",
+        "sessions-spawn",
+        "0.7",
+        "v5.0.19",
+        "2/3",
+        "7/7"
+      ]
+    },
+    "memory:memory/2026-04-22.md:62:88": {
+      "key": "memory:memory/2026-04-22.md:62:88",
+      "path": "memory/2026-04-22.md",
+      "startLine": 62,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "- sfx-cash-register.ogg - sfx-crash-wood.ogg, sfx-crash-glass.ogg, sfx-crash-metal.ogg, sfx-assembly.ogg - sfx-portal-whoosh.ogg - ambient-conveyor-hum.ogg (10s loop) ## Key Code Files Modified - `src/App.vue` (~300+ lines: boss AI, showroom, conveyor, slippery floor, obstacles) - `src/composables/useConveyor.js` (conveyor physics) - `src/composables/usePortal.js` (portal spawning, safe positions, warnings) - `src/composables/useScreenEffects.js` (effects with reduce-motion support) - `src/composables/useObstacle.js` (obstacle spawning) ## Lessons Learned 1. **Subagent timeout pattern:** Complex tasks (>4 min) often timeout. Solution: spawn simpler retries with minimal specs (~30-60 lines,",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4210456848144531,
+      "maxScore": 0.4210456848144531,
+      "firstRecalledAt": "2026-05-24T00:42:34.890Z",
+      "lastRecalledAt": "2026-05-24T00:42:34.890Z",
+      "queryHashes": [
+        "86bfa405cf38"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "sfx-cash-register.ogg",
+        "sfx-crash-wood.ogg",
+        "sfx-crash-glass.ogg",
+        "sfx-crash-metal.ogg",
+        "sfx-assembly.ogg",
+        "sfx-portal-whoosh.ogg",
+        "ambient-conveyor-hum.ogg",
+        "src/app.vue"
+      ]
+    },
+    "memory:memory/2026-04-25.md:2081:2114": {
+      "key": "memory:memory/2026-04-25.md:2081:2114",
+      "path": "memory/2026-04-25.md",
+      "startLine": 2081,
+      "endLine": 2114,
+      "source": "memory",
+      "snippet": "### **Bug 2: Boss Tentacle Animation — Already Implemented!** Byte found all 3 fixes were already in the codebase: 1. ✅ **Vertical halo positioning** — Y-axis ring with X spread, Z=0 center 2. ✅ **Sinusoidal wiggle** — `rotation.x` and `rotation.z` oscillate with sine waves 3. ✅ **Magenta glow** — `PointLight(0xff00ff, 2, 10)` at meatball center **Commit:** `🐙 v5.0.25 Part 2: Boss tentacle Z-plane halo + wiggle` (ac6e55f) ### **Sashay's Texture Creation** | Texture | File | Purpose | |---------|------|---------| | Skyscraper glass (cropped) | `assets/stage3/skyscraper-glass.png` | Fixed floating buildings | | Mario brick box | `assets/obstacles/brick-box.png` | Replaces fruit sphere | |",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.38445291221141814,
+      "maxScore": 0.38445291221141814,
+      "firstRecalledAt": "2026-05-24T00:42:45.703Z",
+      "lastRecalledAt": "2026-05-24T00:42:45.703Z",
+      "queryHashes": [
+        "a120ef5b9b0f"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "y-axis",
+        "rotation.x",
+        "rotation.z",
+        "v5.0.25",
+        "z-plane",
+        "assets/obstacles/brick-box.png",
+        "bug",
+        "boss"
       ]
     }
   }

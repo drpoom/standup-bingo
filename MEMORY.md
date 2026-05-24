@@ -39,9 +39,15 @@
 | **Scout** 🔍 | `glm-5.1:cloud` | **0.15** | QA | Detail-oriented, thorough reviewer |
 | **Warren** 🦅 | `glm-5.1:cloud` | **0.1** | Value Investing | Conservative, analytical, Buffett/Munger philosophy |
 
-**Model Selection Rationale:**
-- **Fast agents** (Mickey, Byte, Sashay): `qwen3.5:cloud` for quick responses
-- **Analytical agents** (Archie, Scout): `glm-5.1:cloud` for deep thinking
+**Model Selection Rationale (Updated 2026-05-17):**
+- **Mickey, Byte, Sashay:** `qwen3.5:cloud` — cost-effective for routing, coding, creative work
+- **Archie, Scout, Warren:** `glm-5.1:cloud` — superior analytical reasoning for deep analysis, QA, investing
+
+**⚠️ Model Speed Facts (2026-05-17):**
+- `glm-5.1:cloud`: ~1123 tokens/sec — **10× faster inference**, better for analytical tasks
+- `qwen3.5:cloud`: ~114 tokens/sec — slower but cost-effective for routine tasks
+- **Ollama cloud pricing:** Based on model size and task complexity, not config values
+- Use glm-5.1 for analytical depth; qwen3.5 for cost-sensitive routing/coding/creative
 
 **Subagent config:** maxSpawnDepth=2, maxConcurrent=8, runTimeout=300s, allowAgents=[coder, creative, qa]
 
@@ -50,19 +56,30 @@
 - **Orchestrator rule:** Mickey = architecture + orchestration ONLY. All code → Byte. All creative → Sashay. All deploys → Scout ✅ first. **No exceptions. Violated 2026-04-17: coded resetStage refactor directly. Never again.**
 - **Mickey never edits code files** (`.vue`, `.js`, `.css`, `.py`, `.ts`, `.html`). Write specs, delegate to Byte. If tempted to open an edit on a code file, STOP and spawn Byte instead.
 - **Lean task prompts:** <500 chars simple, <1000 complex. Never embed file contents.
+- **Timeout budgets (Updated 2026-05-18 — Conservative for cloud delays):**
+  - **Simple tasks:** 300s (5 min) — Single file, <50 lines, straightforward fix
+  - **Complex tasks:** 600s (10 min) — Multi-file, >50 lines, requires exploration
+  - **Rationale:** Cloud models experience server-side delays (queueing, rate limiting, network). Budgets must accommodate file reads + edits + verification + server latency.
+- **Silent failure protocol (v1.1 — 2026-05-18):** `sessions_yield` resolves on session termination, NOT success. Timeout events look like completions. Three-layer safety net: (1) Post-yield result verification (`test -f` + `test -s`), (2) Mandatory failure notification within 1 turn, (3) Decompose-on-timeout: split into 2 subtasks → retry once → escalate. See docs/orchestration-reliability-protocol.md §6.3.
+- **Claude Code via LiteLLM proxy (2026-05-18):** Claude Code CLI routes through LiteLLM proxy (port 4000) to Ollama models. Model mapping: claude-sonnet-4-6 → glm-5.1:cloud, claude-haiku-4-20250506 → qwen3.5:cloud. Env vars: ANTHROPIC_BASE_URL=http://localhost:4000, ANTHROPIC_API_KEY=sk-fake-key, CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1. Proxy script: ~/.openclaw/scripts/litellm-proxy.sh. Config: ~/.openclaw/litellm-config.yaml. Auto-starts with gateway restart.
 
 ## People
 - **John Poom (ลุงจอห์น)** — My human. System integration expert, tech enthusiast, investment hobbyist. Fluent Thai/German/English. Timezone: Europe/Berlin.
+
+## Delivery Preferences
+- **Investment reports**: ALWAYS attach as file + send to Telegram immediately upon completion (catalyst alerts, analysis reports, earnings briefings, etc.)
 
 ## Key Lessons
 - Smart quotes cause build errors in Vue SFCs — use backtick template literals
 - Emoji ZWJ characters cause edit tool matching failures — use `write`
 - `statSnapshot` must mirror achievement conditions
 - `DIALOGUE_NODES` must be `computed(() => [...])` for reactive flag references
+- **`sessions_yield` resolves on termination, not success** — timeout events look like completions. Always verify result files exist + are non-empty after yield. (2026-05-18 incident)
 - Deploy leak: ALWAYS commit to main BEFORE deploying to gh-pages
 - Compaction can't help first-turn overflow — only prevention works (lightContext + session maintenance + lean prompts)
 - Atomic task sizing: <100 lines changed per task, monolithic rewrites timeout
 - **Byte model correction:** Byte is `qwen3.5:cloud` (snappy coder), NOT `glm-5.1:cloud`
+- **Elango Delivery Orchestration Rule (2026-05-24):** NEVER bundle atomic tasks without explicit user approval. Follow Archie's TASK-LIST.md exactly — one spawn = one atomic task (1-2 min each) or small independent group (max 2-3 tasks) with user approval. Mickey's role = strict orchestration per the official task list, not improvisation.
 
 ## Conventions
 - Version format: `pi.sprint` (e.g., `1.20`)

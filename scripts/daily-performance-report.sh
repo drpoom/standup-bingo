@@ -254,9 +254,9 @@ print()
 print(f"**Total:** {grand_fmt} tokens")
 print()
 
-# Top slowest tasks section
-if task_list:
-    print("## ⏱️ Top 10 Slowest Tasks (by Wall Time)")
+# Top slowest tasks section (only if no failures/timeouts)
+if timeout == 0 and failed == 0 and task_list:
+    print("## ⏱️ Top 3 Slowest Tasks (by Wall Time)")
     print()
     print("| # | Task | Agent | Wall Time | Inference | Ratio | Project |")
     print("|---|------|-------|-----------|-----------|-------|---------|")
@@ -264,7 +264,7 @@ if task_list:
     # Sort by wall time descending
     task_list.sort(key=lambda x: -x['wall_dur'])
     
-    for i, t in enumerate(task_list[:10], 1):
+    for i, t in enumerate(task_list[:3], 1):
         wall_min = int(t['wall_dur']) // 60
         wall_sec = int(t['wall_dur']) % 60
         wall_fmt = f"{wall_min}m{wall_sec}s" if wall_min > 0 else f"{wall_sec}s"
@@ -294,6 +294,89 @@ if task_list:
         print("- Batch file operations (combine multiple `exec` calls)")
         print("- Parallelize independent tasks with subagents")
         print("- Cache repeated data fetches")
+        print()
+
+# Failure Analysis section (only if there are failures or timeouts)
+if timeout > 0 or failed > 0:
+    print("## 🔴 Failure Analysis")
+    print()
+    
+    # Analyze timeout tasks
+    if timeout > 0:
+        print("### ⏱️ Timeout Analysis")
+        print()
+        print(f"**{timeout} task(s) timed out** in the last 24 hours")
+        print()
+        
+        # Find timeout tasks from task_list (those with high wall time but low inference)
+        timeout_candidates = [t for t in task_list if t['wall_dur'] > 120 and t['ratio'] > 50]
+        
+        if timeout_candidates:
+            print("**Root Cause Patterns:**")
+            print()
+            
+            # Analyze common patterns
+            agents_affected = set(t['agent'] for t in timeout_candidates)
+            projects_affected = set(t['project'] for t in timeout_candidates)
+            
+            if len(agents_affected) == 1:
+                print(f"- **Agent-specific**: All timeouts occurred in `{list(agents_affected)[0]}` agent")
+            elif len(agents_affected) > 1:
+                print(f"- **Systemic**: Timeouts spread across {len(agents_affected)} agents: {', '.join(agents_affected)}")
+            
+            if 'investments' in projects_affected:
+                print("- **Domain-specific**: Investment-related tasks showing timeouts (possible API rate limits or data volume)")
+            
+            # Check for high ratio tasks (tool execution bottlenecks)
+            high_ratio_timeouts = [t for t in timeout_candidates if t['ratio'] > 100]
+            if high_ratio_timeouts:
+                print(f"- **Tool execution bottleneck**: {len(high_ratio_timeouts)} tasks had >100x wall/inference ratio")
+                print("  → Heavy tool execution, not model inference, is the bottleneck")
+            
+            print()
+            print("**Suggested Fixes (Root Cause, Not Workarounds):**")
+            print()
+            
+            if high_ratio_timeouts:
+                print("1. **Reduce tool call chains**: Break monolithic tasks into atomic subtasks with `sessions_spawn` + `lightContext:true`")
+                print("2. **Parallelize independent work**: Use `maxConcurrent` subagents instead of sequential tool calls")
+                print("3. **Add progress checkpoints**: Long tasks should report intermediate results to avoid silent failures")
+            
+            if 'investments' in projects_affected:
+                print("4. **Batch API calls**: Investment data fetches should use batch endpoints, not per-stock requests")
+                print("5. **Cache market data**: Repeated price/quote fetches should use in-memory cache with TTL")
+            
+            print("6. **Decompose complex prompts**: Split 'analyze + execute' tasks into separate planner + executor subagents")
+            print()
+        else:
+            print("**Root Cause:** Insufficient detail in session logs for deep analysis")
+            print()
+            print("**Suggested Fixes:**")
+            print("1. Enable detailed session logging for timeout investigation")
+            print("2. Add task decomposition protocol for complex multi-turn work")
+            print("3. Implement progress heartbeat for long-running tasks")
+            print()
+    
+    # Analyze failed tasks
+    if failed > 0:
+        print("### ❌ Failure Analysis")
+        print()
+        print(f"**{failed} task(s) failed** in the last 24 hours")
+        print()
+        print("**Root Cause Investigation:**")
+        print()
+        print("Failure details require session log inspection. Common patterns:")
+        print("- **Model errors**: OOM, context overflow, or provider-side failures")
+        print("- **Tool failures**: API rate limits, network timeouts, permission denied")
+        print("- **Logic errors**: Unhandled edge cases, invalid assumptions in prompts")
+        print()
+        print("**Suggested Fixes (Root Cause, Not Workarounds):**")
+        print()
+        print("1. **Add error handling**: Wrap tool calls with retry logic + fallback paths")
+        print("2. **Validate inputs**: Check file existence, API responses, and data formats before processing")
+        print("3. **Reduce context size at source**: Use `memory_search` with targeted queries instead of loading full files")
+        print("4. **Implement circuit breakers**: Fail fast on repeated API errors instead of exhausting timeout budget")
+        print("5. **Add pre-flight checks**: Validate task prerequisites before starting execution")
         print()
 
 print("## 📁 Project Activity")

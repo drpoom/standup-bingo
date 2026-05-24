@@ -1,6 +1,7 @@
 # Security Audit Skill
 
 **Owner:** Scout (QA)
+**Model:** `glm-5.1:cloud` (PREFERRED for speed: 1123 TPS)
 **Purpose:** Vulnerability scanning, secret detection, dependency CVE checks, code security review
 
 ---

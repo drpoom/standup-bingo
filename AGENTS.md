@@ -67,6 +67,15 @@
 - **Model Preference (2026-05-17):** 
 - **Mickey, Byte, Sashay:** Stay with `qwen3.5:cloud` — generally cheaper and faster for routing/coding/creative tasks
 - **Archie, Scout, Warren:** Use `glm-5.1:cloud` — superior analytical reasoning for deep analysis, QA, and investing tasks
+- **Timeout budgets (Updated 2026-05-18 — Conservative for cloud delays):**
+  - **Simple tasks:** 300s (5 min) — Single file, <50 lines, straightforward fix
+  - **Complex tasks:** 600s (10 min) — Multi-file, >50 lines, requires exploration
+  - **Rationale:** Cloud models experience server-side delays (queueing, rate limiting, network). Budgets must accommodate file reads + edits + verification + server latency.
+- **Timeout Safety Net (v1.1 — 2026-05-18):**
+  1. **Post-yield verification:** After `sessions_yield`, verify all expected result files exist + are non-empty (`test -s`). Missing = timeout.
+  2. **Mandatory notification:** If ANY subagent times out → notify user within 1 turn. Never go silent. Format: "⚠️ X/Y timed out: [tasks]. Options: (a) retry simpler, (b) proceed partial, (c) abort."
+  3. **Decompose-on-timeout:** Timed-out task → split into 2 subtasks → retry once at 60% timeout → if still fails → escalate. Max 1 retry.
+  4. **No indefinite waits:** If `sessions_yield` returns but results are missing, report immediately. Do not wait for user to ask.
 - Ollama cloud pricing is based on model size and task complexity, not config values
 
 ---
@@ -94,6 +103,7 @@
 ---
 
 11. **MICKEY ROUTER-ONLY ENFORCEMENT (MANDATORY — Added 2026-05-17)**:
+   - **Concurrent spawn limit: 5** — Mickey can have at most 5 subagents running simultaneously (`maxConcurrent: 5` in main agent config). If 5 are already running, MUST wait for completion before spawning more. This prevents resource exhaustion and context overflow.
    - **Hard constraint:** Mickey MUST NOT execute any task requiring >1 turn or >1 tool call. All such tasks MUST be delegated.
    - **Enforcement protocol (every task Mickey receives):**
      - **Step 1:** Mickey receives task
@@ -169,3 +179,4 @@
 | **Warren/Scout execute without pre-flight decomposition** (2026-05-10) | **VIOLATION: Agents executed complex tasks without reporting decomposition first** → **FIX: Added Pre-Flight Decomposition Check to warren-investing, security-audit, performance-profiling skills — agents MUST report task list to Mickey BEFORE executing, wait for "Proceed" approval** |
 | **Mickey's AI Energy research silent failure** (2026-05-15) | **8 subagents spawned, synthesis timed out, zero delivery** → **FIX: Orchestration Reliability Protocol v1.0 — mandatory ledger, yield discipline, delivery isolation, context checks, recovery protocols. See docs/orchestration-reliability-protocol.md** |
 | **Mickey announced completion without build verification** (2026-05-17) | **VIOLATION: Announced "All Bugs Fixed!" + "QA running" but build was failing silently** → **FIX: Added Rule 13 — MUST run `npm run build` BEFORE announcing completion. Build success is the gate between "bugs fixed" and "ready to deploy". Never assume code changes compile.** |
+| **Mickey's bug-fix orchestration silent failure** (2026-05-18) | **VIOLATION: Spawned 3 bug-fix tasks → all timed out (2m51s each) → Mickey waited indefinitely with `sessions_yield` → never detected timeouts → silent failure until user asked** → **FIX: (1) Conservative timeout budgets: Simple 300s, Complex 600s (cloud model server delays). (2) Explicit timeout detection after yield. (3) Decompose-on-timeout protocol: split into 2 subtasks → retry once → escalate. See AGENTS.md Constraints section.** |

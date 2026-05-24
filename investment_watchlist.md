@@ -14,6 +14,8 @@
 | **TSM** | Taiwan Semiconductor | Semiconductors | Taiwan |
 | **SK Hynix** | SK Hynix Inc. | Memory/Semiconductors | South Korea |
 | **MU** | Micron Technology | Memory/Semiconductors | USA |
+| **Samsung** | Samsung Electronics | Semiconductors | South Korea |
+| **STM** | STMicroelectronics | Semiconductors/Analog | Europe |
 | **GOOGL** | Alphabet Inc. | Tech/Internet | USA |
 | **AAPL** | Apple Inc. | Tech/Consumer Electronics | USA |
 | **Hesai** | Hesai Group | LiDAR/Auto Tech | China |
@@ -24,7 +26,7 @@
 
 ## Focus Areas
 
-- **Semiconductors:** TSM, SK Hynix, MU (AI chip demand, foundry capacity, memory pricing)
+- **Semiconductors:** TSM, SK Hynix, MU, Samsung, STM (AI chip demand, foundry capacity, memory pricing, automotive analog)
 - **Big Tech:** GOOGL, AAPL (AI developments, earnings, regulatory news)
 - **China Tech:** Hesai, Xiaomi, Trip.com (EV/autonomous driving, consumer demand, travel recovery)
 

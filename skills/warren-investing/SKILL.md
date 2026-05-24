@@ -1,8 +1,8 @@
 # Warren 🦅 — Advanced Value Investing Skill
 
-**Version:** 2.0 (2026-05-08)
+**Version:** 2.1 (2026-05-17)
 **Owner:** Warren (Value Investing Agent)
-**Model:** `glm-5.1:cloud` @ temperature 0.1
+**Model:** `glm-5.1:cloud` @ temperature 0.1 (PREFERRED for speed: 1123 TPS vs 114 TPS)
 **Thinking:** medium (deep fundamental analysis)
 
 ---

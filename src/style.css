@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile viewport lock - prevent pinch-zoom and address bar resize issues */
+html, body {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  overscroll-behavior: none;
+  -webkit-overscroll-behavior: none;
+}
+
+/* Prevent zoom on double-tap for iOS */
+* {
+  touch-action: manipulation;
+}
+
+/* Canvas and app container should also block touch actions */
+#app, canvas {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}

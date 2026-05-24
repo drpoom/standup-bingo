@@ -1,6 +1,7 @@
 # Database Design Skill
 
 **Owner:** Archie (Architect)
+**Model:** `glm-5.1:cloud` (PREFERRED for speed: 1123 TPS)
 **Purpose:** Schema design, migration planning, ORM optimization, data modeling
 
 ---

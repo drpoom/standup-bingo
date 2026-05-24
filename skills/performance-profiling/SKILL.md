@@ -1,6 +1,7 @@
 # Performance Profiling Skill
 
 **Owner:** Scout (QA)
+**Model:** `glm-5.1:cloud` (PREFERRED for speed: 1123 TPS)
 **Purpose:** Lighthouse audits, bundle analysis, memory leak detection, performance regression tracking
 
 ---

@@ -1,3 +1,6 @@
+## 2026-05-12
+- **Daily Performance Report Format Standardized** — Table format with: Task Outcomes (Succeeded/Timeout/Failed), Model Performance (Sessions, Tokens, Avg In/Out/Total, Wall Time, Inference, TPS), Top 10 Slowest Tasks (Wall Time, Inference, Ratio, Project), Project Activity. Cron job: 7:30 AM daily via `daily-performance-report.sh`.
+
 ## 2026-04-05
 - Setup daily investment news briefings for a specific watchlist (TSM, SK Hynix, MU, GOOGL, AAPL, Hesai, Xiaomi, Trip).
 - Set up cron job (7:00 AM) for these briefings.
