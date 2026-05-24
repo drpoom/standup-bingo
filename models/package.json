@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "format": "threejs-json",
+    "description": "Simple package box 3D model for delivery missions"
+  },
+  "object": {
+    "type": "BoxGeometry",
+    "width": 2,
+    "height": 2,
+    "depth": 2,
+    "material": {
+      "type": "MeshLambertMaterial",
+      "color": 0x8B4513,
+      "name": "PackageMaterial"
+    }
+  }
+}
