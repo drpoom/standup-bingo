@@ -75,7 +75,8 @@ import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { THEMES } from './data/themes.js'
 import { hashString } from './utils/prng.js'
 
-const VERSION = '2.5.1'
+import packageInfo from '../package.json'
+const VERSION = packageInfo.version
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
