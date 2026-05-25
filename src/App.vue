@@ -196,7 +196,7 @@ function handleJoin(teamCode, playerName, theme, dateISO) {
     if (!networking.connected.value && networking.players.value.length === 0) {
       // Disconnect client peer first, then become host
       networking.disconnect()
-      networking.initializeAsHost(teamCode, dateISO, playerName)
+      networking.initializeAsHost(teamCode, dateISO, playerName, gameState.seed, gameState.boardSharing, gameState.theme)
     }
   }, 5000)
   

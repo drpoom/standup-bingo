@@ -20,10 +20,14 @@ export function useNetworking() {
   // Player tracking
   const playerJoinTimes = ref({})
 
-  function initializeAsHost(teamCode, dateISO, playerName) {
+  function initializeAsHost(teamCode, dateISO, playerName, defaultSeed = null, defaultBoardSharing = 'separate', defaultTheme = 'default') {
     roomId.value = `${teamCode.toUpperCase()}-${dateISO}`
     isHost.value = true
     hostPeerId.value = null // Will be set when peer opens
+
+    if (defaultSeed !== null) lobbySeed.value = defaultSeed
+    if (defaultBoardSharing !== null) lobbyBoardSharing.value = defaultBoardSharing
+    if (defaultTheme !== null) lobbyTheme.value = defaultTheme
     
     peer.value = new Peer(roomId.value, {
       debug: 2,
@@ -270,16 +274,24 @@ export function useNetworking() {
   }
 
   function updatePlayerGrid(peerId, grid) {
-    const player = players.value.find(p => p.peerId === peerId)
-    if (player) {
-      player.grid = grid
+    const playerIndex = players.value.findIndex(p => p.peerId === peerId)
+    if (playerIndex !== -1) {
+      players.value[playerIndex] = {
+        ...players.value[playerIndex],
+        grid: grid
+      }
+      players.value = [...players.value]
     }
   }
 
   function updatePlayerSeed(peerId, seed) {
-    const player = players.value.find(p => p.peerId === peerId)
-    if (player) {
-      player.seed = seed
+    const playerIndex = players.value.findIndex(p => p.peerId === peerId)
+    if (playerIndex !== -1) {
+      players.value[playerIndex] = {
+        ...players.value[playerIndex],
+        seed: seed
+      }
+      players.value = [...players.value]
     }
   }
 
@@ -412,9 +424,13 @@ export function useNetworking() {
 
   function toggleReady(ready) {
     // Update local player
-    const myPlayer = players.value.find(p => p.peerId === myPeerId.value)
-    if (myPlayer) {
-      myPlayer.ready = ready
+    const playerIndex = players.value.findIndex(p => p.peerId === myPeerId.value)
+    if (playerIndex !== -1) {
+      players.value[playerIndex] = {
+        ...players.value[playerIndex],
+        ready: ready
+      }
+      players.value = [...players.value]
     }
     broadcastPlayerReady(ready)
     broadcastPlayerList()
