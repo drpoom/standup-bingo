@@ -231,7 +231,7 @@ function handleStartGame(theme, seed = null, boardSharing = 'separate') {
       peerId: networking.myPeerId.value,
       playerName: gameState.playerName,
       seed: gameState.playerSeed,
-      grid: grid,
+      grid: JSON.parse(JSON.stringify(grid)),
       timestamp: Date.now()
     })
   }, 200)
@@ -307,7 +307,7 @@ function handleContinue() {
       peerId: networking.myPeerId.value,
       playerName: gameState.playerName,
       seed: gameState.playerSeed,
-      grid: grid,
+      grid: JSON.parse(JSON.stringify(grid)),
       timestamp: Date.now()
     })
   }, 200)

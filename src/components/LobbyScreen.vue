@@ -649,16 +649,19 @@ const playerPreviews = computed(() => {
     let derivedSeed = null
     try {
       const seedVal = effectiveSeed.value
-      derivedSeed = props.gameState.boardSharing === 'separate' && seedVal !== null
-        ? Math.abs(hashString(`${seedVal}-${player.name}`)) % 1000000
-        : seedVal
+      const isSeparate = boardSharing.value === 'separate'
+      const seedString = !isSeparate && seedVal !== null
+        ? String(seedVal)
+        : `${props.gameState.teamCode.toUpperCase()}${previewDateISO.value}${player.name}${selectedTheme.value}${seedVal !== null && seedVal !== undefined ? seedVal : ''}`
+      derivedSeed = Math.abs(hashString(seedString)) % 1000000
+
       grid = generateCard(
         props.gameState.teamCode,
         player.name,
         previewDateISO.value,
         selectedTheme.value,
         null, // customPhrases not available in preview
-        derivedSeed,
+        seedVal,
         boardSharing.value
       )
     } catch (e) {

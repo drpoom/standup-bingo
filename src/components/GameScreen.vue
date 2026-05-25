@@ -166,8 +166,6 @@ const props = defineProps({
 
 const emit = defineEmits(['continue', 'toggle', 'open-modal', 'close-modal', 'end-game'])
 
-const { gameState, timer, marksCount, toggleMark, formatTime, allPlayers, connected, playerCount } = props
-
 function formatTimer(seconds) {
   const mins = Math.floor(seconds / 60)
   const secs = seconds % 60
@@ -189,7 +187,7 @@ function handlePeerBingo(data) {
 }
 
 function handleToggle(row, col) {
-  const wins = toggleMark(row, col)
+  const wins = props.toggleMark(row, col)
   emit('toggle', { row, col, wins })
 }
 
