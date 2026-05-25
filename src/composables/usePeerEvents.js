@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { checkBingo } from '../utils/bingoCheck.js'
 
 /**
  * Composable for handling peer data events in the bingo game.
@@ -57,6 +58,18 @@ export function usePeerEvents(deps) {
     // For remote games, we don't know if the seed was user-provided, so show the seed value
     gameState.userSeed = seed
     lobbyGamePhase.value = 'PLAYING'
+
+    // Send BOARD_SYNC to host and peers
+    setTimeout(() => {
+      networking.sendToPeers({
+        type: 'BOARD_SYNC',
+        peerId: networking.myPeerId.value,
+        playerName: gameState.playerName,
+        seed: gameState.playerSeed,
+        grid: grid,
+        timestamp: Date.now()
+      })
+    }, 200)
   }
 
   /**
@@ -86,12 +99,38 @@ export function usePeerEvents(deps) {
 
   /**
    * Handle remote mark update from peer
-   * @param {Object} data - Mark update data with row, col, marked
+   * @param {Object} data - Mark update data with row, col, marked, peerId
    */
   function handleRemoteMarkUpdate(data) {
-    const { row, col, marked } = data
-    if (gameState.grid[row] && gameState.grid[row][col]) {
-      gameState.grid[row][col].marked = marked
+    const { row, col, marked, peerId } = data
+    const player = networkPlayers.value.find(p => p.peerId === peerId)
+    if (player && player.grid && player.grid[row] && player.grid[row][col]) {
+      player.grid[row][col].marked = marked
+      
+      // Recalculate player's bingo count
+      const wins = checkBingo(player.grid)
+      player.bingoCount = wins.length
+    }
+  }
+
+  /**
+   * Handle remote board synchronization
+   * @param {Object} data - Board sync data
+   */
+  function handleRemoteBoardSync(data) {
+    const { peerId, playerName, seed, grid } = data
+    const player = networkPlayers.value.find(p => p.peerId === peerId)
+    if (player) {
+      player.grid = grid
+      player.seed = seed
+    } else {
+      networkPlayers.value.push({
+        peerId,
+        name: playerName || 'Unknown',
+        seed,
+        grid,
+        bingoCount: 0
+      })
     }
   }
 
@@ -142,6 +181,20 @@ export function usePeerEvents(deps) {
         if (data.gamePhase) {
           lobbyGamePhase.value = data.gamePhase
         }
+
+        // Sync settings from host
+        if (!networking.isHost.value) {
+          if (data.seed !== undefined) {
+            gameState.seed = data.seed
+            gameState.userSeed = data.seed
+          }
+          if (data.boardSharing !== undefined) {
+            gameState.boardSharing = data.boardSharing
+          }
+          if (data.theme !== undefined) {
+            gameState.theme = data.theme
+          }
+        }
         
         // LATE JOIN: If game is PLAYING/WON and we just connected, request game state
         if ((data.gamePhase === 'PLAYING' || data.gamePhase === 'WON') && !gameState.grid.length) {
@@ -182,7 +235,18 @@ export function usePeerEvents(deps) {
         handleRemoteMarkUpdate(data)
         // Rebroadcast to all peers except sender if host
         if (networking.isHost.value && data.peerId) {
+          networking.updatePlayerGrid(data.peerId, networkPlayers.value.find(p => p.peerId === data.peerId)?.grid)
           networking.sendToPeers(data, data.peerId)
+        }
+        break
+
+      case 'BOARD_SYNC':
+        handleRemoteBoardSync(data)
+        // If host, rebroadcast to all other clients and update host's internal players list
+        if (networking.isHost.value && data.peerId) {
+          networking.sendToPeers(data, data.peerId)
+          networking.updatePlayerGrid(data.peerId, data.grid)
+          networking.updatePlayerSeed(data.peerId, data.seed)
         }
         break
 
@@ -217,8 +281,8 @@ export function usePeerEvents(deps) {
           // Generate card with same seed
           const grid = generateCard(teamCode, playerName, dateISO, data.theme, data.customPhrases, data.seed, data.boardSharing)
           
-          // Apply marked state from host
-          if (data.gridMarks && grid.length === data.gridMarks.length) {
+          // Apply marked state from host (only if shared board!)
+          if (data.boardSharing === 'shared' && data.gridMarks && grid.length === data.gridMarks.length) {
             for (let row = 0; row < grid.length; row++) {
               for (let col = 0; col < grid[row].length; col++) {
                 if (data.gridMarks[row][col]) {

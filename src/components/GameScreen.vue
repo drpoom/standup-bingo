@@ -38,7 +38,10 @@
           </div>
           <!-- Seed Display -->
           <div class="text-xs" :style="{ color: 'var(--theme-text-muted)' }">
-            Seed: {{ gameState.userSeed || 'Random' }}
+            Lobby Seed: {{ gameState.seed }}
+            <span v-if="gameState.boardSharing === 'separate'" class="ml-2 font-semibold text-blue-400">
+              (Your Board Seed: #{{ gameState.playerSeed }})
+            </span>
           </div>
           <!-- Host End Game Button -->
           <button
@@ -70,16 +73,17 @@
         </div>
       </div>
 
-      <!-- Player Sidebar -->
+      <!-- Player Sidebar (excludes own board) -->
       <aside class="w-full sm:w-64 space-y-3">
         <h3 class="font-semibold mb-2" :style="{ color: 'var(--theme-text)' }">Players</h3>
         <PlayerBoardThumbnail
-          v-for="player in allPlayers"
+          v-for="player in allPlayers.filter(p => !p.isSelf)"
           :key="player.name"
           :playerName="player.name"
           :grid="player.grid"
           :bingoCount="player.bingoCount"
           :theme="player.theme"
+          :seed="player.seed"
           @click="openPlayerModal(player)"
         />
       </aside>
@@ -93,6 +97,7 @@
       :grid="modalPlayer.grid"
       :bingoCount="modalPlayer.bingoCount"
       :theme="modalPlayer.theme || 'default'"
+      :seed="modalPlayer.seed"
       @close="closeModal"
     />
 

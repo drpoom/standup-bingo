@@ -32,10 +32,14 @@ export function useBingoCard() {
   function generateCard(teamCode, playerName, dateISO, theme = 'default', customPhrases = null, seed = null, boardSharing = 'separate') {
     // If separate: include playerName in seed
     // If shared: use seed only (no playerName)
-    const seedString = boardSharing === 'shared' && seed 
+    const seedString = boardSharing === 'shared' && seed !== null && seed !== undefined
       ? String(seed) 
-      : `${teamCode.toUpperCase()}${dateISO}${playerName}${theme}${seed || ''}`
-    const seedValue = typeof seed === 'number' ? seed : hashString(seedString)
+      : `${teamCode.toUpperCase()}${dateISO}${playerName}${theme}${seed !== null && seed !== undefined ? seed : ''}`
+    
+    // Always hash the seedString if separate, or if seed is not a number
+    const seedValue = boardSharing === 'shared' && typeof seed === 'number'
+      ? seed
+      : hashString(seedString)
     const rng = mulberry32(seedValue)
 
     // Get phrases based on theme

@@ -184,6 +184,30 @@
         </div>
       </div>
 
+      <!-- Lobby Info Bar -->
+      <div class="bg-white/5 border-b border-white/10 px-3 sm:px-4 py-2.5 text-sm text-white/80">
+        <div class="max-w-4xl mx-auto flex flex-wrap gap-4 items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-white/50 font-medium">Lobby Seed:</span>
+            <span class="font-mono font-bold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-400/20">
+              {{ gameState.seed || 'Random' }}
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-white/50 font-medium">Board Sharing:</span>
+            <span class="font-semibold capitalize text-green-400 bg-green-500/10 px-2 py-0.5 rounded border border-green-400/20">
+              {{ gameState.boardSharing }}
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-white/50 font-medium">Theme:</span>
+            <span class="font-semibold capitalize text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-400/20">
+              {{ gameState.theme }}
+            </span>
+          </div>
+        </div>
+      </div>
+
       <div class="max-w-4xl mx-auto px-3 sm:px-4 py-6">
         <!-- Player List -->
         <div class="glass-card p-5 sm:p-6 mb-4">
@@ -210,6 +234,9 @@
                   </div>
                   <div class="text-xs text-white/70">
                     Joined {{ formatJoinTime(player.joinTime) }}
+                    <span v-if="gameState.seed" class="ml-2 px-1.5 py-0.5 rounded bg-white/10 font-mono text-[10px]">
+                      Seed: #{{ getPlayerSeed(player) }}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -277,16 +304,27 @@
             <!-- Seed Input -->
             <div>
               <label for="seedInput" class="block text-sm font-medium text-white/90 mb-2">
-                Board Seed (optional)
+                Board Seed
               </label>
-              <input
-                id="seedInput"
-                v-model="seedInput"
-                type="text"
-                placeholder="Leave empty for random"
-                class="w-full px-4 py-3 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none bg-white/10 text-white"
-              />
-              <p class="text-xs text-white/50 mt-1">Same seed = same board for all players</p>
+              <div class="flex gap-2">
+                <input
+                  id="seedInput"
+                  v-model="seedInput"
+                  type="text"
+                  placeholder="Enter a custom seed"
+                  class="flex-1 px-4 py-3 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none bg-white/10 text-white font-mono"
+                />
+                <button
+                  @click.prevent="randomizeSeed"
+                  class="px-4 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg transition border border-white/30 flex items-center gap-1.5 min-h-[44px]"
+                  title="Generate a random seed"
+                >
+                  🎲 <span class="hidden sm:inline">Random</span>
+                </button>
+              </div>
+              <p class="text-xs text-white/50 mt-1">
+                {{ boardSharing === 'separate' ? 'Each player gets a different board based on this base seed' : 'Same seed = same board for all players' }}
+              </p>
             </div>
 
             <!-- Board Sharing -->
@@ -440,6 +478,7 @@ import PlayerBoardThumbnail from './PlayerBoardThumbnail.vue'
 import PlayerBoardModal from './PlayerBoardModal.vue'
 import { useBingoCard } from '../composables/useBingoCard.js'
 import { useSoundEffects } from '../composables/useSoundEffects.js'
+import { hashString } from '../utils/prng.js'
 
 const props = defineProps({
   networking: {
@@ -486,11 +525,74 @@ const playerName = ref(localStorage.getItem(STORAGE_KEYS.playerName) || '')
 const selectedTheme = ref(localStorage.getItem(STORAGE_KEYS.theme) || 'default')
 const dateISO = ref('')
 const boardSharing = ref(localStorage.getItem(STORAGE_KEYS.boardSharing) || 'separate')
-const seedInput = ref('')
+const seedInput = ref(props.gameState.seed !== null && props.gameState.seed !== undefined ? String(props.gameState.seed) : '')
 const showLateJoinDialog = ref(false)
 const pendingJoinData = ref(null)
 const rememberMe = ref(!!(localStorage.getItem(STORAGE_KEYS.teamCode) || localStorage.getItem(STORAGE_KEYS.playerName)))
 const hasSavedData = ref(rememberMe.value)
+
+// Sync local refs from gameState for clients (non-hosts)
+watch(() => props.gameState.seed, (newVal) => {
+  if (!props.isHost) {
+    seedInput.value = newVal !== null && newVal !== undefined ? String(newVal) : ''
+  }
+}, { immediate: true })
+
+watch(() => props.gameState.boardSharing, (newVal) => {
+  if (!props.isHost && newVal) {
+    boardSharing.value = newVal
+  }
+}, { immediate: true })
+
+watch(() => props.gameState.theme, (newVal) => {
+  if (!props.isHost && newVal) {
+    selectedTheme.value = newVal
+  }
+}, { immediate: true })
+
+// If host, update the shared gameState and broadcast settings when local refs change
+watch(seedInput, (newVal) => {
+  if (props.isHost) {
+    const parsed = newVal.trim()
+    const seedVal = parsed ? (isNaN(Number(parsed)) ? parsed : Number(parsed)) : null
+    props.gameState.seed = seedVal
+    props.gameState.userSeed = seedVal
+    props.networking.updateLobbySettings({ seed: seedVal })
+  }
+})
+
+watch(boardSharing, (newVal) => {
+  if (props.isHost) {
+    props.gameState.boardSharing = newVal
+    props.networking.updateLobbySettings({ boardSharing: newVal })
+  }
+})
+
+watch(selectedTheme, (newVal) => {
+  if (props.isHost) {
+    props.gameState.theme = newVal
+    props.networking.updateLobbySettings({ theme: newVal })
+  }
+})
+
+function randomizeSeed() {
+  const newSeed = Math.floor(100000 + Math.random() * 900000)
+  seedInput.value = String(newSeed)
+  if (props.isHost) {
+    props.gameState.seed = newSeed
+    props.gameState.userSeed = newSeed
+    props.networking.updateLobbySettings({ seed: newSeed })
+  }
+}
+
+function getPlayerSeed(player) {
+  const lobbySeedVal = props.gameState.seed
+  if (!lobbySeedVal) return 'None'
+  if (props.gameState.boardSharing === 'shared') {
+    return lobbySeedVal
+  }
+  return Math.abs(hashString(`${lobbySeedVal}-${player.name}`)) % 1000000
+}
 
 
 const inRoom = computed(() => !!props.gameState.teamCode)
@@ -535,7 +637,7 @@ const previewDateISO = computed(() => new Date().toISOString().split('T')[0])
 // Compute the effective seed for preview: if shared mode, use host's seed; if separate, each player uses their own
 const effectiveSeed = computed(() => {
   const raw = seedInput.value.trim()
-  return raw ? Number(raw) : null
+  return raw ? (isNaN(Number(raw)) ? raw : Number(raw)) : props.gameState.seed
 })
 
 // Generate preview grids for all players
@@ -544,15 +646,19 @@ const playerPreviews = computed(() => {
   
   return props.players.map(player => {
     let grid = []
+    let derivedSeed = null
     try {
-      const seed = effectiveSeed.value ?? Date.now()
+      const seedVal = effectiveSeed.value
+      derivedSeed = props.gameState.boardSharing === 'separate' && seedVal !== null
+        ? Math.abs(hashString(`${seedVal}-${player.name}`)) % 1000000
+        : seedVal
       grid = generateCard(
         props.gameState.teamCode,
         player.name,
         previewDateISO.value,
         selectedTheme.value,
         null, // customPhrases not available in preview
-        seed,
+        derivedSeed,
         boardSharing.value
       )
     } catch (e) {
@@ -565,6 +671,7 @@ const playerPreviews = computed(() => {
       bingoCount: 0,
       theme: selectedTheme.value,
       peerId: player.peerId,
+      seed: derivedSeed,
       isSelf: player.peerId === props.networking.myPeerId.value
     }
   })
@@ -670,7 +777,8 @@ function toggleReady() {
 
 function handleStartGame() {
   // Pass seed and boardSharing from host controls to the start-game event
-  const seed = seedInput.value.trim() ? Number(seedInput.value.trim()) : Date.now()
+  const raw = seedInput.value.trim()
+  const seed = raw ? (isNaN(Number(raw)) ? raw : Number(raw)) : Date.now()
   emit('start-game', selectedTheme.value, seed, boardSharing.value)
 }
 

@@ -12,6 +12,11 @@ export function useNetworking() {
   const hostPeerId = ref(null)
   const lobbyGamePhase = ref('LOBBY') // 'LOBBY' | 'PLAYING'
 
+  // Settings sync refs
+  const lobbySeed = ref(null)
+  const lobbyBoardSharing = ref('separate')
+  const lobbyTheme = ref('default')
+
   // Player tracking
   const playerJoinTimes = ref({})
 
@@ -271,21 +276,43 @@ export function useNetworking() {
     }
   }
 
+  function updatePlayerSeed(peerId, seed) {
+    const player = players.value.find(p => p.peerId === peerId)
+    if (player) {
+      player.seed = seed
+    }
+  }
+
+  function updateLobbySettings(settings) {
+    if (settings.seed !== undefined) lobbySeed.value = settings.seed
+    if (settings.boardSharing !== undefined) lobbyBoardSharing.value = settings.boardSharing
+    if (settings.theme !== undefined) lobbyTheme.value = settings.theme
+    
+    // Broadcast updated settings to everyone in the lobby
+    if (isHost.value) {
+      broadcastPlayerList()
+    }
+  }
+
   function removePlayer(peerId) {
     players.value = players.value.filter(p => p.peerId !== peerId)
   }
 
   function broadcastPlayerList() {
-    // Include grid for each player if available
+    // Include grid and seed for each player if available
     const playersWithGrid = players.value.map(p => ({
       ...p,
-      grid: p.grid || null
+      grid: p.grid || null,
+      seed: p.seed || null
     }))
     
     broadcast({
       type: 'PLAYER_LIST',
       players: playersWithGrid,
       gamePhase: lobbyGamePhase.value,
+      seed: lobbySeed.value,
+      boardSharing: lobbyBoardSharing.value,
+      theme: lobbyTheme.value,
       timestamp: Date.now()
     })
   }
@@ -333,7 +360,7 @@ export function useNetworking() {
       theme,
       seed,
       dateISO,
-      boardSharing: boardSharing || gameState.boardSharing,
+      boardSharing: boardSharing || lobbyBoardSharing.value,
       timestamp: Date.now()
     })
   }
@@ -446,6 +473,9 @@ export function useNetworking() {
     myPeerId,
     hostPeerId,
     lobbyGamePhase,
+    lobbySeed,
+    lobbyBoardSharing,
+    lobbyTheme,
     initializeAsHost,
     initializeAsClient,
     sendToPeers,
@@ -464,6 +494,8 @@ export function useNetworking() {
     sendCustomPhrases,
     sendGameStateToPeer,
     updatePlayerGrid,
+    updatePlayerSeed,
+    updateLobbySettings,
     disconnect
   }
 }

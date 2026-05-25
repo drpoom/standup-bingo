@@ -73,8 +73,9 @@
 <script setup>
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { THEMES } from './data/themes.js'
+import { hashString } from './utils/prng.js'
 
-const VERSION = '2.4.2'
+const VERSION = '2.5.0'
 import { useBingoCard } from './composables/useBingoCard'
 import { useGameState } from './composables/useGameState'
 import { usePersistence } from './composables/usePersistence'
@@ -221,6 +222,18 @@ function handleStartGame(theme, seed = null, boardSharing = 'separate') {
   
   // Broadcast to peers
   networking.startGame(theme, actualSeed, dateISO, boardSharing)
+
+  // Broadcast BOARD_SYNC to peers
+  setTimeout(() => {
+    networking.sendToPeers({
+      type: 'BOARD_SYNC',
+      peerId: networking.myPeerId.value,
+      playerName: gameState.playerName,
+      seed: gameState.playerSeed,
+      grid: grid,
+      timestamp: Date.now()
+    })
+  }, 200)
 }
 
 function handleTransferHost(newHostPeerId) {
@@ -274,11 +287,29 @@ function handleContinue() {
   gameState.seed = seed
   gameState.userSeed = null  // New round is always random
   gameState.dateISO = dateISO
+
+  // Calculate playerSeed
+  const seedString = gameState.boardSharing === 'shared' && seed !== null
+    ? String(seed)
+    : `${gameState.teamCode.toUpperCase()}${dateISO || ''}${gameState.playerName}${gameState.theme}${seed !== null && seed !== undefined ? seed : ''}`
+  gameState.playerSeed = Math.abs(hashString(seedString)) % 1000000
   
   // Broadcast new round to peers
   if (networking.isHost.value) {
     networking.startGame(gameState.theme, seed, dateISO, gameState.boardSharing)
   }
+
+  // Broadcast BOARD_SYNC to peers
+  setTimeout(() => {
+    networking.sendToPeers({
+      type: 'BOARD_SYNC',
+      peerId: networking.myPeerId.value,
+      playerName: gameState.playerName,
+      seed: gameState.playerSeed,
+      grid: grid,
+      timestamp: Date.now()
+    })
+  }, 200)
   
   console.log('[DEBUG] handleContinue: phase after:', gameState.phase)
   stopConfetti()

@@ -5,9 +5,14 @@
   >
     <div class="rounded-lg shadow-md p-2 border-2" :style="{ borderColor: themeColors.border, background: themeColors.card }">
       <!-- Avatar + Name -->
-      <div class="flex items-center gap-1.5 mb-1.5">
-        <PlayerAvatar :name="playerName" :size="20" />
-        <span class="text-xs font-semibold truncate" :style="{ color: themeColors.text }">{{ playerName }}</span>
+      <div class="flex items-center justify-between gap-1.5 mb-1.5 min-w-0">
+        <div class="flex items-center gap-1.5 min-w-0">
+          <PlayerAvatar :name="playerName" :size="20" />
+          <span class="text-xs font-semibold truncate" :style="{ color: themeColors.text }">{{ playerName }}</span>
+        </div>
+        <span v-if="seed" class="text-[9px] font-mono opacity-60 px-1 rounded bg-white/10" :style="{ color: themeColors.text }">
+          #{{ seed }}
+        </span>
       </div>
       
       <!-- Mini Bingo Grid (5x5 compact squares) -->
@@ -52,6 +57,10 @@ const props = defineProps({
   theme: {
     type: String,
     default: 'default'
+  },
+  seed: {
+    type: [Number, String],
+    default: null
   }
 })
 

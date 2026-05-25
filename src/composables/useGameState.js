@@ -1,6 +1,7 @@
 import { reactive, computed, ref } from 'vue'
 import { checkBingo } from '../utils/bingoCheck.js'
 import { formatTime } from '../utils/formatTime.js'
+import { hashString } from '../utils/prng.js'
 
 export function useGameState() {
   const timer = ref(0)
@@ -29,8 +30,9 @@ export function useGameState() {
     bingos: [],
     startTime: null,
     bingoTime: null,
-    seed: null,
+    seed: Math.floor(100000 + Math.random() * 900000),
     userSeed: null, // The seed value the user entered, or null if random
+    playerSeed: null, // The individual player derived seed
     customPhrases: null,
     hostPeerId: null,
     boardSharing: 'separate', // 'separate' or 'shared'
@@ -71,6 +73,13 @@ export function useGameState() {
     gameState.seed = seed
     gameState.customPhrases = customPhrases
     if (dateISO) gameState.dateISO = dateISO
+
+    // Calculate playerSeed
+    const seedString = gameState.boardSharing === 'shared' && seed !== null
+      ? String(seed)
+      : `${teamCode.toUpperCase()}${dateISO || ''}${playerName}${theme}${seed !== null && seed !== undefined ? seed : ''}`
+    gameState.playerSeed = Math.abs(hashString(seedString)) % 1000000
+
     startTimer()
   }
 

@@ -15,9 +15,15 @@
           <PlayerAvatar :name="playerName" :size="48" />
           <div>
             <h2 class="text-xl font-bold" :style="{ color: themeColors.text }">{{ playerName }}</h2>
-            <p class="text-sm font-semibold" :style="{ color: themeColors.accent }">
-              {{ bingoCount }} BINGO{{ bingoCount !== 1 ? 'S' : '' }}
-            </p>
+            <div class="flex items-center gap-2 text-sm font-semibold">
+              <span :style="{ color: themeColors.accent }">
+                {{ bingoCount }} BINGO{{ bingoCount !== 1 ? 'S' : '' }}
+              </span>
+              <span v-if="seed" class="text-white/40 font-normal">|</span>
+              <span v-if="seed" :style="{ color: themeColors.text }" class="opacity-60 text-xs font-mono">
+                Seed: #{{ seed }}
+              </span>
+            </div>
           </div>
         </div>
         <button
@@ -75,6 +81,10 @@ const props = defineProps({
   theme: {
     type: String,
     default: 'default'
+  },
+  seed: {
+    type: [Number, String],
+    default: null
   }
 })
 
