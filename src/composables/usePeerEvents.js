@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { checkBingo } from '../utils/bingoCheck.js'
 
 /**
@@ -37,6 +37,26 @@ export function usePeerEvents(deps) {
   const toastMessage = ref('')
   const peerBingo = ref(null)
   const lobbyGamePhase = ref('LOBBY') // 'LOBBY' | 'PLAYING' for host controls visibility
+
+  // Watch networking.players and sync to networkPlayers if host
+  watch(
+    () => networking.players.value,
+    (newPlayers) => {
+      if (networking.isHost.value) {
+        networkPlayers.value = newPlayers.map(p => ({
+          peerId: p.peerId,
+          name: p.name,
+          joinTime: p.joinTime,
+          ready: p.ready,
+          isHost: p.isHost,
+          seed: p.seed || null,
+          grid: p.grid || null,
+          bingoCount: p.grid ? checkBingo(p.grid).length : 0
+        }))
+      }
+    },
+    { deep: true, immediate: true }
+  )
 
   /**
    * Handle remote game start from host
@@ -103,7 +123,8 @@ export function usePeerEvents(deps) {
    */
   function handleRemoteMarkUpdate(data) {
     const { row, col, marked, peerId } = data
-    const player = networkPlayers.value.find(p => p.peerId === peerId)
+    const playersList = networking.isHost.value ? networking.players.value : networkPlayers.value
+    const player = playersList.find(p => p.peerId === peerId)
     if (player && player.grid && player.grid[row] && player.grid[row][col]) {
       player.grid[row][col].marked = marked
       
@@ -119,12 +140,13 @@ export function usePeerEvents(deps) {
    */
   function handleRemoteBoardSync(data) {
     const { peerId, playerName, seed, grid } = data
-    const player = networkPlayers.value.find(p => p.peerId === peerId)
+    const playersList = networking.isHost.value ? networking.players.value : networkPlayers.value
+    const player = playersList.find(p => p.peerId === peerId)
     if (player) {
       player.grid = grid
       player.seed = seed
     } else {
-      networkPlayers.value.push({
+      playersList.push({
         peerId,
         name: playerName || 'Unknown',
         seed,
