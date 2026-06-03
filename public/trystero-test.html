@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trystero + Supabase PoC - Standup Bingo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      min-height: 100vh;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .container { max-width: 700px; margin: 0 auto; }
+    h1 { color: #00d9ff; margin-bottom: 1rem; font-size: 1.8rem; }
+    .info-box {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-box h2 { color: #e94560; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .info-box ul { margin-left: 1.2rem; margin-top: 0.5rem; }
+    .info-box a { color: #00d9ff; }
+    .card {
+      background: #16213e;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    label { display: block; margin-bottom: 0.3rem; color: #aaa; font-size: 0.9rem; }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #0f3460;
+      border-radius: 4px;
+      background: #1a1a2e;
+      color: #fff;
+      font-size: 1rem;
+    }
+    input[type="text"]:focus { outline: none; border-color: #00d9ff; }
+    button {
+      background: #e94560;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #ff6b6b; }
+    button:disabled { background: #555; cursor: not-allowed; }
+    .status {
+      padding: 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .status.connecting { background: #f39c12; color: #000; }
+    .status.connected { background: #27ae60; color: #fff; }
+    .status.waiting { background: #34495e; color: #fff; }
+    .status.failed { background: #c0392b; color: #fff; }
+    .events {
+      background: #0f0f23;
+      border-radius: 4px;
+      padding: 1rem;
+      max-height: 200px;
+      overflow-y: auto;
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .event { margin-bottom: 0.3rem; }
+    .chat-area { margin-top: 1rem; }
+    .chat-messages {
+      background: #0f0f23;
+      border-radius: 4px;
+      padding: 1rem;
+      max-height: 150px;
+      overflow-y: auto;
+      margin-bottom: 0.5rem;
+    }
+    .chat-message { margin-bottom: 0.3rem; }
+    .chat-message strong { color: #00d9ff; }
+    .chat-input { display: flex; gap: 0.5rem; }
+    .chat-input input { flex: 1; margin-bottom: 0; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Trystero + Supabase PoC</h1>
+    
+    <div class="info-box">
+      <h2>What This Tests</h2>
+      <p>This page verifies that Trystero can establish peer-to-peer connections using Supabase as a signaling server — essential for multiplayer Standup Bingo on static GitHub Pages.</p>
+      <ul>
+        <li>No backend required — works on GitHub Pages</li>
+        <li>You need a free <a href="https://supabase.com" target="_blank">Supabase</a> project</li>
+        <li>Paste your <strong>Project URL</strong> and <strong>anon/public key</strong> below</li>
+        <li>Open this page in multiple browser tabs to test peer discovery</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <label for="supabaseUrl">Supabase Project URL</label>
+      <input type="text" id="supabaseUrl" placeholder="https://xxxxx.supabase.co">
+      
+      <label for="supabaseKey">Supabase Anon Key</label>
+      <input type="text" id="supabaseKey" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6...">
+      
+      <label for="roomId">Room ID</label>
+      <input type="text" id="roomId" value="bingo-test">
+      
+      <label for="playerName">Your Name</label>
+      <input type="text" id="playerName" placeholder="Player 1">
+      
+      <button id="connectBtn">Connect to Room</button>
+    </div>
+
+    <div id="statusCard" class="card hidden">
+      <div id="statusIndicator" class="status waiting">🟡 Connecting...</div>
+      <div id="peerCount">Peers connected: 0</div>
+    </div>
+
+    <div id="eventsCard" class="card hidden">
+      <h3 style="margin-bottom: 0.5rem;">Peer Events</h3>
+      <div id="eventsLog" class="events"></div>
+    </div>
+
+    <div id="chatCard" class="card hidden">
+      <h3 style="margin-bottom: 0.5rem;">Chat Test</h3>
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type a message...">
+        <button id="sendChatBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { joinRoom } from 'https://esm.run/@trystero-p2p/supabase';
+
+    let room = null;
+    let connectionTimeout = null;
+    const peers = new Set();
+
+    const connectBtn = document.getElementById('connectBtn');
+    const statusCard = document.getElementById('statusCard');
+    const statusIndicator = document.getElementById('statusIndicator');
+    const peerCountEl = document.getElementById('peerCount');
+    const eventsCard = document.getElementById('eventsCard');
+    const eventsLog = document.getElementById('eventsLog');
+    const chatCard = document.getElementById('chatCard');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const sendChatBtn = document.getElementById('sendChatBtn');
+
+    function addEvent(message) {
+      const div = document.createElement('div');
+      div.className = 'event';
+      div.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      eventsLog.appendChild(div);
+      eventsLog.scrollTop = eventsLog.scrollHeight;
+    }
+
+    function addChatMessage(message, peerId) {
+      const div = document.createElement('div');
+      div.className = 'chat-message';
+      div.innerHTML = `<strong>${peerId}:</strong> ${message}`;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function updateStatus(state, peerNum) {
+      statusIndicator.className = 'status ' + state;
+      const labels = {
+        connecting: '🟡 Connecting...',
+        connected: `🟢 Connected (${peerNum} peers)`,
+        waiting: '🔟 No peers yet (waiting...)',
+        failed: '❌ Connection failed — Supabase may be blocked by your proxy'
+      };
+      statusIndicator.textContent = labels[state];
+      peerCountEl.textContent = `Peers connected: ${peerNum}`;
+    }
+
+    connectBtn.addEventListener('click', async () => {
+      const supabaseUrl = document.getElementById('supabaseUrl').value.trim();
+      const supabaseKey = document.getElementById('supabaseKey').value.trim();
+      const roomId = document.getElementById('roomId').value.trim();
+      const playerName = document.getElementById('playerName').value.trim() || 'Anonymous';
+
+      if (!supabaseUrl || !supabaseKey) {
+        alert('Please enter your Supabase Project URL and Anon Key');
+        return;
+      }
+
+      connectBtn.disabled = true;
+      statusCard.classList.remove('hidden');
+      updateStatus('connecting', 0);
+
+      const config = { appId: supabaseUrl, supabaseKey };
+
+      // 15s timeout
+      connectionTimeout = setTimeout(() => {
+        if (peers.size === 0 && room) {
+          updateStatus('failed', 0);
+          addEvent('❌ Connection timeout after 15s');
+        }
+      }, 15000);
+
+      try {
+        room = joinRoom(config, roomId);
+
+        room.onPeerJoin(peerId => {
+          peers.add(peerId);
+          addEvent(`✅ ${peerId} joined`);
+          updateStatus('connected', peers.size);
+          if (connectionTimeout) clearTimeout(connectionTimeout);
+        });
+
+        room.onPeerLeave(peerId => {
+          peers.delete(peerId);
+          addEvent(`👋 ${peerId} left`);
+          updateStatus(peers.size > 0 ? 'connected' : 'waiting', peers.size);
+        });
+
+        const [sendChat, getChat] = room.makeAction('chat');
+        getChat((message, peerId) => {
+          addChatMessage(message, peerId);
+          addEvent(`💬 Message from ${peerId}: ${message}`);
+        });
+
+        window.sendChat = sendChat;
+
+        eventsCard.classList.remove('hidden');
+        chatCard.classList.remove('hidden');
+        addEvent(`🎉 Joined room "${roomId}" as ${playerName}`);
+        updateStatus('waiting', 0);
+
+      } catch (err) {
+        clearTimeout(connectionTimeout);
+        updateStatus('failed', 0);
+        addEvent(`❌ Error: ${err.message}`);
+        connectBtn.disabled = false;
+      }
+    });
+
+    sendChatBtn.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message && window.sendChat) {
+        window.sendChat(message);
+        addChatMessage(message, 'You');
+        chatInput.value = '';
+      }
+    });
+
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendChatBtn.click();
+    });
+  </script>
+</body>
+</html>
