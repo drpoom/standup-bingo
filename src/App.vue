@@ -44,6 +44,7 @@
       :connected="networking.connected.value"
       :playerCount="allPlayersList.length"
       :isHost="networking.isHost.value"
+      :offlineMode="networking.offlineMode.value"
       @continue="handleContinue"
       @toggle="handleToggleEmit"
       @end-game="handleEndGame"
@@ -207,6 +208,19 @@ function handleJoin(teamCode, playerName, theme, dateISO) {
       clearTimeout(checkConnection)
     }
   }, { once: true })
+  
+  // Listen for network-offline event (corporate proxy fallback)
+  const handleOffline = () => {
+    clearTimeout(checkConnection)
+    // In offline mode, still allow local gameplay with seed-based generation
+    console.log('[App.vue] Network offline - entering offline mode')
+  }
+  window.addEventListener('network-offline', handleOffline)
+  
+  // Cleanup listener on unmount
+  onUnmounted(() => {
+    window.removeEventListener('network-offline', handleOffline)
+  })
 }
 
 function handleStartGame(theme, seed = null, boardSharing = 'separate') {
@@ -216,25 +230,27 @@ function handleStartGame(theme, seed = null, boardSharing = 'separate') {
   gameState.boardSharing = boardSharing
   gameState.userSeed = seed  // null if random, number if user-provided
   
-  // Generate card locally first
+  // Generate card locally first (works offline with seed-based generation)
   const grid = generateCard(gameState.teamCode, gameState.playerName, dateISO, theme, gameState.customPhrases, actualSeed, boardSharing)
   startGame(gameState.teamCode, gameState.playerName, grid, theme, actualSeed, gameState.customPhrases, dateISO)
   lobbyGamePhase.value = 'PLAYING'
   
-  // Broadcast to peers
-  networking.startGame(theme, actualSeed, dateISO, boardSharing)
+  // Broadcast to peers only if not in offline mode
+  if (!networking.offlineMode.value) {
+    networking.startGame(theme, actualSeed, dateISO, boardSharing)
 
-  // Broadcast BOARD_SYNC to peers
-  setTimeout(() => {
-    networking.sendToPeers({
-      type: 'BOARD_SYNC',
-      peerId: networking.myPeerId.value,
-      playerName: gameState.playerName,
-      seed: gameState.playerSeed,
-      grid: JSON.parse(JSON.stringify(grid)),
-      timestamp: Date.now()
-    })
-  }, 200)
+    // Broadcast BOARD_SYNC to peers
+    setTimeout(() => {
+      networking.sendToPeers({
+        type: 'BOARD_SYNC',
+        peerId: networking.myPeerId.value,
+        playerName: gameState.playerName,
+        seed: gameState.playerSeed,
+        grid: JSON.parse(JSON.stringify(grid)),
+        timestamp: Date.now()
+      })
+    }, 200)
+  }
 }
 
 function handleTransferHost(newHostPeerId) {
@@ -256,13 +272,17 @@ function handleToggleMark(row, col) {
   
   const wins = toggleMark(row, col)
   
-  // Broadcast mark update
+  // Broadcast mark update only if not in offline mode
   const cell = gameState.grid[row][col]
-  networking.broadcastMarkUpdate(row, col, cell.marked, networking.myPeerId.value)
+  if (!networking.offlineMode.value) {
+    networking.broadcastMarkUpdate(row, col, cell.marked, networking.myPeerId.value)
+  }
   
-  // If bingo, broadcast
+  // If bingo, broadcast only if not in offline mode
   if (wins && wins.length > 0 && gameState.bingos.length === 1) {
-    networking.broadcastBingo(gameState.playerName, wins[0].type)
+    if (!networking.offlineMode.value) {
+      networking.broadcastBingo(gameState.playerName, wins[0].type)
+    }
     playBingoSound()
   }
   
@@ -295,8 +315,8 @@ function handleContinue() {
     : `${gameState.teamCode.toUpperCase()}${dateISO || ''}${gameState.playerName}${gameState.theme}${seed !== null && seed !== undefined ? seed : ''}`
   gameState.playerSeed = Math.abs(hashString(seedString)) % 1000000
   
-  // Broadcast new round to peers
-  if (networking.isHost.value) {
+  // Broadcast new round to peers only if not in offline mode
+  if (!networking.offlineMode.value && networking.isHost.value) {
     networking.startGame(gameState.theme, seed, dateISO, gameState.boardSharing)
   }
 
@@ -328,7 +348,9 @@ function handleEndGame() {
   console.log('[DEBUG] handleEndGame called')
   endGame()
   lobbyGamePhase.value = 'LOBBY'
-  networking.endGame()
+  if (!networking.offlineMode.value) {
+    networking.endGame()
+  }
 }
 
 function handleReseed() {

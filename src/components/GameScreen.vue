@@ -74,8 +74,9 @@
       </div>
 
       <!-- Player Sidebar (excludes own board) -->
-      <aside class="w-full sm:w-64 space-y-3">
+      <aside class="w-full sm:w-64 space-y-3" :class="offlineMode ? 'sidebar-offline' : ''">
         <h3 class="font-semibold mb-2" :style="{ color: 'var(--theme-text)' }">Players</h3>
+        <div v-if="offlineMode" class="text-xs text-white/50 mb-2">Offline mode</div>
         <PlayerBoardThumbnail
           v-for="player in allPlayers.filter(p => !p.isSelf)"
           :key="player.name"
@@ -161,10 +162,16 @@ const props = defineProps({
   isHost: {
     type: Boolean,
     default: false
+  },
+  offlineMode: {
+    type: Boolean,
+    default: false
   }
 })
 
 const emit = defineEmits(['continue', 'toggle', 'open-modal', 'close-modal', 'end-game'])
+
+const { gameState, timer, marksCount, toggleMark, formatTime, allPlayers, connected, playerCount, offlineMode } = props
 
 function formatTimer(seconds) {
   const mins = Math.floor(seconds / 60)
@@ -219,3 +226,11 @@ if (typeof window !== 'undefined') {
   })
 }
 </script>
+
+<style scoped>
+/* Offline mode sidebar styling */
+.sidebar-offline {
+  opacity: 0.6;
+  filter: grayscale(0.5);
+}
+</style>

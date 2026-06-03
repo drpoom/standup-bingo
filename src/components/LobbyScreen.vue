@@ -160,6 +160,14 @@
 
     <!-- ==================== PHASE 2: LOBBY WAITING ROOM ==================== -->
     <div v-if="inRoom" class="min-h-screen relative z-10">
+      <!-- Offline Mode Banner -->
+      <div v-if="networking.offlineMode.value" class="offline-banner px-3 sm:px-4 py-3">
+        <div class="max-w-4xl mx-auto flex items-center gap-3">
+          <span class="text-lg">📡</span>
+          <p class="text-sm text-white/90 font-medium">Offline mode — playing independently (corporate proxy?)</p>
+        </div>
+      </div>
+
       <!-- Lobby Header - distinct from setup -->
       <div class="lobby-header px-3 sm:px-4 py-4 sm:py-5">
         <div class="max-w-4xl mx-auto flex items-center justify-between">
@@ -824,6 +832,12 @@ function formatJoinTime(timestamp) {
 .lobby-header {
   background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Offline mode banner */
+.offline-banner {
+  background: rgba(59, 130, 246, 0.2);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 /* Animate pulse for connected indicator */

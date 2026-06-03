@@ -7,6 +7,7 @@ export function useNetworking() {
   const isHost = ref(false)
   const roomId = ref(null)
   const connected = ref(false)
+  const offlineMode = ref(false)
   const players = ref([])
   const myPeerId = ref(null)
   const hostPeerId = ref(null)
@@ -20,10 +21,23 @@ export function useNetworking() {
   // Player tracking
   const playerJoinTimes = ref({})
 
+  function handleOfflineFallback(reason) {
+    console.warn('Network offline fallback triggered:', reason)
+    if (peer.value) {
+      peer.value.destroy()
+      peer.value = null
+    }
+    connections.value = []
+    connected.value = false
+    offlineMode.value = true
+    window.dispatchEvent(new CustomEvent('network-offline', { detail: { reason } }))
+  }
+
   function initializeAsHost(teamCode, dateISO, playerName, defaultSeed = null, defaultBoardSharing = 'separate', defaultTheme = 'default') {
     roomId.value = `${teamCode.toUpperCase()}-${dateISO}`
     isHost.value = true
     hostPeerId.value = null // Will be set when peer opens
+    offlineMode.value = false
 
     if (defaultSeed !== null) lobbySeed.value = defaultSeed
     if (defaultBoardSharing !== null) lobbyBoardSharing.value = defaultBoardSharing
@@ -39,7 +53,14 @@ export function useNetworking() {
       }
     })
 
+    // 10s timeout fallback for corporate proxy scenarios
+    const openTimeout = setTimeout(() => {
+      handleOfflineFallback('connection-timeout')
+    }, 10000)
+
     peer.value.on('open', (id) => {
+      clearTimeout(openTimeout)
+      if (offlineMode.value) return // Already switched to offline
       console.log('Host peer opened:', id)
       myPeerId.value = id
       hostPeerId.value = id
@@ -79,6 +100,7 @@ export function useNetworking() {
   function initializeAsClient(teamCode, dateISO, playerName) {
     roomId.value = `${teamCode.toUpperCase()}-${dateISO}`
     isHost.value = false
+    offlineMode.value = false
     
     peer.value = new Peer({
       debug: 2,
@@ -90,7 +112,14 @@ export function useNetworking() {
       }
     })
 
+    // 10s timeout fallback for corporate proxy scenarios
+    const openTimeout = setTimeout(() => {
+      handleOfflineFallback('connection-timeout')
+    }, 10000)
+
     peer.value.on('open', (id) => {
+      clearTimeout(openTimeout)
+      if (offlineMode.value) return // Already switched to offline
       console.log('Client peer opened:', id)
       myPeerId.value = id
       
@@ -117,6 +146,7 @@ export function useNetworking() {
       // If the host peer is unavailable, mark as not connected so fallback can trigger
       if (err.type === 'peer-unavailable') {
         connected.value = false
+        handleOfflineFallback('peer-unavailable')
       }
     })
 
@@ -485,6 +515,7 @@ export function useNetworking() {
     isHost,
     roomId,
     connected,
+    offlineMode,
     players,
     myPeerId,
     hostPeerId,
